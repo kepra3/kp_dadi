@@ -8,5 +8,6 @@ Using altered [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/) fr
 **Note:** the pipeline is for datasets created through reduced representation methods (GBS, ddRAD, RAD, etc.) and which do not have a reference genome.
 ## Preparation
 
-.vcf file was obtained from a [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) and filtering has followed 
+.vcf file was obtained from an [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) was filtered to remove low frequency alleles.
+ksdhfksjhglkahfgd
 
