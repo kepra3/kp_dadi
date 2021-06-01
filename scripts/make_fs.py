@@ -7,8 +7,12 @@
 @description: vcf file is imported through make_data_dict_vcf and subsampled.
 
 Input:
+File: .vcf file named with population names.
+Arguments:
 snps = vcf file named after your two populations broken by a hyphen (-)
-sub = the number you want to subsample by in units of genotypes
+masked = yes or no
+method = subsample or projection
+genotypes = the number you want to subsample by in units of genotypes
 run from the scripts directory or change path variables
 
 Output: a subsampled fs for input into dadi analysis

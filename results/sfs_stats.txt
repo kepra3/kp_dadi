@@ -1,3 +1,3 @@
 Pop	Sample sizes	Sum of SFS	FST
-AG1-AG2	[40 18]	1466.0	0.13
-AG1-AG2_masked	[40 18]	920.0	0.14
+AG1-AG2	[40 18]	1479.0	0.13
+AG1-AG2_masked	[40 18]	909.0	0.15

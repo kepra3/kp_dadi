@@ -49,6 +49,12 @@ Using the optimise_manual.py script:
 $ python optimise_manual.py 
 ```
 
+How many times you run the optimisation and what starting parameters you use is up to you.
+The aim is to find parameters with the highest likelihood from many runs that have used different starting parameters.
+It is important to search the parameter space adequately. I do this by running from the lower and higher parameter limits,
+random parameters and the optimised parameter values found in previous runs. Increasing the fold to 2 or 3 allows you to
+jump around the parameter space easier.
+
 ## 4 - Assess your models
 
 ## 5 - Parameter uncertainties
