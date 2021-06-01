@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../kp_dadi/.idea/kp_dadi.iml" filepath="$PROJECT_DIR$/../kp_dadi/.idea/kp_dadi.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/python_carpentry_ws/.idea/python_carpentry_ws.iml" filepath="$USER_HOME$/PycharmProjects/python_carpentry_ws/.idea/python_carpentry_ws.iml" />
     </modules>
   </component>
 </project>

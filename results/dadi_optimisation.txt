@@ -1,0 +1,3 @@
+Pop	Model	Folds	log-likelihood	AIC	chi-squared	theta	optimised_params(nu1, nu2, F1, F2, T)
+AG1-AG2	iso_inbred	3	-551.02	1112.04	1040.08	242.59	2.122,25.95,0.0012,0.0455,0.3989
+AG1-AG2	iso_inbred	2	-591.12	1192.24	738.18	289.88	0.8724,150.0,0.1932,0.5999,0.1628
