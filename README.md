@@ -13,6 +13,15 @@ do not have a reference genome.
 
 ## 1 - Preparation
 
+Best practise to set up a conda environment with the version of the software you are using so that the analysis will 
+work the same every time.
+
+```
+$ conda create -n dadi211 python=3.6 -y
+$ conda activate dadi211
+$ conda install -c conda-forge dadi=2.1.1
+```
+
 ### 1a - Filter your vcf file
 
 .vcf file was obtained from an [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) and was filtered 

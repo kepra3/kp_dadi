@@ -1,6 +1,5 @@
-#!/usr/anaconda3/bin/python
+#!/usr/anaconda3/env/dadi211/bin/python
 # -*- coding: utf-8 -*-
-# remember to edit python environment if required.
 
 """
 @author: Katharine Prata
