@@ -92,8 +92,9 @@ can see which snp bins your model is doing badly at estimating. A bad fit is whe
 this tells you that another demographic model may be more appropriate.
 
 ```bash
-$ python compare_model.py
+$ python compare_model.py AG1-AG2 iso_inbred 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
+Arguments: pop(s), model, vmin, -o optimised parameters.
 
 ### 4b - Bootstrapping
 
