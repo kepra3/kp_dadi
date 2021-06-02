@@ -13,7 +13,7 @@ do not have a reference genome.
 
 ## 1 - Preparation
 
-## 1a - Filter your vcf file
+### 1a - Filter your vcf file
 
 .vcf file was obtained from an [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) and was filtered 
 to remove low frequency alleles in vcftools as well as other mutliple other steps see Prata et al., (preprint).
@@ -30,7 +30,7 @@ of SNP loci used in your analyses and individuals with lowest (or no) admixture 
 
 My final vcf file was named `AG1-AG2.vcf` as AG1 is my first population and AG2 is my second population. 
 
-## 1b - Create your frequency spectrum (subsample or projection?)
+### 1b - Create your frequency spectrum (subsample or projection?)
 
 To create your fs for input into dadi the format will need to be changed and you need to decided where you will 
 project or subsample your fs in order to maximise the number of SNP loci (& individuals) in your analysis.
@@ -86,7 +86,7 @@ can see which snp bins your model is doing badly at estimating. A bad fit is whe
 this tells you that another demographic model may be more appropriate.
 
 ```bash
-$ python compare_model.py AG1-AG2 iso_inbred yes subsample 3
+$ python compare_model.py
 ```
 
 ### 4b - Bootstrapping
@@ -97,8 +97,9 @@ whereas, parametric bootstrapping is using your model to simulate bootstraps of 
 Here, we use non-parametric bootstrapping. See manual and dadi-user group for more info on bootstrapping.
 
 ```bash
-$ python nonparametric_bootstrap_subsample.py AG1-AG2 
+$ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 -g 20 9 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
+Arguments: pop(s), model, number of bootstraps, -g number of genotypes in each pop, -o optimised parameters.
 
 ### 4c - Goodness-of-fit and parameter confidence intervals (GIM/FIM)
 
@@ -109,10 +110,10 @@ can be plotted next to each other.
 $ Rscript
 ```
 
-To calculate the confidence intervals of the parameters we use the Godambe Information Matrix (x et al.). This step is
-finicky and requires the adjustment of different values of eps (see dadi manual, YRU_CEU.py script and dadi user google
-group).
+To calculate the confidence intervals of the parameters we use the Godambe Information Matrix (Coffman et al.). This 
+step is finicky and requires the adjustment of different values of eps (see dadi manual, YRU_CEU.py script and dadi 
+user google group).
 
 ```bash
-$ python
+$ python confindence_intervals.py AG1-AG2 iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```

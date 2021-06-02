@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-@author: kprata
+@author: Katharine Prata
 @date created: 5/5/21
 @description: Optimising sample fit to demographic models with real time optimisation monitoring
 

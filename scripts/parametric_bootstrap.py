@@ -3,7 +3,7 @@
 # remember to edit python environment if required.
 
 """
-@author: kprata
+@author: Katharine Prata
 @date created: 1/6/21
 @description: TODO
 """

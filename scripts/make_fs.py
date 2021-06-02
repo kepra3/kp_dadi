@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-@author: kprata
+@author: Katharine Prata
 @date created: 23/4/21
 @description: vcf file is imported through make_data_dict_vcf and subsampled.
 
