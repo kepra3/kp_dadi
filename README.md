@@ -51,15 +51,12 @@ If you have to incorporate inbreeding as a parameter into your model then you ca
 within dadi, if not then you can use projection.
 
 ```bash
-$ python make_fs.py AG1-AG2 yes subsample 10 10
+$ python make_fs.py AG1-AG2 yes subsample 20 9
 ```
-
-First argument is your vcf file with the population IDs separated by a dash ('-').
-Second is whether you want to use masking on your singletons and doubletons (e.g., if you have filtered them as in 
-step 1a)
-Third is whether the method you want to use is subsample, projection or neither.
-Fourth is the genotypes (diploid) you want to project/subsample down to, just use the max if you are using all indivs,
-(i.e., not subsampling/projecting).
+Arguments: (1) your vcf file with the population IDs separated by a dash ('-'), (2) yes or no - whether you want to use 
+masking on your singletons and doubletons (e.g., if you have filtered them as in step 1a), (3) whether the method you 
+want to use is subsample, projection or neither, (4) the genotypes (diploid) you want to project/subsample down to or
+just use the max if you are using all individuals (i.e., not subsampling/projecting).
 
 This script will give you info about the number of SNPs in your sfs as well as plot the spectrum.
 
