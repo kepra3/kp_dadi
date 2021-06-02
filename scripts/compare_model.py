@@ -5,7 +5,7 @@
 """
 @author: Katharine Prata
 @date created: 2/6/21
-@description: TODO
+@description: Plotting the data, model and residuals for comparison
 """
 
 import argparse
@@ -35,8 +35,8 @@ vmin = args.vmin
 out_name = "../plots/residual/" + args.snps
 
 # Plot sizes
-figsize1 = (2.5, 2)
-figsize2 = (1.75, 1.25)
+figsize = (2.5, 2)
+figsize2 = (5, 4)
 plt.rcParams.update({'font.size': 8})
 
 # Masking the spectrum
@@ -52,7 +52,7 @@ print("FST: {}".format(numpy.around(fs.Fst(), 2)))
 print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
 # Plot the data fs
-fig1 = pylab.figure(figsize=figsize1)
+fig1 = pylab.figure(figsize=figsize)
 Plotting.plot_single_2d_sfs(fs, vmin=vmin, cmap=pylab.cm.hsv)
 fig1.tight_layout()
 if os.path.isfile(out_name + "_data.pdf"):
@@ -89,13 +89,19 @@ folded_sim_model = scaled_sim_model.fold()
 resid = Inference.Anscombe_Poisson_residual(folded_sim_model, fs)
 
 # Plot figure to (residuals)
-fig2 = pylab.figure(figsize=figsize2)
+fig2 = pylab.figure(figsize=figsize)
 Plotting.plot_2d_resid(resid, resid_range=3)
 fig2.tight_layout()
 fig2.savefig(out_name + args.model + "_residual.pdf", dpi=300)
 
 # Plot figure 3 (the simulated model)
-fig3 = pylab.figure(figsize=figsize2)
+fig3 = pylab.figure(figsize=figsize)
 Plotting.plot_single_2d_sfs(folded_sim_model, vmin=vmin, cmap=pylab.cm.hsv)
 fig3.tight_layout()
 fig3.savefig(out_name + args.model + "_model.pdf", dpi=300)
+
+# Plot figure 4 (all together and distribution of residuals)
+fig4 = pylab.figure(figsize=figsize2)
+Plotting.plot_2d_comp_multinom(folded_sim_model, fs, resid_range=3, vmin=vmin)
+fig4.tight_layout()
+fig4.savefig(out_name + args.model + "_all4.pdf", dpi=300)

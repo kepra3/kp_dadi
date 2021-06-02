@@ -107,7 +107,7 @@ Using the information gathered from the bootstrapping statistics. Bootstrap like
 can be plotted next to each other.
 
 ```bash
-$ Rscript
+$ Rscript # TODO
 ```
 
 To calculate the confidence intervals of the parameters we use the Godambe Information Matrix (Coffman et al.). This 
