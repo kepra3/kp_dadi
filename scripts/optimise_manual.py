@@ -39,7 +39,7 @@ parser.add_argument("folds", type=int)
 # parser.add_argument("out_path")
 args = parser.parse_args()
 
-# Import and define data constants.
+# Import and define data constants
 if args.method == "subsample":
     data = dadi.Spectrum.from_file('../data/{}_subsampled.fs'.format(args.snps))
 elif args.method == "projection":
@@ -53,10 +53,10 @@ pop_ids = pops.split("-")
 # uncomment the proceeding comment.
 # path = "{}".format(args.out_path)
 
-# Define optimisation bounds.
+# Define optimisation bounds
 PTS = [50, 60, 70]
 
-# Mask singletons and doubletons.
+# Mask singletons and doubletons
 if args.masked == "yes":
     data.mask[1, 0] = True
     data.mask[0, 1] = True
@@ -65,7 +65,7 @@ if args.masked == "yes":
 else:
     print("Singletons and Doubletons are not masked")
 
-# Print useful information about the sfs.
+# Print useful information about the sfs
 print("The datafile is {}".format(args.snps))
 print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 print("Data for site frequency spectrum:")
@@ -74,10 +74,10 @@ print("Sum of SFS: {}".format(numpy.around(data.S(), 2)))
 print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
 print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
-# Define model from argument.
+# Define model from argument
 model = args.model
 
-# Define metadata for models.
+# Define metadata for models
 if model == "iso_inbred":
     num = 5
     p_labels = "nu1, nu2, F1, F2, T"
@@ -151,6 +151,7 @@ p1 = p0
 # Make the extrapolating version of our demographic model function.
 func_ex = dadi.Numerics.make_extrap_log_func(model)
 
+# Comments taken from Gutenkunst et al. (2009)
 # Perturb our parameters before optimisation. This does so by taking each
 # parameter a up to a factor of "folds" up or down.
 p1 = dadi.Misc.perturb_params(p1, fold=args.folds, upper_bound=upper, lower_bound=lower)
@@ -177,15 +178,15 @@ param_opt = dadi.Inference.optimize_log_fmin(p1, data, func_ex, PTS,
 # Calculate sim model using parameters optimised (p_opt).
 sim_model = func_ex(param_opt, data.sample_sizes, PTS)
 
-# Calculate theta.
+# Calculate theta
 theta = dadi.Inference.optimal_sfs_scaling(sim_model, data)
 theta = numpy.around(theta, 2)
 
-# Calculate likelihood.
+# Calculate likelihood
 ll = dadi.Inference.ll_multinom(sim_model, data)
 ll = numpy.around(ll, 2)
 
-# Calculate AIC.
+# Calculate AIC
 aic = (-2 * (float(ll))) + (2 * len(param_opt))
 
 # Calculate  Chi^2
@@ -194,10 +195,10 @@ folded_sim_model = scaled_sim_model.fold()
 chi2 = numpy.sum((folded_sim_model - data) ** 2 / folded_sim_model)
 chi2 = numpy.around(chi2, 2)
 
-# Store results with likelihoods, theta and parameters (max. likelihood).
+# Store results with likelihoods, theta and parameters (max. likelihood)
 results = [ll, aic, chi2, theta, param_opt]
 
-# Export the results to file.
+# Export the results to file
 with open(out_name, "a") as opt_out:
     easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
     opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\n".format(args.snps, args.model, args.folds,

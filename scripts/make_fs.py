@@ -29,14 +29,14 @@ import pylab
 import matplotlib as plt
 
 # Configuring argument variables
-parser = argparse.ArgumentParser(prog="dadi fs", usage='[options]')
+parser = argparse.ArgumentParser(prog="dadi fs", usage="[options]")
 parser.add_argument("snps")
 parser.add_argument("masked")
 parser.add_argument("method")
-parser.add_argument("genotypes", type=int, nargs='+')
+parser.add_argument("genotypes", type=int, nargs="+")
 args: Namespace = parser.parse_args()
 
-# import the spectrum and popfile from data/vcf and data/popfile
+# Import the spectrum and popfile from data/vcf and data/popfile
 snp_path = "../data/vcf/" + args.snps + ".vcf"
 pop_path = "../data/popfile/pop_" + args.snps + ".txt"
 pops = "{}".format(args.snps)
@@ -51,7 +51,7 @@ with open(stats_out_name, 'a') as stats_out:
     else:
         print('file exists, appending')
 
-# configuring haplotypes and genotypes
+# Configuring haplotypes and genotypes
 if len(pop_ids) == 1:
     proj = [args.genotypes[0] * 2]
     subsample = {pop_ids[0]: args.genotypes[1]}
