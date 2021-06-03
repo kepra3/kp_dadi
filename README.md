@@ -45,23 +45,29 @@ The final vcf files was named with the population names separated by a hyphen, (
 To create the fs for input into dadi the format needs to be changed. Projection or subsampling can be used in order to 
 maximise the number of SNP loci (& individuals) in the analysis when there is missing data.
 
-Because for this analysis inbreeding was used as a parameter in the models the subsample option was used.
+Because inbreeding was used as a parameter in the models the subsample option was used 
+[(Blischak et al., 2020)]( https://doi-org.ezproxy.library.uq.edu.au/10.1093/molbev/msaa042 ).
 
 **To run this script:**
 
 Change to the script directory and make sure the vcf file is named correctly (i.e., name of pop1 and pop2 separated 
 by a hyphen) and within the data directory and the population file within the popfile directory.
 
+E.g.,
 ```bash
 $ python make_fs.py AG1-AG2 yes subsample 20 9
 ```
-Arguments: (1) vcf file with the population IDs separated by a dash ('-'), (2) yes or no - whether to use 
+Arguments: (1) vcf file with the population IDs separated by a hyphen ('-'), (2) yes or no - whether to use 
 masking on singletons and doubletons (e.g., if filtered as in step 1a), (3) whether the method to use is subsample, 
 projection or neither, (4) the number of genotypes (diploid) to project/subsample down to or use the max if using all 
 individuals within the analysis (i.e., not subsampling/projecting).
 
 This script will provide info about the sfs as well as create and plot the spectrum.
-Output files: (1) xxx (2) xxx (3) xxx.
+
+Output files: (1) an fs file (2) spectrum plot(s), 2 x if masked and (3) statistics of the sfs.
+
+Due to a random fs being produced each time the official results can be found in the following directories: 
+(1) `data/official_analysis_fs/` (2) `plots/official_ms_plots/` and (3) `results/official_analysis_results/`.
 
 ## 2 - Construct models
 
@@ -74,6 +80,7 @@ script as a module (or by however you like importing modules).
 
 Using the `optimise_manual.py` script:
 
+E.g.,
 ```bash
 $ python optimise_manual.py AG1-AG2 iso_inbred yes subsample 3
 ```
@@ -88,8 +95,9 @@ a few times and then with 2-folds a few times, running from the lower and higher
 parameter limits, and starting with the parameter values which the lowest log-likelihood scores using 1-fold 
 perturbations. During these optimisations how the likelihood changed with different parameter values was watched. The 
 optimised parameter values were chosen due to appearing a few times when starting with different initial values. 
-See Prata et al., xxxx for more details and see within results directory `dadi_optimisations_officialresult.txt` for 
-optimisation results.
+See Prata et al., xxxx for more details and see `dadi_optimisations_official.txt` for optimisation results.
+
+Official results can be found in `results/official_analysis_results/`
 
 ## 4 - Assess the model fit
 
@@ -99,6 +107,7 @@ To qualitatively assess the model a simulated fs was created from the parameter 
 This is helpful because you can see which snp bins your model is doing badly at estimating. A bad fit is when there is 
 bias in certain snp bins - this tells you that another demographic model may be more appropriate.
 
+E.g.,
 ```bash
 $ python compare_model.py AG1-AG2 iso_inbred 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
@@ -106,6 +115,8 @@ Arguments: (1) fs, (2) model, (3) vmin (the scale bar), (4) -o optimised paramet
 
 Output: (1) fs plot of the data, (2) fs plot of the simulated model, (3) a residual plot of data - model and (4) all 
 previous 3 outputs as well a distribution of the residual scores in a 2x2 figure plot.
+
+Official results can be found in `plots/official_ms_plots/`
 
 ### 4b - Bootstrapping
 
@@ -120,19 +131,28 @@ $ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 -g 20 9 -o 
 Arguments: (1) fs, (2) model, (3) number of bootstraps, (4) -g number of genotypes in each pop, (5) -o optimised 
 parameters.
 
+Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/`.
+
 ### 4c - Goodness-of-fit and parameter confidence intervals (GIM/FIM)
 
 Using the information gathered from the bootstrapping statistics, bootstrap likelihoods given the optimised parameters
 can be plotted next to each other using this Rscript below.
 
+E.g.,
 ```bash
-$ Rscript # TODO
+$ Rscript GOF_plots.R AG1-AG2 iso_inbred -551.02 1040.08
 ```
+Arguments: (1) fs, (2) model, (3) optimised chi2 and (4) optimised log-likelihood.
 
-To calculate the confidence intervals the parameters the Godambe Information Matrix (Coffman et al.) was used. 
-Different values of eps were used to find stable parameter confidence intervals.
+Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/GOF_plots/`.
+
+To calculate the confidence intervals the parameters the Godambe Information Matrix 
+[(Coffman et al.)]( https://doi.org/10.1093/molbev/msv255 ) was used. Different values of eps were used to find stable 
+parameter confidence intervals.
 
 ```bash
 $ python confindence_intervals.py AG1-AG2 iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
+
+Official results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
