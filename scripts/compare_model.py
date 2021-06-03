@@ -31,7 +31,7 @@ fs = Spectrum.from_file(snp_path)
 vmin = args.vmin
 
 # Name of plots
-out_name = "../plots/residual/" + args.snps
+out_name = "../plots/" + args.snps
 
 # Plot sizes
 figsize = (2.5, 2)

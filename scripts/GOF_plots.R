@@ -23,13 +23,14 @@ bootstraps <- read.delim(paste0("../results/bootstraps/", sfs, "_", model, "_100
 ll_seq <- seq(250, 850, 2)
 chi_seq <- seq(5, 10, 0.1)
 
-hist(-bootstraps$Likelihood, breaks = ll_seq, main = "Bootstrapping Results - Log-likelihood distribution",
-     xlab = "-logL", col = "blue",ylab = "Freq", lty = "blank")
-abline(v = abs(emp_ll), lwd = 3, col = 'red')
+# uncomment if running in R
+#hist(-bootstraps$Likelihood, breaks = ll_seq, main = "Bootstrapping Results - Log-likelihood distribution",
+#     xlab = "-logL", col = "blue",ylab = "Freq", lty = "blank")
+#abline(v = abs(emp_ll), lwd = 3, col = 'red')
 
-hist(log(bootstraps$chi.squared), breaks = chi_seq, main = "Bootstrapping Results - Chi-squared distribution",
-     xlab = "log(chi2)",col = "blue", ylab = "Freq", lty = "blank")
-abline(v = log(emp_chi), lwd = 3, col = 'red')
+#hist(log(bootstraps$chi.squared), breaks = chi_seq, main = "Bootstrapping Results - Chi-squared distribution",
+#     xlab = "log(chi2)",col = "blue", ylab = "Freq", lty = "blank")
+#abline(v = log(emp_chi), lwd = 3, col = 'red')
 
 ########################## Save plots ######################################
 
