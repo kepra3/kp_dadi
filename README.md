@@ -1,14 +1,13 @@
 # kp_dadi
 *An electronic notebook by Katharine Prata (June 2021)*
 
-A pipeline for manually optimising the Diffusion Approximations for Demographic Inference (dadi) by Gutenkunst et el. 
-(2009): a population genomics analyses.
+A workflow for manually optimising the Diffusion Approximations for Demographic Inference (dadi) 
+[(Gutenkunst et el. 2009)](https://dx.plos.org/10.1371/journal.pgen.1000695).
 
-Using altered [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/) from 
-[Gutenkunst et al. (2009)](https://dx.plos.org/10.1371/journal.pgen.1000695). This pipeline has followed the help 
+Using altered [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/), this workflow has followed the advice 
 offered by Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user).
 
-**Note:** this pipeline is for datasets created through reduced representation methods (GBS, ddRAD, RAD, etc.) and which 
+**Note:** this workflow is for datasets created through reduced representation methods (GBS, ddRAD, RAD, etc.) and which 
 do not have a reference genome. The scripts can be used on this type of data or customised to fit other analysis 
 requirements.
 
