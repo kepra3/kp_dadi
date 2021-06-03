@@ -147,7 +147,7 @@ Arguments: (1) fs, (2) model, (3) optimised chi2 and (4) optimised log-likelihoo
 Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/GOF_plots/`.
 
 To calculate the confidence intervals the parameters the Godambe Information Matrix 
-[(Coffman et al.)]( https://doi.org/10.1093/molbev/msv255 ) was used. Different values of eps were used to find stable 
+[(Coffman et al. 2016)]( https://doi.org/10.1093/molbev/msv255 ) was used. Different values of eps were used to find stable 
 parameter confidence intervals.
 
 ```bash
