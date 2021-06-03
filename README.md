@@ -66,7 +66,7 @@ This script will provide info about the sfs as well as create and plot the spect
 
 Output files: (1) an fs file (2) spectrum plot(s), 2 x if masked and (3) statistics of the sfs.
 
-Due to a random fs being produced each time the official results can be found in the following directories: 
+Due to a random fs being produced each time the official analysis results can be found in the following directories: 
 (1) `data/official_analysis_fs/` (2) `plots/official_ms_plots/` and (3) `results/official_analysis_results/`.
 
 ## 2 - Construct models
@@ -97,7 +97,7 @@ perturbations. During these optimisations how the likelihood changed with differ
 optimised parameter values were chosen due to appearing a few times when starting with different initial values. 
 See Prata et al., xxxx for more details and see `dadi_optimisations_official.txt` for optimisation results.
 
-Official results can be found in `results/official_analysis_results/`
+Official analysis results can be found in `results/official_analysis_results/`.
 
 ## 4 - Assess the model fit
 
@@ -116,7 +116,7 @@ Arguments: (1) fs, (2) model, (3) vmin (the scale bar), (4) -o optimised paramet
 Output: (1) fs plot of the data, (2) fs plot of the simulated model, (3) a residual plot of data - model and (4) all 
 previous 3 outputs as well a distribution of the residual scores in a 2x2 figure plot.
 
-Official results can be found in `plots/official_ms_plots/`
+Official analysis results can be found in `plots/official_ms_plots/`.
 
 ### 4b - Bootstrapping
 
@@ -131,7 +131,7 @@ $ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 -g 20 9 -o 
 Arguments: (1) fs, (2) model, (3) number of bootstraps, (4) -g number of genotypes in each pop, (5) -o optimised 
 parameters.
 
-Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/`.
+Official analysis results can be found in `results/official_analaysis_results/bootstrap_vcf_official/`.
 
 ### 4c - Goodness-of-fit and parameter confidence intervals (GIM/FIM)
 
@@ -144,7 +144,7 @@ $ Rscript GOF_plots.R AG1-AG2 iso_inbred -551.02 1040.08
 ```
 Arguments: (1) fs, (2) model, (3) optimised $$\chi^2$$ and (4) optimised log-likelihood.
 
-Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/GOF_plots/`.
+Official analysis plots can be found in `plots/official_ms_plots/GOF_plots/`.
 
 To calculate the confidence intervals the parameters the Godambe Information Matrix 
 [(Coffman et al. 2016)]( https://doi.org/10.1093/molbev/msv255 ) was used. Different values of eps were used to find stable 
@@ -154,5 +154,5 @@ parameter confidence intervals.
 $ python confindence_intervals.py AG1-AG2 iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
 
-Official results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
+Official analysis results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
