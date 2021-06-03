@@ -4,8 +4,9 @@
 A workflow for manually optimising the Diffusion Approximations for Demographic Inference (dadi) 
 [(Gutenkunst et el. 2009)](https://dx.plos.org/10.1371/journal.pgen.1000695).
 
-Using altered [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/), this workflow has followed the advice 
-offered by Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user).
+The scripts presented here were altered from the original dadi 
+[scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/). This workflow has followed the advice offered by 
+Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user).
 
 **Note:** this workflow is for datasets created through reduced representation methods (GBS, ddRAD, RAD, etc.) and which 
 do not have a reference genome. The scripts can be used on this type of data or customised to fit other analysis 
