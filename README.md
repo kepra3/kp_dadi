@@ -142,7 +142,7 @@ E.g.,
 ```bash
 $ Rscript GOF_plots.R AG1-AG2 iso_inbred -551.02 1040.08
 ```
-Arguments: (1) fs, (2) model, (3) optimised chi2 and (4) optimised log-likelihood.
+Arguments: (1) fs, (2) model, (3) optimised $$\chi^2$$ and (4) optimised log-likelihood.
 
 Official results can be found in `results/official_analaysis_results/bootstrap_vcf_official/GOF_plots/`.
 
