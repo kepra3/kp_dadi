@@ -24,8 +24,9 @@ $ conda install -c conda-forge dadi=2.1.1
 
 ### 1a - Filter vcf file
 
-A .vcf file was obtained from an [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) and was 
-filtered to remove low frequency alleles in vcftools as well as other multiple other steps see Prata et al., (xxxx).
+A .vcf (v.4.0) file was obtained from an [ipyrad assembly]( https://ipyrad.readthedocs.io/en/latest/index.html ) 
+(v.0.7.23) and was filtered to remove low frequency alleles in [VCFtools]( https://vcftools.github.io/index.html ) 
+(v.0.1.16) as well as multiple other steps see Prata et al., (xxxx).
 
 ```bash
 $ vcftools --vcf agrahno_2c.vcf --min-alleles 2 --max-alleles 2 --mac 3 --recode --stdout > 'agrahno_2d-3.vcf'
