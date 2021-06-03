@@ -5,6 +5,8 @@
 @author: Katharine Prata
 @date created: 2/6/21
 @description: Create non-parametric bootstraps using the subsample option.
+
+script modified from YRI_CEU.py
 """
 
 import argparse

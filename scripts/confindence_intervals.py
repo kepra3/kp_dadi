@@ -4,7 +4,11 @@
 """
 @author: Katharine Prata
 @date created: 2/6/21
-@description: if use Godambe have to cite Coffman et al. (2016) script modified from YRI_CEU.py
+@description: obtains GIM uncertainty from optimised parameters and bootstraps.
+
+Script modified from YRI_CEU.py if use Godambe have to cite Coffman et al. (2016).
+
+Compatible with python 3.6.11 and dadi 2.1.1
 """
 
 from argparse import Namespace

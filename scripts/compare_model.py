@@ -4,7 +4,9 @@
 """
 @author: Katharine Prata
 @date created: 2/6/21
-@description: Plotting the data, model and residuals for comparison
+@description: Plotting the data, model and residuals for comparison.
+
+Compatible with python 3.6.11 and dadi 2.1.1
 """
 
 import argparse

@@ -4,15 +4,15 @@
 """
 @author: Katharine Prata
 @date created: 5/5/21
-@description: Optimising sample fit to demographic models with real time optimisation monitoring
+@description: Optimising sample fit to demographic models with real time optimisation monitoring.
 
-Optimises using Nelder-mead simplex (can change log_fmin within script if you require a different optimiser)
+Optimises using Nelder-mead simplex (can change log_fmin within script if you require a different optimiser).
 
 Inputs:
 File: The fs with naming which includes the format of the fs, i,e., subsampled/projected/neither
 Arguments:
 snps = Pop1-Pop2
-model = iso_breeding (taken from custom model module: demo_models_kp.py)
+model = iso_inbred (refers to custom model module: demo_models_kp.py and used alias for model see script below)
 masked = yes or no
 method = subsample projection or none
 folds = any integer (best to use: 1, 2 or 3)

@@ -4,7 +4,7 @@
 """
 @author: kprata
 @date created: 5/5/21
-@description: Custom models for demographic analysis using the site frequency spectrum
+@description: Custom models for demographic analysis using the site frequency spectrum.
 
 Compatible with python 3.6.11 and dadi 2.1.1
 """

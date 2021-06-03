@@ -15,7 +15,7 @@ method = subsample or projection
 genotypes = the number you want to subsample by in units of genotypes
 run from the scripts directory or change path variables
 
-Output: a subsampled fs for input into dadi analysis
+Output: a subsampled fs for input into dadi analysis, a text file with statistics and plots of fs produced.
 
 Compatible with python 3.6.11 and dadi 2.1.1
 """
