@@ -1,0 +1,15 @@
+Pops	Model	theta	nu1	nu2	F1	F2	m	T	eps
+AG1-AL2	mig_inbred	0.0	0.0	2.5221	0.0	0.0	0.0549	0.0	0.1
+AG1-AL2	mig_inbred	147.7684	6.33	4.6919	1.2102	6.1884	0.1307	9.1914	0.1
+Pops	Model	theta	nu1	nu2	F1	F2	m	T	eps
+AG1-AL2	mig_inbred	9.5867	0.0	1.4437	0.0	0.0	0.0339	0.0	0.05
+AG1-AL2	mig_inbred	124.6153	4.9757	5.7703	7.8234	6.406	0.1517	7.6093	0.05
+Pops	Model	theta	nu1	nu2	F1	F2	m	T	eps
+AG1-AL2	mig_inbred	0.0	0.0	1.0419	0.0	0.0	0.0002	0.0	0.02
+AG1-AL2	mig_inbred	184.7704	7.8513	6.1721	0.0322	4.3804	0.1854	11.8464	0.02
+Pops	Model	theta	nu1	nu2	F1	F2	m	T	eps
+AG1-AL2	mig_inbred	34.5427	0.0	0.505	0.0	0.0	0.0389	1.3075	0.01
+AG1-AL2	mig_inbred	99.6593	5.2296	6.709	0.0218	1.7358	0.1467	5.9771	0.01
+Pops	Model	theta	nu1	nu2	F1	F2	m	T	eps
+AG1-AL2	mig_inbred	61.2638	2.1899	0.1307	0.0	0.0	0.0121	3.459	0.001
+AG1-AL2	mig_inbred	72.9382	2.6079	7.0833	2.1959	6.1987	0.1735	3.8256	0.001

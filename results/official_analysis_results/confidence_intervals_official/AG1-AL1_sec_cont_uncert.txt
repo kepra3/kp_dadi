@@ -1,0 +1,15 @@
+Pops	Model	theta	nu1	nu2	F1	F2	m	T1	T2	eps
+AG1-AL1	sec_cont	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.1
+AG1-AL1	sec_cont	626.6072	1.8396	1589.3565	0.8775	12.0995	1.5883	6.0012	0.3838	0.1
+Pops	Model	theta	nu1	nu2	F1	F2	m	T1	T2	eps
+AG1-AL1	sec_cont	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.05
+AG1-AL1	sec_cont	630.8028	1.8297	1599.9186	0.9306	12.1572	1.6339	5.9659	0.3543	0.05
+Pops	Model	theta	nu1	nu2	F1	F2	m	T1	T2	eps
+AG1-AL1	sec_cont	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.02
+AG1-AL1	sec_cont	632.8754	1.8206	1602.7864	0.9462	12.1744	1.6446	5.9464	0.3478	0.02
+Pops	Model	theta	nu1	nu2	F1	F2	m	T1	T2	eps
+AG1-AL1	sec_cont	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.01
+AG1-AL1	sec_cont	634.1823	1.8143	1602.3156	0.9524	12.1795	1.6472	5.9281	0.3477	0.01
+Pops	Model	theta	nu1	nu2	F1	F2	m	T1	T2	eps
+AG1-AL1	sec_cont	0.0	0.5698	0.0	0.0	0.0	0.0	0.0	0.0465	0.001
+AG1-AL1	sec_cont	746.1742	1.1762	1524.8368	1.509	12.3896	1.8078	4.1967	0.2939	0.001
