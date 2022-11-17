@@ -5,8 +5,10 @@ A workflow for manually optimising the Diffusion Approximations for Demographic 
 [(Gutenkunst et el. 2009)](https://dx.plos.org/10.1371/journal.pgen.1000695).
 
 The scripts presented here were altered from the original dadi 
-[scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/). This workflow has followed the advice offered by 
-Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user).
+[scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/) and are written for ease of interpretation.
+This workflow has followed the advice offered by Ryan Gutenkunst on the 
+[dadi-user google group](https://groups.google.com/g/dadi-user). Code was written for the manuscript, 
+[Prata et al., 2022]() published in *Molecular Ecology* (checkout: dc97a7f on *3 June 2021*).
 
 **Note:** this workflow is for datasets created through reduced representation methods (GBS, ddRAD, RAD, etc.) and which 
 do not have a reference genome. The scripts can be used on this type of data or customised to fit other analysis 
