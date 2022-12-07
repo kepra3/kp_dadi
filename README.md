@@ -97,7 +97,7 @@ a few times and then with 2-folds a few times, running from the lower and higher
 parameter limits, and starting with the parameter values which the lowest log-likelihood scores using 1-fold 
 perturbations. During these optimisations how the likelihood changed with different parameter values was watched. The 
 optimised parameter values were chosen due to appearing a few times when starting with different initial values. 
-See Prata et al., xxxx for more details and see `dadi_optimisations_official.txt` for optimisation results.
+See Prata et al. (2022) for more details and see `dadi_optimisations_official.txt` for optimisation results.
 
 Official analysis results can be found in `results/official_analysis_results/`.
 
