@@ -34,11 +34,11 @@ import numpy
 def main(snps, model, masked, method, folds, PTS):
     # Import and define data constants
     if method == "subsample":
-        data = dadi.Spectrum.from_file('../data/{}_subsampled.fs'.format(snps))
+        data = dadi.Spectrum.from_file('../data/fs/{}_subsampled.fs'.format(snps))
     elif method == "projection":
-        data = dadi.Spectrum.from_file('../data/{}_projected.fs'.format(snps))
+        data = dadi.Spectrum.from_file('../data/fs/{}_projected.fs'.format(snps))
     else:
-        data = dadi.Spectrum.from_file('../data/{}.fs'.format(snps))
+        data = dadi.Spectrum.from_file('../data/fs/{}.fs'.format(snps))
     pops = "{}".format(snps)
     pop_ids = pops.split("-")
 
