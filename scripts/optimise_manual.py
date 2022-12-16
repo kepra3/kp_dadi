@@ -31,7 +31,7 @@ import argparse
 import numpy
 
 
-def main(snps, model, masked, method, folds, PTS):
+def main(snps, model, masked, method, folds, int_params, PTS):
     # Import and define data constants
     if method == "subsample":
         data = dadi.Spectrum.from_file('../data/fs/{}_subsampled.fs'.format(snps))
@@ -109,7 +109,10 @@ def main(snps, model, masked, method, folds, PTS):
             print('File exists, appending\n')
 
     # This is our initial guess for the parameters, which is somewhat arbitrary.
-    p0 = [1] * num
+    if int_params is None:
+        p0 = [1] * num
+    else:
+        p0 = int_params
     # Paste below your optimised params to start from a specified place.
     # For example:
     # if model == "iso_inbred":
@@ -199,7 +202,8 @@ if __name__ == '__main__':
     parser.add_argument("model")
     parser.add_argument("masked")
     parser.add_argument("method")
-    parser.add_argument("folds", type=int)
+    parser.add_argument("folds", type=int, nargs=1)
+    parser.add_argument("-p", "--int_params", nargs="+", type=float)
     # parser.add_argument("out_path")
     args = parser.parse_args()
 
@@ -208,6 +212,7 @@ if __name__ == '__main__':
     model = args.model
     masked = args.masked
     method = args.method
+    int_params = [args.int_params]
     folds = args.folds
 
     # Define optimisation bounds
@@ -218,4 +223,4 @@ if __name__ == '__main__':
     # then add path variable to main function.
     # path = "{}".format(args.out_path)
 
-    main(snps, model, masked, method, folds, PTS)
+    main(snps, model, masked, method, folds, int_params, PTS)

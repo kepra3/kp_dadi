@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 def main(snps, model, vmin, opt, PTS, figsize, figsize2):
     # Parse the data file to generate the sfs
-    snp_path = '/Users/kprata/Dropbox/dadi_pipeline_kp/Optimising/' + snps + ".fs"
+    snp_path = '../data/fs/' + snps + ".fs"
     pops = "{}".format(snps)
     fs = Spectrum.from_file(snp_path)
 

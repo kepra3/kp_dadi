@@ -179,14 +179,14 @@ def anc_sym_mig(params, ns, pts):
     T1: The scaled time between the split and the ancient migration (in units of 2*Na generations).
     T2: The scaled time between the ancient migration and present.
     """
-    nu1, nu2, m, T1, T2 = params
+    nu1, nu2, m1, m2, T1, T2 = params
 
     xx = Numerics.default_grid(pts)
 
     phi = PhiManip.phi_1D(xx)
     phi = PhiManip.phi_1D_to_2D(xx, phi)
 
-    phi = Integration.two_pops(phi, xx, T1, nu1, nu2, m12=m, m21=m)
+    phi = Integration.two_pops(phi, xx, T1, nu1, nu2, m12=m1, m21=m2)
 
     phi = Integration.two_pops(phi, xx, T2, nu1, nu2, m12=0, m21=0)
 
