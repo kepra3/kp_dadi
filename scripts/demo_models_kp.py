@@ -28,7 +28,7 @@ def no_divergence(notused, ns, pts):
     return fs
 
 
-def no_mig(params, ns, pts):
+def no_migration(params, ns, pts):
     """
     Split into two populations, no migration.
 
@@ -49,7 +49,7 @@ def no_mig(params, ns, pts):
     return fs
 
 
-def sym_mig(params, ns, pts):
+def sym_migration(params, ns, pts):
     """
     Split into two populations, with symmetric migration.
 
@@ -71,7 +71,7 @@ def sym_mig(params, ns, pts):
     return fs
 
 
-def asym_mig(params, ns, pts):
+def asym_migration(params, ns, pts):
     """
     Split into two populations, with different migration rates.
 
@@ -169,7 +169,7 @@ def mig_be_inbred(params, ns, pts):
     return fs
 
 
-def anc_sym_mig(params, ns, pts):
+def anc_sym_migration(params, ns, pts):
     """
     Split with symmetric migration followed by isolation.
 
@@ -179,14 +179,14 @@ def anc_sym_mig(params, ns, pts):
     T1: The scaled time between the split and the ancient migration (in units of 2*Na generations).
     T2: The scaled time between the ancient migration and present.
     """
-    nu1, nu2, m1, m2, T1, T2 = params
+    nu1, nu2, m, T1, T2 = params
 
     xx = Numerics.default_grid(pts)
 
     phi = PhiManip.phi_1D(xx)
     phi = PhiManip.phi_1D_to_2D(xx, phi)
 
-    phi = Integration.two_pops(phi, xx, T1, nu1, nu2, m12=m1, m21=m2)
+    phi = Integration.two_pops(phi, xx, T1, nu1, nu2, m12=m, m21=m)
 
     phi = Integration.two_pops(phi, xx, T2, nu1, nu2, m12=0, m21=0)
 
@@ -219,7 +219,7 @@ def anc_sym_mig_inbred(params, ns, pts):
     return fs
 
 
-def anc_asym_mig(params, ns, pts):
+def anc_asym_migration(params, ns, pts):
     """
     Split with asymmetric migration followed by isolation.
 
@@ -245,7 +245,7 @@ def anc_asym_mig(params, ns, pts):
     return fs
 
 
-def sec_contact_sym_mig(params, ns, pts):
+def sec_contact_sym_migration(params, ns, pts):
     """
     Split with no gene flow, followed by period of symmetrical gene flow.
 
@@ -295,7 +295,7 @@ def sec_contact_sym_mig_inbred(params, ns, pts):
     return fs
 
 
-def sec_contact_asym_mig(params, ns, pts):
+def sec_contact_asym_migration(params, ns, pts):
     """
     Split with no gene flow, followed by period of asymmetrical gene flow.
 

@@ -16,7 +16,7 @@ requirements.
 
 ## 1 - Preparation
 
-A conda environment was setup with the versions below to ensure the analysis works the same every time it's run.
+A conda environment was set up with the versions below to ensure the analysis works the same every time it's run.
 
 ```
 $ conda create -n dadi211 python=3.6 -y
@@ -66,7 +66,7 @@ individuals within the analysis (i.e., not subsampling/projecting).
 
 This script will provide info about the sfs as well as create and plot the spectrum.
 
-Output files: (1) an fs file (2) spectrum plot(s), 2 x if masked and (3) statistics of the sfs.
+Output files: (1) a fs file (2) spectrum plot(s), 2 x if masked and (3) statistics of the sfs.
 
 Due to a random fs being produced each time the official analysis results can be found in the following directories: 
 (1) `data/official_analysis_fs/` (2) `plots/official_ms_plots/` and (3) `results/official_analysis_results/`.
@@ -84,12 +84,19 @@ Using the `optimise_manual.py` script:
 
 E.g.,
 ```bash
-$ python optimise_manual.py AG1-AG2 iso_inbred yes subsample 3
+$ python optimise_manual.py AG1-AG2 iso_inbred yes subsample 3 -p 1 1 1 1 1 
 ```
-Arguments: (1) name of your sfs, (2) model, (3) masked or not, (4) method: subsample or projection, and (5) number of 
-folds.
+Arguments: (1) name of your sfs, (2) model, (3) masked or not, (4) method: subsample or projection, (5) number of 
+folds and (6) initial parameter values (where you start the optimisation)
 
-The aim is to find parameters with the highest likelihood from many runs that have used different starting parameters.
+If using these scripts please make sure your `PTS` for model extrapolation are defined appropriately. You can use 
+three grid sizes with the first being much larger (double) than your largest population, and the second and third, each 
+larger than the previous (e.g., if largest population size is 20 haplotypes, the PTS = [40, 50, 60]). You need to 
+change this manually within the `optimise_manual.py` script. The nicknames for the models are also defined within 
+`optimise_manual.py`, please check what they should be and check whether your upper and lower parameter limits are ok. 
+You may need to change PTS and upper/lower limits if there are issues with optimisation.
+
+The aim of optimisation is to find parameters with the highest likelihood from many runs that have used different starting parameters.
 It is important to search the parameter space adequately. 
 
 This was achieved through starting with random parameter values and running the optimisation with 3-fold perturbations 

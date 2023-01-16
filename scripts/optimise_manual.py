@@ -60,43 +60,98 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
+    # Need to manually alter the upper and lower parameter limits, model functions are defined in demo_models_kp.py
+    # Use nicknames for models, e.g., "snm" instead of model function name, e.g., "no_divergence"
     # Define metadata for models
-    if model == "iso_inbred":
+    if model == "snm":
+        # standard neutral model, no divergence
+        num = 1
+        p_labels = "nu"
+        upper = [150]
+        lower = [0.001]
+        model_fun = demo_models_kp.no_divergence
+    elif model == "no_mig":
+        # divergence with no migration
+        num = 3
+        p_labels = "nu1, nu2, T"
+        upper = [150, 150, 15]
+        lower = [0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.no_migration()
+    elif model == "sym_mig":
+        # divergence with symmetrical migration
+        num = 4
+        p_labels = "nu1, nu2, m, T"
+        upper = [150, 150, 10, 15]
+        lower = [0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.sym_migration()
+    elif model == "asym_mig":
+        # divergence with asymmetrical migration
+        num = 5
+        p_labels = "nu1, nu2, m12, m21, T"
+        upper = [150, 150, 10, 10, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.asym_migration()
+    elif model == "anc_sym_mig":
+        num = 5
+        p_labels = "nu1, nu2, m, T1, T2"
+        upper = [150, 150, 10, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.anc_sym_migration()
+    elif model == "anc_asym_mig":
+        num = 6
+        p_labels = "nu1, nu2, m12, m21, T1, T2"
+        upper = [150, 150, 10, 10, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.anc_asym_migration()
+    elif model == "sec_cont_sym_mig":
+        num = 5
+        p_labels = "nu1, nu2, m, T1, T2"
+        upper = [150, 150, 10, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.sec_contact_sym_migration()
+    elif model == "sec_cont_asym_mig":
+        num = 6
+        p_labels = "nu1, nu2, m12, m21, T1, T2"
+        upper = [150, 150, 10, 10, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.sec_contact_asym_migration()
+    elif model == "iso_inbred":
+        # divergence with inbreeding
         num = 5
         p_labels = "nu1, nu2, F1, F2, T"
         upper = [150, 150, 1, 1, 15]
         lower = [0.001, 0.001, 0.00001, 0.00001, 0.001]
         model_fun = demo_models_kp.iso_inbreeding
     elif model == "mig_inbred":
+        # divergence with migration with inbreeding
         num = 6
         p_labels = "nu1, nu2, F1, F2, m, T"
         upper = [150, 150, 1, 1, 10, 15]
         lower = [0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001]
         model_fun = demo_models_kp.mig_inbreeding
-    elif model == "anc_mig":
+    elif model == "anc_mig_inbred":
+        # ancient migration with inbreeding
         num = 7
         p_labels = "nu1, nu2, F1, F2, m, T1, T2"
         upper = [150, 150, 1, 1, 10, 15, 15]
         lower = [0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.anc_sym_mig_inbred
-    elif model == "snm":
-        num = 1
-        p_labels = "nu"
-        upper = [150]
-        lower = [0.001]
-        model_fun = demo_models_kp.no_divergence
+    elif model == "sec_cont_inbred":
+        # secondary contact with inbreeding
+        num = 7
+        p_labels = "nu1, nu2, F1, F2, m, T1, T2"
+        upper = [150, 150, 1, 1, 10, 15, 15]
+        lower = [0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.sec_contact_sym_mig_inbred
     elif model == "mig_be_inbred":
+        # population size changes with divergence with migration and inbreeding
         num = 10
         p_labels = "nu1, nu2, nu1a, nu2a, F1, F2, m1, m2,  T1, T2"
         upper = [150, 150, 150, 150, 1, 1, 10, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.mig_be_inbred
     else:
-        num = 7
-        p_labels = "nu1, nu2, F1, F2, m, T1, T2"
-        upper = [150, 150, 1, 1, 10, 15, 15]
-        lower = [0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.sec_contact_sym_mig_inbred
+        print("model nickname undefined please check you are using the correct model nickname!")
 
     # Create log file.
     out_name = "../results/dadi_optimisation.txt"
@@ -104,7 +159,8 @@ def main(snps, model, masked, method, folds, int_params, PTS):
         if opt_out.tell() == 0:
             print('Creating a new file\n')
             opt_out.write(
-                "Pop\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\toptimised_params({})\n".format(p_labels))
+                "Pop\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\toptimised_params\t"
+                "optimised_params_labels\n")
         else:
             print('File exists, appending\n')
 
@@ -187,9 +243,9 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     # Export the results to file
     with open(out_name, "a") as opt_out:
         easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
-        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\n".format(snps, model, folds,
+        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\n".format(snps, model, folds,
                                                                         results[0], results[1], results[2],
-                                                                        results[3], easy_p))
+                                                                        results[3], easy_p, p_labels))
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * *  Finished optimisation  * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
@@ -215,6 +271,7 @@ if __name__ == '__main__':
     int_params = [args.int_params]
     folds = args.folds
 
+    # Need to manually define!
     # Define optimisation bounds
     PTS = [50, 60, 70]
 
