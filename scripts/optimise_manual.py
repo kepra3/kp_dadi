@@ -76,45 +76,45 @@ def main(snps, model, masked, method, folds, int_params, PTS):
         p_labels = "nu1, nu2, T"
         upper = [150, 150, 15]
         lower = [0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.no_migration()
+        model_fun = demo_models_kp.no_migration
     elif model == "sym_mig":
         # divergence with symmetrical migration
         num = 4
         p_labels = "nu1, nu2, m, T"
         upper = [150, 150, 10, 15]
         lower = [0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.sym_migration()
+        model_fun = demo_models_kp.sym_migration
     elif model == "asym_mig":
         # divergence with asymmetrical migration
         num = 5
         p_labels = "nu1, nu2, m12, m21, T"
         upper = [150, 150, 10, 10, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.asym_migration()
+        model_fun = demo_models_kp.asym_migration
     elif model == "anc_sym_mig":
         num = 5
         p_labels = "nu1, nu2, m, T1, T2"
         upper = [150, 150, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.anc_sym_migration()
+        model_fun = demo_models_kp.anc_sym_migration
     elif model == "anc_asym_mig":
         num = 6
         p_labels = "nu1, nu2, m12, m21, T1, T2"
         upper = [150, 150, 10, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.anc_asym_migration()
+        model_fun = demo_models_kp.anc_asym_migration
     elif model == "sec_cont_sym_mig":
         num = 5
         p_labels = "nu1, nu2, m, T1, T2"
         upper = [150, 150, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.sec_contact_sym_migration()
+        model_fun = demo_models_kp.sec_contact_sym_migration
     elif model == "sec_cont_asym_mig":
         num = 6
         p_labels = "nu1, nu2, m12, m21, T1, T2"
         upper = [150, 150, 10, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.sec_contact_asym_migration()
+        model_fun = demo_models_kp.sec_contact_asym_migration
     elif model == "iso_inbred":
         # divergence with inbreeding
         num = 5
