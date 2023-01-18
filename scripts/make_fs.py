@@ -82,7 +82,9 @@ def main(snps, masked, method, genotypes):
                                                       np.around(fs.Fst(), 2)))
 
     # Plotting sfs and masked sfs
-    color_map = copy.copy(pylab.cm.get_cmap("hsv"))
+    # Not using rainbow palette anymore due to error
+    # color_map = copy.copy(pylab.cm.get_cmap("hsv"))
+    # within figure function, cmap=colour_map
     v_min = 0.05
     fig_size = (2.5, 2)
     fig1 = pylab.figure(figsize=fig_size)
@@ -97,13 +99,13 @@ def main(snps, masked, method, genotypes):
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
             fig2 = pylab.figure(figsize=fig_size)
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=color_map)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
             fig2.tight_layout()
             fig2.savefig("../plots/" + plot_out_name + "_masked.png", dpi=300)
         elif masked == "no":
             dadi.Plotting.plot_1d_fs(fs)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + ".png", dpi=300, cmap=color_map)
+            fig1.savefig("../plots/" + plot_out_name + ".png", dpi=300)
         else:
             print(":(")
     elif len(pop_ids) == 2:
@@ -113,11 +115,11 @@ def main(snps, masked, method, genotypes):
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
             fig2 = pylab.figure(figsize=fig_size)
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=color_map)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
             fig2.tight_layout()
-            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300, cmap=color_map)
+            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300)
         elif masked == "no":
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=color_map)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
             fig1.tight_layout()
             fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300)
         else:
