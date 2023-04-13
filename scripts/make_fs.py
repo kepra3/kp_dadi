@@ -83,7 +83,7 @@ def main(snps, masked, method, genotypes):
 
     # Plotting sfs and masked sfs
     # Not using rainbow palette anymore due to error
-    # color_map = copy.copy(pylab.cm.get_cmap("hsv"))
+    colour_map = copy.copy(pylab.cm.get_cmap("hsv"))
     # within figure function, cmap=colour_map
     v_min = 0.05
     fig_size = (2.5, 2)
@@ -98,8 +98,8 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 0] = True
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
-            fig2 = pylab.figure(figsize=fig_size)
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
+            fig2 = pylab.figure(figsize=fig_size, cmap=colour_map)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
             fig2.savefig("../plots/" + plot_out_name + "_masked.png", dpi=300)
         elif masked == "no":
@@ -115,13 +115,13 @@ def main(snps, masked, method, genotypes):
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
             fig2 = pylab.figure(figsize=fig_size)
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
-            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300)
+            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300, cmap=colour_map)
         elif masked == "no":
-            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
+            dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300)
+            fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300, cmap=colour_map)
         else:
             print(":(")
     elif len(pop_ids) == 3:
@@ -130,13 +130,14 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 0] = True
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
-            dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min)
+            fs.mask[1, 1] = True
+            dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D_masked.png", dpi=300)
+            fig1.savefig("../plots/" + plot_out_name + "_3D_masked.png", dpi=300, cmap=colour_map)
         elif masked == "no":
             dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D.png", dpi=300)
+            fig1.savefig("../plots/" + plot_out_name + "_3D.png", dpi=300, cmap=colour_map)
         else:
             print(":(")
     else:
@@ -148,6 +149,7 @@ def main(snps, masked, method, genotypes):
         fs.mask[1, 0] = True
         fs.mask[2, 0] = True
         fs.mask[0, 2] = True
+        fs.mask[1, 1] = True
 
         print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
         print("Data for masked site frequency spectrum:\n")

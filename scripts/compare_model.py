@@ -35,6 +35,7 @@ def main(snps, model, vmin, opt, PTS, figsize, figsize2):
     fs.mask[0, 1] = True
     fs.mask[2, 0] = True
     fs.mask[0, 2] = True
+    fs.mask[1, 1] = True
 
     # Print spectrum statistics
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")

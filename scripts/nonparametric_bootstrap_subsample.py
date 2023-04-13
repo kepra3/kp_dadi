@@ -76,6 +76,7 @@ def main(snps, model, sims, genotypes, opt, PTS):
         boots_subsample[i].mask[0, 1] = True
         boots_subsample[i].mask[2, 0] = True
         boots_subsample[i].mask[0, 2] = True
+        boots_subsample[i].mask[1, 1] = True
         func_exec = Numerics.make_extrap_func(model_fun)
         sim_model = func_exec(opt, boots_subsample[i].sample_sizes, PTS)
         ll = Inference.ll_multinom(sim_model, boots_subsample[i])

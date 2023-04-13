@@ -32,6 +32,7 @@ def main(snps, model, sims, eps, opt, PTS):
     fs.mask[0, 1] = True
     fs.mask[2, 0] = True
     fs.mask[0, 2] = True
+    fs.mask[1, 1] = True
 
     # Print information about the spectrum
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")

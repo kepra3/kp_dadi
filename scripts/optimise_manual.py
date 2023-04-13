@@ -48,6 +48,7 @@ def main(snps, model, masked, method, folds, int_params, PTS):
         data.mask[0, 1] = True
         data.mask[2, 0] = True
         data.mask[0, 2] = True
+        data.mask[1, 1] = True
     else:
         print("Singletons and Doubletons are not masked")
 
