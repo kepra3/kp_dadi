@@ -1,3 +1,0 @@
-Pops	Model	theta	nu1	nu2	F1	F2	T	eps
-AG1-AG2	iso_inbred	0.0	1.0736	0.0	0.0	0.0	0.0	0.01
-AG1-AG2	iso_inbred	491.1058	3.1704	369.8075	2.9788	9.2225	1.5821	0.01
