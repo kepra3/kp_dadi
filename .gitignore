@@ -130,3 +130,9 @@ dmypy.json
 
 # idea
 .idea/
+
+# Mac
+.DS_Store
+
+# yml
+*.yml
