@@ -194,7 +194,6 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     # Make the extrapolating version of our demographic model function.
     func_ex = dadi.Numerics.make_extrap_log_func(model_fun)
 
-    # Comments taken from Gutenkunst et al. (2009)
     # Perturb our parameters before optimisation. This does so by taking each
     # parameter a up to a factor of "folds" up or down.
     p1 = dadi.Misc.perturb_params(p1, fold=folds, upper_bound=upper, lower_bound=lower)
@@ -245,8 +244,8 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     with open(out_name, "a") as opt_out:
         easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
         opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\n".format(snps, model, folds,
-                                                                        results[0], results[1], results[2],
-                                                                        results[3], easy_p, p_labels))
+                                                                             results[0], results[1], results[2],
+                                                                             results[3], easy_p, p_labels))
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * *  Finished optimisation  * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
@@ -269,8 +268,8 @@ if __name__ == '__main__':
     model = args.model
     masked = args.masked
     method = args.method
-    int_params = [args.int_params]
     folds = args.folds
+    int_params = [args.int_params]
 
     # Need to manually define!
     # Define optimisation bounds

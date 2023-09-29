@@ -4,7 +4,7 @@
 """
 @author: Katharine Prata
 @date created: 2/6/21
-@description: obtains GIM uncertainty from optimised parameters and bootstraps.
+@description: obtains GIM or FIM uncertainty from optimised parameters and bootstraps.
 
 Script modified from YRI_CEU.py if use Godambe have to cite Coffman et al. (2016).
 
@@ -18,7 +18,13 @@ import numpy as np
 import argparse
 
 
-def main(snps, model, sims, eps, opt, PTS):
+def main(function, snps, model, sims, eps, opt, PTS):
+    """
+    eps: Fractional stepsize to use when taking finite-difference derivatives.
+        Note that if eps*param is < 1e-6, then the step size for that parameter
+        will simply be eps, to avoid numerical issues with small parameter
+        perturbations.
+    """
     # Import spectrum
     fs_path = "../data/fs/{}_subsampled.fs".format(snps)  # note using subsampled fs here
     fs = Spectrum.from_file(fs_path)
@@ -74,28 +80,40 @@ def main(snps, model, sims, eps, opt, PTS):
     # Godambe uncertainties
     # param_confidence_intervals contains the estimated standard deviations of each parameter,
     # with theta as the final entry in the list.
-    param_confidence_intervals = Godambe.GIM_uncert(func_ex, PTS, all_boot, opt, fs, multinom=True, eps=eps)
+    if function == "GIM":
+        param_confidence_intervals = Godambe.GIM_uncert(func_ex, PTS, all_boot, opt, fs,
+                                                        multinom=True, eps=eps, log=True)
+    elif function == "FIM":
+        # if want to do FIM
+        # For comparison, we can estimate uncertainties with the Fisher Information
+        # Matrix, which doesn't account for linkage in the data and thus underestimates
+        # uncertainty. (Although it's a fine approach if you think your data is truly
+        # unlinked.)
+        param_confidence_intervals = Godambe.FIM_uncert(func_ex, PTS, opt, fs,
+                                                        multinom=True, eps=eps, log=True)
+    else:
+        print("Choose uncertainty function")
 
-    print('Estimated parameter standard deviations from GIM: {0}'.format(param_confidence_intervals))
+    print('Estimated parameter standard deviations from {0}: {1}'.format(function, param_confidence_intervals))
     # Add optimal theta to parameter list for comparison
     opt.append(theta)
     print('Optimised parameters: {0}'.format(opt))
 
     # The lower bound confidence intervals
     low = np.subtract(opt, param_confidence_intervals)
-    print('Estimated parameter lower from GIM: {0}'.format(low))
+    print('Estimated parameter lower from {0}: {1}'.format(function, low))
     for i in range(len(low)):
         if low[i] < 0:
             low[i] = 0
         else:
             print("not negative")
     low = np.around(low, 4)
-    print('Adjusted estimated parameter lower from GIM: {0}'.format(low))
+    print('Adjusted estimated parameter lower from {0}: {1}'.format(function, low))
 
     # The upper bound confidence intervals
     upp = opt + param_confidence_intervals
     upp = np.around(upp, 4)
-    print('Estimated parameter upper from GIM: {0}'.format(upp))
+    print('Estimated parameter upper from {0}: {1}'.format(function, upp))
 
     # If statements are to adjust the number of columns with the varying number of parameters within each of my models
     if model == "iso_inbred":
@@ -125,35 +143,11 @@ def main(snps, model, sims, eps, opt, PTS):
             file_out.write(f'{snps}\t{model}\t{upp[-1]}\t{upp[0]}\t{upp[1]}\t{upp[2]}\t{upp[3]}\t{upp[4]}\t{upp[5]}'
                            f'\t{upp[6]}\t{eps}\n')
 
-    # if want to do FIM
-    # For comparison, we can estimate uncertainties with the Fisher Information
-    # Matrix, which doesn't account for linkage in the data and thus underestimates
-    # uncertainty. (Although it's a fine approach if you think your data is truly
-    # unlinked.)
-    # if multinom = True
-
-    # uncert contains the estimated standard deviations of each parameter, with
-    # theta as the final entry in the list.
-    # uncerts_fim = dadi.Godambe.FIM_uncert(func_ex,PTS,opt,fs,multinom=True,eps=0.1)
-    # print('Estimate parameter standard deviations from FIM with eps=0.1: {0}'.format(uncerts_fim))
-
-    # eps: Fractional stepsize to use when taking finite-difference derivatives.
-    #         Note that if eps*param is < 1e-6, then the step size for that parameter
-    #         will simply be eps, to avoid numerical issues with small parameter
-    #         perturbations.
-    # uncerts_fim = dadi.Godambe.FIM_uncert(func_ex, PTS, opt, fs, multinom=True, eps=0.01)
-    # print('Estimate parameter standard deviations from FIM with ep=0.01: {0}'.format(uncerts_fim))
-
-    # uncerts_fim = dadi.Godambe.FIM_uncert(func_ex,PTS,opt,fs,multinom=True,eps=0.001)
-    # print('Estimate parameter standard deviations from FIM: {0}'.format(uncerts_fim))
-
-    # uncerts_fim = dadi.Godambe.FIM_uncert(func_ex,PTS,opt,fs,log=True,multinom=True)
-    # print('Estimate Log parameter standard deviations from FIM: {0}'.format(uncerts_fim))
-
 
 if __name__ == "__main__":
     # Arguments
-    parser = argparse.ArgumentParser(prog="GIM uncertainity")
+    parser = argparse.ArgumentParser(prog="Parameter uncertainty")
+    parser.add_argument("function")
     parser.add_argument("snps")
     parser.add_argument("model")
     parser.add_argument("sims", type=int)
@@ -162,6 +156,7 @@ if __name__ == "__main__":
     args: Namespace = parser.parse_args()
 
     # Setting variables
+    function = args.snps
     snps = args.snps
     model = args.model
     sims = args.sims
@@ -171,5 +166,4 @@ if __name__ == "__main__":
     # Extrapolation of grid size
     PTS = [50, 60, 70]
 
-    main(snps, model, sims, eps, opt, PTS)
-
+    main(function, snps, model, sims, eps, opt, PTS)
