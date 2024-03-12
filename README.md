@@ -1,4 +1,7 @@
 # kp_dadi
+
+*This branch is in development - not ready for public use*
+
 *An electronic notebook by Katharine Prata (June 2021)*
 
 A workflow for manually optimising the Diffusion Approximations for Demographic Inference (dadi) 
