@@ -14,7 +14,7 @@ Arguments:
 snps = Pop1-Pop2
 model = iso_inbred (refers to custom model module: demo_models_kp.py and used alias for model see script below)
 masked = yes or no
-method = subsample projection or none
+method = subsample, projection or none
 folds = any integer (best to use: 1, 2 or 3)
 
 Run from script path directory and make sure your custom demographic module is within the directory.
@@ -31,7 +31,7 @@ import argparse
 import numpy
 
 
-def main(snps, model, masked, method, folds, int_params, PTS):
+def main(snps, model, masked, folds, int_params, PTS, method=None):
     # Import and define data constants
     if method == "subsample":
         data = dadi.Spectrum.from_file('../data/fs/{}_subsampled.fs'.format(snps))
@@ -58,19 +58,32 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     print("Data for site frequency spectrum:")
     print("Sample sizes: {}".format(data.sample_sizes))
     print("Sum of SFS: {}".format(numpy.around(data.S(), 2)))
-    print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
+    if len(pop_ids) == 2:
+        print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
     # Need to manually alter the upper and lower parameter limits, model functions are defined in demo_models_kp.py
     # Use nicknames for models, e.g., "snm" instead of model function name, e.g., "no_divergence"
     # Define metadata for models
-    if model == "snm":
-        # standard neutral model, no divergence
+    if model == "snm.1d":
+        # standard neutral model 1d
         num = 1
         p_labels = "nu"
         upper = [150]
         lower = [0.001]
-        model_fun = demo_models_kp.no_divergence
+        model_fun = demo_models_kp.no_divergence_1d
+    elif model == "size_change":
+        num = 2
+        p_labels = "nu, T"
+        upper = [150, 150]
+        lower = [0.001, 0.001]
+        model_fun = demo_models_kp.instant_change
+    elif model == "bottle":
+        num = 3
+        p_labels = "nuB, nuF, T"
+        upper = [150, 150, 150]
+        lower = [0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.bottlegrowth
     elif model == "no_mig":
         # divergence with no migration
         num = 3
@@ -78,6 +91,13 @@ def main(snps, model, masked, method, folds, int_params, PTS):
         upper = [150, 150, 15]
         lower = [0.001, 0.001, 0.001]
         model_fun = demo_models_kp.no_migration
+    elif model == "snm":
+        # standard neutral model, no divergence
+        num = 1
+        p_labels = "nu"
+        upper = [150]
+        lower = [0.001]
+        model_fun = demo_models_kp.no_divergence
     elif model == "sym_mig":
         # divergence with symmetrical migration
         num = 4
@@ -155,12 +175,12 @@ def main(snps, model, masked, method, folds, int_params, PTS):
         print("model nickname undefined please check you are using the correct model nickname!")
 
     # Create log file.
-    out_name = "../results/dadi_optimisation.txt"
+    out_name = "../results/dadi_optimisation_ahya.txt"
     with open(out_name, 'a') as opt_out:
         if opt_out.tell() == 0:
             print('Creating a new file\n')
             opt_out.write(
-                "Pop\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\toptimised_params\t"
+                "Pop\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\tinitial_params\toptimised_params\t"
                 "optimised_params_labels\n")
         else:
             print('File exists, appending\n')
@@ -187,7 +207,7 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     #        p1 = [0.6783, 44.3377, 0.055, 0.0398, 0.7721]
     #    else:
     #        p1 = p0
-    # if using custom starting parameter values then comment the line below
+    # if using custom starting parameter values then comment out the line below
     p1 = p0
 
     # Comments from software example (Gutenkunst et al., 2009)
@@ -243,9 +263,10 @@ def main(snps, model, masked, method, folds, int_params, PTS):
     # Export the results to file
     with open(out_name, "a") as opt_out:
         easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
-        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\n".format(snps, model, folds,
-                                                                             results[0], results[1], results[2],
-                                                                             results[3], easy_p, p_labels))
+        int_p = ",".join([str(numpy.around(x, 4)) for x in p0])
+        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\n".format(snps, model, folds,
+                                                                                  results[0], results[1], results[2],
+                                                                                  results[3], int_p, easy_p, p_labels))
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * *  Finished optimisation  * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
@@ -269,15 +290,15 @@ if __name__ == '__main__':
     masked = args.masked
     method = args.method
     folds = args.folds
-    int_params = [args.int_params]
+    int_params = args.int_params
 
     # Need to manually define!
     # Define optimisation bounds
-    PTS = [50, 60, 70]
+    PTS = [80, 90, 100]
 
     # If you are wanting to export data to a specific location,
     # uncomment the proceeding comment and argument parse,
     # then add path variable to main function.
     # path = "{}".format(args.out_path)
 
-    main(snps, model, masked, method, folds, int_params, PTS)
+    main(snps, model, masked, folds, int_params, PTS, method=method)

@@ -10,6 +10,76 @@ Compatible with python 3.6.11 and dadi 2.1.1
 """
 from dadi import Numerics, PhiManip, Integration
 from dadi.Spectrum_mod import Spectrum
+import numpy as np
+
+
+# Models for testing one population scenarios.
+
+def no_divergence_1d(notused, ns, pts):
+    """
+    Standard neutral model.
+
+    ns = (n1,)
+
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
+
+def instant_change(params, ns, pts):
+    """
+    Instantaneous size change some time ago.
+
+    params = (nu,T)
+    ns = (n1,)
+
+    nu: Ratio of contemporary to ancient population size
+    T: Time in the past at which size change happened (in units of 2*Na
+       generations)
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu, T = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    phi = Integration.one_pop(phi, xx, T, nu)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
+
+def bottlegrowth(params, ns, pts):
+    """
+    Instantanous size change followed by exponential growth.
+
+    params = (nuB,nuF,T)
+    ns = (n1,)
+
+    nuB: Ratio of population size after instantanous change to ancient
+         population size
+    nuF: Ratio of contemporary to ancient population size
+    T: Time in the past at which instantaneous change happened and growth began
+       (in units of 2*Na generations)
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nuB, nuF, T = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    nu_func = lambda t: nuB * np.exp(np.log(nuF / nuB) * t / T)
+    phi = Integration.one_pop(phi, xx, T, nu_func)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
 
 
 # Models for testing two population scenarios.
