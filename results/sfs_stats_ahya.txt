@@ -43,3 +43,8 @@ ahya.unfold.group3.major	[40]	1217843.86	-0.84
 ahya.unfold.group2.major	[40]	1154826.83	-0.82
 ahya.unfold.group1.major	[40]	861817.75	-0.68
 ahya.unfold.Amil.major	[22]	4370059.82	-0.37
+ahya.fold.het05.Amil.major	[22]	3494831.34	-1.29
+ahya.fold.het05.group1.major	[40]	705380.21	-1.71
+ahya.fold.het05.group2.major	[40]	966800.05	-1.74
+ahya.fold.het05.group3.major	[40]	1025505.9	-1.74
+ahya.fold.het05.group4.major	[40]	1170244.34	-1.75

@@ -1,0 +1,345 @@
+Pop	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+ahya.fold.Amil.major.mask	snm.1d	[3]	-83658.91	167319.82	165829.63	1179246.15	1.0	4.1018	nu
+ahya.fold.group1.major.mask	snm.1d	[3]	-46293.17	92588.34	89472.84	199254.5	1.0	1.8612	nu
+ahya.fold.group2.major.mask	snm.1d	[3]	-75009.58	150021.16	145475.87	268604.7	1.0	0.4655	nu
+ahya.fold.group3.major.mask	snm.1d	[3]	-82639.33	165280.66	159147.41	283444.68	1.0	2.2035	nu
+ahya.fold.group4.major.mask	snm.1d	[3]	-94130.16	188262.32	182796.08	324444.74	1.0	2.7987	nu
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.03	862939.92	1.0,1.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-1421.37	2848.74	2737.66	889817.61	1.0,1.0,1.0	11.921,1.1925,0.2784	nuB, nuF, T
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.48	122583.25	1.0,1.0	2.7736,0.4621	nu, T
+ahya.fold.Amil.major.mask	size_change	[3]	-83658.91	167321.82	165829.62	65172484.11	1.0,1.0	0.0181,1.1639	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-1421.37	2848.74	2737.66	889818.37	1.0,1.0,1.0	11.9206,1.1925,0.2784	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-1897.47	3802.94	3696.07	188028000.01	1.0,1.0,1.0,1.0	0.001,0.0093,0.0058,0.0029	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-46293.17	92590.34	89472.84	9960901.29	1.0,1.0	0.02,1.9707	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.68	9887.36	10501.4	209121.21	1.0,1.0,1.0	0.2182,1.8363,0.9729	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-4141.38	8290.76	8870.1	122355.69	1.0,1.0,1.0,1.0	2.7629,5.3727,0.466,0.001	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-75009.58	150023.16	145475.87	8009142.15	1.0,1.0	0.0335,1.8309	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-2247.8	4501.6	4636.12	154423.62	1.0,1.0,1.0	13.7313,2.0777,0.4332	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-75009.58	150027.16	145475.87	1940242.89	1.0,1.0,1.0,1.0	0.6332,0.1384,2.5197,7.8959	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-82639.33	165282.66	159147.41	9184975.19	1.0,1.0	0.0309,2.3261	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.02	158125.05	1.0,1.0,1.0	19.9776,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-82639.33	165286.66	159147.41	1892101.87	1.0,1.0,1.0,1.0	1.045,0.1498,0.5244,7.0876	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-94130.16	188264.32	182796.08	1022058.79	1.0,1.0	0.3174,22.5057	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-2965.68	5937.36	6259.85	184662.51	1.0,1.0,1.0	11.6267,2.2269,0.4423	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-94130.16	188268.32	182796.08	853678.13	1.0,1.0,1.0,1.0	0.0463,0.3801,0.013,21.7577	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-83658.91	167321.82	165829.62	103342237.26	2.0,2.0	0.0114,2.3036	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2993.28	5992.56	5996.31	329460.25	2.0,2.0,2.0	1.1101,5.3968,7.9782	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.71	4227.42	4138.04	1665928.4	2.0,2.0,2.0,2.0	0.518,1.0578,6.9894,0.2317	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-46293.17	92590.34	89472.84	26266201.15	2.0,2.0	0.0076,1.4186	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-3262.8	6531.6	7010.94	125436.55	2.0,2.0,2.0	27.2675,1.5349,0.3383	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3722.26	7452.52	7991.0	140526.46	2.0,2.0,2.0,2.0	0.0038,2.3893,0.001,0.5604	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6058.91	148943.7	2.0,2.0	3.1773,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-2247.8	4501.6	4636.12	154423.6	2.0,2.0,2.0	13.7312,2.0777,0.4332	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.89	438840.16	2.0,2.0,2.0,2.0	0.3394,1.0784,24.957,0.1956	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-82639.33	165282.66	159147.41	604527.24	2.0,2.0	0.4689,61.2851	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.03	158124.75	2.0,2.0,2.0	19.979,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-2954.72	5917.44	6077.93	2037956.23	2.0,2.0,2.0,2.0	0.001,0.2428,0.0028,0.0617	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-94130.16	188264.32	182796.08	805711.16	2.0,2.0	0.4027,78.4412	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-2965.68	5937.36	6259.84	184662.73	2.0,2.0,2.0	11.6273,2.2269,0.4423	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3092.7	6193.4	6450.24	1630298.25	2.0,2.0,2.0,2.0	0.001,0.3531,0.0024,0.0838	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.03	862936.83	3.0,3.0	2.042,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2599.48	5204.96	5132.39	1343103.41	3.0,3.0,3.0	0.2938,1.4117,1.2213	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-83658.91	167325.82	165829.62	56564077.28	3.0,3.0,3.0,3.0	0.0951,0.0208,0.9415,5.3465	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.56	122581.48	3.0,3.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.87	9887.74	10501.77	181660.57	3.0,3.0,3.0	0.2758,2.114,1.0705	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3527.88	7063.76	7386.61	5804729.52	3.0,3.0,3.0,3.0	0.001,0.0585,0.004,0.0136	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6058.94	148942.84	3.0,3.0	3.1774,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-4237.94	8481.88	9106.58	659667.37	3.0,3.0,3.0	0.0122,0.7595,1.1579	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	65456.57	3.0,3.0,3.0,3.0	2.2754,7.2299,61.9601,1.3113	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-82639.33	165282.66	159147.41	283018.18	3.0,3.0	1.0015,137.766	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.04	158124.6	3.0,3.0,3.0	19.9775,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-2953.03	5914.06	6074.06	935478.44	3.0,3.0,3.0,3.0	0.001,0.529,0.002,0.1345	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.5	178885.1	3.0,3.0	3.2428,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-4835.78	9677.56	10249.49	237409.77	3.0,3.0,3.0	0.312,2.7814,1.4459	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-5031.39	10070.78	11341.85	160427.27	3.0,3.0,3.0,3.0	0.0074,3.388,0.001,0.975	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.06	862927.01	4.0,4.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-1421.37	2848.74	2737.66	889817.7	4.0,4.0,4.0	11.9211,1.1925,0.2784	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.68	4227.36	4138.02	862910.08	4.0,4.0,4.0,4.0	1.492,2.0421,0.001,0.4467	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.51	122582.5	4.0,4.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3513.81	7035.62	7352.56	492225.84	4.0,4.0,4.0,4.0	0.001,0.6897,0.0015,0.1619	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6058.95	148943.0	4.0,4.0	3.1774,0.5762	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-2247.8	4501.6	4636.12	154423.72	4.0,4.0,4.0	13.7309,2.0777,0.4332	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	159839.3	4.0,4.0,4.0,4.0	0.9318,2.9608,13.0453,0.537	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-82639.33	165282.66	159147.41	570484.6	4.0,4.0	0.4968,21.3517	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-4615.96	9237.92	9813.21	4215646.07	4.0,4.0,4.0	0.0016,0.1272,0.1965	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-3341.74	6691.48	6980.34	182539.47	4.0,4.0,4.0,4.0	0.825,2.7169,145.6729,0.5338	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.62	178881.67	4.0,4.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-2965.68	5937.36	6259.83	184663.35	4.0,4.0,4.0	11.6277,2.2269,0.4423	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3625.73	7259.46	7697.64	99712.46	4.0,4.0,4.0,4.0	1.794,5.8176,28.4858,1.022	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.05	862931.54	5.0,5.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2599.5	5205.0	5132.38	1224849.75	5.0,5.0,5.0	0.3395,1.548,1.2943	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.7	4227.4	4138.02	899371.63	5.0,5.0,5.0,5.0	0.9595,1.9593,7.4569,0.4292	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.45	122583.63	5.0,5.0	2.7735,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.67	9887.34	10501.29	211129.28	5.0,5.0,5.0	0.2148,1.8189,0.9662	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3529.55	7067.1	7391.74	6398301.86	5.0,5.0,5.0,5.0	0.001,0.053,0.0041,0.0123	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6059.03	148940.1	5.0,5.0	3.1774,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-3925.17	7856.34	8188.34	169985.56	5.0,5.0,5.0	0.405,3.1446,1.6585	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	106587.91	5.0,5.0,5.0,5.0	1.3974,4.44,43.8139,0.8053	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.32	150592.27	5.0,5.0	3.2933,0.647	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.02	158125.13	5.0,5.0,5.0	19.9776,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-2964.64	5937.28	6099.4	8257369.32	5.0,5.0,5.0,5.0	0.001,0.0599,0.0042,0.0151	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.55	178883.93	5.0,5.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-4835.7	9677.4	10250.17	1885251.02	5.0,5.0,5.0	0.0187,0.3503,0.2437	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-4602.17	9212.34	10340.01	166203.9	5.0,5.0,5.0,5.0	0.0067,3.304,0.001,0.911	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.05	862933.58	6.0,6.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2599.5	5205.0	5132.31	1247662.93	6.0,6.0,6.0	0.3296,1.5197,1.28	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.71	4227.42	4138.04	417276.46	6.0,6.0,6.0,6.0	2.068,4.2231,29.8579,0.925	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.61	122580.95	6.0,6.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.55	9887.1	10500.94	436387.87	6.0,6.0,6.0	0.0743,0.88,0.5409	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3932.12	7872.24	8362.67	226443.49	6.0,6.0,6.0,6.0	0.4404,1.5012,0.8192,0.272	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6059.02	148940.26	6.0,6.0	3.1774,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-3925.17	7856.34	8188.68	171471.19	6.0,6.0,6.0	0.3984,3.1171,1.6508	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	105888.15	6.0,6.0,6.0,6.0	1.4066,4.4693,35.0548,0.8106	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.26	150593.8	6.0,6.0	3.2933,0.647	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.03	158124.93	6.0,6.0,6.0	19.978,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-82639.33	165286.66	159147.41	245593.72	6.0,6.0,6.0,6.0	12.1939,1.1541,9.9145,46.6687	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.6	178881.78	6.0,6.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-2965.68	5937.36	6259.86	184662.3	6.0,6.0,6.0	11.6277,2.2269,0.4423	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3578.23	7164.46	7564.89	104548556.96	6.0,6.0,6.0,6.0	0.0016,0.0055,0.0152,0.001	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.07	862928.15	7.0,7.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2996.39	5998.78	6002.74	477722.76	7.0,7.0,7.0	0.025,3.7208,17.4457	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.71	4227.42	4138.03	383191215.52	7.0,7.0,7.0,7.0	0.0023,0.0046,1.1847,0.001	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.35	122585.66	7.0,7.0	2.7735,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.55	9887.1	10501.04	469861.22	7.0,7.0,7.0	0.0672,0.8173,0.5078	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-4105.07	8218.14	8787.5	13200.96	7.0,7.0,7.0,7.0	9.2859,25.7552,149.993,4.291	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6059.05	148939.17	7.0,7.0	3.1774,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-4237.94	8481.88	9106.94	5551.25	7.0,7.0,7.0	2.6925,90.2589,116.8626	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	64076.44	7.0,7.0,7.0,7.0	2.3244,7.3856,61.9049,1.3395	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.35	150590.95	7.0,7.0	3.2933,0.6471	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.02	158125.03	7.0,7.0,7.0	19.9775,1.9738,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-2954.5	5917.0	6077.46	1901374.48	7.0,7.0,7.0,7.0	0.001,0.2603,0.0027,0.0661	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.55	178883.43	7.0,7.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-5323.9	10653.8	11678.86	279183.04	7.0,7.0,7.0	0.0093,2.197,4.2442	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3625.52	7259.04	7696.93	519996.37	7.0,7.0,7.0,7.0	0.3439,1.1156,3.1577,0.196	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.06	862931.73	8.0,8.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2058.57	4125.14	4031.07	1442595.48	8.0,8.0,8.0,8.0	0.5371,1.2208,1.1794,0.2863	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.5	122582.48	8.0,8.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.56	9887.12	10499.8	350079.18	8.0,8.0,8.0	0.1009,1.0972,0.6504	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-3230.07	6468.14	6915.65	126142.42	8.0,8.0,8.0,8.0	16.8141,1.6775,0.2261,0.0932	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6058.93	148943.47	8.0,8.0	3.1774,0.5762	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-3928.61	7863.22	8200.82	125662.21	8.0,8.0,8.0	1.0091,4.2497,1.579	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	63764.73	8.0,8.0,8.0,8.0	2.3358,7.4217,65.0633,1.346	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.43	150588.91	8.0,8.0	3.2934,0.6471	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-4615.76	9237.52	9814.06	31655.51	8.0,8.0,8.0	1.0127,16.9414,16.817	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-82639.33	165286.66	159147.41	194667.84	8.0,8.0,8.0,8.0	20.2322,1.456,8.2929,97.2312	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.52	178884.8	8.0,8.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-3078.4	6162.8	6456.55	185358.1	8.0,8.0,8.0	60.3076,1.7599,0.4236	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3595.22	7198.44	7628.04	219852.25	8.0,8.0,8.0,8.0	0.7858,2.6368,1.7477,0.4704	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.06	862930.88	9.0,9.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-1421.37	2848.74	2737.66	889819.48	9.0,9.0,9.0	11.921,1.1925,0.2784	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.71	4227.42	4138.05	238965.7	9.0,9.0,9.0,9.0	3.6111,7.3742,101.6999,1.6152	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.56	122581.68	9.0,9.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-5594.41	11194.82	12399.54	3102.64	9.0,9.0,9.0	6.5655,110.6817,149.9662	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-4105.07	8218.14	8787.51	37443.14	9.0,9.0,9.0,9.0	3.2738,9.0802,87.2968,1.5128	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6058.94	148942.62	9.0,9.0	3.1773,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-4237.94	8481.88	9107.32	11491.82	9.0,9.0,9.0	1.4414,43.6024,54.7956	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-75009.58	150027.16	145475.87	145850.03	9.0,9.0,9.0,9.0	55.4758,1.8416,1.8442,62.4411	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.22	150595.16	9.0,9.0	3.2932,0.647	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-4615.96	9237.92	9813.32	12483.8	9.0,9.0,9.0	0.0596,42.9501,99.6633	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-3341.74	6691.48	6980.33	13043.82	9.0,9.0,9.0,9.0	11.5451,38.0218,149.9987,7.4702	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.54	178884.25	9.0,9.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-4835.96	9677.92	10249.95	202770.59	9.0,9.0,9.0	0.4137,3.2565,1.5966	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3625.73	7259.46	7697.58	49845.33	9.0,9.0,9.0,9.0	3.5888,11.638,96.443,2.0445	nuB, nuF, TB, TF
+ahya.fold.Amil.major.mask	size_change	[3]	-2109.71	4223.42	4138.05	862936.03	10.0,10.0	2.0421,0.4473	nu, T
+ahya.fold.Amil.major.mask	bottle	[3]	-2599.48	5204.96	5132.34	1317677.03	10.0,10.0,10.0	0.3026,1.439,1.2364	nuB, nuF, T
+ahya.fold.Amil.major.mask	bottle_neck	[3]	-2109.71	4227.42	4138.05	1850899.69	10.0,10.0,10.0,10.0	0.4662,0.9521,103.7466,0.2085	nuB, nuF, TB, TF
+ahya.fold.group1.major.mask	size_change	[3]	-4105.07	8214.14	8787.47	122583.48	10.0,10.0	2.7736,0.4621	nu, T
+ahya.fold.group1.major.mask	bottle	[3]	-4940.56	9887.12	10500.93	382501.1	10.0,10.0,10.0	0.0891,1.004,0.6045	nuB, nuF, T
+ahya.fold.group1.major.mask	bottle_neck	[3]	-46293.17	92594.34	89472.85	58784.43	10.0,10.0,10.0,10.0	14.7226,3.3896,51.4801,135.2473	nuB, nuF, TB, TF
+ahya.fold.group2.major.mask	size_change	[3]	-2909.87	5823.74	6059.0	148941.14	10.0,10.0	3.1774,0.5763	nu, T
+ahya.fold.group2.major.mask	bottle	[3]	-4237.95	8481.9	9106.93	4231.24	10.0,10.0,10.0	3.8639,118.416,149.4065	nuB, nuF, T
+ahya.fold.group2.major.mask	bottle_neck	[3]	-2909.87	5827.74	6058.98	153784.49	10.0,10.0,10.0,10.0	0.9685,3.0773,18.2326,0.5581	nuB, nuF, TB, TF
+ahya.fold.group3.major.mask	size_change	[3]	-3341.74	6687.48	6980.38	150590.16	10.0,10.0	3.2934,0.6471	nu, T
+ahya.fold.group3.major.mask	bottle	[3]	-2339.79	4685.58	4840.03	158124.75	10.0,10.0,10.0	19.9773,1.9739,0.4645	nuB, nuF, T
+ahya.fold.group3.major.mask	bottle_neck	[3]	-3341.74	6691.48	6980.32	29401.89	10.0,10.0,10.0,10.0	5.1219,16.868,137.2837,3.3141	nuB, nuF, TB, TF
+ahya.fold.group4.major.mask	size_change	[3]	-3625.73	7255.46	7697.56	178883.21	10.0,10.0	3.2429,0.5697	nu, T
+ahya.fold.group4.major.mask	bottle	[3]	-5326.3	10658.6	11687.42	4142.79	10.0,10.0,10.0	8.424,148.0657,149.9998	nuB, nuF, T
+ahya.fold.group4.major.mask	bottle_neck	[3]	-3625.73	7259.46	7697.6	561829.6	10.0,10.0,10.0,10.0	0.3184,1.0325,28.6744,0.1814	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-97045.24	194094.48	190622.74	13939.54	1.0,1.0	150.0,54.4662	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206918.44	413842.88	382710.24	2289470.51	1.0,1.0,1.0	0.0013,1.3695,1.0859	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-95621.58	191251.16	188009.39	1326999.46	1.0,1.0,1.0,1.0	0.001,1.573,0.0856,0.581	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37521.77	75047.54	62621.55	2505.67	1.0,1.0	150.0,39.1462	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78264.13	156534.26	111385.24	214998.01	1.0,1.0,1.0	0.0177,2.6025,1.0423	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-28706.94	57421.88	48535.95	5383.59	1.0,1.0,1.0,1.0	150.0,37.7402,15.3438,2.6404	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47777.45	95558.9	78852.41	3481.3	1.0,1.0	150.0,38.033	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-102803.17	205612.34	144834.68	864930.88	1.0,1.0,1.0	0.0048,0.9178,0.3592	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-45616.71	91241.42	77903.38	3805.44	1.0,1.0,1.0,1.0	0.001,138.03,2.7908,35.2081	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-50540.59	101085.18	83118.9	3691.58	1.0,1.0	150.0,38.0572	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-109863.2	219732.4	154927.06	342002.65	1.0,1.0,1.0	0.0094,2.4463,1.0274	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-89154.23	178316.46	125275.27	64015.08	1.0,1.0,1.0,1.0	149.9289,0.0158,1.4616,0.001	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-56153.95	112311.9	93015.4	4236.5	1.0,1.0	150.0,37.6057	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-50664.21	101334.42	80783.52	10212.42	1.0,1.0,1.0	150.0,48.2414,15.2663	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393543.68	787095.36	531543.86	1424849.6	1.0,1.0,1.0,1.0	0.1884,0.1932,0.3313,6.5493	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-97045.24	194094.48	190622.26	13939.51	2.0,2.0	150.0,54.4664	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-70942.33	141890.66	133657.19	73612.84	2.0,2.0,2.0	150.0,18.1894,9.387	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722600.32	1445208.64	1111602.05	1921126.9	2.0,2.0,2.0,2.0	0.8891,0.4993,3.9965,32.7536	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-233113.53	466231.06	309716.02	698043.69	2.0,2.0	0.2377,8.6633	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-33204.64	66415.28	52956.49	6598.57	2.0,2.0,2.0	150.0,43.1779,14.5087	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-233113.53	466235.06	309716.02	800216.07	2.0,2.0,2.0,2.0	0.7774,0.2074,49.4333,30.2727	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47777.45	95558.9	78852.17	3481.3	2.0,2.0	150.0,38.033	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-42849.12	85704.24	67994.3	8670.37	2.0,2.0,2.0	150.0,46.3418,14.9152	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-323833.97	647675.94	435057.24	840359.82	2.0,2.0,2.0,2.0	0.2256,0.2706,3.1277,24.9655	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-50540.59	101085.18	83119.56	3691.59	2.0,2.0	150.0,38.0569	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-109863.35	219732.7	154982.18	15109.07	2.0,2.0,2.0	0.3823,55.4029,20.7748	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-48286.44	96580.88	82073.83	3712.96	2.0,2.0,2.0,2.0	0.02,150.0,149.7894,38.2791	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-56155.21	112314.42	92745.51	4231.55	2.0,2.0	150.0,37.6988	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122078.01	244162.02	171744.72	475695.84	2.0,2.0,2.0	0.0046,2.0443,0.9035	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393543.68	787095.36	531543.86	603448.64	2.0,2.0,2.0,2.0	1.1479,0.4562,7.8084,14.5342	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-97045.26	194094.52	190598.06	13938.0	3.0,3.0	150.0,54.478	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206918.5	413843.0	382668.73	2204814.2	3.0,3.0,3.0	0.0089,1.4218,0.8208	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722600.32	1445208.64	1111602.05	110196710.21	3.0,3.0,3.0,3.0	80.5102,0.0087,1.1826,20.9921	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-233113.53	466231.06	309716.02	331983.32	3.0,3.0	0.4998,76.7344	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78262.7	156531.4	111379.44	14505.9	3.0,3.0,3.0	0.2812,38.5697,15.2327	nuB, nuF, T
+ahya.fold.het05.group2.major	size_change	[3]	-47777.48	95558.96	78854.86	3481.4	3.0,3.0	149.9981,38.0314	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-42858.77	85723.54	68157.62	8864.51	3.0,3.0,3.0	149.9651,45.1258,14.5544	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-45646.86	91301.72	77940.66	52972.56	3.0,3.0,3.0,3.0	0.001,9.9162,0.5075,2.5285	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-50540.59	101085.18	83117.91	3691.57	3.0,3.0	150.0,38.0575	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-44904.93	89815.86	70622.84	9368.78	3.0,3.0,3.0	149.9983,45.2068,14.6475	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-343125.6	686259.2	460594.74	372338.69	3.0,3.0,3.0,3.0	0.7117,0.6479,1.4422,41.8482	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-56153.95	112311.9	93015.42	4236.49	3.0,3.0	150.0,37.6058	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-50765.47	101536.94	81727.2	9098.47	3.0,3.0,3.0	149.5869,56.0244,17.1843	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393543.68	787095.36	531543.86	289338.31	3.0,3.0,3.0,3.0	1.7976,0.9514,3.8779,40.1714	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-97045.24	194094.48	190621.63	13939.48	4.0,4.0	150.0,54.4667	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-199793.24	399592.48	401523.17	191579.5	4.0,4.0,4.0	2.7141,18.3533,3.3744	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722600.32	1445208.64	1111602.05	1262558.22	4.0,4.0,4.0,4.0	6.618,0.7597,1.6656,54.0366	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37521.77	75047.54	62627.73	2505.78	4.0,4.0	150.0,39.1427	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78262.5	156531.0	111415.58	161698.15	4.0,4.0,4.0	0.0074,3.4618,1.7046	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-233113.53	466235.06	309716.03	90240.25	4.0,4.0,4.0,4.0	13.4315,1.8387,3.4324,81.7956	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47777.46	95558.92	78856.24	3481.38	4.0,4.0	149.9999,38.0313	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-102803.09	205612.18	144801.13	70481.85	4.0,4.0,4.0	0.0703,11.2594,4.2551	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-46057.84	92123.68	78108.37	717242.03	4.0,4.0,4.0,4.0	0.001,0.7315,0.0286,0.1863	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-50540.59	101085.18	83120.61	3691.61	4.0,4.0	150.0,38.0565	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-112526.93	225059.86	146113.63	7811790.97	4.0,4.0,4.0	0.001,0.0938,0.0431	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-50522.27	101052.54	82684.03	3684.19	4.0,4.0,4.0,4.0	0.9901,149.9894,3.5762,38.2287	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-56153.95	112311.9	93013.88	4236.47	4.0,4.0	150.0,37.6063	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-50664.24	101334.48	80522.76	9909.56	4.0,4.0,4.0	149.9912,50.0207,15.7828	nuB, nuF, T
+ahya.fold.het05.Amil.major	size_change	[3]	-722600.32	1445204.64	1111602.05	1472122.74	5.0,5.0	0.6516,98.3438	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-70988.27	141982.54	134426.02	76117.85	5.0,5.0,5.0	149.9917,17.5235,9.0141	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722600.32	1445208.64	1111602.05	1084603.23	5.0,5.0,5.0,5.0	16.9763,0.8844,4.4703,32.0234	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37521.77	75047.54	62622.9	2505.69	5.0,5.0	150.0,39.1455	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-33204.71	66415.42	52999.98	6601.53	5.0,5.0,5.0	149.9994,43.1695,14.4968	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-57476.68	114961.36	67268.11	17294.74	5.0,5.0,5.0,5.0	148.2742,17.5147,1.5725,4.8237	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47777.45	95558.9	78851.99	3481.3	5.0,5.0	150.0,38.0331	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-42852.3	85710.6	67354.42	8550.57	5.0,5.0,5.0	149.9987,46.9568,15.1974	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-323833.97	647675.94	435057.24	460823.09	5.0,5.0,5.0,5.0	0.7871,0.4935,1.2015,28.2844	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-50540.59	101085.18	83118.78	3691.58	5.0,5.0	150.0,38.0572	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-109843.08	219692.16	154874.45	14320.4	5.0,5.0,5.0	1.2949,58.4013,16.7978	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-50556.27	101120.54	82881.19	3694.21	5.0,5.0,5.0,5.0	14.5399,149.7074,0.173,37.9219	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-56153.99	112311.98	93059.69	4237.3	5.0,5.0	150.0,37.5907	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122077.87	244161.74	171845.91	465274.56	5.0,5.0,5.0	0.0016,2.0919,1.086	nuB, nuF, T
+ahya.fold.het05.group2.major	size_change	[3]	-47233.89	94471.78	78611.37	2614.88	10.0,10.0	200.0,50.7836	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-41255.96	82517.92	66453.09	7608.98	10.0,10.0,10.0	199.9983,50.8977,17.0567	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-39161.3	78330.6	71708.67	5074.88	10.0,10.0,10.0,10.0	199.9089,14.5717,25.4637,0.6017	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49962.59	99929.18	82848.24	2772.84	10.0,10.0	200.0,50.8155	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43198.35	86402.7	69007.82	8714.41	10.0,10.0,10.0	199.5019,46.2552,15.7449	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-39112.97	78233.94	71255.96	5447.15	10.0,10.0,10.0,10.0	199.8186,23.9215,24.539,1.0727	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55492.31	110988.62	92712.74	3182.04	10.0,10.0	200.0,50.2182	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122078.37	244162.74	171887.72	32809.3	10.0,10.0,10.0	0.196,29.677,10.7694	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393543.68	787095.36	531543.88	83681.87	10.0,10.0,10.0,10.0	72.6254,3.2896,27.8251,116.0865	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189842.64	10440.46	1.0,1.0	200.0,73.0324	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-90897.42	181800.84	178475.09	188990.96	1.0,1.0,1.0	199.7305,5.7554,2.9153	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722408.55	1444825.1	1111266.83	9120640.57	1.0,1.0,1.0,1.0	3.078,0.1051,25.1015,23.2114	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-233060.65	466125.3	309623.86	8953956.02	1.0,1.0	0.0185,1.4364	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78259.39	156524.78	111208.68	186609.92	1.0,1.0,1.0	0.0158,2.9895,1.2641	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-37038.56	74085.12	62476.06	1882.95	1.0,1.0,1.0,1.0	0.1169,199.9355,0.0321,52.3575	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-323759.93	647523.86	434926.06	20265865.87	1.0,1.0	0.0112,1.819	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-102797.31	205600.62	144838.24	1164170.44	1.0,1.0,1.0	0.0029,0.6816,0.2766	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-47183.55	94375.1	78122.31	2615.01	1.0,1.0,1.0,1.0	0.3365,199.4327,0.0725,50.9973	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49991.19	99986.38	82902.47	2772.08	1.0,1.0	199.9832,50.799	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43187.94	86381.88	68763.13	7942.25	1.0,1.0,1.0	199.9076,51.7763,17.38	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-48377.78	96763.56	82084.4	2784.49	1.0,1.0,1.0,1.0	0.0616,199.8445,0.4547,51.0155	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55524.05	111052.1	92759.93	3180.79	1.0,1.0	199.9957,50.2108	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-50202.27	100410.54	81106.84	13565.59	1.0,1.0,1.0	198.5616,31.7779,11.2148	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393453.37	786914.74	531382.76	4122220.47	1.0,1.0,1.0,1.0	0.1917,0.0668,0.1502,3.4824	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189841.6	10440.41	2.0,2.0	199.9999,73.0331	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206904.62	413815.24	382555.04	41159.82	2.0,2.0,2.0	0.8253,76.0779,39.1955	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-95511.89	191031.78	187825.24	10452.57	2.0,2.0,2.0,2.0	0.0031,199.594,2.4598,73.843	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-233060.65	466125.3	309623.86	667030.67	2.0,2.0	0.2487,20.7789	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78259.89	156525.78	111529.61	43511.36	2.0,2.0,2.0	0.0364,12.8772,6.04	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-33246.46	66500.92	51465.53	11624.29	2.0,2.0,2.0,2.0	161.5047,11.5314,7.1868,1.0428	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.45	94524.9	78701.4	2614.47	2.0,2.0	200.0,50.75	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-102798.05	205602.1	144781.02	76117.71	2.0,2.0,2.0	0.0675,10.418,3.9108	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-47531.52	95071.04	79197.81	2640.45	2.0,2.0,2.0,2.0	1.1541,198.2646,14.6576,50.0727	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49991.03	99986.06	82878.8	2771.52	2.0,2.0	200.0,50.8157	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43248.51	86503.02	68273.25	8689.81	2.0,2.0,2.0	198.4945,46.2277,15.8571	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-49870.77	99749.54	82639.22	2772.79	2.0,2.0,2.0,2.0	0.8328,199.7876,0.6215,50.8918	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55524.01	111052.02	92751.51	3180.61	2.0,2.0	200.0,50.2156	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122071.63	244149.26	172028.71	1468364.44	2.0,2.0,2.0	0.0028,0.6636,0.261	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-53592.9	107193.8	90911.36	62093.9	2.0,2.0,2.0,2.0	0.001,10.2465,1.1003,2.6065	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96685.13	193374.26	190521.11	10471.23	3.0,3.0	200.0,72.6162	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206904.26	413814.52	382781.67	119457.5	3.0,3.0,3.0	0.2001,26.2458,14.538	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-95899.51	191807.02	188316.2	1033026.22	3.0,3.0,3.0,3.0	0.0034,2.0185,199.1747,0.7447	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37158.76	74321.52	62486.77	1881.16	3.0,3.0	200.0,52.2657	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-32014.9	64035.8	51683.87	6067.1	3.0,3.0,3.0	199.7079,44.7547,15.7984	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-233060.65	466129.3	309623.86	1072235.17	3.0,3.0,3.0,3.0	1.4917,0.1547,0.1516,13.675	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.37	94524.74	78645.29	2613.73	3.0,3.0	200.0,50.7804	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-41988.45	83982.9	65808.41	5295.21	3.0,3.0,3.0	199.9626,79.1592,25.1718	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-315163.97	630335.94	420284.15	278281.75	3.0,3.0,3.0,3.0	0.6381,0.8328,199.2921,1.761	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-343047.37	686098.74	460456.83	607653.15	3.0,3.0	0.3969,31.9073	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-44030.11	88066.22	67743.68	7756.57	3.0,3.0,3.0	177.9668,54.1598,18.0585	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-343047.37	686102.74	460456.83	320531.36	3.0,3.0,3.0,3.0	1.6037,0.7524,0.8003,27.1362	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55524.01	111052.02	92748.4	3180.57	3.0,3.0	200.0,50.217	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-48817.34	97640.68	78747.0	8711.96	3.0,3.0,3.0	199.9928,54.7598,17.9991	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393453.37	786914.74	531382.76	301491.61	3.0,3.0,3.0,3.0	0.1917,0.9128,0.1065,105.7719	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189841.66	10440.41	4.0,4.0	200.0,73.033	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206909.95	413825.9	382738.06	313868.59	4.0,4.0,4.0	0.1129,9.9863,5.0875	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-56354.62	112717.24	107350.72	62475.01	4.0,4.0,4.0,4.0	199.1459,8.8799,10.0799,0.9871	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37158.76	74321.52	62482.21	1881.11	4.0,4.0	200.0,52.2689	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-32087.26	64180.52	52125.73	5907.68	4.0,4.0,4.0	195.703,46.6121,16.2067	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-42741.15	85490.3	85454.6	5553.3	4.0,4.0,4.0,4.0	2.9793,74.1596,0.0724,15.6163	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.37	94524.74	78635.15	2613.59	4.0,4.0	200.0,50.786	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-102797.28	205600.56	144810.54	6254.73	4.0,4.0,4.0	0.1177,126.8234,65.9134	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-38482.59	76973.18	69577.27	4395.83	4.0,4.0,4.0,4.0	199.9035,26.5578,29.0731,0.9566	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-343047.37	686098.74	460456.83	242680.43	4.0,4.0	0.9937,46.5505	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-109857.67	219721.34	154919.11	7072.08	4.0,4.0,4.0	1.112,118.2279,41.6361	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-343047.37	686102.74	460456.83	6504493.06	4.0,4.0,4.0,4.0	0.0029,0.0371,0.0111,1.1122	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55592.64	111189.28	90296.04	3145.5	4.0,4.0	200.0,51.4037	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-48852.59	97711.18	78270.73	8875.4	4.0,4.0,4.0	198.9591,53.427,17.6976	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-55690.91	111389.82	92867.54	3180.62	4.0,4.0,4.0,4.0	1.275,199.9669,0.7042,50.1343	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189842.87	10440.46	5.0,5.0	200.0,73.0323	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-68250.52	136507.04	128316.06	66204.07	5.0,5.0,5.0	199.9988,19.3903,10.5362	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722408.55	1444825.1	1111266.83	618274.51	5.0,5.0,5.0,5.0	2.3165,1.551,4.7434,59.0447	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37158.76	74321.52	62485.82	1881.16	5.0,5.0	200.0,52.2662	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-78259.49	156524.98	111411.24	6600.61	5.0,5.0,5.0	0.9188,84.7549,30.7485	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-36945.48	73898.96	62017.26	1878.73	5.0,5.0,5.0,5.0	0.8099,199.9164,27.3636,52.5685	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.37	94524.74	78633.83	2613.57	5.0,5.0	200.0,50.7867	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-41633.46	83272.92	66286.24	8975.12	5.0,5.0,5.0	192.7028,41.6531,14.372	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-46333.71	92675.42	78819.0	73421.44	5.0,5.0,5.0,5.0	0.0152,7.1582,0.9352,1.8114	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49991.03	99986.06	82878.57	2771.52	5.0,5.0	200.0,50.8158	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43185.88	86377.76	68465.47	8134.51	5.0,5.0,5.0	199.9994,50.1658,16.9761	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-49920.38	99848.76	82781.94	2771.33	5.0,5.0,5.0,5.0	0.8694,199.985,0.4898,50.8708	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55582.73	111169.46	94922.01	3208.47	5.0,5.0	200.0,49.3062	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122073.55	244153.1	171814.46	11018.99	5.0,5.0,5.0	1.0351,88.259,28.4082	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-393453.37	786914.74	531382.77	300144.71	5.0,5.0,5.0,5.0	19.9513,0.9169,0.6573,27.557	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189843.44	10440.49	6.0,6.0	200.0,73.0319	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-206904.57	413815.14	382794.35	41284.42	6.0,6.0,6.0	1.0289,75.9479,37.102	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-96675.36	193358.72	189789.96	10462.62	6.0,6.0,6.0,6.0	183.2843,199.5268,0.5685,72.3241	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37158.76	74321.52	62486.73	1881.17	6.0,6.0	200.0,52.2656	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-31997.24	64000.48	51737.38	5785.41	6.0,6.0,6.0	199.9864,47.4817,16.6031	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-29667.86	59343.72	50994.74	8207.66	6.0,6.0,6.0,6.0	199.2559,20.932,9.6227,1.8306	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.37	94524.74	78637.55	2613.62	6.0,6.0	200.0,50.7847	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-41291.53	82589.06	66341.66	7351.29	6.0,6.0,6.0	199.4851,53.0818,17.6938	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-47332.51	94673.02	78434.62	2610.66	6.0,6.0,6.0,6.0	1.0514,199.9482,2.1647,50.8891	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49991.03	99986.06	82878.97	2771.53	6.0,6.0	200.0,50.8155	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43231.95	86469.9	68439.21	7728.91	6.0,6.0,6.0	199.1831,53.483,17.9264	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-49330.81	98669.62	80880.76	2758.17	6.0,6.0,6.0,6.0	0.594,199.6323,32.4241,51.7259	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55524.01	111052.02	92746.29	3180.54	6.0,6.0	200.0,50.218	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122069.85	244145.7	171793.45	11054.41	6.0,6.0,6.0	1.1953,87.9623,27.3845	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-43839.35	87686.7	76698.81	8820.55	6.0,6.0,6.0,6.0	199.4169,38.4048,14.7244,2.9748	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189842.67	10440.45	7.0,7.0	200.0,73.0324	nu, T
+ahya.fold.het05.Amil.major	bottle	[3]	-68272.44	136550.88	128491.83	69597.86	7.0,7.0,7.0	199.9141,18.259,9.9624	nuB, nuF, T
+ahya.fold.het05.Amil.major	bottle_neck	[3]	-722408.55	1444825.1	1111266.83	1008735.76	7.0,7.0,7.0,7.0	0.7526,0.9506,91.2439,83.371	nuB, nuF, TB, TF
+ahya.fold.het05.group1.major	size_change	[3]	-37158.76	74321.52	62484.99	1881.14	7.0,7.0	200.0,52.267	nu, T
+ahya.fold.het05.group1.major	bottle	[3]	-31996.92	63999.84	51627.76	5857.5	7.0,7.0,7.0	199.9944,46.7169,16.4013	nuB, nuF, T
+ahya.fold.het05.group1.major	bottle_neck	[3]	-29962.91	59933.82	54516.91	3356.33	7.0,7.0,7.0,7.0	195.3467,5.6363,29.0869,0.1904	nuB, nuF, TB, TF
+ahya.fold.het05.group2.major	size_change	[3]	-47260.37	94524.74	78638.47	2613.63	7.0,7.0	200.0,50.7842	nu, T
+ahya.fold.het05.group2.major	bottle	[3]	-41316.17	82638.34	65826.37	7303.06	7.0,7.0,7.0	198.9262,53.3719,17.8761	nuB, nuF, T
+ahya.fold.het05.group2.major	bottle_neck	[3]	-323759.93	647527.86	434926.07	200706.1	7.0,7.0,7.0,7.0	35.0709,1.1328,1.8731,36.1398	nuB, nuF, TB, TF
+ahya.fold.het05.group3.major	size_change	[3]	-49991.03	99986.06	82876.04	2771.48	7.0,7.0	200.0,50.8172	nu, T
+ahya.fold.het05.group3.major	bottle	[3]	-43599.5	87205.0	68619.93	10581.93	7.0,7.0,7.0	199.9962,36.1456,12.8671	nuB, nuF, T
+ahya.fold.het05.group3.major	bottle_neck	[3]	-38270.77	76549.54	68418.25	6686.84	7.0,7.0,7.0,7.0	199.9382,29.715,18.9407,1.8096	nuB, nuF, TB, TF
+ahya.fold.het05.group4.major	size_change	[3]	-55526.6	111057.2	92198.72	3173.07	7.0,7.0	200.0,50.4672	nu, T
+ahya.fold.het05.group4.major	bottle	[3]	-122071.33	244148.66	171853.85	168915.67	7.0,7.0,7.0	0.0269,5.7596,2.2363	nuB, nuF, T
+ahya.fold.het05.group4.major	bottle_neck	[3]	-54035.71	108079.42	91671.63	3185.77	7.0,7.0,7.0,7.0	0.2469,199.9894,184.4134,50.571	nuB, nuF, TB, TF
+ahya.fold.het05.Amil.major	size_change	[3]	-96673.71	193351.42	189843.59	10440.49	8.0,8.0	200.0,73.0319	nu, T
+ahya.fold.het05.group4.major	size_change	[3]	-55556.95	111117.9	94232.2	3199.87	9.0,9.0	200.0,49.5849	nu, T

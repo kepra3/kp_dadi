@@ -82,6 +82,19 @@ def bottlegrowth(params, ns, pts):
     return fs
 
 
+def bottleneck(params, ns, pts):
+
+    nuB, nuF, TB, TF = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    phi = Integration.one_pop(phi, xx, TB, nuB)
+    phi = Integration.one_pop(phi, xx, TF, nuF)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
 # Models for testing two population scenarios.
 
 def no_divergence(notused, ns, pts):

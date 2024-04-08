@@ -69,21 +69,27 @@ def main(snps, model, masked, folds, int_params, PTS, method=None):
         # standard neutral model 1d
         num = 1
         p_labels = "nu"
-        upper = [150]
+        upper = [200]
         lower = [0.001]
         model_fun = demo_models_kp.no_divergence_1d
     elif model == "size_change":
         num = 2
         p_labels = "nu, T"
-        upper = [150, 150]
+        upper = [200, 200]
         lower = [0.001, 0.001]
         model_fun = demo_models_kp.instant_change
     elif model == "bottle":
         num = 3
         p_labels = "nuB, nuF, T"
-        upper = [150, 150, 150]
+        upper = [200, 200, 200]
         lower = [0.001, 0.001, 0.001]
         model_fun = demo_models_kp.bottlegrowth
+    elif model == "bottle_neck":
+        num = 4
+        p_labels = "nuB, nuF, TB, TF"
+        upper = [200, 200, 200, 200]
+        lower = [0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.bottleneck
     elif model == "no_mig":
         # divergence with no migration
         num = 3
@@ -175,7 +181,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None):
         print("model nickname undefined please check you are using the correct model nickname!")
 
     # Create log file.
-    out_name = "../results/dadi_optimisation_ahya.txt"
+    out_name = "../results/dadi_optimisation_ahya2.txt"
     with open(out_name, 'a') as opt_out:
         if opt_out.tell() == 0:
             print('Creating a new file\n')
@@ -233,7 +239,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None):
     param_opt = dadi.Inference.optimize_log_fmin(p1, data, func_ex, PTS,
                                                  lower_bound=lower,
                                                  upper_bound=upper,
-                                                 verbose=1, maxiter=1000)
+                                                 verbose=1, maxiter=100)
     # The verbose argument controls how often progress of the optimizer should be
     # printed. It's useful to keep track of optimisation process.
 
@@ -294,7 +300,7 @@ if __name__ == '__main__':
 
     # Need to manually define!
     # Define optimisation bounds
-    PTS = [80, 90, 100]
+    PTS = [100, 120, 130]
 
     # If you are wanting to export data to a specific location,
     # uncomment the proceeding comment and argument parse,

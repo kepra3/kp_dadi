@@ -3,8 +3,3 @@ ahya.fold.group1.major
 ahya.fold.group2.major
 ahya.fold.group3.major
 ahya.fold.group4.major
-ahya.unfold.Amil.major
-ahya.unfold.group1.major
-ahya.unfold.group2.major
-ahya.unfold.group3.major
-ahya.unfold.group4.major
