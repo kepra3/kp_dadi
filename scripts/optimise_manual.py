@@ -31,7 +31,7 @@ import argparse
 import numpy
 
 
-def main(snps, model, masked, folds, int_params, PTS, method=None):
+def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     # Import and define data constants
     if method == "subsample":
         data = dadi.Spectrum.from_file('../data/fs/{}_subsampled.fs'.format(snps))
@@ -181,7 +181,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None):
         print("model nickname undefined please check you are using the correct model nickname!")
 
     # Create log file.
-    out_name = "../results/dadi_optimisation_ahya2.txt"
+    out_name = path + "dadi_optimisation.txt"
     with open(out_name, 'a') as opt_out:
         if opt_out.tell() == 0:
             print('Creating a new file\n')
@@ -286,8 +286,8 @@ if __name__ == '__main__':
     parser.add_argument("masked")
     parser.add_argument("method")
     parser.add_argument("folds", type=int, nargs=1)
+    parser.add_argument("out_path")
     parser.add_argument("-p", "--int_params", nargs="+", type=float)
-    # parser.add_argument("out_path")
     args = parser.parse_args()
 
     # Setting variables
@@ -305,6 +305,6 @@ if __name__ == '__main__':
     # If you are wanting to export data to a specific location,
     # uncomment the proceeding comment and argument parse,
     # then add path variable to main function.
-    # path = "{}".format(args.out_path)
+    path = "{}".format(args.out_path)
 
-    main(snps, model, masked, folds, int_params, PTS, method=method)
+    main(snps, model, masked, folds, int_params, PTS, method=method, path=path)

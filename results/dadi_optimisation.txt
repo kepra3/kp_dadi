@@ -1,0 +1,6 @@
+Pop	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+ahya.fold.het05.Amil.major	snm.1d	[3]	-722408.55	1444819.1	1111266.84	958947.57	1.0	0.8576	nu
+ahya.fold.het05.group1.major	snm.1d	[3]	-233060.65	466123.3	309623.86	165878.9	1.0	7.9029	nu
+ahya.fold.het05.group2.major	snm.1d	[3]	-323759.93	647521.86	434926.06	227355.02	1.0	0.6744	nu
+ahya.fold.het05.group3.major	snm.1d	[3]	-343047.37	686096.74	460456.83	241160.43	1.0	4.391	nu
+ahya.fold.het05.group4.major	snm.1d	[3]	-393453.37	786908.74	531382.76	275197.47	1.0	0.6109	nu
