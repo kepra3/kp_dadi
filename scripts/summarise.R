@@ -28,7 +28,7 @@ plot.results <- function(results) {
 setwd("~/git/kp_dadi/scripts/")
 
 # Load data
-results <- read.table("../results/dadi_optimisation_ahya2.txt", sep = "\t",
+results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
 
 results$Pop <- as.factor(results$Pop)
@@ -40,7 +40,7 @@ plot.results(results)
 
 dat <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
 for (group in c("group1", "group2", "group3", "group4", "Amil")) {
-  subset <- results[results$Pop == paste0("ahya.fold.het05.", group, ".major"),]
+  subset <- results[results$Pop == paste0("ahya.fold.", group, ".major.mask"),]
   row <- head(subset[order(subset$AIC),],1)
   row <- row[,c(1,2,9)]
   dat <- rbind(dat, row)

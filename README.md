@@ -22,9 +22,9 @@ requirements.
 A conda environment was set up with the versions below to ensure the analysis works the same every time it's run.
 
 ```
-$ conda create -n dadi211 python=3.6 -y
-$ conda activate dadi211
-$ conda install -c conda-forge dadi=2.1.1
+$ conda create -n kp_dadi python=3.10.9 -y
+$ conda activate kp_dadi
+$ conda install -c conda-forge dadi=2.3.3
 ```
 
 ### 1a - Filter vcf file

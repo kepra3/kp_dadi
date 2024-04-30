@@ -43,14 +43,20 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     pop_ids = pops.split("-")
 
     # Mask singletons and doubletons
-    if masked == "yes":
+    if masked == "low":
         data.mask[1, 0] = True
         data.mask[0, 1] = True
         data.mask[2, 0] = True
         data.mask[0, 2] = True
         data.mask[1, 1] = True
+        print("Low frequencies masked")
+    elif masked == "mid" and len(data.sample_sizes) == 1:
+        mid = data.sample_sizes/2
+        mid = int(mid[0])
+        data.mask[mid] = True
+        print("Mid frequencies masked")
     else:
-        print("Singletons and Doubletons are not masked")
+        print("No masking")
 
     # Print useful information about the sfs
     print("The datafile is {}".format(snps))
@@ -186,7 +192,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         if opt_out.tell() == 0:
             print('Creating a new file\n')
             opt_out.write(
-                "Pop\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\tinitial_params\toptimised_params\t"
+                "Pop\tMask\tModel\tFolds\tlog-likelihood\tAIC\tchi-squared\ttheta\tinitial_params\toptimised_params\t"
                 "optimised_params_labels\n")
         else:
             print('File exists, appending\n')
@@ -270,7 +276,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     with open(out_name, "a") as opt_out:
         easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
         int_p = ",".join([str(numpy.around(x, 4)) for x in p0])
-        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\n".format(snps, model, folds,
+        opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\n".format(snps, masked, model, folds[0],
                                                                                   results[0], results[1], results[2],
                                                                                   results[3], int_p, easy_p, p_labels))
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')

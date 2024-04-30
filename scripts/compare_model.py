@@ -31,12 +31,20 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
     plt.rcParams.update({'font.size': 8})
 
     # Masking the spectrum
-    if mask == "yes":
+    if mask == "low" and len(fs.sample_sizes) == 2:
         fs.mask[1, 0] = True
         fs.mask[0, 1] = True
         fs.mask[2, 0] = True
         fs.mask[0, 2] = True
         fs.mask[1, 1] = True
+        print("Singletons and doubletons masked")
+    elif mask == "mid" and len(fs.sample_sizes) == 1:
+        mid = fs.sample_sizes/2
+        mid = int(mid[0])
+        fs.mask[mid] = True
+        print("Mid frequencies masked")
+    else:
+        print("Spectrum not masked")
 
     # Choose the model
     if model == "iso_inbred":
@@ -179,7 +187,7 @@ if __name__ == '__main__':
     opt = args.opt
 
     # Extrapolating grid size
-    PTS = [50, 60, 70]
+    PTS = [100, 120, 130]
 
     # Figure sizes
     figsize = (2.5, 2)

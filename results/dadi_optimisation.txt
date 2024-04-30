@@ -1,6 +1,32 @@
-Pop	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
-ahya.fold.het05.Amil.major	snm.1d	[3]	-722408.55	1444819.1	1111266.84	958947.57	1.0	0.8576	nu
-ahya.fold.het05.group1.major	snm.1d	[3]	-233060.65	466123.3	309623.86	165878.9	1.0	7.9029	nu
-ahya.fold.het05.group2.major	snm.1d	[3]	-323759.93	647521.86	434926.06	227355.02	1.0	0.6744	nu
-ahya.fold.het05.group3.major	snm.1d	[3]	-343047.37	686096.74	460456.83	241160.43	1.0	4.391	nu
-ahya.fold.het05.group4.major	snm.1d	[3]	-393453.37	786908.74	531382.76	275197.47	1.0	0.6109	nu
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	173261309.91	1.0,1.0	0.0044,1.2302	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	1971796.74	1.0,1.0	0.3763,20.9286	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	52725701.39	1.0,1.0	0.0155,2.5753	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.3	7394.09	1.0,1.0	199.9999,98.0061	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.18	15218.36	14857.02	7531.78	1.0,1.0	200.0,97.0278	nu, T
+ahya.unfold.het05.group1_snp6966117	no	size_change	3	-10282.99	20569.98	20296.19	6600.63	1.0,1.0	200.0,102.5973	nu, T
+ahya.unfold.het05.Amil_snp6966117	no	size_change	3	-2292.95	4589.9	4505.08	5734.49	1.0,1.0	199.9987,149.6055	nu, T
+ahya.unfold.het05.group2_snp6966117	no	size_change	3	-8062.33	16128.66	15809.71	7110.83	1.0,1.0	200.0,100.6056	nu, T
+ahya.unfold.het05.group3_snp6966117	no	size_change	3	-414737.75	829479.5	705660.34	5669233.44	1.0,1.0	0.1465,26.3857	nu, T
+ahya.unfold.het05.group4_snp6966117	no	size_change	3	-425929.67	851863.34	730233.03	27775900.31	1.0,1.0	0.0303,2.1325	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.23	1.0,1.0	200.0,102.8892	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.43	1.0,1.0	199.9928,148.7734	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.24	7099.29	1.0,1.0	200.0,101.1432	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.38	7394.13	1.0,1.0	199.9999,98.0047	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.29	7533.87	1.0,1.0	200.0,96.9644	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	snm.1d	3	-329854.75	659711.5	568964.61	765355.95	1.0	0.7935	nu
+ahya.unfold.het05.Amil_snp6966117	mid	snm.1d	3	-94001.0	188004.0	174952.39	741905.67	1.0	1.0437	nu
+ahya.unfold.het05.group2_snp6966117	mid	snm.1d	3	-360069.31	720140.62	620670.86	817995.27	1.0	2.0941	nu
+ahya.unfold.het05.group3_snp6966117	mid	snm.1d	3	-390689.03	781380.06	664712.9	840778.96	1.0	0.2081	nu
+ahya.unfold.het05.group4_snp6966117	mid	snm.1d	3	-401804.43	803610.86	688828.5	852820.59	1.0	2.3065	nu
+ahya.unfold.het05.group1_snp6966117	no	snm.1d	3	-347994.41	695990.82	601278.34	756621.91	1.0	0.3665	nu
+ahya.unfold.het05.Amil_snp6966117	no	snm.1d	3	-115388.92	230779.84	217044.16	717866.11	1.0	0.1466	nu
+ahya.unfold.het05.group2_snp6966117	no	snm.1d	3	-381156.37	762314.74	657458.38	808351.07	1.0	1.7162	nu
+ahya.unfold.het05.group3_snp6966117	no	snm.1d	3	-414737.75	829477.5	705660.34	830467.55	1.0	1.4567	nu
+ahya.unfold.het05.group4_snp6966117	no	snm.1d	3	-425929.67	851861.34	730233.03	842404.67	1.0	0.2336	nu
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.18	1.0,1.0	200.0,102.8909	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.39	6595.24	1.0,1.0	199.9997,102.8891	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.23	1.0,1.0	199.9999,102.8892	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	32415070.26	1.0,1.0	0.0236,1.4284	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.15	20462.3	20193.52	6595.87	1.0,1.0	199.9946,102.8691	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	4618452.54	1.0,1.0	0.1657,62.8826	nu, T

@@ -1,5 +1,5 @@
-ahya.fold.Amil.major
-ahya.fold.group1.major
-ahya.fold.group2.major
-ahya.fold.group3.major
-ahya.fold.group4.major
+ahya.unfold.het05.group1_snp6966117
+ahya.unfold.het05.Amil_snp6966117
+ahya.unfold.het05.group2_snp6966117
+ahya.unfold.het05.group3_snp6966117
+ahya.unfold.het05.group4_snp6966117
