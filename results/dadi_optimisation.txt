@@ -30,3 +30,103 @@ ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4
 ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	32415070.26	1.0,1.0	0.0236,1.4284	nu, T
 ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.15	20462.3	20193.52	6595.87	1.0,1.0	199.9946,102.8691	nu, T
 ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	4618452.54	1.0,1.0	0.1657,62.8826	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	4027772.73	1.0,1.0	0.19,8.1056	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.2	1.0,1.0	200.0,102.8901	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.41	6595.32	1.0,1.0	200.0,102.8858	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.36	6594.98	1.0,1.0	199.9998,102.8985	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.25	1.0,1.0	199.9966,148.7806	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.16	1.0,1.0	200.0,148.7825	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.16	1.0,1.0	199.9994,148.7832	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	2033851.44	1.0,1.0	0.3648,20.2316	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.77	5744.65	1.0,1.0	199.9707,148.7824	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.95	4543.9	4474.73	5744.82	1.0,1.0	199.9998,148.7426	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.74	5744.31	1.0,1.0	199.9999,148.7735	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	4838461.52	1.0,1.0	0.1533,5.9379	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	29108218.19	1.0,1.0	0.0255,2.5095	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.74	5744.29	1.0,1.0	199.9957,148.7794	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	2912563.93	1.0,1.0	0.2809,9.657	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.3	7099.37	1.0,1.0	200.0,101.1405	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.26	7099.33	1.0,1.0	199.9999,101.142	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.39	15816.78	15500.48	7098.25	1.0,1.0	200.0,101.1788	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	54335410.63	1.0,1.0	0.0151,1.3462	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.31	7099.39	1.0,1.0	199.9999,101.1399	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	12384552.03	1.0,1.0	0.066,3.2989	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.28	7099.33	1.0,1.0	200.0,101.1417	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	3852635.8	1.0,1.0	0.2123,13.705	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	972722.63	1.0,1.0	0.8409,27.2946	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-390689.03	781382.06	664712.91	1718754.67	1.0,1.0	0.4892,16.0579	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.3	7394.08	1.0,1.0	200.0,98.0063	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.1	7393.97	1.0,1.0	199.9996,98.0099	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.28	7394.07	1.0,1.0	200.0,98.0066	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.58	7394.25	1.0,1.0	200.0,98.001	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.29	7394.07	1.0,1.0	199.9998,98.0066	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.04	7393.93	1.0,1.0	200.0,98.0111	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.15	7394.0	1.0,1.0	200.0,98.0089	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-390689.03	781382.06	664712.9	1525646.69	1.0,1.0	0.5511,53.3617	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.27	7394.08	1.0,1.0	199.9999,98.0065	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.16	7533.76	1.0,1.0	199.9999,96.9676	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.28	7533.86	1.0,1.0	199.9999,96.9646	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7609.89	15223.78	14853.63	7524.92	1.0,1.0	200.0,97.2374	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.3	7533.87	1.0,1.0	199.9999,96.9642	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-401804.43	803612.86	688828.5	2020060.47	1.0,1.0	0.4222,31.4379	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.21	7533.82	1.0,1.0	199.9997,96.9661	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.24	7533.84	1.0,1.0	200.0,96.9654	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.31	7533.88	1.0,1.0	200.0,96.964	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.32	7533.89	1.0,1.0	200.0,96.9637	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.3	7533.88	1.0,1.0	200.0,96.964	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.78	137321.47	1.0,1.0,1.0	74.4656,6.0466,3.6544	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-2196.74	4399.48	4120.3	210135.55	1.0,1.0,1.0	199.9999,3.1068,1.9728	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.28	101772.56	98245.03	988458.91	1.0,1.0,1.0	0.0274,1.7332,1.6827	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.78	137315.9	1.0,1.0,1.0	74.4724,6.0468,3.6546	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.79	137181.62	1.0,1.0,1.0	74.4908,6.0537,3.6593	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.2	101772.4	98232.72	46277.71	1.0,1.0,1.0	0.7094,37.0057,34.2929	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.43	101772.86	98244.81	77819.52	1.0,1.0,1.0	0.4783,22.0141,19.7363	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.22	101772.44	98238.2	64949.38	1.0,1.0,1.0	0.5097,26.3715,24.3776	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.16	101772.32	98239.37	33057.34	1.0,1.0,1.0	0.7861,51.8154,50.8319	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.21	101772.42	98241.0	1106047.62	1.0,1.0,1.0	0.023,1.5487,1.5267	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-359.65	725.3	623.13	143572.34	1.0,1.0,1.0	27.7898,5.9793,4.4334	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-62.15	130.3	24.74	329130.91	1.0,1.0,1.0	58.6658,1.8014,1.1576	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-262.4	530.8	427.27	217128.6	1.0,1.0,1.0	20.5918,3.8125,2.5055	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.55	16353.1	16326.79	58286.92	1.0,1.0,1.0	1.0026,24.1384,33.9544	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-66.18	138.36	32.8	325153.81	1.0,1.0,1.0	45.5616,1.9198,1.1952	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.93	1877508.14	1.0,1.0,1.0	0.0182,0.7494,1.2313	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-68.51	143.02	37.49	336496.6	1.0,1.0,1.0	102.8304,1.6114,1.0974	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.56	1488441.84	1.0,1.0,1.0	0.0244,0.9452,1.5291	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.56	16353.12	16326.74	76429.9	1.0,1.0,1.0	0.7125,18.408,26.4703	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.61	73396.0	1.0,1.0,1.0	0.6333,19.1683,28.9075	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49647.2	99300.4	94630.5	5454581.63	1.0,1.0,1.0	0.0019,0.3422,0.3943	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-606.88	1219.76	1015.62	85931.62	1.0,1.0,1.0	62.8881,12.1088,7.0835	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49644.09	99294.18	94680.8	14198.94	1.0,1.0,1.0	3.7648,131.6433,103.6339	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-606.88	1219.76	1015.62	86025.68	1.0,1.0,1.0	62.8508,12.0944,7.0743	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49647.21	99300.42	94631.17	78491.05	1.0,1.0,1.0	0.3891,23.7795,21.7441	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-25120.64	50247.28	44568.91	351602.36	1.0,1.0,1.0	15.4899,2.8925,0.9599	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-608.84	1223.68	1019.26	89163.66	1.0,1.0,1.0	61.4912,11.6219,6.7914	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-360082.98	720171.96	620695.68	812347197.76	1.0,1.0,1.0	0.1379,0.001,199.6163	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-360083.5	720173.0	620696.61	817922871.07	1.0,1.0,1.0	0.1722,0.001,199.9942	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-666.41	1338.82	1137.24	47107.31	1.0,1.0,1.0	97.7706,22.8306,13.9359	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-553.99	1113.98	909.86	33355.44	1.0,1.0,1.0	165.5515,32.4836,20.3192	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.0	1114.0	909.88	33400.88	1.0,1.0,1.0	165.2916,32.4394,20.2913	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.02	1114.04	909.92	33622.16	1.0,1.0,1.0	164.2549,32.2288,20.1464	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-589.34	1184.68	980.64	60260.52	1.0,1.0,1.0	99.4234,17.6916,10.708	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.01	1114.02	909.93	33703.55	1.0,1.0,1.0	163.7643,32.1503,20.0988	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59213.84	118433.68	111682.65	801429.42	1.0,1.0,1.0	0.0049,2.434,3.2153	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59213.87	118433.74	111685.31	44277.72	1.0,1.0,1.0	0.8085,44.0573,37.464	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-553.99	1113.98	909.88	33297.06	1.0,1.0,1.0	165.7101,32.5469,20.3565	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-866.56	1739.12	1530.85	107868.23	1.0,1.0,1.0	73.157,9.3016,5.4602	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59214.44	118434.88	111681.06	1630278.37	1.0,1.0,1.0	0.0187,1.1964,1.0579	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.33	107736.66	101592.7	1338978.38	1.0,1.0,1.0	0.0125,1.5038,1.4641	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.34	107736.68	101581.55	14535.75	1.0,1.0,1.0	1.2448,138.4882,132.6493	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.38	107736.76	101595.18	200267.99	1.0,1.0,1.0	0.1481,10.0548,8.6148	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-18685.1	37376.2	37183.3	9765.91	1.0,1.0,1.0	104.6739,178.6022,71.9356	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-654.13	1314.26	1109.16	66039.75	1.0,1.0,1.0	76.8634,17.1318,9.8041	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.35	107736.7	101578.3	1771941.51	1.0,1.0,1.0	0.0104,1.136,1.0835	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-614.56	1235.12	1031.6	30029.16	1.0,1.0,1.0	146.1499,38.8719,22.9742	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.34	107736.68	101589.77	1677764.72	1.0,1.0,1.0	0.014,1.2001,1.0848	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10129.19	20266.38	19995.29	1673530.07	1.0,1.0,1.0,1.0	0.001,0.7875,0.8674,0.4086	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-329854.75	659717.5	568964.61	5024474.04	1.0,1.0,1.0,1.0	4.3955,0.1523,3.0423,6.3729	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10103.93	20215.86	19946.17	484229.71	1.0,1.0,1.0,1.0	0.001,2.7232,2.8417,1.4133	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-5019.04	10046.08	9613.49	246875.66	1.0,1.0,1.0,1.0	197.2774,2.4476,1.1923,0.2805	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10134.94	20277.88	20007.21	6601.74	1.0,1.0,1.0,1.0	0.295,199.7199,1.2275,103.4702	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-1354.86	2717.72	2488.37	196709.57	1.0,1.0,1.0,1.0	197.6144,4.2263,1.5461,0.6138	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-329854.75	659717.5	568964.61	46644428.69	1.0,1.0,1.0,1.0	7.2928,0.0164,0.0433,1.525	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10252.43	20512.86	20239.44	6597.22	1.0,1.0,1.0,1.0	1.6525,199.9618,0.7681,102.6161	nuB, nuF, TB, TF
