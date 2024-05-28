@@ -175,6 +175,77 @@ def asym_migration(params, ns, pts):
 
     return fs
 
+def split_bottlegrowth(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=0, m21=0)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_bottlegrowth_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12, m21 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=m12, m21=m21)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
 
 def iso_inbreeding(params, ns, pts):
     """

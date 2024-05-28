@@ -71,6 +71,9 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
     elif model == "bottle_neck":
         model_fun = demo_models_kp.bottleneck
         dim = "1d"
+    elif model == "no_mig":
+        model_fun = demo_models_kp.no_migration
+        dim = "2d"
     else:
         model_fun = False
         print("Choose correct model name")

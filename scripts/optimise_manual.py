@@ -183,6 +183,18 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         upper = [150, 150, 150, 150, 1, 1, 10, 10, 15, 15]
         lower = [0.001, 0.001, 0.001, 0.001, 0.00001, 0.00001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.mig_be_inbred
+    elif model == "split_bottle":
+        num = 6
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2"
+        upper = [200, 200, 200, 200, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth
+    elif model == "split_bottle_asym_mig":
+        num = 8
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12, m21"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_asym_mig
     else:
         print("model nickname undefined please check you are using the correct model nickname!")
 
