@@ -53,11 +53,47 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
     elif model == "mig_inbred":
         model_fun = demo_models_kp.mig_inbreeding
         dim = "2d"
+    elif model == "no_mig":
+        model_fun = demo_models_kp.no_migration
+        dim = "2d"
+    elif model == "asym_mig":
+        model_fun = demo_models_kp.asym_migration
+        dim = "2d"
     elif model == "anc_mig":
         model_fun = demo_models_kp.anc_sym_mig_inbred
         dim = "2d"
     elif model == "sec_cont":
         model_fun = demo_models_kp.sec_contact_sym_mig_inbred
+        dim = "2d"
+    elif model == "anc_asym_mig":
+        model_fun = demo_models_kp.anc_asym_migration
+        dim = "2d"
+    elif model == "sec_cont_asym_mig":
+        model_fun = demo_models_kp.sec_contact_asym_migration
+        dim = "2d"
+    elif model == "split_bottle":
+        model_fun = demo_models_kp.split_bottlegrowth
+        dim = "2d"
+    elif model == "split_bottle_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_asym_mig
+        dim = "2d"
+    elif model == "split_bottle_anc_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_ancient_asym_mig
+        dim = "2d"
+    elif model == "split_bottle_sec_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_second_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange":
+        model_fun = demo_models_kp.split_sizechange
+        dim = "2d"
+    elif model == "split_sizechange_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange_anc_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_ancient_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange_sec_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_second_asym_mig
         dim = "2d"
     elif model == "snm.1d":
         model_fun = demo_models_kp.no_divergence_1d
@@ -71,9 +107,6 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
     elif model == "bottle_neck":
         model_fun = demo_models_kp.bottleneck
         dim = "1d"
-    elif model == "no_mig":
-        model_fun = demo_models_kp.no_migration
-        dim = "2d"
     else:
         model_fun = False
         print("Choose correct model name")

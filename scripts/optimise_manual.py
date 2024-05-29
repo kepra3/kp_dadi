@@ -190,11 +190,47 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.split_bottlegrowth
     elif model == "split_bottle_asym_mig":
+        num = 10
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, m12T2, m21T2"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_asym_mig
+    elif model == "split_bottle_sec_asym_mig":
         num = 8
         p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12, m21"
         upper = [200, 200, 200, 200, 15, 15, 10, 10]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-        model_fun = demo_models_kp.split_bottlegrowth_asym_mig
+        model_fun = demo_models_kp.split_bottlegrowth_second_asym_mig
+    elif model == "split_bottle_anc_asym_mig":
+        num = 8
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12, m21"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_ancient_asym_mig
+    elif model == "split_sizechange":
+        num = 6
+        p_labels = "nu1T1, nu2T2, nu1T1, nu2T2, T1, T2"
+        upper = [200, 200, 200, 200, 15, 15]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange
+    elif model == "split_sizechange_asym_mig":
+        num = 10
+        p_labels = "nu1T1, nu2T2, nu1T1, nu2T2, T1, T2, m12T1, m21T1, m12T2, m21T2"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_asym_mig
+    elif model == "split_sizechange_anc_asym_mig":
+        num = 8
+        p_labels = "nu1T1, nu2T2, nu1T1, nu2T2, T1, T2, m12, m21"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_ancient_asym_mig
+    elif model == "split_sizechange_sec_asym_mig":
+        num = 8
+        p_labels = "nu1T1, nu2T2, nu1T1, nu2T2, T1, T2, m12, m21"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_second_asym_mig
     else:
         print("model nickname undefined please check you are using the correct model nickname!")
 
