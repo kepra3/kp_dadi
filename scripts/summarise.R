@@ -15,20 +15,21 @@ plot.results <- function(results) {
     ggsave(paste0("../plots/", pop, ".model.summary.pdf"), p, height = 5, width = 5,
            units = "cm", dpi = 400)
     p1 <- ggplot(group[group$AIC < quantile(group$AIC, 0.5),], aes(Model, AIC)) + 
-      geom_point() + theme_bw() + ggtitle(paste0(pop, " - Top 50%"))
+      geom_point() + theme_bw() + ggtitle(paste0(pop, " - Top 50%")) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
     print(p1)
     ggsave(paste0("../plots/", pop, ".model-top50.summary.pdf"), p1, height = 5, width = 5,
            units = "cm", dpi = 400)
-    print(as.data.frame(group[group$AIC == min(group$AIC[group$Model == "bottle"]),])[1,])
-    print(as.data.frame(group[group$AIC == min(group$AIC[group$Model == "bottle_neck"]),])[1,])
-    print(as.data.frame(group[group$AIC == min(group$AIC[group$Model == "size_change"]),])[1,])
+    for (model in levels(results$Model)) {
+      print(as.data.frame(group[group$AIC == min(group$AIC[group$Model == model]),])[1,])
+    }
   }
 }
 
 setwd("~/git/kp_dadi/scripts/")
 
 # Load data
-results <- read.table("../results/dadi_optimisation.txt", sep = "\t",
+results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
 
 results$Pop <- as.factor(results$Pop)
@@ -36,12 +37,14 @@ results$Model <- as.factor(results$Model)
 
 table(results$Pop, results$Model)
 
+results <- results[results$AIC > 10000,]
+
 plot.results(results)
 
 dat <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
-for (group in c("group1", "group2", "group3", "group4", "Amil")) {
-  subset <- results[results$Pop == paste0("ahya.unfold.het05.", group, "_snp6966117"),]
-  row <- head(subset[order(subset$AIC),],1)
-  row <- row[,c(1,3,10)]
+for (group in sort(unique(results$Pop))) {
+  subset <- results[results$Pop == group,]
+  row <- head(subset[order(subset$AIC),],3)
+  row <- row[,c(1,3,5,6,10, 11)]
   dat <- rbind(dat, row)
 }

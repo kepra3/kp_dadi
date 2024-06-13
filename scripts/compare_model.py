@@ -148,7 +148,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
             fig1.savefig(out_name + "_data.pdf", dpi=300)
         # Plot figure to (residuals)
         fig2 = pylab.figure(figsize=figsize)
-        Plotting.plot_2d_resid(resid, resid_range=3)
+        Plotting.plot_2d_resid(resid)
         fig2.tight_layout()
         fig2.savefig(out_name + "_" + model + "_residual.pdf", dpi=300)
 
@@ -166,9 +166,9 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
         # Plot figure 4 (all together and distribution of residuals)
         fig4 = pylab.figure(figsize=figsize2)
         if fold == "yes":
-            Plotting.plot_2d_comp_multinom(folded_sim_model, fs, resid_range=3, vmin=vmin)
+            Plotting.plot_2d_comp_multinom(folded_sim_model, fs, vmin=vmin)
         elif fold == "no":
-            Plotting.plot_2d_comp_multinom(scaled_sim_model, fs, resid_range=3, vmin=vmin)
+            Plotting.plot_2d_comp_multinom(scaled_sim_model, fs, vmin=vmin)
         else:
             print("choose folding")
         fig4.tight_layout()

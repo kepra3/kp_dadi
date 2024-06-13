@@ -231,6 +231,60 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         upper = [200, 200, 200, 200, 15, 15, 10, 10]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.split_sizechange_second_asym_mig
+    elif model == "het_asym_mig":
+        num = 8
+        p_labels = "nu1, nu2, m12, m21, me12, me21, T, P"
+        upper = [200, 200, 10, 10, 10, 10, 15, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.hetero_asym_migration
+    elif model == "anc_het_asym_mig":
+        num = 9
+        p_labels = "nu1, nu2, m12, m21, me12, me21, T1, T2, P"
+        upper = [200, 200, 10, 10, 10, 10, 15, 15, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.anc_hetero_asym_migration
+    elif model == "sec_het_asym_mig":
+        num = 9
+        p_labels = "nu1, nu2, m12, m21, me12, me21, T1, T2, P"
+        upper = [200, 200, 10, 10, 10, 10, 15, 15, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.sec_contact_hetero_asym_migration
+    elif model == "split_bottle_het_asym_mig":
+        num = 15
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_hetero_asym_mig
+    elif model == "split_bottle_anc_het_asym_mig":
+        num = 11
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12, m21, me12, me21, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_ancient_hetero_asym_mig
+    elif model == "split_bottle_sec_het_asym_mig":
+        num = 11
+        p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12, m21, me12, me21, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_bottlegrowth_second_hetero_asym_mig
+    elif model == "split_sizechange_het_asym_mig":
+        num = 15
+        p_labels = "nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_hetero_asym_mig
+    elif model == "split_sizechange_anc_het_asym_mig":
+        num = 11
+        p_labels = "nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21, me12, me21, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_ancient_hetero_asym_mig
+    elif model == "split_sizechange_sec_het_asym_mig":
+        num = 11
+        p_labels = "nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21, me12, me21, P"
+        upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        model_fun = demo_models_kp.split_sizechange_second_hetero_asym_mig
     else:
         print("model nickname undefined please check you are using the correct model nickname!")
 
