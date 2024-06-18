@@ -95,6 +95,33 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
     elif model == "split_sizechange_sec_asym_mig":
         model_fun = demo_models_kp.split_sizechange_second_asym_mig
         dim = "2d"
+    elif model == "het_asym_mig":
+        model_fun = demo_models_kp.hetero_asym_migration
+        dim = "2d"
+    elif model == "anc_het_asym_mig":
+        model_fun = demo_models_kp.anc_hetero_asym_migration
+        dim = "2d"
+    elif model == "sec_het_asym_mig":
+        model_fun = demo_models_kp.sec_contact_hetero_asym_migration
+        dim = "2d"
+    elif model == "split_bottle_het_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_hetero_asym_mig
+        dim = "2d"
+    elif model == "split_bottle_anc_het_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_ancient_hetero_asym_mig
+        dim = "2d"
+    elif model == "split_bottle_sec_het_asym_mig":
+        model_fun = demo_models_kp.split_bottlegrowth_second_hetero_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange_het_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_hetero_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange_anc_het_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_ancient_hetero_asym_mig
+        dim = "2d"
+    elif model == "split_sizechange_sec_het_asym_mig":
+        model_fun = demo_models_kp.split_sizechange_second_hetero_asym_mig
+        dim = "2d"
     elif model == "snm.1d":
         model_fun = demo_models_kp.no_divergence_1d
         dim = "1d"
