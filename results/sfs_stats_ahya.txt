@@ -39,3 +39,33 @@ ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
 ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
 ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
 ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
