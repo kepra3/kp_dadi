@@ -16,7 +16,7 @@ import demo_models_kp
 from dadi import Misc, Numerics, Inference
 
 
-def main(snps, model, sims, genotypes, opt, PTS):
+def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
     # import the spectrum and popfile from data/vcf and data/popfile
     snp_path = "../data/vcf/" + snps + ".vcf"
     pop_path = "../data/popfile/pop_" + snps + ".txt"
@@ -45,7 +45,7 @@ def main(snps, model, sims, genotypes, opt, PTS):
 
         # Making subsampled bootstraps
         # Need to alter chunk_size here depending on how long your contigs are
-    boots_subsample = Misc.bootstraps_subsample_vcf(snp_path, pop_path, chunk_size=100, Nboot=args.sims,
+    boots_subsample = Misc.bootstraps_subsample_vcf(snp_path, pop_path, chunk_size=chunk_size, Nboot=args.sims,
                                                     subsample=subsample,
                                                     pop_ids=pop_ids, polarized=False)
     # Saving your bootstraps to file
@@ -63,6 +63,8 @@ def main(snps, model, sims, genotypes, opt, PTS):
         model_fun = demo_models_kp.mig_inbreeding
     elif model == "anc_mig":
         model_fun = demo_models_kp.anc_sym_mig_inbred
+    elif model == "anc_asym_mig":
+        model_fun = demo_models_kp.anc_asym_migration
     elif model == "sec_cont":
         model_fun = demo_models_kp.sec_contact_sym_mig_inbred
     else:
@@ -112,6 +114,7 @@ if __name__ == '__main__':
     parser.add_argument("snps")
     parser.add_argument("model")
     parser.add_argument("sims", type=int)
+    parser.add_argument("chunksize", type=int)
     parser.add_argument("-g", "--genotypes", nargs="+", type=int)
     parser.add_argument("-o", "--opt_params", nargs="+", type=float)
     args: argparse.Namespace = parser.parse_args()
@@ -121,11 +124,12 @@ if __name__ == '__main__':
     model = args.model
     sims = args.sims
     genotypes = args.genotypes
+    chunk_size = args.chunksize
     opt = args.opt_params
 
     # Define optimisation bounds - use the same ones as before
-    PTS = [50, 60, 70]
+    PTS = [200, 210, 220]
 
-    main(snps, model, sims, genotypes, opt, PTS)
+    main(snps, model, sims, genotypes, chunk_size, opt, PTS)
 
 
