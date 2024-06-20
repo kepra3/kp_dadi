@@ -18,7 +18,7 @@ import numpy as np
 import argparse
 
 
-def main(function, snps, model, sims, eps, opt, PTS):
+def main(function, snps, method, model, sims, eps, opt, PTS):
     """
     eps: Fractional stepsize to use when taking finite-difference derivatives.
         Note that if eps*param is < 1e-6, then the step size for that parameter
@@ -26,7 +26,12 @@ def main(function, snps, model, sims, eps, opt, PTS):
         perturbations.
     """
     # Import spectrum
-    fs_path = "../data/fs/{}_subsampled.fs".format(snps)  # note using subsampled fs here
+    if method == "subsample":
+        fs_path = "../data/fs/{}_subsampled.fs".format(snps)
+    elif method == "projection":
+        fs_path = "../data/fs/{}_projected.fs".format(snps)
+    else:
+        fs_path = "../data/fs/{}.fs".format(snps)
     fs = Spectrum.from_file(fs_path)
     ns = fs.sample_sizes
 
@@ -149,6 +154,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="Parameter uncertainty")
     parser.add_argument("function")
     parser.add_argument("snps")
+    parser.add_argument("method")
     parser.add_argument("model")
     parser.add_argument("sims", type=int)
     parser.add_argument("eps", type=float)
@@ -158,6 +164,7 @@ if __name__ == "__main__":
     # Setting variables
     function = args.snps
     snps = args.snps
+    method = args.method
     model = args.model
     sims = args.sims
     eps = args.eps
@@ -166,4 +173,4 @@ if __name__ == "__main__":
     # Extrapolation of grid size
     PTS = [50, 60, 70]
 
-    main(function, snps, model, sims, eps, opt, PTS)
+    main(function, snps, method, model, sims, eps, opt, PTS)

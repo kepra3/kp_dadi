@@ -161,8 +161,9 @@ To calculate the confidence intervals the parameters the Godambe Information Mat
 parameter confidence intervals.
 
 ```bash
-$ python confindence_intervals.py AG1-AG2 iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
+$ python confindence_intervals.py AG1-AG2 subsample iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
+Arguments: 
 
 Official analysis results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
