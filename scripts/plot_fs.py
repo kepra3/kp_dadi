@@ -86,7 +86,7 @@ with open(stats_out_name, "a") as stats_out:
                                                   np.around(statistic, 2)))
 
 # Plotting
-fig_size = (2.5, 2)
+fig_size = (5, 5)
 fig1 = pylab.figure(figsize=fig_size)
 colour_map = copy.copy(pylab.cm.get_cmap("hsv"))
 
