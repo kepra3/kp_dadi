@@ -637,10 +637,10 @@ def split_bottlegrowth_ancient_hetero_asym_mig(params, ns, pts):
     nu1F, nu2F : Ratio of contemporary to ancient population size
     T2: Time in the past at which growth began
        (in units of 2*Na generations)
-    m12: migration rate from pop1 into pop2 over T2
-    m21: migration rate from pop2 into pop1 over T2
-    me12: effective migration rate from pop1 into pop2 over T2
-    me21: effective migration rate from pop2 into pop1 over T2
+    m12: migration rate from pop1 into pop2 over T1
+    m21: migration rate from pop2 into pop1 over T1
+    me12: effective migration rate from pop1 into pop2 over T1
+    me21: effective migration rate from pop2 into pop1 over T1
     P: The proportion of the genome evolving neutrally
     ns: Number of samples in resulting Spectrum
     pts: Number of grid points to use in integration.
