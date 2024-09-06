@@ -255,6 +255,6 @@ if __name__ == '__main__':
     # Figure sizes
     figsize = (2.5, 2)
     figsize2 = (5, 4)
-    vmin = 0.05
+    vmin = 1
 
     main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2)

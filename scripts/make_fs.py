@@ -48,7 +48,7 @@ def main(snps, masked, method, genotypes):
     # Configuring haplotypes and genotypes
     if len(pop_ids) == 1:
         proj = [genotypes[0] * 2]
-        subsample = {pop_ids[0]: genotypes[1]}
+        subsample = {pop_ids[0]: genotypes[0]}
     elif len(pop_ids) == 2:
         proj = [genotypes[0] * 2, genotypes[1] * 2]
         subsample = {pop_ids[0]: genotypes[0], pop_ids[1]: genotypes[1]}
@@ -117,11 +117,12 @@ def main(snps, masked, method, genotypes):
             fig2 = pylab.figure(figsize=fig_size)
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
-            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300, cmap=colour_map)
+            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300)
         elif masked == "no":
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
+            #dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300, cmap=colour_map)
+            fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300)
         else:
             print(":(")
     elif len(pop_ids) == 3:
@@ -133,11 +134,11 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 1] = True
             dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D_masked.png", dpi=300, cmap=colour_map)
+            fig1.savefig("../plots/" + plot_out_name + "_3D_masked.png", dpi=300)
         elif masked == "no":
-            dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min)
+            dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D.png", dpi=300, cmap=colour_map)
+            fig1.savefig("../plots/" + plot_out_name + "_3D.png", dpi=300)
         else:
             print(":(")
     else:
