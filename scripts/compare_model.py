@@ -18,7 +18,7 @@ from dadi import Plotting, Spectrum, Numerics, Inference
 import matplotlib.pyplot as plt
 
 
-def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
+def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range):
     # Parse the data file to generate the sfs
     snp_path = '../data/fs/' + snps + ".fs"
     pops = "{}".format(snps)
@@ -175,7 +175,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2):
             fig1.savefig(out_name + "_data.pdf", dpi=300)
         # Plot figure to (residuals)
         fig2 = pylab.figure(figsize=figsize)
-        Plotting.plot_2d_resid(resid)
+        Plotting.plot_2d_resid(resid, resid_range=resid_range)
         fig2.tight_layout()
         fig2.savefig(out_name + "_" + model + "_residual.pdf", dpi=300)
 
@@ -256,5 +256,6 @@ if __name__ == '__main__':
     figsize = (2.5, 2)
     figsize2 = (5, 4)
     vmin = 1
+    resid_range = 100
 
-    main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2)
+    main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range)
