@@ -139,3 +139,8 @@ dmypy.json
 
 # scrap
 scrap/
+
+# iva large vcf files
+ahya.group1.hwe.miss5.vcf
+ahya.group1.ld05.miss10.vcf
+ahya.group1.miss10.vcf

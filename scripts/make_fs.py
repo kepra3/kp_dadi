@@ -74,12 +74,17 @@ def main(snps, masked, method, genotypes):
     print("Data for site frequency spectrum:\n")
     print("Sample sizes: {}".format(fs.sample_sizes))
     print("Sum of SFS: {}".format(np.around(fs.S(), 2)))
-    print("FST of SFS: {}".format(np.around(fs.Fst(), 2)))
+    if len(pop_ids) == 2:
+        print("FST of SFS: {}".format(np.around(fs.Fst(), 2)))
+        stat = np.around(fs.pi, 2)
+    elif len(pop_ids) == 1:
+        print("Tajima's D of SFS: {}".format(np.around(fs.Tajima_D())))
+        stat = np.around(fs.Tajima_D(), 2)
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
     with open(stats_out_name, "a") as stats_out:
         stats_out.write("{0}\t{1}\t{2}\t{3}\n".format(snps, fs.sample_sizes, np.around(fs.S(), 2),
-                                                      np.around(fs.Fst(), 2)))
+                                                      stat))
 
     # Plotting sfs and masked sfs
     # Not using rainbow palette anymore due to error
@@ -156,12 +161,17 @@ def main(snps, masked, method, genotypes):
         print("Data for masked site frequency spectrum:\n")
         print("Sample sizes: {}".format(fs.sample_sizes))
         print("Sum of SFS: {}".format(np.around(fs.S(), 2)))
-        print("FST of SFS: {}".format(np.around(fs.Fst(), 2)))
+        if len(pop_ids) == 2:
+            print("FST of SFS: {}".format(np.around(fs.Fst(), 2)))
+            stat = np.around(fs.pi, 2)
+        elif len(pop_ids) == 1:
+            print("Tajima's D of SFS: {}".format(np.around(fs.Tajima_D())))
+            stat = np.around(fs.Tajima_D(), 2)
         print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
         with open(stats_out_name, "a") as stats_out:
-            stats_out.write("{0}\t{1}\t{2}\t{3}\n".format("{}_masked".format(snps), fs.sample_sizes,
-                                                          np.around(fs.S(), 2), np.around(fs.Fst(), 2)))
+            stats_out.write("{0}\t{1}\t{2}\t{3}\n".format(snps, fs.sample_sizes, np.around(fs.S(), 2),
+                                                          stat))
     elif masked == "no":
         print("low frequency SNP masking not performed |-O-O-|")
     else:

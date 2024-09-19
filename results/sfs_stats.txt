@@ -19,3 +19,11 @@ Tas-Med	[180 160]	30561.35	0.11
 Tas-Med	[160 140]	32030.38	0.11
 Tas-Med	[160 140]	32030.38	0.11
 Tas-Med	[160 140]	32030.38	0.11
+ahya.group1.hwe.miss5	[1018]	544.0	nan
+ahya.group1.hwe.miss5	[500]	88723.23	nan
+ahya.group1.hwe.miss5	[800]	96304.18	nan
+ahya.group1.ld05.miss10	[1018]	427.0	nan
+ahya.group1.ld05.miss10	[800]	256188.81	nan
+ahya.group1.miss10	[1018]	0.0	nan
+ahya.group1.miss10	[1018]	552.0	nan
+ahya.group1.miss10	[800]	268299.42	-1.79
