@@ -73,7 +73,7 @@ with open(stats_out_name, 'a') as stats_out:
         print('file exists, appending')
 
 # Printing out stats for the fs
-print("The datafile will be named {}".format(snps))
+print("\nThe datafile will be named {}".format(snps))
 print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 print("Data for site frequency spectrum:\n")
 print("Sample sizes: {}".format(fs.sample_sizes))
@@ -96,6 +96,10 @@ extras = ""
 if fold == "yes":
     fs = fs.fold()
     extras += "fold"
+    fs.to_file("../data/fs/{}_folded.fs".format(snps))
+
+if mask != "no":
+    extras += "mask{}".format(mask)
 
 if dim == "1D":
     if proj == "yes":

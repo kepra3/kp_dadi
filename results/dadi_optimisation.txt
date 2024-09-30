@@ -198,3 +198,8 @@ ahya.group1.hwe.miss5	no	size_change	3	-16714.66	33433.32	28441.82	158.67	1.0,1.
 ahya.group1.hwe.miss5	no	bottle	3	-24650.37	49306.74	41852.35	6792.45	1.0,1.0,1.0	0.0015,5.6974,1.0506	nuB, nuF, T
 ahya.group1.hwe.miss5	no	bottle_neck	3	-16764.2	33536.4	28460.96	231.45	1.0,1.0,1.0,1.0	173.8475,136.8625,2.0145,4.704	nuB, nuF, TB, TF
 ahya.group1.hwe.miss5	no	size_change	3	-68050.61	136105.22	135654.51	4952253.34	1.0,1.0	0.0027,1.5535	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	1.0	0.7803	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	1.0	0.2969	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	1.0	0.7804	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	1.0	1.3018	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	1.0	4.0086	nu
