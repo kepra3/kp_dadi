@@ -1,6 +1,6 @@
 # kp_dadi
 
-*This branch is in development - not ready for public use! Please email kepra3@gmail.com for enquires*
+*This branch is in development - not ready for public use! Please email kepra3@gmail.com for enquiries.*
 
 *An electronic notebook by Katharine Prata (June 2021)*
 
