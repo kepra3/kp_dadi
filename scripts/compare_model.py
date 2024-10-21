@@ -25,7 +25,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
     fs = Spectrum.from_file(snp_path)
 
     # Name of plots
-    out_name = "../plots/" + snps
+    out_name = "../plots/models/" + snps
 
     # Plot font size
     plt.rcParams.update({'font.size': 8})

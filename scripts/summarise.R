@@ -40,7 +40,7 @@ setwd("~/git/kp_dadi/scripts/")
 results <- read.table("../results/dadi_optimisation.txt", sep = "\t",
                       header = TRUE)
 
-results <- results[200:length(results[,1]),]
+results <- results[331:length(results[,1]),]
 
 results$Pop <- as.factor(results$Pop)
 results$Model <- as.factor(results$Model)
