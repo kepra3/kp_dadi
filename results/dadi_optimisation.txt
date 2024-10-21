@@ -319,3 +319,12 @@ outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.s
 outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.8	9.0,9.0	30.9733,3.5128	nu, T
 outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.8	10.0,10.0	30.9738,3.5128	nu, T
 outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1002.88	2011.76	1959.71	31656.09	1.0,1.0,1.0	0.7862,5.631,0.881	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-15966.9	31939.8	31761.45	47919379.48	2.0,2.0,2.0	1.079,0.0012,195.2947	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-981.62	1969.24	1914.92	40919.36	3.0,3.0,3.0	0.3124,4.4227,0.9092	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-994.68	1995.36	1953.74	33523.7	4.0,4.0,4.0	0.5421,5.4542,0.9566	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-754.12	1514.24	1463.02	32484.75	5.0,5.0,5.0	7.5372,3.5786,0.4248	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.72	2698.52	6.0,6.0,6.0	1.2705,47.3624,42.8589	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-978.6	1963.2	1902.4	62952.06	7.0,7.0,7.0	0.1364,2.8617,0.6804	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3305.76	1081.01	8.0,8.0,8.0	1.6882,118.1825,125.7025	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.63	1204.99	9.0,9.0,9.0	2.24,106.0615,102.3292	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.41	1246.93	10.0,10.0,10.0	2.3043,102.4845,97.2977	nuB, nuF, T

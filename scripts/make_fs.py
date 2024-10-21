@@ -106,11 +106,11 @@ def main(snps, masked, method, genotypes):
             fig2 = pylab.figure(figsize=fig_size, cmap=colour_map)
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
-            fig2.savefig("../plots/" + plot_out_name + "_masked.png", dpi=300)
+            fig2.savefig("../plots/spectra/" + plot_out_name + "_masked.png", dpi=300)
         elif masked == "no":
             dadi.Plotting.plot_1d_fs(fs)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + ".png", dpi=300)
+            fig1.savefig("../plots/spectra/" + plot_out_name + ".png", dpi=300)
         else:
             print(":(")
     elif len(pop_ids) == 2:
@@ -122,12 +122,12 @@ def main(snps, masked, method, genotypes):
             fig2 = pylab.figure(figsize=fig_size)
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
-            fig2.savefig("../plots/" + plot_out_name + "_2D_masked.png", dpi=300)
+            fig2.savefig("../plots/spectra/" + plot_out_name + "_2D_masked.png", dpi=300)
         elif masked == "no":
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             #dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_2D.png", dpi=300)
+            fig1.savefig("../plots/spectra/" + plot_out_name + "_2D.png", dpi=300)
         else:
             print(":(")
     elif len(pop_ids) == 3:
@@ -139,11 +139,11 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 1] = True
             dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D_masked.png", dpi=300)
+            fig1.savefig("../plots/spectra/" + plot_out_name + "_3D_masked.png", dpi=300)
         elif masked == "no":
             dadi.Plotting.plot_3d_spectrum(fs, vmin=v_min, cmap=colour_map)
             fig1.tight_layout()
-            fig1.savefig("../plots/" + plot_out_name + "_3D.png", dpi=300)
+            fig1.savefig("../plots/spectra/" + plot_out_name + "_3D.png", dpi=300)
         else:
             print(":(")
     else:
