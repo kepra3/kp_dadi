@@ -130,6 +130,18 @@ previous 3 outputs as well a distribution of the residual scores in a 2x2 figure
 
 Official analysis results can be found in `plots/official_ms_plots/`.
 
+Updated version - vmin scale now is created from the max residuals, 
+option for whether the fs is masked at the lower- or mid- frequencies or neither, and option for 
+folded or unfolded spectra.
+```bash
+$ python compare_model.py [fs] [model] [mask] [fold] -o [params separated by spaces]
+```
+Arguments: (1) fs, (2) model, (3) masked [low, mid, both, or no], (4) folded [yes or no], (5) -o optimised parameter values.
+
+Output: (1) fs plot of the data, (2) fs plot of the simulated model, (3) a residual plot of data - model and (4) all 
+previous 3 outputs as well a distribution of the residual scores in a 2x2 figure plot.
+
+
 ### 4b - Bootstrapping
 
 Either non-parametric or parametric bootstrapping. Non-parametric is taking random samples from your data 

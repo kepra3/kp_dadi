@@ -30,6 +30,8 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
     # Plot font size
     plt.rcParams.update({'font.size': 8})
 
+    extras = ""
+
     # Masking the spectrum
     if mask == "low" and len(fs.sample_sizes) == 2:
         fs.mask[1, 0] = True
@@ -38,11 +40,36 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         fs.mask[0, 2] = True
         fs.mask[1, 1] = True
         print("Singletons and doubletons masked")
+        extras += "mask{}".format(mask)
+    elif mask == "low" and len(fs.sample_sizes) == 1:
+        fs.mask[1] = True
+        fs.mask[2] = True
+        extras += "mask{}".format(mask)
+    elif mask == "mid" and len(fs.sample_sizes) == 2:
+        mid0 = int(fs.sample_sizes[0]/2)
+        mid1 = int(fs.sample_sizes[1]/2)
+        fs.mask[mid0, :] = True
+        fs.mask[:, mid1] = True
+        print("Mid frequencies masked")
+        extras += "mask{}".format(mask)
     elif mask == "mid" and len(fs.sample_sizes) == 1:
         mid = fs.sample_sizes/2
         mid = int(mid[0])
         fs.mask[mid] = True
         print("Mid frequencies masked")
+        extras += "mask{}".format(mask)
+    elif mask == "both" and len(fs.sample_sizes) == 2:
+        mid0 = int(fs.sample_sizes[0]/2)
+        mid1 = int(fs.sample_sizes[1]/2)
+        fs.mask[mid0, :] = True
+        fs.mask[:, mid1] = True
+        fs.mask[1, 0] = True
+        fs.mask[0, 1] = True
+        fs.mask[2, 0] = True
+        fs.mask[0, 2] = True
+        fs.mask[1, 1] = True
+        extras += "maskmidlow"
+        print("Mid frequencies and singletons and doubletons masked")
     else:
         print("Spectrum not masked")
 
@@ -159,8 +186,10 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         folded_sim_model = scaled_sim_model.fold()
         # Calculate the residuals
         resid = Inference.Anscombe_Poisson_residual(folded_sim_model, fs)
+        extras += "folded"
     elif fold == "no":
         resid = Inference.Anscombe_Poisson_residual(scaled_sim_model, fs)
+        extras += "unfolded"
     else:
         print("choose yes or no for folding")
 
@@ -177,7 +206,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         fig2 = pylab.figure(figsize=figsize)
         Plotting.plot_2d_resid(resid, resid_range=resid_range)
         fig2.tight_layout()
-        fig2.savefig(out_name + "_" + model + "_residual.pdf", dpi=300)
+        fig2.savefig(out_name + "_" + model + "_" + extras + "_residual.pdf", dpi=300)
 
         # Plot figure 3 (the simulated model)
         fig3 = pylab.figure(figsize=figsize)
@@ -188,7 +217,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         else:
             print("choose folding")
         fig3.tight_layout()
-        fig3.savefig(out_name + "_" + model + "_model.pdf", dpi=300)
+        fig3.savefig(out_name + "_" + model + "_" + extras + "_model.pdf", dpi=300)
 
         # Plot figure 4 (all together and distribution of residuals)
         fig4 = pylab.figure(figsize=figsize2)
@@ -199,16 +228,16 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         else:
             print("choose folding")
         fig4.tight_layout()
-        fig4.savefig(out_name + model + "_all4.pdf", dpi=300)
+        fig4.savefig(out_name + model + "_" + extras + "_all4.pdf", dpi=300)
     elif dim == "1d":
         # Plot the data fs
         fig1 = pylab.figure(figsize=figsize)
         Plotting.plot_1d_fs(fs)
         fig1.tight_layout()
-        if os.path.isfile(out_name + "_data.pdf"):
+        if os.path.isfile(out_name + "_" + extras + "_data.pdf"):
             print("data file exists")
         else:
-            fig1.savefig(out_name + "_data.pdf", dpi=300)
+            fig1.savefig(out_name + "_" + extras + "_data.pdf", dpi=300)
         # Fig 2 Poisson
         fig2 = pylab.figure(figsize=figsize)
         if fold == "yes":
@@ -218,7 +247,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         else:
             print('choose folding')
         fig2.tight_layout()
-        fig2.savefig(out_name + "_" + model + "_poisson_residual.pdf", dpi=300)
+        fig2.savefig(out_name + "_" + model + "_" + extras + "_poisson_residual.pdf", dpi=300)
 
         # Fig 3 multimnom
         fig3 = pylab.figure(figsize=figsize)
@@ -229,7 +258,7 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
         else:
             print('choose folding')
         fig3.tight_layout()
-        fig3.savefig(out_name + "_" + model + "_mulitnom_residual.pdf", dpi=300)
+        fig3.savefig(out_name + "_" + model + "_" + extras + "_mulitnom_residual.pdf", dpi=300)
 
 
 if __name__ == '__main__':
