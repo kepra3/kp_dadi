@@ -1,0 +1,8 @@
+description: Neadrathral-Human admixture from extinct population.
+time_units: generations
+admixture_units: fraction_of_population_entering_gene_pool
+parameters:
+  Modern_pop1_proportion_admixture: A1
+  Modern_pop1_generations_since_admixture: T1
+  Modern_pop2_proportion_admixture: A2
+  Modern_pop2_generations_since_admixture: T2

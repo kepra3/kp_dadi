@@ -1,0 +1,7 @@
+description: Squirrel populations that were isolated from eachother due to the formation of a canyon.
+time_units: generations
+population_units: number_of_individuals
+parameters:
+  east_population_size: N1
+  west_population_size: N2
+  generations_since_split: T

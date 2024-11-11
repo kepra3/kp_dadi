@@ -66,6 +66,8 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     print("Sum of SFS: {}".format(numpy.around(data.S(), 2)))
     if len(pop_ids) == 2:
         print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
+    if len(pop_ids) == 1:
+        print("Tajima's D: {}".format(numpy.around(data.Tajima_D(), 2)))
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
     # Need to manually alter the upper and lower parameter limits, model functions are defined in demo_models_kp.py
@@ -368,8 +370,12 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     # Calculate  Chi^2
     scaled_sim_model = sim_model * theta
     folded_sim_model = scaled_sim_model.fold()
-    chi2 = numpy.sum((folded_sim_model - data) ** 2 / folded_sim_model)
-    chi2 = numpy.around(chi2, 2)
+    if data.folded == folded_sim_model.folded:
+        chi2 = numpy.sum((folded_sim_model - data) ** 2 / folded_sim_model)
+        chi2 = numpy.around(chi2, 2)
+    else:
+        chi2 = numpy.sum((scaled_sim_model - data) ** 2 / scaled_sim_model)
+        chi2 = numpy.around(chi2, 2)
 
     # Store results with likelihoods, theta and parameters (max. likelihood)
     results = [ll, aic, chi2, theta, param_opt]

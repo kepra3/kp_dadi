@@ -1,0 +1,7 @@
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+wisent_unfolded_projected	no	bottle	3	-323.42	652.84	249.49	70928.31	1.0,1.0,1.0	0.0062,0.5581,0.0035	nuB, nuF, T
+wisent_unfolded_projected	no	bottle	3	-331.07	668.14	264.66	71205.18	1.0,1.0,1.0	1.3301,0.0609,0.0271	nuB, nuF, T
+wisent_unfolded_projected	no	bottle	3	-334.51	675.02	271.95	71136.52	100.0,1.0,10.0	4.1251,0.0637,0.0366	nuB, nuF, T
+wisent_unfolded_projected	no	bottle	3	-330.49	666.98	263.42	71250.34	100.0,1.0,10.0	0.4394,0.0636,0.0191	nuB, nuF, T
+wisent_unfolded_projected	no	bottle	3	-332.46	670.92	267.51	71225.61	100.0,1.0,10.0	3.5468,0.06,0.0337	nuB, nuF, T
+wisent_unfolded_projected	no	bottle	3	-624.17	1254.34	847.45	65350.88	100.0,100.0,10.0	82.3717,0.2225,0.5562	nuB, nuF, T

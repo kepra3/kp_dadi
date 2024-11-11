@@ -1,0 +1,6 @@
+description: Wisent bottleneck.
+time_units: generations
+post_decline_fraction_units: modern_populations_size_divided_by_ancestral_population_size
+parameters:
+  generations: T
+  post_decline_fraction: nu

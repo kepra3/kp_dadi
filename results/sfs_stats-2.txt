@@ -1,0 +1,2 @@
+Pop	Sample sizes	Fold	Sum of SFS	Stat
+wisent	[40]	unfolded	219410.0	0.86

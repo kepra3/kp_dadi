@@ -37,17 +37,17 @@ plot.results <- function(results) {
 setwd("~/git/kp_dadi/scripts/")
 
 # Load data
-results <- read.table("../results/dadi_optimisation.txt", sep = "\t",
+results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
 
-results <- results[331:length(results[,1]),]
+#results <- results[331:length(results[,1]),]
 
 results$Pop <- as.factor(results$Pop)
 results$Model <- as.factor(results$Model)
 
 table(results$Pop, results$Model)
 
-#results <- results[results$AIC > 10000,]
+results <- results[results$log.likelihood < -15,]
 
 plot.results(results)
 
@@ -55,6 +55,16 @@ dat <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
 for (group in sort(unique(results$Pop))) {
   subset <- results[results$Pop == group,]
   row <- head(subset[order(subset$AIC),],3)
-  row <- row[,c(1,3,5,6,10, 11)]
+  row <- row[,c(1,3,5,6,10,11)]
   dat <- rbind(dat, row)
 }
+
+# Shorten pop names
+dat <- dat %>% separate(Pop, into = c("Pop1","2","Pop2"), sep = "_", remove = FALSE) %>% 
+  separate(Pop1, into = c( "x", "y", "Pop1"), sep = "\\.") %>% 
+  unite(Pop_short, c("Pop1", "Pop2"))
+dat <- dat[,c(-2,-3,-5)]
+
+ggplot(dat, aes(AIC, Model)) + geom_point() + 
+  facet_wrap(~Pop_short)
+

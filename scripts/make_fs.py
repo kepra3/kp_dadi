@@ -18,6 +18,8 @@ run from the scripts directory or change path variables
 Output: a subsampled fs for input into dadi analysis, a text file with statistics and plots of fs produced.
 
 Compatible with python 3.6.11 and dadi 2.1.1
+
+# TODO: To add option for unfolded spectra
 """
 
 import argparse
@@ -29,7 +31,7 @@ import pylab
 import matplotlib as plt
 
 
-def main(snps, masked, method, genotypes):
+def main(snps, fold, masked, method, genotypes):
     # Import the spectrum and popfile from data/vcf and data/popfile
     snp_path = "../data/vcf/" + snps + ".vcf"
     pop_path = "../data/popfile/pop_" + snps + ".txt"
@@ -37,11 +39,11 @@ def main(snps, masked, method, genotypes):
     pop_ids = pops.split("-")
 
     # make a file with statistics about your sfs
-    stats_out_name = "../results/sfs_stats.txt"
+    stats_out_name = "../results/sfs_stats-2.txt"
     with open(stats_out_name, 'a') as stats_out:
         if stats_out.tell() == 0:
             print('Creating a new file')
-            stats_out.write("Pop\tSample sizes\tSum of SFS\tFST\n")
+            stats_out.write("Pop\tSample sizes\tFold\tSum of SFS\tStat\n")
         else:
             print('file exists, appending')
 
@@ -59,14 +61,26 @@ def main(snps, masked, method, genotypes):
             proj.append(20)
             subsample["Pop{}".format(i)] = 10
 
-    if method == "subsample":
-        dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path, subsample=subsample)
-        fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=False)
-        fs.to_file("../data/fs/{}_subsampled.fs".format(snps))
-    elif method == "projection":
-        dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path)
-        fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=False)
-        fs.to_file("../data/fs/{}_projected.fs".format(snps))
+    if fold == "folded":
+        if method == "subsample":
+            dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path, subsample=subsample)
+            fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=False)
+            fs.to_file("../data/fs/{}_subsampled.fs".format(snps))
+        elif method == "projection":
+            dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path)
+            fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=False)
+            fs.to_file("../data/fs/{}_projected.fs".format(snps))
+    elif fold == "unfolded":
+        if method == "subsample":
+            dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path, subsample=subsample)
+            fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=True)
+            fs.to_file("../data/fs/{}_unfolded_subsampled.fs".format(snps))
+        elif method == "projection":
+            dd = dadi.Misc.make_data_dict_vcf(snp_path, pop_path)
+            fs = dadi.Spectrum.from_data_dict(dd, pop_ids=pop_ids, projections=proj, polarized=True)
+            fs.to_file("../data/fs/{}_unfolded_projected.fs".format(snps))
+    else:
+        print("Need to choose whether folded or unfolded spectra")
 
     # Printing out stats for the fs
     print("The datafile will be named {}".format(snps))
@@ -83,8 +97,8 @@ def main(snps, masked, method, genotypes):
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
     with open(stats_out_name, "a") as stats_out:
-        stats_out.write("{0}\t{1}\t{2}\t{3}\n".format(snps, fs.sample_sizes, np.around(fs.S(), 2),
-                                                      stat))
+        stats_out.write("{0}\t{1}\t{2}\t{3}\t{4}\n".format(snps, fs.sample_sizes, fold, np.around(fs.S(), 2),
+                                                           stat))
 
     # Plotting sfs and masked sfs
     # Not using rainbow palette anymore due to error
@@ -103,6 +117,7 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 0] = True
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
+            fs.mask[1, 1] = True
             fig2 = pylab.figure(figsize=fig_size, cmap=colour_map)
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
@@ -119,6 +134,7 @@ def main(snps, masked, method, genotypes):
             fs.mask[1, 0] = True
             fs.mask[2, 0] = True
             fs.mask[0, 2] = True
+            fs.mask[1, 1] = True
             fig2 = pylab.figure(figsize=fig_size)
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=v_min, cmap=colour_map)
             fig2.tight_layout()
@@ -170,7 +186,7 @@ def main(snps, masked, method, genotypes):
         print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
         with open(stats_out_name, "a") as stats_out:
-            stats_out.write("{0}\t{1}\t{2}\t{3}\n".format(snps, fs.sample_sizes, np.around(fs.S(), 2),
+            stats_out.write("{0}\t{1}\t{2}\t{3}\t{4}\n".format(snps, fs.sample_sizes, fold, np.around(fs.S(), 2),
                                                           stat))
     elif masked == "no":
         print("low frequency SNP masking not performed |-O-O-|")
@@ -182,6 +198,7 @@ if __name__ == '__main__':
     # Arguments
     parser = argparse.ArgumentParser(prog="dadi fs", usage="[options]")
     parser.add_argument("snps")
+    parser.add_argument("fold")
     parser.add_argument("masked")
     parser.add_argument("method")
     parser.add_argument("genotypes", type=int, nargs="+")
@@ -189,10 +206,11 @@ if __name__ == '__main__':
 
     # Setting variables
     snps = args.snps
+    fold = args.fold
     masked = args.masked
     method = args.method
     genotypes = args.genotypes
 
-    main(snps, masked, method, genotypes)
+    main(snps, fold, masked, method, genotypes)
 
 

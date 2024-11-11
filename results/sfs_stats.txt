@@ -27,3 +27,6 @@ ahya.group1.ld05.miss10	[800]	256188.81	nan
 ahya.group1.miss10	[1018]	0.0	nan
 ahya.group1.miss10	[1018]	552.0	nan
 ahya.group1.miss10	[800]	268299.42	-1.79
+wisent	[40]	219410.0	0.86
+wisent	[42]	0.0	nan
+wisent	[40]	219410.0	0.86
