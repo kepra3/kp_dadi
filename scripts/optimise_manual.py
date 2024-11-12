@@ -358,11 +358,11 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
 
     # Calculate theta
     theta = dadi.Inference.optimal_sfs_scaling(sim_model, data)
-    theta = numpy.around(theta, 2)
+    theta = numpy.around(theta, 4)
 
     # Calculate likelihood
     ll = dadi.Inference.ll_multinom(sim_model, data)
-    ll = numpy.around(ll, 2)
+    ll = numpy.around(ll, 4)
 
     # Calculate AIC
     aic = (-2 * (float(ll))) + (2 * len(param_opt))
@@ -372,10 +372,10 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
     folded_sim_model = scaled_sim_model.fold()
     if data.folded == folded_sim_model.folded:
         chi2 = numpy.sum((folded_sim_model - data) ** 2 / folded_sim_model)
-        chi2 = numpy.around(chi2, 2)
+        chi2 = numpy.around(chi2, 4)
     else:
         chi2 = numpy.sum((scaled_sim_model - data) ** 2 / scaled_sim_model)
-        chi2 = numpy.around(chi2, 2)
+        chi2 = numpy.around(chi2, 4)
 
     # Store results with likelihoods, theta and parameters (max. likelihood)
     results = [ll, aic, chi2, theta, param_opt]
