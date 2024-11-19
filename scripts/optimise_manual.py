@@ -13,9 +13,11 @@ File: The fs with naming which includes the format of the fs, i,e., subsampled/p
 Arguments:
 fs = Pop1-Pop2
 model = iso_inbred (refers to custom model module: demo_models_kp.py and used alias for model see script below)
-masked = yes or no
-method = subsample, projection or none
+masked = low, mid or no
+method = subsample, projection or no
 folds = any integer (best to use: 1, 2 or 3)
+path = outfile path
+(optional) int_params = -p 1 1 1 (any floats for your initial parameter guesses)
 
 Run from script path directory and make sure your custom demographic module is within the directory.
 
@@ -96,24 +98,7 @@ def main(fs, model, masked, folds, int_params, PTS, method=None, path=None):
         p0 = [1] * num
     else:
         p0 = int_params
-    # Optional paste below your optimised params to start from a specified place.
-    # For example:
-    # if model == "iso_inbred":
-    #    if fs == "AG1-AG2":
-    #        p1 = [2.1498, 97.3976, 0.0374, 0.0231, 0.4141]
-    #    elif fs == "AL1-AL2":
-    #        p1 = [7.4065, 1.9955, 0.0302, 0.0148, 0.4264]
-    #    elif fs == "AG1-AL1":
-    #        p1 = [0.8382, 41.4364, 0.0371, 0.0229, 0.8367]
-    #    elif fs == "AG1-AL2":
-    #        p1 = [1.0488, 46.8787, 0.0234, 0.00001, 0.8585]
-    #    elif fs == "AG2-AL1":
-    #        p1 = [0.7615, 55.4268, 0.0261, 0.0712, 0.9558]
-    #    elif fs == "AG2-AL2":
-    #        p1 = [0.6783, 44.3377, 0.055, 0.0398, 0.7721]
-    #    else:
-    #        p1 = p0
-    # if using custom starting parameter values then comment out the line below
+
     p1 = p0
 
     # Comments from software example (Gutenkunst et al., 2009)
