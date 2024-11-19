@@ -162,12 +162,13 @@ Official analysis results can be found in `plots/official_ms_plots/`.
 Either non-parametric or parametric bootstrapping. Non-parametric is taking random samples from your data 
 whereas, parametric bootstrapping is using the model to simulate bootstraps of the data.
 
-Here, we use non-parametric bootstrapping. See manual and dadi-user group for more info on bootstrapping.
+Here, we use non-parametric bootstrapping. See manual and dadi-user group for more info on bootstrapping. Make sure to 
+change your chunk_size to a reasonable size according to the size of your genome.
 
 ```bash
-$ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 -g 20 9 -o 2.122 25.95 0.0012 0.0455 0.3989
+$ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 100 -g 20 9 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
-Arguments: (1) fs, (2) model, (3) number of bootstraps, (4) -g number of genotypes in each pop, (5) -o optimised 
+Arguments: (1) fs, (2) model, (3) number of bootstraps, (4) chunk_size (5) -g number of genotypes in each pop, (6) -o optimised 
 parameters.
 
 Official analysis results can be found in `results/official_analaysis_results/bootstrap_vcf_official/`.
@@ -183,7 +184,7 @@ E.g.,
 ```bash
 $ Rscript GOF_plots.R AG1-AG2 iso_inbred -551.02 1040.08
 ```
-Arguments: (1) fs, (2) model, (3) optimised $$\chi^2$$ and (4) optimised log-likelihood.
+Arguments: (1) fs, (2) model, (3) optimised log-likelihood and (4 ) optimised $$\chi^2$$
 
 Official analysis plots can be found in `plots/official_ms_plots/GOF_plots/`.
 
@@ -192,8 +193,9 @@ To calculate the confidence intervals the parameters the Godambe Information Mat
 parameter confidence intervals.
 
 ```bash
-$ python confindence_intervals.py AG1-AG2 iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
+$ python confindence_intervals.py AG1-AG2 subsample iso_inbred 100 0.01 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
+Arguments: 
 
 Official analysis results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
