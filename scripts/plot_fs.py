@@ -107,7 +107,7 @@ if dim == "1D":
         project_int = int(project)
         fs = fs.project([project_int])
         extras += "project"
-        fs.to_file("../data/fs/{}_projected.fs".format(snps))
+        fs.to_file("../data/fs/{}_projected0.8.fs".format(snps))
     dadi.Plotting.plot_1d_fs(fs)
 elif dim == "2D":
     # Projecting
@@ -116,8 +116,8 @@ elif dim == "2D":
         project_int = [int(x) for x in project]
         fs = fs.project([project_int[0], project_int[1]])
         extras += "project"
-        fs.to_file("../data/fs/{}_projected.fs".format(snps))
+        fs.to_file("../data/fs/{}_projected0.8.fs".format(snps))
     dadi.Plotting.plot_single_2d_sfs(fs, vmin=1, cmap=colour_map)
 
 fig1.tight_layout()
-fig1.savefig("../plots/" + snps + dim + extras + ".png", dpi=300)
+fig1.savefig("../plots/spectra/" + snps + dim + extras + ".png", dpi=300)

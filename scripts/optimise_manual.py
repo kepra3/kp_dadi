@@ -51,7 +51,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         data.mask[1, 1] = True
         print("Low frequencies masked")
     elif masked == "mid" and len(data.sample_sizes) == 1:
-        mid = data.sample_sizes/2
+        mid = data.sample_sizes / 2
         mid = int(mid[0])
         data.mask[mid] = True
         print("Mid frequencies masked")
@@ -255,7 +255,8 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         num = 15
         p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
-        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001,
+                 0.001]
         model_fun = demo_models_kp.split_bottlegrowth_hetero_asym_mig
     elif model == "split_bottle_anc_het_asym_mig":
         num = 11
@@ -273,7 +274,8 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         num = 15
         p_labels = "nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
-        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001,
+                 0.001]
         model_fun = demo_models_kp.split_sizechange_hetero_asym_mig
     elif model == "split_sizechange_anc_het_asym_mig":
         num = 11
@@ -306,7 +308,7 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         p0 = [1] * num
     else:
         p0 = int_params
-    # Paste below your optimised params to start from a specified place.
+    # Optional paste below your optimised params to start from a specified place.
     # For example:
     # if model == "iso_inbred":
     #    if snps == "AG1-AG2":
@@ -385,8 +387,10 @@ def main(snps, model, masked, folds, int_params, PTS, method=None, path=None):
         easy_p = ",".join([str(numpy.around(x, 4)) for x in results[4]])
         int_p = ",".join([str(numpy.around(x, 4)) for x in p0])
         opt_out.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\n".format(snps, masked, model, folds[0],
-                                                                                  results[0], results[1], results[2],
-                                                                                  results[3], int_p, easy_p, p_labels))
+                                                                                        results[0], results[1],
+                                                                                        results[2],
+                                                                                        results[3], int_p, easy_p,
+                                                                                        p_labels))
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * *  Finished optimisation  * * * * * * * * * * * * * * * * * *')
     print('* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *')

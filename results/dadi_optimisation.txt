@@ -486,3 +486,9 @@ outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_m
 outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-14345.15	28692.3	28428.75	65533.18	1.0	1.8388	nu
 outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_folded	no	het_asym_mig	3	-78886.47	157788.94	822906.14	33774.96	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	2.6018,4.1582,1.0023,0.8744,0.4542,0.0058,0.7703,0.0696	nu1, nu2, m12, m21, me12, me21, T, P
 outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_folded	no	het_asym_mig	3	-51778.33	103572.66	624871.08	9010.66	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	5.3438,17.4799,0.055,0.6129,0.2909,1.5808,2.4565,0.9795	nu1, nu2, m12, m21, me12, me21, T, P
+group1-group2_projected0.8	low	no_mig	3	-21994.8712	43995.7424	138392.3362	13832.2783	1.0,1.0,1.0	28.5406,7.3829,0.7985	nu1, nu2, T
+group1-group2_projected0.8	low	sym_mig	3	-6463.0103	12934.0206	104191.4388	5180.3221	1.0,1.0,1.0,1.0	27.5015,9.5553,0.1784,2.7589	nu1, nu2, m, T
+group1-group2_projected0.8	low	split_sizechange	3	-22270.5064	44553.0128	103335.4724	15058.2808	1.0,1.0,1.0,1.0,1.0,1.0	14.4354,191.6271,102.5951,1.2717,0.3515,0.1452	nu1T1, nu2T2, nu1T1, nu2T2, T1, T2
+group1-group2_projected0.8	low	split_bottle	3	-86816.8601	173645.7202	1639606.7045	10692.9169	1.0,1.0,1.0,1.0,1.0,1.0	0.9384,190.4825,4.8652,0.2752,0.4695,0.5428	nu1, nu2, nu1F, nu2F, T1, T2
+group1-group2_projected0.8	low	split_bottle_sec_asym_mig	3	-26563.4462	53142.8924	62175.28	11978.1871	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	1.2501,0.1479,0.8058,1.4509,0.8912,14.2069,3.2059,0.4769	nu1, nu2, nu1F, nu2F, T1, T2, m12, m21
+group1-group2_projected0.8	low	het_asym_mig	3	-11853.263	23722.526	20442.0894	12894.4066	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	0.5469,6.9265,6.7222,1.1237,0.0978,0.7021,0.7243,0.7021	nu1, nu2, m12, m21, me12, me21, T, P

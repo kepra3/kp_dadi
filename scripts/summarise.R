@@ -38,10 +38,12 @@ plot.results <- function(results) {
 
 setwd("~/git/kp_dadi/scripts/")
 
+# Args
+
 # Load data
 results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
-num_runs <- 5
+num_runs <- 3
 
 #results <- results[331:length(results[,1]),]
 
@@ -50,33 +52,111 @@ results$Model <- as.factor(results$Model)
 
 table(results$Pop, results$Model)
 
+str(results)
+results$log.likelihood <- as.numeric(results$log.likelihood)
+str(results)
+
 results <- results[results$log.likelihood < -15,]
+results[results$log.likelihood == -1297.27,] <- NA
+results <- na.omit(results)
+
+# Remove complicated models (including het and test between no migration vs. migration models)
+#remove_models <- c("het_asym_mig", "anc_het_asym_mig", "sec_het_asym_mig",
+#                   "split_bottle_het_asym_mig", "split_bottle_anc_het_asym_mig",
+#                   "split_bottle_sec_het_asym_mig", "split_sizechange_het_asym_mig",
+#                   "split_sizechange_anc_het_asym_mig",
+#                   "split_sizechange_sec_het_asym_mig")
+
+#results2 <- results[!results$Model %in% remove_models,]
 
 plot.results(results)
+#plot.results(results2)
+#results <- results2
 
 dat <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
 for (group in sort(unique(results$Pop))) {
-  subset <- results[results$Pop == group,]
+    subset <- results[results$Pop == group,]
+    row <- head(subset[order(subset$AIC),],num_runs)
+    row <- row[,c(1,3,5,6,10,11)]
+    dat <- rbind(dat, row)
+  }
+dat2 <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
+for (group in sort(unique(results$Pop))) {
+  for (model in sort(unique(results$Model))) {
+  subset <- results[results$Pop == group & results$Model == model,]
   row <- head(subset[order(subset$AIC),],num_runs)
   row <- row[,c(1,3,5,6,10,11)]
-  dat <- rbind(dat, row)
-}
+  dat2 <- rbind(dat2, row)
+  }}
+
+dat_nomig_mig <- data.frame(Pop = numeric(0), Model = numeric(0), Opt = numeric(0))
+no.mig_models <- c("no_mig", "split_bottle", "split_sizechange")
+mig_models <- levels(dat2$Model)
+mig_models <- mig_models[!mig_models %in% no.mig_models]
+for (group in sort(unique(results$Pop))) {
+  subset <- results[results$Pop == group & results$Model %in% no.mig_models,]
+  row <- head(subset[order(subset$AIC),],num_runs)
+  row <- row[,c(1,3,5,6,10,11)]
+  dat_nomig_mig <- rbind(dat_nomig_mig, row)
+  subset <- results[results$Pop == group & results$Model %in% mig_models,]
+  row <- head(subset[order(subset$AIC),],num_runs)
+  row <- row[,c(1,3,5,6,10,11)]
+  dat_nomig_mig <- rbind(dat_nomig_mig, row)
+  }
 
 # Shorten pop names
 dat <- dat %>% separate(Pop, into = c("Pop1","2","Pop2"), sep = "_", remove = FALSE) %>% 
   separate(Pop1, into = c( "x", "y", "Pop1"), sep = "\\.") %>% 
   unite(Pop_short, c("Pop1", "Pop2"), sep = "-")
 dat <- dat[,c(-2,-3,-5)]
+dat2 <- dat2 %>% separate(Pop, into = c("Pop1","2","Pop2"), sep = "_", remove = FALSE) %>% 
+  separate(Pop1, into = c( "x", "y", "Pop1"), sep = "\\.") %>% 
+  unite(Pop_short, c("Pop1", "Pop2"), sep = "-")
+dat2 <- dat2[,c(-2,-3,-5)]
+dat_nomig_mig <- dat_nomig_mig %>% separate(Pop, into = c("Pop1","2","Pop2"), sep = "_", remove = FALSE) %>% 
+  separate(Pop1, into = c( "x", "y", "Pop1"), sep = "\\.") %>% 
+  unite(Pop_short, c("Pop1", "Pop2"), sep = "-")
+dat_nomig_mig <- dat_nomig_mig[,c(-2,-3,-5)]
+
+
+pop_order <- c("group1-group2", "group1-group3", "group1-group4",
+               "group2-group3", "group2-group4", "group3-group4",
+               "group1-Amil", "group2-Amil", "group3-Amil", "group4-Amil")
+
+dat$Pop_short <- factor(dat$Pop_short, levels = pop_order)
+dat2$Pop_short <- factor(dat2$Pop_short, levels = pop_order)
+dat_nomig_mig$Pop_short <- factor(dat_nomig_mig$Pop_short, levels = pop_order)
+
+# Best models ####
 
 ggplot(dat, aes(AIC, Model, color = AIC)) + 
   geom_point() + 
   scale_color_gradient(low = "green", high = "red") +
   theme_bw() +
-  facet_wrap(~Pop_short) +
+  facet_wrap(~Pop_short, nrow=4, ncol=3) +
   theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0("../plots/model_summaries/Ahya_", num_runs, "_11-11-24.pdf"), units = "cm",
-       width = 25, height = 15)
-dat$Pop_short <- as.factor(dat$Pop_short)
+ggsave(paste0("../plots/model_summaries/Ahya_", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 25, height = 30)
+
+ggplot(dat[dat$Pop_short %in% pop_order[1:6],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=2, ncol=3) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-within_", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 25)
+
+ggplot(dat[dat$Pop_short %in% pop_order[7:10],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=1, ncol=4) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-Amil_", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 15)
+
+# Per group pair
 for (pop in levels(dat$Pop_short)) {
   ggplot(dat[dat$Pop_short == pop,], aes(AIC, Model, color = AIC)) + 
     geom_point() + 
@@ -88,9 +168,60 @@ for (pop in levels(dat$Pop_short)) {
          units = "cm", width = 15, height = 15)
 }
 
+# All models ####
+
+ggplot(dat2[dat2$Pop_short %in% pop_order[1:6],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=2, ncol=3) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-within_all-models-", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 25)
+
+ggplot(dat2[dat2$Pop_short %in% pop_order[7:10],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=1, ncol=4) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-Amil_all-models-", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 15)
+
+# No migration vs. migration ####
+ggplot(dat_nomig_mig[dat_nomig_mig$Pop_short %in% pop_order[1:6],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=2, ncol=3) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-within_nomig-mig-", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 25)
+
+ggplot(dat_nomig_mig[dat_nomig_mig$Pop_short %in% pop_order[7:10],], aes(AIC, Model, color = AIC)) + 
+  geom_point() + 
+  scale_color_gradient(low = "green", high = "red") +
+  theme_bw() +
+  facet_wrap(~Pop_short, nrow=1, ncol=4) +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(paste0("../plots/model_summaries/Ahya-Amil_nomig-mig-", num_runs, "_13-11-24.pdf"), units = "cm",
+       width = 30, height = 15)
+
+# Per group pair
+for (pop in levels(dat$Pop_short)) {
+  ggplot(dat_nomig_mig[dat_nomig_mig$Pop_short == pop,], aes(AIC, Model, color = AIC)) + 
+    geom_point() + 
+    scale_color_gradient(low = "green", high = "red") +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90))
+  ggsave(paste0("../plots/model_summaries/",
+                pop, "_nomig-mig_", num_runs, "_11-11-24.pdf"),
+         units = "cm", width = 15, height = 15)
+}
+
 
 # Calculate the number of comma-separated values in each row
-comma_counts <- sapply(dat$optimised_params_labels, function(x) length(strsplit(x, ",")[[1]]))
+comma_counts <- sapply(results$optimised_params_labels, function(x) length(strsplit(x, ",")[[1]]))
 
 # Find the maximum count and the row(s) where it occurs
 max_count <- max(comma_counts)
@@ -170,4 +301,5 @@ for(pop in levels(df_clean$Pop_short)) {
   ggsave(paste0("../plots/model_summaries/", pop, "_top", num_runs, ".pdf"),
          height = 23, width = 15, units= "cm")
 }
+
 

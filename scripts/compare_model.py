@@ -83,6 +83,9 @@ def main(snps, model, mask, fold, vmin, opt, PTS, figsize, figsize2, resid_range
     elif model == "no_mig":
         model_fun = demo_models_kp.no_migration
         dim = "2d"
+    elif model == "sym_mig":
+        model_fun = demo_models_kp.sym_migration
+        dim = "2d"
     elif model == "asym_mig":
         model_fun = demo_models_kp.asym_migration
         dim = "2d"
