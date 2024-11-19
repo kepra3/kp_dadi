@@ -1,2 +1,5 @@
 Pop	Sample sizes	Fold	Sum of SFS	Stat
 wisent	[40]	unfolded	219410.0	0.86
+AG1-AG2	[40 18]	folded	1487.0	0.13
+AG1-AG2	[40 18]	folded	1478.0	0.13
+AG1-AG2	[40 18]	folded	873.0	0.14

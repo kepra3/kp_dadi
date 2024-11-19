@@ -1,9 +1,0 @@
-
-
-# Run these in the scripts directory
-$ python make_fs.py Tas-Med no projection 80 70
-$ python optimise_manual.py Tas-Med snm no projection 3 ../results/mussels/ -p 1
-$ python optimise_manual.py Tas-Med no_mig no projection 3 ../results/mussels/ -p 1 1 1
-$ python optimise_manual.py Tas-Med sym_mig no projection 3 ../results/mussels/ -p 1 1 1 1
-$ python optimise_manual.py Tas-Med asym_mig no projection 3 ../results/mussels/ -p 1 1 1 1 1
-$ python compare_model.py Tas-Med asym_mig no yes -o 0.0206 0.0312 0.0011 0.1201 0.0016
