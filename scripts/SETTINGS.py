@@ -1,7 +1,9 @@
 import demo_models_kp
 
-def get_settings(model):
+# GLOBAL VARIABLES
+SET_PTS = [100, 120, 130]
 
+def get_settings(model):
     if model == "snm.1d":
         # standard neutral model 1d
         num = 1
@@ -184,7 +186,8 @@ def get_settings(model):
         num = 15
         p_labels = "nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
-        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001,
+                 0.001]
         model_fun = demo_models_kp.split_bottlegrowth_hetero_asym_mig
     elif model == "split_bottle_anc_het_asym_mig":
         num = 11
@@ -202,7 +205,8 @@ def get_settings(model):
         num = 15
         p_labels = "nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P"
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 10, 10, 10, 10, 1]
-        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+        lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001,
+                 0.001]
         model_fun = demo_models_kp.split_sizechange_hetero_asym_mig
     elif model == "split_sizechange_anc_het_asym_mig":
         num = 11
@@ -221,4 +225,3 @@ def get_settings(model):
             'Model nickname undefined please check in SETTINGS.py you are using the correct model nickname!')
 
     return num, p_labels, upper, lower, model_fun
-

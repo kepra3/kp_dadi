@@ -50,3 +50,5 @@ wisent_unfolded_projected	no	bottle	1	-323.4223	652.8446	249.4871	70927.9616	0.0
 wisent_unfolded_projected	no	bottle	1	-323.4353	652.8706	249.51	70919.0493	0.0062,0.565,0.0035	0.0055,0.7202,0.0033	nuB, nuF, T
 wisent_unfolded_projected	no	bottle	1	-323.4243	652.8486	249.4903	70933.737	0.0055,0.7112,0.0034	0.0065,0.5188,0.0036	nuB, nuF, T
 wisent_unfolded_projected	no	bottle	1	-323.4319	652.8638	249.4836	70940.8357	0.0065,0.5188,0.0036	0.0066,0.5052,0.0036	nuB, nuF, T
+wisent_unfolded	no	size_change	3	-327.6456	659.2912	257.9067	71114.7723	1,1	0.0806,0.0102	nu, T
+wisent_unfolded	no	size_change	3	-16353.2952	32710.5904	29676.3869	64542.2796	1,1	0.7994,59.8039	nu, T
