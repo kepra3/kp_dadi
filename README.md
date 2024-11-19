@@ -77,8 +77,20 @@ This script will provide info about the sfs as well as create and plot the spect
 
 Output files: (1) a fs file (2) spectrum plot(s), 2 x if masked and (3) statistics of the sfs.
 
-Due to a random fs being produced each time the official analysis results can be found in the following directories: 
+Due to a random fs being produced each time the official analysis results for [Prata et al (2022)]() can be found in the following directories: 
 (1) `data/official_analysis_fs/` (2) `plots/official_ms_plots/` and (3) `results/official_analysis_results/`.
+
+### 1bi - Plotting, projecting or folding a spectrum from a .fs file
+
+If you already have an sfs output from another program (e.g., ANGSD, easySFS) simply use `plot_fs.py`
+
+```bash
+# Run script
+$ python plot_fs.py AG1-AG2_subsampled no no low
+# NOTE: only use folded if the spectrum is unfolded and you want to fold. Projection will project to 0.8 of sample size.
+# Find help
+$ python plot_fs.py -h
+```
 
 ## 2 - Construct models
 
@@ -113,6 +125,8 @@ In [Prata et al., 2022](https://onlinelibrary.wiley.com/doi/10.1111/mec.16391) t
 See Methods in [Prata et al. (2022)](https://onlinelibrary.wiley.com/doi/10.1111/mec.16391) for more details and see `dadi_optimisations_official.txt` for final optimisation results.
 
 Official analysis results can be found in `results/official_analysis_results/`.
+
+### 3a -Plot optimisation results - TBD
 
 ## 4 - Assess the model fit
 
