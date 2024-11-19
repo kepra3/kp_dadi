@@ -124,28 +124,21 @@ bias in certain snp bins - this tells you that another demographic model may be 
 
 E.g.,
 ```bash
+# Run script
 $ python compare_model.py AG1-AG2 iso_inbred folded 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
+# Find help
+$ python compare_model.py -h
 ```
-Arguments: (1) fs, (2) model, (3) vmin (the scale bar), (4) -o optimised parameter values.
+Arguments: (1) fs, (2) model, (3) whether spectra is 'folded' or 'unfolded', (4) vmin (the scale bar), (5) -o optimised parameter values.
 
 Output: (1) fs plot of the data, (2) fs plot of the simulated model, (3) a residual plot of data - model and (4) all 
 previous 3 outputs as well a distribution of the residual scores in a 2x2 figure plot.
 
 Official analysis results can be found in `plots/official_ms_plots/`.
 
-Updated version - vmin scale now is created from the max residuals, 
-option for whether the fs is masked at the lower- or mid- frequencies or neither, and option for 
-folded or unfolded spectra.
-```bash
-$ python compare_model.py [fs] [model] [mask] [fold] -o [params separated by spaces]
-```
-Arguments: (1) fs, (2) model, (3) masked [low, mid, both, or no], (4) folded [yes or no], (5) -o optimised parameter values.
-
-Output: (1) fs plot of the data, (2) fs plot of the simulated model, (3) a residual plot of data - model and (4) all 
-previous 3 outputs as well a distribution of the residual scores in a 2x2 figure plot.
-
-
 ### 4b - Bootstrapping
+
+[*CURRENTLY IN CONSTRUCTION FOR NEW UPDATE*]
 
 Either non-parametric or parametric bootstrapping. Non-parametric is taking random samples from your data 
 whereas, parametric bootstrapping is using the model to simulate bootstraps of the data.
@@ -161,6 +154,8 @@ parameters.
 Official analysis results can be found in `results/official_analaysis_results/bootstrap_vcf_official/`.
 
 ### 4c - Goodness-of-fit and parameter confidence intervals (GIM/FIM)
+
+[*CURRENTLY IN CONSTRUCTION FOR NEW UPDATE*]
 
 Using the information gathered from the bootstrapping statistics, bootstrap likelihoods given the optimised parameters
 can be plotted next to each other using this Rscript below.
