@@ -1,6 +1,6 @@
 # kp_dadi
 
-*This branch is in development - not ready for public use!*
+*This repository is actively in development and will be continuously updated.*
 
 *Please email kepra3@gmail.com for enquiries and comments. 
 You are welcome to raise an issue if there is a problem with a script.*
@@ -93,7 +93,6 @@ If you already have an sfs output from another program (e.g., ANGSD, easySFS) si
 ```bash
 # Run script
 $ python plot_fs.py AG1-AG2_subsampled no no low
-# NOTE: only use folded if the spectrum is unfolded and you want to fold. Projection will project to 0.8 of sample size.
 # Find help
 $ python plot_fs.py -h
 ```
