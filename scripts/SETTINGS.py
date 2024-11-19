@@ -3,7 +3,8 @@ import demo_models_kp
 # GLOBAL VARIABLES
 SET_PTS = [100, 120, 130]
 
-def get_settings(model):
+
+def get_settings(model, ALL=False):
     if model == "snm.1d":
         # standard neutral model 1d
         num = 1
@@ -223,5 +224,7 @@ def get_settings(model):
     else:
         raise ValueError(
             'Model nickname undefined please check in SETTINGS.py you are using the correct model nickname!')
-
-    return num, p_labels, upper, lower, model_fun
+    if ALL:
+        return model_fun, num, p_labels, upper, lower
+    else:
+        return model_fun

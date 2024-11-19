@@ -43,13 +43,17 @@ def main(fs, model, masked, folds, int_params, PTS, method=None, path=None):
     pops = "{}".format(fs)
     pop_ids = pops.split("-")
 
-    # Mask singletons and doubletons
-    if masked == "low":
+    # Masking
+    if masked == "low" and len(data.sample_sizes) == 2:
         data.mask[1, 0] = True
         data.mask[0, 1] = True
         data.mask[2, 0] = True
         data.mask[0, 2] = True
         data.mask[1, 1] = True
+        print("Low frequencies masked")
+    elif masked == "low" and len(data.sample_sizes) == 1:
+        data.mask[1] = True
+        data.mask[2] = True
         print("Low frequencies masked")
     elif masked == "mid" and len(data.sample_sizes) == 1:
         mid = data.sample_sizes / 2
@@ -65,16 +69,16 @@ def main(fs, model, masked, folds, int_params, PTS, method=None, path=None):
     print("Data for site frequency spectrum:")
     print("Sample sizes: {}".format(data.sample_sizes))
     print("Sum of SFS: {}".format(numpy.around(data.S(), 2)))
-    if len(pop_ids) == 2:
+    if len(data.sample_sizes) == 2:
         print("FST of SFS: {}".format(numpy.around(data.Fst(), 2)))
-    if len(pop_ids) == 1:
+    if len(data.sample_sizes) == 1:
         print("Tajima's D: {}".format(numpy.around(data.Tajima_D(), 2)))
     print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
     # Need to manually alter the upper and lower parameter limits in settings files,
     # model functions are defined in demo_models_kp.py
     # Use nicknames for models, e.g., "snm" instead of model function name, e.g., "no_divergence"
-    num, p_labels, upper, lower, model_fun = SETTINGS.get_settings(model)
+    model_fun, num, p_labels, upper, lower = SETTINGS.get_settings(model, ALL=True)
 
     # Create log file.
     out_name = path + "dadi_optimisation.txt"

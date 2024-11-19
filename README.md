@@ -124,7 +124,7 @@ bias in certain snp bins - this tells you that another demographic model may be 
 
 E.g.,
 ```bash
-$ python compare_model.py AG1-AG2 iso_inbred 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
+$ python compare_model.py AG1-AG2 iso_inbred folded 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
 ```
 Arguments: (1) fs, (2) model, (3) vmin (the scale bar), (4) -o optimised parameter values.
 
