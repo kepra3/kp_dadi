@@ -1,0 +1,5 @@
+ahya.unfold.het05.group1_snp6966117
+ahya.unfold.het05.Amil_snp6966117
+ahya.unfold.het05.group2_snp6966117
+ahya.unfold.het05.group3_snp6966117
+ahya.unfold.het05.group4_snp6966117

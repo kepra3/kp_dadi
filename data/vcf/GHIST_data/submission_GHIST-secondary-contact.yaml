@@ -1,0 +1,10 @@
+description: Mainland-island mice split and delayed migration.
+time_units: generations
+population_units: number_of_individuals
+migration_units: continuous_per_generation_probability_of_migration
+parameters:
+  mainland_population_size: N1
+  island_population_size: N2
+  generations_since_split: T1
+  generations_since_migration: T2
+  migration_rate: M

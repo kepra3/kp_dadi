@@ -1,0 +1,494 @@
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	173261309.91	1.0,1.0	0.0044,1.2302	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	1971796.74	1.0,1.0	0.3763,20.9286	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	52725701.39	1.0,1.0	0.0155,2.5753	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.3	7394.09	1.0,1.0	199.9999,98.0061	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.18	15218.36	14857.02	7531.78	1.0,1.0	200.0,97.0278	nu, T
+ahya.unfold.het05.group1_snp6966117	no	size_change	3	-10282.99	20569.98	20296.19	6600.63	1.0,1.0	200.0,102.5973	nu, T
+ahya.unfold.het05.Amil_snp6966117	no	size_change	3	-2292.95	4589.9	4505.08	5734.49	1.0,1.0	199.9987,149.6055	nu, T
+ahya.unfold.het05.group2_snp6966117	no	size_change	3	-8062.33	16128.66	15809.71	7110.83	1.0,1.0	200.0,100.6056	nu, T
+ahya.unfold.het05.group3_snp6966117	no	size_change	3	-414737.75	829479.5	705660.34	5669233.44	1.0,1.0	0.1465,26.3857	nu, T
+ahya.unfold.het05.group4_snp6966117	no	size_change	3	-425929.67	851863.34	730233.03	27775900.31	1.0,1.0	0.0303,2.1325	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.23	1.0,1.0	200.0,102.8892	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.43	1.0,1.0	199.9928,148.7734	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.24	7099.29	1.0,1.0	200.0,101.1432	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.38	7394.13	1.0,1.0	199.9999,98.0047	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.29	7533.87	1.0,1.0	200.0,96.9644	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	snm.1d	3	-329854.75	659711.5	568964.61	765355.95	1.0	0.7935	nu
+ahya.unfold.het05.Amil_snp6966117	mid	snm.1d	3	-94001.0	188004.0	174952.39	741905.67	1.0	1.0437	nu
+ahya.unfold.het05.group2_snp6966117	mid	snm.1d	3	-360069.31	720140.62	620670.86	817995.27	1.0	2.0941	nu
+ahya.unfold.het05.group3_snp6966117	mid	snm.1d	3	-390689.03	781380.06	664712.9	840778.96	1.0	0.2081	nu
+ahya.unfold.het05.group4_snp6966117	mid	snm.1d	3	-401804.43	803610.86	688828.5	852820.59	1.0	2.3065	nu
+ahya.unfold.het05.group1_snp6966117	no	snm.1d	3	-347994.41	695990.82	601278.34	756621.91	1.0	0.3665	nu
+ahya.unfold.het05.Amil_snp6966117	no	snm.1d	3	-115388.92	230779.84	217044.16	717866.11	1.0	0.1466	nu
+ahya.unfold.het05.group2_snp6966117	no	snm.1d	3	-381156.37	762314.74	657458.38	808351.07	1.0	1.7162	nu
+ahya.unfold.het05.group3_snp6966117	no	snm.1d	3	-414737.75	829477.5	705660.34	830467.55	1.0	1.4567	nu
+ahya.unfold.het05.group4_snp6966117	no	snm.1d	3	-425929.67	851861.34	730233.03	842404.67	1.0	0.2336	nu
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.18	1.0,1.0	200.0,102.8909	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.39	6595.24	1.0,1.0	199.9997,102.8891	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.23	1.0,1.0	199.9999,102.8892	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	32415070.26	1.0,1.0	0.0236,1.4284	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.15	20462.3	20193.52	6595.87	1.0,1.0	199.9946,102.8691	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	4618452.54	1.0,1.0	0.1657,62.8826	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-329854.75	659713.5	568964.61	4027772.73	1.0,1.0	0.19,8.1056	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.4	6595.2	1.0,1.0	200.0,102.8901	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.41	6595.32	1.0,1.0	200.0,102.8858	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	size_change	3	-10229.14	20462.28	20193.36	6594.98	1.0,1.0	199.9998,102.8985	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.25	1.0,1.0	199.9966,148.7806	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.16	1.0,1.0	200.0,148.7825	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.75	5744.16	1.0,1.0	199.9994,148.7832	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	2033851.44	1.0,1.0	0.3648,20.2316	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.77	5744.65	1.0,1.0	199.9707,148.7824	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.95	4543.9	4474.73	5744.82	1.0,1.0	199.9998,148.7426	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.74	5744.31	1.0,1.0	199.9999,148.7735	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	4838461.52	1.0,1.0	0.1533,5.9379	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-94001.0	188006.0	174952.39	29108218.19	1.0,1.0	0.0255,2.5095	nu, T
+ahya.unfold.het05.Amil_snp6966117	mid	size_change	3	-2269.94	4543.88	4474.74	5744.29	1.0,1.0	199.9957,148.7794	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	2912563.93	1.0,1.0	0.2809,9.657	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.3	7099.37	1.0,1.0	200.0,101.1405	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.26	7099.33	1.0,1.0	199.9999,101.142	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.39	15816.78	15500.48	7098.25	1.0,1.0	200.0,101.1788	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	54335410.63	1.0,1.0	0.0151,1.3462	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.31	7099.39	1.0,1.0	199.9999,101.1399	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	12384552.03	1.0,1.0	0.066,3.2989	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-7906.34	15816.68	15501.28	7099.33	1.0,1.0	200.0,101.1417	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	3852635.8	1.0,1.0	0.2123,13.705	nu, T
+ahya.unfold.het05.group2_snp6966117	mid	size_change	3	-360069.31	720142.62	620670.86	972722.63	1.0,1.0	0.8409,27.2946	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-390689.03	781382.06	664712.91	1718754.67	1.0,1.0	0.4892,16.0579	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.3	7394.08	1.0,1.0	200.0,98.0063	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.1	7393.97	1.0,1.0	199.9996,98.0099	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.28	7394.07	1.0,1.0	200.0,98.0066	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.58	7394.25	1.0,1.0	200.0,98.001	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.29	7394.07	1.0,1.0	199.9998,98.0066	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.04	7393.93	1.0,1.0	200.0,98.0111	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.15	7394.0	1.0,1.0	200.0,98.0089	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-390689.03	781382.06	664712.9	1525646.69	1.0,1.0	0.5511,53.3617	nu, T
+ahya.unfold.het05.group3_snp6966117	mid	size_change	3	-10405.87	20815.74	20394.27	7394.08	1.0,1.0	199.9999,98.0065	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.16	7533.76	1.0,1.0	199.9999,96.9676	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.28	7533.86	1.0,1.0	199.9999,96.9646	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7609.89	15223.78	14853.63	7524.92	1.0,1.0	200.0,97.2374	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.3	7533.87	1.0,1.0	199.9999,96.9642	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-401804.43	803612.86	688828.5	2020060.47	1.0,1.0	0.4222,31.4379	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.21	7533.82	1.0,1.0	199.9997,96.9661	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.24	7533.84	1.0,1.0	200.0,96.9654	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.31	7533.88	1.0,1.0	200.0,96.964	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.32	7533.89	1.0,1.0	200.0,96.9637	nu, T
+ahya.unfold.het05.group4_snp6966117	mid	size_change	3	-7607.02	15218.04	14859.3	7533.88	1.0,1.0	200.0,96.964	nu, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.78	137321.47	1.0,1.0,1.0	74.4656,6.0466,3.6544	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-2196.74	4399.48	4120.3	210135.55	1.0,1.0,1.0	199.9999,3.1068,1.9728	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.28	101772.56	98245.03	988458.91	1.0,1.0,1.0	0.0274,1.7332,1.6827	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.78	137315.9	1.0,1.0,1.0	74.4724,6.0468,3.6546	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-584.63	1175.26	971.79	137181.62	1.0,1.0,1.0	74.4908,6.0537,3.6593	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.2	101772.4	98232.72	46277.71	1.0,1.0,1.0	0.7094,37.0057,34.2929	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.43	101772.86	98244.81	77819.52	1.0,1.0,1.0	0.4783,22.0141,19.7363	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.22	101772.44	98238.2	64949.38	1.0,1.0,1.0	0.5097,26.3715,24.3776	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.16	101772.32	98239.37	33057.34	1.0,1.0,1.0	0.7861,51.8154,50.8319	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle	3	-50883.21	101772.42	98241.0	1106047.62	1.0,1.0,1.0	0.023,1.5487,1.5267	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-359.65	725.3	623.13	143572.34	1.0,1.0,1.0	27.7898,5.9793,4.4334	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-62.15	130.3	24.74	329130.91	1.0,1.0,1.0	58.6658,1.8014,1.1576	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-262.4	530.8	427.27	217128.6	1.0,1.0,1.0	20.5918,3.8125,2.5055	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.55	16353.1	16326.79	58286.92	1.0,1.0,1.0	1.0026,24.1384,33.9544	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-66.18	138.36	32.8	325153.81	1.0,1.0,1.0	45.5616,1.9198,1.1952	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.93	1877508.14	1.0,1.0,1.0	0.0182,0.7494,1.2313	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-68.51	143.02	37.49	336496.6	1.0,1.0,1.0	102.8304,1.6114,1.0974	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.56	1488441.84	1.0,1.0,1.0	0.0244,0.9452,1.5291	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.56	16353.12	16326.74	76429.9	1.0,1.0,1.0	0.7125,18.408,26.4703	nuB, nuF, T
+ahya.unfold.het05.Amil_snp6966117	mid	bottle	3	-8173.54	16353.08	16326.61	73396.0	1.0,1.0,1.0	0.6333,19.1683,28.9075	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49647.2	99300.4	94630.5	5454581.63	1.0,1.0,1.0	0.0019,0.3422,0.3943	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-606.88	1219.76	1015.62	85931.62	1.0,1.0,1.0	62.8881,12.1088,7.0835	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49644.09	99294.18	94680.8	14198.94	1.0,1.0,1.0	3.7648,131.6433,103.6339	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-606.88	1219.76	1015.62	86025.68	1.0,1.0,1.0	62.8508,12.0944,7.0743	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-49647.21	99300.42	94631.17	78491.05	1.0,1.0,1.0	0.3891,23.7795,21.7441	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-25120.64	50247.28	44568.91	351602.36	1.0,1.0,1.0	15.4899,2.8925,0.9599	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-608.84	1223.68	1019.26	89163.66	1.0,1.0,1.0	61.4912,11.6219,6.7914	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-360082.98	720171.96	620695.68	812347197.76	1.0,1.0,1.0	0.1379,0.001,199.6163	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-360083.5	720173.0	620696.61	817922871.07	1.0,1.0,1.0	0.1722,0.001,199.9942	nuB, nuF, T
+ahya.unfold.het05.group2_snp6966117	mid	bottle	3	-666.41	1338.82	1137.24	47107.31	1.0,1.0,1.0	97.7706,22.8306,13.9359	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-553.99	1113.98	909.86	33355.44	1.0,1.0,1.0	165.5515,32.4836,20.3192	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.0	1114.0	909.88	33400.88	1.0,1.0,1.0	165.2916,32.4394,20.2913	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.02	1114.04	909.92	33622.16	1.0,1.0,1.0	164.2549,32.2288,20.1464	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-589.34	1184.68	980.64	60260.52	1.0,1.0,1.0	99.4234,17.6916,10.708	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-554.01	1114.02	909.93	33703.55	1.0,1.0,1.0	163.7643,32.1503,20.0988	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59213.84	118433.68	111682.65	801429.42	1.0,1.0,1.0	0.0049,2.434,3.2153	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59213.87	118433.74	111685.31	44277.72	1.0,1.0,1.0	0.8085,44.0573,37.464	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-553.99	1113.98	909.88	33297.06	1.0,1.0,1.0	165.7101,32.5469,20.3565	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-866.56	1739.12	1530.85	107868.23	1.0,1.0,1.0	73.157,9.3016,5.4602	nuB, nuF, T
+ahya.unfold.het05.group3_snp6966117	mid	bottle	3	-59214.44	118434.88	111681.06	1630278.37	1.0,1.0,1.0	0.0187,1.1964,1.0579	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.33	107736.66	101592.7	1338978.38	1.0,1.0,1.0	0.0125,1.5038,1.4641	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.34	107736.68	101581.55	14535.75	1.0,1.0,1.0	1.2448,138.4882,132.6493	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.38	107736.76	101595.18	200267.99	1.0,1.0,1.0	0.1481,10.0548,8.6148	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-18685.1	37376.2	37183.3	9765.91	1.0,1.0,1.0	104.6739,178.6022,71.9356	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-654.13	1314.26	1109.16	66039.75	1.0,1.0,1.0	76.8634,17.1318,9.8041	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.35	107736.7	101578.3	1771941.51	1.0,1.0,1.0	0.0104,1.136,1.0835	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-614.56	1235.12	1031.6	30029.16	1.0,1.0,1.0	146.1499,38.8719,22.9742	nuB, nuF, T
+ahya.unfold.het05.group4_snp6966117	mid	bottle	3	-53865.34	107736.68	101589.77	1677764.72	1.0,1.0,1.0	0.014,1.2001,1.0848	nuB, nuF, T
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10129.19	20266.38	19995.29	1673530.07	1.0,1.0,1.0,1.0	0.001,0.7875,0.8674,0.4086	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-329854.75	659717.5	568964.61	5024474.04	1.0,1.0,1.0,1.0	4.3955,0.1523,3.0423,6.3729	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10103.93	20215.86	19946.17	484229.71	1.0,1.0,1.0,1.0	0.001,2.7232,2.8417,1.4133	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-5019.04	10046.08	9613.49	246875.66	1.0,1.0,1.0,1.0	197.2774,2.4476,1.1923,0.2805	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10134.94	20277.88	20007.21	6601.74	1.0,1.0,1.0,1.0	0.295,199.7199,1.2275,103.4702	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-1354.86	2717.72	2488.37	196709.57	1.0,1.0,1.0,1.0	197.6144,4.2263,1.5461,0.6138	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-329854.75	659717.5	568964.61	46644428.69	1.0,1.0,1.0,1.0	7.2928,0.0164,0.0433,1.525	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10252.43	20512.86	20239.44	6597.22	1.0,1.0,1.0,1.0	1.6525,199.9618,0.7681,102.6161	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10106.42	20220.84	19952.3	303351.64	1.0,1.0,1.0,1.0	0.0012,4.353,190.2057,2.252	nuB, nuF, TB, TF
+ahya.unfold.het05.group1_snp6966117	mid	bottle_neck	3	-10330.42	20668.84	20377.33	219967.47	1.0,1.0,1.0,1.0	0.0388,5.9624,136.7956,3.1017	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-2270.05	4548.1	4475.12	18628.16	1.0,1.0,1.0,1.0	0.3012,61.6307,7.6697,45.9268	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-94001.0	188010.0	174952.39	3315607.77	1.0,1.0,1.0,1.0	1.5975,0.2238,1.3095,7.9933	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-420.59	849.18	745.44	190783.48	1.0,1.0,1.0,1.0	16.3157,4.979,1.9658,1.0399	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-94001.0	188010.0	174952.39	6117305.67	1.0,1.0,1.0,1.0	1.4842,0.1213,0.9263,7.1651	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-2262.84	4533.68	4460.55	101669.3	1.0,1.0,1.0,1.0	0.0016,11.2914,0.8851,8.4675	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-94001.0	188010.0	174952.39	669502.94	1.0,1.0,1.0,1.0	1.1233,1.1081,0.4287,179.4486	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-94001.0	188010.0	174952.39	27976687.47	1.0,1.0,1.0,1.0	0.164,0.0265,6.6455,0.9706	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-2287.22	4582.44	4509.84	772362.75	1.0,1.0,1.0,1.0	0.011,1.4845,0.0535,1.0988	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-2265.16	4538.32	4465.13	5886.98	1.0,1.0,1.0,1.0	0.359,195.1059,6.1038,145.813	nuB, nuF, TB, TF
+ahya.unfold.het05.Amil_snp6966117	mid	bottle_neck	3	-94001.0	188010.0	174952.39	7603740.4	1.0,1.0,1.0,1.0	3.5085,0.0976,0.9243,5.5308	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-360069.31	720146.62	620670.86	52206501.54	1.0,1.0,1.0,1.0	0.4118,0.0157,0.2172,1.2702	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-360069.31	720146.62	620670.86	6525127.39	1.0,1.0,1.0,1.0	0.9751,0.1254,0.9953,4.1134	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7796.52	15601.04	15285.51	1721296.03	1.0,1.0,1.0,1.0	0.001,0.8243,0.636,0.4204	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7777.85	15563.7	15250.23	796356.08	1.0,1.0,1.0,1.0	0.001,1.7819,1.2076,0.9095	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7784.34	15576.68	15263.79	1118567.04	1.0,1.0,1.0,1.0	0.001,1.2688,20.3596,0.6471	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-360069.31	720146.62	620670.86	26620953.07	1.0,1.0,1.0,1.0	1.1909,0.0307,0.469,2.2798	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7775.86	15559.72	15244.91	683313.1	1.0,1.0,1.0,1.0	0.001,2.0761,1.0328,1.0605	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7778.32	15564.64	15250.8	787645.72	1.0,1.0,1.0,1.0	0.001,1.8014,0.5677,0.9196	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-7836.16	15680.32	15360.02	7123.7	1.0,1.0,1.0,1.0	0.4237,199.1003,0.8828,101.397	nuB, nuF, TB, TF
+ahya.unfold.het05.group2_snp6966117	mid	bottle_neck	3	-360069.31	720146.62	620670.86	142525001.1	1.0,1.0,1.0,1.0	0.921,0.0057,1.0504,1.231	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	34507917.4	1.0,1.0,1.0,1.0	6.7621,0.0244,0.8005,2.5127	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	41439854.21	1.0,1.0,1.0,1.0	1.289,0.0203,0.9216,1.376	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.9	3710866.64	1.0,1.0,1.0,1.0	0.6261,0.2266,0.4652,7.1832	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	69552696.85	1.0,1.0,1.0,1.0	0.6038,0.0121,0.6034,1.7159	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	15453597.96	1.0,1.0,1.0,1.0	2.3039,0.0544,0.3312,4.0793	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-10245.4	20498.8	20088.0	650792.84	1.0,1.0,1.0,1.0	0.0023,2.2717,198.7214,1.1219	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.9	1624254.96	1.0,1.0,1.0,1.0	0.2136,0.5176,0.1842,68.1059	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	125573047.37	1.0,1.0,1.0,1.0	0.1222,0.0067,0.8202,5.8292	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	4473289.12	1.0,1.0,1.0,1.0	163.5491,0.188,0.0356,38.7104	nuB, nuF, TB, TF
+ahya.unfold.het05.group3_snp6966117	mid	bottle_neck	3	-390689.03	781386.06	664712.91	13992229.05	1.0,1.0,1.0,1.0	0.5637,0.0601,0.491,6.2672	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-8137.79	16283.58	15992.01	29208.06	1.0,1.0,1.0,1.0	0.6347,52.2696,196.2513,24.2408	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-7513.97	15035.94	14680.16	3642806.05	1.0,1.0,1.0,1.0	0.001,0.4135,2.0975,0.2016	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-8155.66	16319.32	15944.11	28297.09	1.0,1.0,1.0,1.0	0.1759,53.4997,0.001,25.0073	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-8968.26	17944.52	17500.24	54927.49	1.0,1.0,1.0,1.0	0.688,27.6262,0.001,12.4087	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-401804.43	803616.86	688828.5	13246579.46	1.0,1.0,1.0,1.0	0.8772,0.0644,0.272,4.2244	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-401804.43	803616.86	688828.5	237192372.34	1.0,1.0,1.0,1.0	0.8549,0.0036,0.0903,1.1858	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-844.24	1696.48	1488.19	67738.71	1.0,1.0,1.0,1.0	30.7926,16.7242,8.2904,1.3224	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-401804.43	803616.86	688828.5	3582800.23	1.0,1.0,1.0,1.0	5.274,0.238,0.2633,8.4247	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-7592.88	15193.76	14831.75	7547.0	1.0,1.0,1.0,1.0	0.8384,199.6354,0.7146,96.8884	nuB, nuF, TB, TF
+ahya.unfold.het05.group4_snp6966117	mid	bottle_neck	3	-7453.57	14915.14	14560.51	7536.45	1.0,1.0,1.0,1.0	0.137,199.7589,0.7332,97.8041	nuB, nuF, TB, TF
+ahya.unfold.het05.group1.Amil_snp6966117	no	no_mig	3	-974015.6	1948037.2	6011357.34	730476.9	1.0,1.0,1.0	1.212,0.96,0.2074	nu1, nu2, T
+ahya.unfold.het05.group1.group2_snp6966117	no	no_mig	3	-899362.63	1798731.26	52230627.68	775313.94	1.0,1.0,1.0	1.1003,1.3092,0.0796	nu1, nu2, T
+ahya.unfold.het05.group1.group3_snp6966117	no	no_mig	3	-898431.19	1796868.38	34552426.61	766862.37	1.0,1.0,1.0	1.3213,1.3397,0.0822	nu1, nu2, T
+ahya.unfold.het05.group1.group4_snp6966117	no	no_mig	3	-27856178.33	55712362.66	806433629422616.8	1275078.19	1.0,1.0,1.0	0.4547,0.0405,0.7665	nu1, nu2, T
+ahya.unfold.het05.group2.Amil_snp6966117	no	no_mig	3	-964198.67	1928403.34	6829066.62	749343.81	1.0,1.0,1.0	1.3666,0.8954,0.1934	nu1, nu2, T
+ahya.unfold.het05.group2.group3_snp6966117	no	no_mig	3	-829537.13	1659080.26	180548365.05	850913.2	1.0,1.0,1.0	0.8091,1.4065,0.0492	nu1, nu2, T
+ahya.unfold.het05.group2.group4_snp6966117	no	no_mig	3	-936545.57	1873097.14	107163278.8	803950.4	1.0,1.0,1.0	1.1857,1.3868,0.0854	nu1, nu2, T
+ahya.unfold.het05.group3.Amil_snp6966117	no	no_mig	3	-956296.02	1912598.04	6825068.81	754173.35	1.0,1.0,1.0	1.4608,0.885,0.1912	nu1, nu2, T
+ahya.unfold.het05.group3.group4_snp6966117	no	no_mig	3	-944102.31	1888210.62	3416304987.92	819280.46	1.0,1.0,1.0	0.6769,133.275,0.0403	nu1, nu2, T
+ahya.unfold.het05.group4.Amil_snp6966117	no	no_mig	3	-971414.01	1942834.02	8328139.09	758715.21	1.0,1.0,1.0	1.5114,0.8602,0.1858	nu1, nu2, T
+ahya.unfold.het05.group1.Amil_snp6966117	no	asym_mig	3	-522692.3	1045394.6	3703843.4	410979.19	1.0,1.0,1.0,1.0,1.0	1.7286,1.7935,0.5389,0.4417,1.2885	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group1.group2_snp6966117	no	asym_mig	3	-326649.07	653308.14	81045946.8	45220.87	1.0,1.0,1.0,1.0,1.0	21.7344,13.5233,0.0815,0.2632,14.8471	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group1.group3_snp6966117	no	asym_mig	3	-407106.0	814222.0	88212112.66	96703.16	1.0,1.0,1.0,1.0,1.0	12.8081,4.3698,0.0561,1.0093,7.031	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group1.group4_snp6966117	no	asym_mig	3	-315395.85	630801.7	1205088105.78	83884.21	1.0,1.0,1.0,1.0,1.0	10.9649,9.588,0.2981,0.4158,6.8017	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group2.Amil_snp6966117	no	asym_mig	3	-406622.45	813254.9	3662998.87	56099.46	1.0,1.0,1.0,1.0,1.0	19.4176,9.4137,0.0395,0.1177,13.8867	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group2.group3_snp6966117	no	asym_mig	3	-352221.61	704453.22	189713766.01	339207.78	1.0,1.0,1.0,1.0,1.0	1.0175,3.7796,4.6954,0.5816,1.4154	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group2.group4_snp6966117	no	asym_mig	3	-295420.26	590850.52	143430941.57	66622.72	1.0,1.0,1.0,1.0,1.0	9.8024,14.9684,0.3064,0.1713,10.5994	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group3.Amil_snp6966117	no	asym_mig	3	-480201.6	960413.2	2501657.49	361170.34	1.0,1.0,1.0,1.0,1.0	3.712,0.8934,0.1127,1.4343,1.4631	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group3.group4_snp6966117	no	asym_mig	3	-276514.33	553038.66	3992448740.44	197986.94	1.0,1.0,1.0,1.0,1.0	1.4493,7.1218,4.4957,0.7239,2.8965	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group4.Amil_snp6966117	no	asym_mig	3	-670595.99	1341201.98	10672430.77	393565.85	1.0,1.0,1.0,1.0,1.0	1.822,2.4932,0.949,0.0031,1.2966	nu1, nu2, m12, m21, T
+ahya.unfold.het05.group2.group3_snp6966117	no	het_asym_mig	3	-361214.29	722444.58	4828933.2	425257.72	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	2.4135,1.9805,0.2116,8.6232,1.7245,0.3607,0.8626,0.5195	nu1, nu2, m12, m21, me12, me21, T, P
+ahya.group1.hwe.miss5	no	snm.1d	3	-68050.61	136103.22	135654.48	13269.03	1.0	0.2483	nu
+ahya.group1.hwe.miss5	no	size_change	3	-16714.66	33433.32	28441.82	158.67	1.0,1.0	199.9999,9.99	nu, T
+ahya.group1.hwe.miss5	no	bottle	3	-24650.37	49306.74	41852.35	6792.45	1.0,1.0,1.0	0.0015,5.6974,1.0506	nuB, nuF, T
+ahya.group1.hwe.miss5	no	bottle_neck	3	-16764.2	33536.4	28460.96	231.45	1.0,1.0,1.0,1.0	173.8475,136.8625,2.0145,4.704	nuB, nuF, TB, TF
+ahya.group1.hwe.miss5	no	size_change	3	-68050.61	136105.22	135654.51	4952253.34	1.0,1.0	0.0027,1.5535	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	1.0	0.7803	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	1.0	0.2969	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	1.0	0.7804	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	1.0	1.3018	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	1.0	4.0086	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-15965.8	31935.6	31759.14	2478257.53	1.0,1.0	0.0224,1.2428	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.65	3738.98	1.0,1.0	22.754,2.0769	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.66	1.0,1.0	30.8691,3.2904	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-40406.73	80817.46	74921.81	108482.73	1.0,1.0	0.2203,7.4064	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.95	1.0,1.0	30.9724,3.5126	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-979.09	1964.18	1903.37	51892.9	1.0,1.0,1.0	0.1934,3.4478,0.7893	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1643.91	3293.82	3314.97	859.63	1.0,1.0,1.0	0.7839,182.36,21.2063	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1203.46	2412.92	2196.41	136933.86	1.0,1.0,1.0	0.0014,1.0441,0.1373	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1516.89	3039.78	2807.86	19171.43	1.0,1.0,1.0	0.0213,8.5512,1.0123	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-2540.24	5086.48	4817.68	2100.14	1.0,1.0,1.0	0.1977,88.4663,12.3219	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle_neck	3	-15965.8	31939.6	31759.14	3348010.59	1.0,1.0,1.0,1.0	1.2347,0.0166,4.374,0.9792	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle_neck	3	-38527.31	77062.62	73087.54	207453.67	1.0,1.0,1.0,1.0	0.3718,0.1151,1.4969,6.073	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle_neck	3	-126.62	261.24	89.38	11937.51	1.0,1.0,1.0,1.0	0.0077,5.8233,0.0145,0.6664	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle_neck	3	-670.14	1348.28	1054.98	4359.58	1.0,1.0,1.0,1.0	199.96,19.0054,0.3961,1.2935	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle_neck	3	-48208.12	96424.24	87792.89	173252.63	1.0,1.0,1.0,1.0	2.9684,0.1697,4.3434,18.5975	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	1.0	0.2064	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	2.0	15.4378	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	3.0	15.2031	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	4.0	10.1514	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	5.0	8.7491	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	6.0	3.7138	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	7.0	32.4597	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	8.0	21.5983	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	9.0	1.4434	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-15965.8	31933.6	31759.14	55596.91	10.0	7.2657	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	1.0	3.7655	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	2.0	2.3687	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	3.0	0.7416	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	4.0	0.7528	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	5.0	1.1179	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	6.0	1.1815	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	7.0	3.3099	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	8.0	16.4418	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	9.0	3.0735	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-38527.31	77056.62	73087.54	23884.33	10.0	21.5253	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	1.0	3.9049	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	2.0	0.4122	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	3.0	0.3881	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	4.0	7.8554	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	5.0	29.1554	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	6.0	15.3722	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	7.0	1.5366	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	8.0	4.2125	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	9.0	5.6188	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-35077.66	70157.32	65285.1	20932.0	10.0	59.1272	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	1.0	7.7285	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	2.0	2.183	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	3.0	9.1987	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	4.0	0.768	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	5.0	19.9321	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	6.0	5.6573	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	7.0	0.9757	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	8.0	23.008	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	9.0	2.9186	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-40406.73	80815.46	74921.81	23902.11	10.0	8.722	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	1.0	4.8454	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	2.0	0.4177	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	3.0	12.2344	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	4.0	3.5025	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	5.0	2.4251	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	6.0	0.9884	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	7.0	3.7493	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	8.0	10.1515	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	9.0	3.1612	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	snm.1d	3	-48208.12	96418.24	87792.87	29394.17	10.0	76.1426	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.83	1.0,1.0	4.1588,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-15965.8	31935.6	31759.14	166357.87	2.0,2.0	0.3342,13.6643	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.88	3.0,3.0	4.1587,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.82	32390.75	4.0,4.0	4.1588,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.82	32390.74	5.0,5.0	4.1588,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.91	6.0,6.0	4.1587,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.97	7.0,7.0	4.1588,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.88	8.0,8.0	4.1587,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.81	32390.61	9.0,9.0	4.1586,0.4626	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-805.69	1615.38	1562.82	32390.58	10.0,10.0	4.1588,0.4626	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.65	3738.97	1.0,1.0	22.7536,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.69	3738.78	2.0,2.0	22.7551,2.077	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.65	3738.96	3.0,3.0	22.7539,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.66	3738.92	4.0,4.0	22.7543,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.66	3738.91	5.0,5.0	22.7545,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.67	3738.85	6.0,6.0	22.7542,2.077	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.64	3739.01	7.0,7.0	22.7534,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.65	3738.97	8.0,8.0	22.7538,2.0769	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-613.24	1230.48	1303.69	3738.8	9.0,9.0	22.7547,2.077	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-38527.31	77058.62	73087.53	11966.17	10.0,10.0	1.996,85.3249	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-35077.66	70159.32	65285.09	1563191.72	1.0,1.0	0.0134,1.405	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.77	2.0,2.0	30.8676,3.2902	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.78	3.0,3.0	30.8675,3.2902	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.63	4.0,4.0	30.8697,3.2904	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.74	5.0,5.0	30.8673,3.2903	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.74	6.0,6.0	30.8677,3.2903	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-35077.66	70159.32	65285.08	19750.84	7.0,7.0	1.0598,47.1384	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.69	8.0,8.0	30.8687,3.2903	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.7	9.0,9.0	30.8686,3.2903	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-134.97	273.94	107.12	2287.69	10.0,10.0	30.8685,3.2903	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-40406.73	80817.46	74921.81	51090.98	1.0,1.0	0.4678,16.4492	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.31	2.0,2.0	32.5895,3.5296	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.19	3.0,3.0	32.5913,3.5298	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.38	4.0,4.0	32.589,3.5295	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.34	5.0,5.0	32.5891,3.5296	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.21	6.0,6.0	32.591,3.5298	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.37	7.0,7.0	32.5889,3.5295	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.26	8.0,8.0	32.5904,3.5297	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.39	9.0,9.0	32.5888,3.5295	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-174.85	353.7	189.28	2463.31	10.0,10.0	32.5901,3.5296	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-48208.12	96420.24	87792.89	130988.33	1.0,1.0	0.2244,12.9372	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.61	3096.94	2.0,2.0	30.9726,3.5126	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.61	3096.9	3.0,3.0	30.9726,3.5127	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.94	4.0,4.0	30.973,3.5126	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.87	5.0,5.0	30.9733,3.5127	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.92	6.0,6.0	30.9727,3.5126	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.8	7.0,7.0	30.9737,3.5128	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.94	8.0,8.0	30.9724,3.5126	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.8	9.0,9.0	30.9733,3.5128	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	size_change	3	-421.1	846.2	695.62	3096.8	10.0,10.0	30.9738,3.5128	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1002.88	2011.76	1959.71	31656.09	1.0,1.0,1.0	0.7862,5.631,0.881	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-15966.9	31939.8	31761.45	47919379.48	2.0,2.0,2.0	1.079,0.0012,195.2947	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-981.62	1969.24	1914.92	40919.36	3.0,3.0,3.0	0.3124,4.4227,0.9092	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-994.68	1995.36	1953.74	33523.7	4.0,4.0,4.0	0.5421,5.4542,0.9566	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-754.12	1514.24	1463.02	32484.75	5.0,5.0,5.0	7.5372,3.5786,0.4248	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.72	2698.52	6.0,6.0,6.0	1.2705,47.3624,42.8589	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-978.6	1963.2	1902.4	62952.06	7.0,7.0,7.0	0.1364,2.8617,0.6804	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3305.76	1081.01	8.0,8.0,8.0	1.6882,118.1825,125.7025	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.63	1204.99	9.0,9.0,9.0	2.24,106.0615,102.3292	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf_folded	mid	bottle	3	-1588.99	3183.98	3306.41	1246.93	10.0,10.0,10.0	2.3043,102.4845,97.2977	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-14345.15	28692.3	28428.75	65533.18	1.0	0.3045	nu
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-79237.38	158476.76	152557.32	60664.44	1.0	0.2145	nu
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-54113.88	108229.76	100645.03	57141.7	1.0	0.3038	nu
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-63826.67	127655.34	118671.1	63824.05	1.0	0.3839	nu
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-76354.83	152711.66	139494.08	72554.85	1.0	1.8799	nu
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.93	41075.1	1.0,1.0	3.4619,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.96	41074.12	2.0,2.0	3.4622,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.93	41075.07	3.0,3.0	3.462,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.94	41074.71	4.0,4.0	3.4621,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.95	41074.35	5.0,5.0	3.4621,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.94	41074.67	6.0,6.0	3.462,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.93	41075.16	7.0,7.0	3.462,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.95	41074.39	8.0,8.0	3.4621,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.95	41074.15	9.0,9.0	3.4621,0.4223	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-834.08	1672.16	1596.93	41074.74	10.0,10.0	3.462,0.4223	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12050.87	1.0,1.0	15.6804,1.691	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12051.42	2.0,2.0	15.6799,1.6909	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12051.2	3.0,3.0	15.68,1.6909	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-79237.38	158478.76	152557.33	76571.91	4.0,4.0	0.7923,28.2342	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12050.97	5.0,5.0	15.6805,1.691	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12051.37	6.0,6.0	15.6799,1.6909	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12050.82	7.0,7.0	15.6805,1.691	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12051.06	8.0,8.0	15.68,1.691	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12050.68	9.0,9.0	15.6807,1.691	nu, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-386.64	777.28	591.93	12050.94	10.0,10.0	15.6803,1.691	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.65	1.0,1.0	11.221,1.8571	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.27	2.0,2.0	11.2213,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12441.98	3.0,3.0	11.2214,1.8573	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.1	4.0,4.0	11.2213,1.8573	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.61	5.0,5.0	11.2209,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.36	6.0,6.0	11.2212,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.6	7.0,7.0	11.2209,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.15	8.0,8.0	11.2214,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.25	9.0,9.0	11.2211,1.8572	nu, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-271.83	547.66	350.8	12442.43	10.0,10.0	11.2209,1.8572	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.68	13097.36	1.0,1.0	12.1807,1.9627	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.61	2.0,2.0	12.1806,1.9627	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-63826.67	127657.34	118671.09	63867.88	3.0,3.0	0.9993,33.9061	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.3	4.0,4.0	12.1809,1.9627	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.73	5.0,5.0	12.1805,1.9626	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.43	6.0,6.0	12.1806,1.9627	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.93	7.0,7.0	12.1803,1.9626	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13097.37	8.0,8.0	12.1807,1.9627	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-332.57	669.14	476.69	13098.0	9.0,9.0	12.1801,1.9626	nu, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-63826.67	127657.34	118671.1	27371.3	10.0,10.0	2.3318,88.0743	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.57	1.0,1.0	13.5972,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.53	2.0,2.0	13.5972,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.73	3.0,3.0	13.597,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.52	4.0,4.0	13.5971,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13440.91	5.0,5.0	13.5978,2.2227	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.08	6.0,6.0	13.5975,2.2227	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.44	7.0,7.0	13.5972,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.73	8.0,8.0	13.597,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.67	9.0,9.0	13.5971,2.2226	nu, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	size_change	3	-1037.9	2079.8	1906.86	13441.02	10.0,10.0	13.5978,2.2227	nu, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-994.26	1994.52	1911.55	60730.26	1.0,1.0,1.0	0.2356,2.9599,0.8144	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1534.53	3075.06	3116.71	22467.59	2.0,2.0,2.0	0.0411,5.9458,10.2313	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-993.33	1992.66	1908.71	380211.95	3.0,3.0,3.0	0.0152,0.4751,0.1753	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1534.53	3075.06	3116.77	4091.53	4.0,4.0,4.0	1.1329,32.6507,37.9519	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-677.75	1361.5	1285.08	41260.41	5.0,5.0,5.0	30.9052,1.9167,0.3622	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-683.9	1373.8	1283.25	41825.89	6.0,6.0,6.0	26.8388,1.9234,0.3494	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1081.2	2168.4	2047.3	43061.25	7.0,7.0,7.0	0.6012,3.7279,0.9863	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1534.53	3075.06	3116.64	1761.01	8.0,8.0,8.0	2.376,75.855,90.8729	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1200.99	2407.98	2274.62	51080.79	9.0,9.0,9.0	0.3746,2.8818,1.1379	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-724.19	1454.38	1352.26	42384.46	10.0,10.0,10.0	12.718,2.2783,0.3394	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1536.28	3078.56	2975.64	44234.26	1.0,1.0,1.0	0.0272,7.0513,1.3064	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-260.02	526.04	329.5	13005.51	2.0,2.0,2.0	199.9994,8.8066,1.459	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-288.74	583.48	386.72	13219.08	3.0,3.0,3.0	69.4157,9.6469,1.4235	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-285.89	577.78	381.75	12922.37	4.0,4.0,4.0	60.1506,10.1826,1.4747	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-285.89	577.78	381.82	12917.73	5.0,5.0,5.0	60.1136,10.1919,1.4752	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1534.9	3075.8	2973.05	3113.06	6.0,6.0,6.0	0.0014,100.2357,37.3269	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1534.89	3075.78	2972.35	9927.88	7.0,7.0,7.0	0.0277,31.3836,7.3769	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-286.45	578.9	382.89	13052.39	8.0,8.0,8.0	92.4158,9.2473,1.4449	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-259.62	525.24	328.64	12981.05	9.0,9.0,9.0	199.9905,8.8062,1.4633	nuB, nuF, T
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-285.92	577.84	381.97	12892.14	10.0,10.0,10.0	60.4557,10.2028,1.4791	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-153.26	312.52	113.77	13764.47	1.0,1.0,1.0	31.1311,7.6458,1.5209	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1465.58	2937.16	2770.37	10261.8	2.0,2.0,2.0	0.0673,20.1484,7.7593	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1465.62	2937.24	2770.1	2867.62	3.0,3.0,3.0	0.5218,72.0551,24.0147	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1465.51	2937.02	2770.1	1641.0	4.0,4.0,4.0	1.2882,125.9613,39.0098	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1465.58	2937.16	2770.45	5759.82	5.0,5.0,5.0	0.0817,35.9024,14.7511	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1465.75	2937.5	2770.61	211581.51	6.0,6.0,6.0	0.0053,0.977,0.345	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-153.26	312.52	113.76	13765.61	7.0,7.0,7.0	31.1083,7.6453,1.5209	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-153.28	312.56	113.81	13778.12	8.0,8.0,8.0	31.2154,7.6333,1.5183	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-153.26	312.52	113.77	13764.94	9.0,9.0,9.0	31.1295,7.646,1.5208	nuB, nuF, T
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-343.91	693.82	496.2	12772.33	10.0,10.0,10.0	12.7837,11.1284,1.6978	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-197.95	401.9	201.05	14491.99	1.0,1.0,1.0	33.3378,8.3086,1.6189	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-197.95	401.9	201.06	14489.11	2.0,2.0,2.0	33.3634,8.3105,1.6191	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1824.64	3655.28	3499.73	2543.61	3.0,3.0,3.0	1.0073,94.9965,26.4977	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-198.06	402.12	201.39	14523.83	4.0,4.0,4.0	34.1286,8.2549,1.6105	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-197.95	401.9	201.06	14489.1	5.0,5.0,5.0	33.3626,8.3106,1.6191	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-197.95	401.9	201.06	14489.09	6.0,6.0,6.0	33.3613,8.3106,1.6191	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1824.39	3654.78	3499.17	18203.87	7.0,7.0,7.0	0.0123,13.2725,5.6856	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1824.4	3654.8	3498.78	93044.64	8.0,8.0,8.0	0.0034,2.595,1.0561	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-1824.39	3654.78	3498.87	9397.26	9.0,9.0,9.0	0.0011,25.6983,15.85	nuB, nuF, T
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-198.04	402.08	201.18	14543.07	10.0,10.0,10.0	33.3557,8.2707,1.6109	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-207.71	421.42	219.38	15383.1	1.0,1.0,1.0	169.3407,6.6307,1.7314	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-3925.47	7856.94	7803.57	223031.99	2.0,2.0,2.0	0.0032,1.249,0.4438	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-3925.47	7856.94	7801.97	319002.45	3.0,3.0,3.0	0.0028,0.8723,0.2993	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-207.71	421.42	219.38	15383.71	4.0,4.0,4.0	169.3222,6.6306,1.7313	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-207.71	421.42	219.38	15381.57	5.0,5.0,5.0	169.3022,6.6312,1.7317	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-207.71	421.42	219.38	15383.54	6.0,6.0,6.0	169.3438,6.6305,1.7313	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-207.71	421.42	219.38	15383.87	7.0,7.0,7.0	169.3121,6.6305,1.7313	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-3925.5	7857.0	7801.38	19799.07	8.0,8.0,8.0	0.002,14.0483,7.4197	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-3925.35	7856.7	7802.0	2661.5	9.0,9.0,9.0	1.1938,104.5707,27.9168	nuB, nuF, T
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle	3	-3925.46	7856.92	7802.95	29141.46	10.0,10.0,10.0	0.0066,9.555,4.1491	nuB, nuF, T
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-799.76	1607.52	1524.08	47585.18	1.0,1.0,1.0,1.0	0.7627,2.9138,0.8107,0.398	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-834.08	1676.16	1596.94	104140.09	2.0,2.0,2.0,2.0	0.3944,1.3655,6.5376,0.1666	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-808.86	1625.72	1539.37	46788.54	3.0,3.0,3.0,3.0	0.8193,3.0244,1.0117,0.383	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-14345.15	28698.3	28428.75	133536.62	4.0,4.0,4.0,4.0	31.2332,0.4908,6.5249,19.3705	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-14345.15	28698.3	28428.75	90278.16	5.0,5.0,5.0,5.0	4.2191,0.7259,0.9637,23.1883	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-855.68	1719.36	1649.5	709519.13	6.0,6.0,6.0,6.0	0.0568,0.1918,26.1976,0.0265	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-14345.15	28698.3	28428.75	52912.52	7.0,7.0,7.0,7.0	1.8705,1.2385,30.8764,46.8701	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-834.14	1676.28	1597.02	9599.17	8.0,8.0,8.0,8.0	4.2807,14.8345,39.1283,1.8033	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-881.46	1770.92	1710.92	13683.63	9.0,9.0,9.0,9.0	2.9087,9.7721,199.9676,1.4345	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-834.09	1676.18	1597.02	8589.06	10.0,10.0,10.0,10.0	4.7823,16.5608,50.2008,2.0189	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-384.71	777.42	587.3	14938.05	1.0,1.0,1.0,1.0	0.6763,12.5893,0.7391,1.3896	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-386.64	781.28	591.92	38461.24	2.0,2.0,2.0,2.0	0.3133,4.9131,3.0909,0.5298	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-387.15	782.3	592.85	9293.86	3.0,3.0,3.0,3.0	1.3172,20.3387,3.5339,2.1907	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-386.94	781.88	592.54	11869.06	4.0,4.0,4.0,4.0	1.0313,15.9215,0.8803,1.7143	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-386.64	781.28	591.93	5946.61	5.0,5.0,5.0,5.0	2.0265,31.7767,20.8243,3.4268	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-387.09	782.18	592.85	12036.82	6.0,6.0,6.0,6.0	1.2003,15.7017,0.0584,1.6841	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-386.12	780.24	590.66	49996.81	7.0,7.0,7.0,7.0	0.234,3.7746,1.1486,0.4091	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-385.14	778.28	588.33	13803.27	8.0,8.0,8.0,8.0	0.781,13.6336,0.8091,1.4948	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-386.51	781.02	591.39	12910.99	9.0,9.0,9.0,9.0	0.9158,14.6257,1.8857,1.5835	nuB, nuF, TB, TF
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-79237.38	158482.76	152557.34	30838.17	10.0,10.0,10.0,10.0	9.1403,1.9672,3.5209,124.8949	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-54113.88	108235.76	100645.03	117350.24	1.0,1.0,1.0,1.0	0.5185,0.4869,0.527,24.8284	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-3063.96	6135.92	5611.32	24589.77	2.0,2.0,2.0,2.0	0.001,4.4831,0.0011,1.4096	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-54113.88	108235.76	100645.03	73112.36	3.0,3.0,3.0,3.0	24.849,0.7816,6.804,30.1997	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-54113.88	108235.76	100645.03	103012.53	4.0,4.0,4.0,4.0	1.1824,0.5547,0.9183,44.6813	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-408.46	824.92	611.18	36892.81	5.0,5.0,5.0,5.0	0.3092,3.5822,135.5511,0.6827	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-140.29	288.58	87.33	13544.74	6.0,6.0,6.0,6.0	13.0064,6.7827,1.4497,0.14	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-271.83	551.66	350.8	2058.22	7.0,7.0,7.0,7.0	6.0452,67.8331,73.3738,11.2274	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-54113.88	108235.76	100645.04	28854.96	8.0,8.0,8.0,8.0	22.3928,1.9803,8.3542,172.6752	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-54113.88	108235.76	100645.04	52483.07	9.0,9.0,9.0,9.0	110.6256,1.0888,2.7379,68.5124	nuB, nuF, TB, TF
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-271.83	551.66	350.8	12380.1	10.0,10.0,10.0,10.0	1.005,11.2775,5.8305,1.8666	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-63826.67	127661.34	118671.09	3906193.67	1.0,1.0,1.0,1.0	0.0981,0.0163,1.0636,1.159	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-63826.67	127661.34	118671.09	1205553.77	2.0,2.0,2.0,2.0	0.6313,0.0529,0.5448,3.015	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-309.6	627.2	430.03	157763.4	3.0,3.0,3.0,3.0	0.0175,1.0031,0.0508,0.1755	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-63826.67	127661.34	118671.09	45386.74	4.0,4.0,4.0,4.0	1.5503,1.4062,0.9252,67.0234	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-63826.67	127661.34	118671.09	77636.64	5.0,5.0,5.0,5.0	4.7117,0.8221,26.4693,26.2059	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-332.58	673.16	476.71	7810.59	6.0,6.0,6.0,6.0	1.678,20.4311,14.4354,3.2897	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-63826.67	127661.34	118671.1	58048.96	7.0,7.0,7.0,7.0	12.5454,1.0995,4.2991,42.0119	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-521.46	1050.92	873.11	11448.12	8.0,8.0,8.0,8.0	199.1243,12.1388,1.0463,1.1816	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-212.25	432.5	229.83	14562.88	9.0,9.0,9.0,9.0	22.029,9.1979,1.0555,0.5492	nuB, nuF, TB, TF
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-333.11	674.22	477.72	6355.62	10.0,10.0,10.0,10.0	2.0596,25.0779,9.2912,4.0554	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1037.9	2083.8	1906.86	324743.42	1.0,1.0,1.0,1.0	0.0414,0.5628,1.0796,0.092	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1037.9	2083.8	1906.86	188076.16	2.0,2.0,2.0,2.0	0.0715,0.9718,21.2048,0.1588	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-76354.83	152717.66	139494.09	91747.74	3.0,3.0,3.0,3.0	6.6538,0.7908,2.2105,49.2976	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-243.71	495.42	291.7	15225.31	4.0,4.0,4.0,4.0	84.3041,8.4387,1.1674,0.578	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-76354.83	152717.66	139494.07	27743.74	5.0,5.0,5.0,5.0	10.5312,2.6152,8.3122,113.6251	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1039.31	2086.62	1910.02	12656.77	6.0,6.0,6.0,6.0	1.0775,14.4752,2.6262,2.3489	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1037.9	2083.8	1906.86	12989.72	7.0,7.0,7.0,7.0	1.0348,14.0701,34.3792,2.2999	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1038.09	2084.18	1907.56	5773.98	8.0,8.0,8.0,8.0	2.3224,31.6683,15.4451,5.176	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1037.9	2083.8	1906.86	9868.16	9.0,9.0,9.0,9.0	1.3621,18.5208,176.7282,3.0275	nuB, nuF, TB, TF
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	bottle_neck	3	-1054.94	2117.88	1942.96	7482.18	10.0,10.0,10.0,10.0	2.0025,24.4762,3.2987,3.9612	nuB, nuF, TB, TF
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3_folded	mid	snm.1d	3	-14345.15	28692.3	28428.75	65533.18	1.0	1.8388	nu
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_folded	no	het_asym_mig	3	-78886.47	157788.94	822906.14	33774.96	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	2.6018,4.1582,1.0023,0.8744,0.4542,0.0058,0.7703,0.0696	nu1, nu2, m12, m21, me12, me21, T, P
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_folded	no	het_asym_mig	3	-51778.33	103572.66	624871.08	9010.66	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	5.3438,17.4799,0.055,0.6129,0.2909,1.5808,2.4565,0.9795	nu1, nu2, m12, m21, me12, me21, T, P
+group1-group2_projected0.8	low	no_mig	3	-21994.8712	43995.7424	138392.3362	13832.2783	1.0,1.0,1.0	28.5406,7.3829,0.7985	nu1, nu2, T
+group1-group2_projected0.8	low	sym_mig	3	-6463.0103	12934.0206	104191.4388	5180.3221	1.0,1.0,1.0,1.0	27.5015,9.5553,0.1784,2.7589	nu1, nu2, m, T
+group1-group2_projected0.8	low	split_sizechange	3	-22270.5064	44553.0128	103335.4724	15058.2808	1.0,1.0,1.0,1.0,1.0,1.0	14.4354,191.6271,102.5951,1.2717,0.3515,0.1452	nu1T1, nu2T2, nu1T1, nu2T2, T1, T2
+group1-group2_projected0.8	low	split_bottle	3	-86816.8601	173645.7202	1639606.7045	10692.9169	1.0,1.0,1.0,1.0,1.0,1.0	0.9384,190.4825,4.8652,0.2752,0.4695,0.5428	nu1, nu2, nu1F, nu2F, T1, T2
+group1-group2_projected0.8	low	split_bottle_sec_asym_mig	3	-26563.4462	53142.8924	62175.28	11978.1871	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	1.2501,0.1479,0.8058,1.4509,0.8912,14.2069,3.2059,0.4769	nu1, nu2, nu1F, nu2F, T1, T2, m12, m21
+group1-group2_projected0.8	low	het_asym_mig	3	-11853.263	23722.526	20442.0894	12894.4066	1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0	0.5469,6.9265,6.7222,1.1237,0.0978,0.7021,0.7243,0.7021	nu1, nu2, m12, m21, me12, me21, T, P

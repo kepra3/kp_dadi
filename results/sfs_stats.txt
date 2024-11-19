@@ -10,3 +10,23 @@ AG1-AG2	[20 20]	1218.0	0.14
 AG1-AG2_masked	[20 20]	694.0	0.16
 AG1-AG2	[20 20]	1238.96	0.14
 AG1-AG2_masked	[20 20]	703.86	0.15
+ahya	[1018]	544.0	nan
+Tas-Med	[212 182]	4048.0	0.07
+Tas-Med	[100  90]	31146.54	0.11
+Tas-Med	[150 100]	31603.37	0.11
+Tas-Med	[150 140]	31986.92	0.11
+Tas-Med	[180 160]	30561.35	0.11
+Tas-Med	[160 140]	32030.38	0.11
+Tas-Med	[160 140]	32030.38	0.11
+Tas-Med	[160 140]	32030.38	0.11
+ahya.group1.hwe.miss5	[1018]	544.0	nan
+ahya.group1.hwe.miss5	[500]	88723.23	nan
+ahya.group1.hwe.miss5	[800]	96304.18	nan
+ahya.group1.ld05.miss10	[1018]	427.0	nan
+ahya.group1.ld05.miss10	[800]	256188.81	nan
+ahya.group1.miss10	[1018]	0.0	nan
+ahya.group1.miss10	[1018]	552.0	nan
+ahya.group1.miss10	[800]	268299.42	-1.79
+wisent	[40]	219410.0	0.86
+wisent	[42]	0.0	nan
+wisent	[40]	219410.0	0.86

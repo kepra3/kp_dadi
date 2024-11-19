@@ -10,10 +10,92 @@ Compatible with python 3.6.11 and dadi 2.1.1
 """
 from dadi import Numerics, PhiManip, Integration
 from dadi.Spectrum_mod import Spectrum
+import numpy as np
 
+
+# Models for testing one population scenarios.
+
+def no_divergence_1d(notused, ns, pts):
+    """
+    Standard neutral model.
+
+    ns = (n1,)
+
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
+
+def instant_change(params, ns, pts):
+    """
+    Instantaneous size change some time ago.
+
+    params = (nu,T)
+    ns = (n1,)
+
+    nu: Ratio of contemporary to ancient population size
+    T: Time in the past at which size change happened (in units of 2*Na
+       generations)
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu, T = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    phi = Integration.one_pop(phi, xx, T, nu)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
+
+def bottlegrowth(params, ns, pts):
+    """
+    Instantanous size change followed by exponential growth.
+
+    params = (nuB,nuF,T)
+    ns = (n1,)
+
+    nuB: Ratio of population size after instantanous change to ancient
+         population size
+    nuF: Ratio of contemporary to ancient population size
+    T: Time in the past at which instantaneous change happened and growth began
+       (in units of 2*Na generations)
+    n1: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nuB, nuF, T = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    nu_func = lambda t: nuB * np.exp(np.log(nuF / nuB) * t / T)
+    phi = Integration.one_pop(phi, xx, T, nu_func)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
+
+
+def bottleneck(params, ns, pts):
+
+    nuB, nuF, TB, TF = params
+
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+
+    phi = Integration.one_pop(phi, xx, TB, nuB)
+    phi = Integration.one_pop(phi, xx, TF, nuF)
+
+    fs = Spectrum.from_phi(phi, ns, (xx,))
+    return fs
 
 # Models for testing two population scenarios.
-
 def no_divergence(notused, ns, pts):
     """
     Standard neutral model, populations never diverge.
@@ -89,10 +171,702 @@ def asym_migration(params, ns, pts):
 
     phi = Integration.two_pops(phi, xx, T, nu1, nu2, m12=m12, m21=m21)
     fs = Spectrum.from_phi(phi, ns, (xx, xx))
-
     return fs
 
 
+def split_bottlegrowth(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=0, m21=0)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_bottlegrowth_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12T1: migration rate from pop1 into pop2 over T1
+    m21T1: migration rate from pop2 into pop1 over T1
+    m12T2: migration rate from pop1 into pop2 over T2
+    m21T2: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, m12T2, m21T2 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=m12T1, m21=m21T1)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=m12T2, m21=m21T2)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_bottlegrowth_ancient_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12, m21 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=m12, m21=m21)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=0, m21=0)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_bottlegrowth_second_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12, m21 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=m12, m21=m21)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_sizechange(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=0, m21=0)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_sizechange_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12T1: migration rate from pop1 into pop2 over T1
+    m21T1: migration rate from pop2 into pop1 over T1
+    m12T2: migration rate from pop1 into pop2 over T2
+    m21T2: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1, m12T2, m21T2 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=m12T1, m21=m21T1)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=m12T2, m21=m21T2)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_sizechange_ancient_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T1
+    m21: migration rate from pop2 into pop1 over T1
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=m12, m21=m21)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=0, m21=0)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def split_sizechange_second_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21 = params
+
+    xx = Numerics.default_grid(pts)
+
+    phi = PhiManip.phi_1D(xx)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    phi = Integration.two_pops(phi, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=0, m21=0)
+    phi = Integration.two_pops(phi, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=m12, m21=m21)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx))
+    return fs
+
+
+def hetero_asym_migration(params, ns, pts):
+    """
+    Split into two populations, with different migration rates.
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T: Time in the past of split (in units of 2*Na generations)
+    m12: Migration from pop 2 to pop 1 (2*Na*m12)
+    m21: Migration from pop 1 to pop 2
+    me12: Reduced effective migration rate from pop 2 to pop 1
+    me21: Reduced effective migration rate from pop 2 to pop 2
+    P: The proportion of the genome evolving neutrally
+    """
+    nu1, nu2, m12, m21, me12, me21, T, P = params
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T, nu1, nu2, m12=m12, m21=m21)
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T, nu1, nu2, m12=me12, m21=me21)
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+
+def anc_hetero_asym_migration(params, ns, pts):
+    """
+    Split with asymmetric migration followed by isolation.
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    m12: Migration from pop 2 to pop 1 (2*Na*m12).
+    m21: Migration from pop 1 to pop 2.
+    me12: Effective migration from pop 2 to pop 1 (2*Na*m12).
+    me21: Effective migration from pop 1 to pop 2.
+    T1: The scaled time between the split and the ancient migration (in units of 2*Na generations).
+    T2: The scaled time between the ancient migration and present.
+    P: The proportion of the genome evolving neutrally
+    """
+    nu1, nu2, m12, m21, me12, me21, T1, T2, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1, nu2, m12=m12, m21=m21)
+
+    phiN = Integration.two_pops(phiN, xx, T2, nu1, nu2, m12=0, m21=0)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1, nu2, m12=me12, m21=me21)
+
+    phiI = Integration.two_pops(phiI, xx, T2, nu1, nu2, m12=0, m21=0)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+def sec_contact_hetero_asym_migration(params, ns, pts):
+    """
+    Split with no gene flow, followed by period of asymmetrical gene flow.
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    m12: Migration from pop 2 to pop 1 (2*Na*m12).
+    m21: Migration from pop 1 to pop 2.
+    me12: Effective migration from pop 2 to pop 1 (2*Na*m12).
+    me21: Effective migration from pop 1 to pop 2.
+    T1: The scaled time between the split and the secondary contact (in units of 2*Na generations).
+    T2: The scaled time between the secondary contact and present.
+    P: The proportion of the genome evolving neutrally
+    """
+    nu1, nu2, m12, m21, me12, me21, T1, T2, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1, nu2, m12=0, m21=0)
+
+    phiN = Integration.two_pops(phiN, xx, T2, nu1, nu2, m12=m12, m21=m21)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1, nu2, m12=0, m21=0)
+
+    phiI = Integration.two_pops(phiI, xx, T2, nu1, nu2, m12=me12, m21=me21)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P*fsN+(1-P)*fsI
+    return fs
+
+
+def split_bottlegrowth_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12T1: migration rate from pop1 into pop2 over T1
+    m21T1: migration rate from pop2 into pop1 over T1
+    me12T1: migration rate from pop1 into pop2 over T1
+    me21T1: migration rate from pop2 into pop1 over T1
+    m12T2: migration rate from pop1 into pop2 over T2
+    m21T2: migration rate from pop2 into pop1 over T2
+    me12T2: migration rate from pop1 into pop2 over T2
+    me21T2: migration rate from pop2 into pop1 over T2
+    P: proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1, nu2=nu2, m12=m12T1, m21=m21T1)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=m12T2, m21=m21T2)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1, nu2=nu2, m12=me12T1, m21=me21T1)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=me12T2, m21=me21T2)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+def split_bottlegrowth_ancient_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T1
+    m21: migration rate from pop2 into pop1 over T1
+    me12: effective migration rate from pop1 into pop2 over T1
+    me21: effective migration rate from pop2 into pop1 over T1
+    P: The proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12, m21, me12, me21, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1, nu2=nu2, m12=m12, m21=m21)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=0, m21=0)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1, nu2=nu2, m12=me12, m21=me21)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=0, m21=0)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+
+def split_bottlegrowth_second_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by exponential growth for both pops.
+
+    nu1, nu2 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1F, nu2F : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    me12: effective migration rate from pop1 into pop2 over T2
+    me21: effective migration rate from pop2 into pop1 over T2
+    P: The proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1, nu2, nu1F, nu2F, T1, T2, m12, m21, me12, me21, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    nu_func1 = lambda T1: nu1 * np.exp(np.log(nu1F / nu1) * T1 / T2)
+    nu_func2 = lambda T1: nu2 * np.exp(np.log(nu2F / nu2) * T1 / T2)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=m12, m21=m21)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1, nu2=nu2, m12=0, m21=0)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu_func1, nu2=nu_func2, m12=me12, m21=me21)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+
+def split_sizechange_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12T1: migration rate from pop1 into pop2 over T1
+    m21T1: migration rate from pop2 into pop1 over T1
+    me12T1: effective migration rate from pop1 into pop2 over T1
+    me21T1: effective migration rate from pop2 into pop1 over T1
+    m12T2: migration rate from pop1 into pop2 over T2
+    m21T2: migration rate from pop2 into pop1 over T2
+    me12T2: effective migration rate from pop1 into pop2 over T2
+    me21T2: effective migration rate from pop2 into pop1 over T2
+    P: The proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1,  me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=m12T1, m21=m21T1)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=m12T2, m21=m21T2)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=me12T1, m21=me21T1)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=me12T2, m21=me21T2)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+
+def split_sizechange_ancient_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T1
+    m21: migration rate from pop2 into pop1 over T1
+    me12: effective migration rate from pop1 into pop2 over T1
+    me21: effective migration rate from pop2 into pop1 over T1
+    P: The proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21, me12, me21, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=m12, m21=m21)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=0, m21=0)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=me12, m21=me21)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=0, m21=0)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+
+def split_sizechange_second_hetero_asym_mig(params, ns, pts):
+    """
+    Split into two populations
+
+    nu1: Size of population 1 after split.
+    nu2: Size of population 2 after split.
+    T1: Time in the past of split (in units of 2*Na generations) and before growth (T2)
+
+    Instantanous size change followed by size change both pops.
+
+    nu1T1, nu2T1 : Ratio of population size after instantanous change to ancient
+         population size
+    nu1T2, nu2T2 : Ratio of contemporary to ancient population size
+    T2: Time in the past at which growth began
+       (in units of 2*Na generations)
+    m12: migration rate from pop1 into pop2 over T2
+    m21: migration rate from pop2 into pop1 over T2
+    me12: effective migration rate from pop1 into pop2 over T2
+    me21: effective migration rate from pop2 into pop1 over T2
+    P: The proportion of the genome evolving neutrally
+    ns: Number of samples in resulting Spectrum
+    pts: Number of grid points to use in integration.
+    """
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12, m21, me12, me21, P = params
+
+    xx = Numerics.default_grid(pts)
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=0, m21=0)
+    phiN = Integration.two_pops(phiN, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=m12, m21=m21)
+
+    fsN = Spectrum.from_phi(phiN, ns, (xx, xx))
+
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T1, nu1=nu1T1, nu2=nu2T1, m12=0, m21=0)
+    phiI = Integration.two_pops(phiI, xx, T2, nu1=nu1T2, nu2=nu2T2, m12=me12, m21=me21)
+
+    fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
+
+# Previous
 def iso_inbreeding(params, ns, pts):
     """
     Spilt into two populations, with inbreeding in each population.

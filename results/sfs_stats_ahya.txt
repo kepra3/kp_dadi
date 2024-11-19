@@ -1,0 +1,174 @@
+Pop	Sample sizes	Sum of SFS	TajimasD-Fst
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1.Amil_snp6966117	[40 22]	4617400.77	0.25
+ahya.unfold.het05.group1.group2_snp6966117	[40 40]	4740805.0	0.12
+ahya.unfold.het05.group1.group3_snp6966117	[40 40]	4792013.09	0.11
+ahya.unfold.het05.group1.group4_snp6966117	[40 40]	4838778.62	0.11
+ahya.unfold.het05.group2.Amil_snp6966117	[40 22]	4763920.48	0.24
+ahya.unfold.het05.group2.group3_snp6966117	[40 40]	4845750.11	0.09
+ahya.unfold.het05.group2.group4_snp6966117	[40 40]	5030704.37	0.12
+ahya.unfold.het05.group3.Amil_snp6966117	[40 22]	4839822.23	0.23
+ahya.unfold.het05.group3.group4_snp6966117	[40 40]	4865307.57	0.07
+ahya.unfold.het05.group4.Amil_snp6966117	[40 22]	4864680.76	0.23
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+ahya.unfold.het05.group1_snp6966117	[40]	3285738.06	-1.14
+ahya.unfold.het05.Amil_snp6966117	[22]	2676163.96	-0.71
+ahya.unfold.het05.group2_snp6966117	[40]	3517270.52	-1.16
+ahya.unfold.het05.group3_snp6966117	[40]	3614712.4	-1.19
+ahya.unfold.het05.group4_snp6966117	[40]	3671361.93	-1.2
+out.fold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2107454.36	-1.11
+out.fold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2107454.36	-1.11
+out.unfold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2106924.57	-1.11
+out.unfold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2106924.57	-1.11
+out.unfold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2106924.57	-1.11
+outQ0.unfold.ngspara.group2_dadi_group2.npara.qc01.sites2791392	[40]	1096129.51	-1.21
+outQ0.unfold.ngspara.min5.group2_dadi_group2.npara.qc01.sites2791392	[40]	345447.57	-1.67
+outQ0.unfold.ngspara.min5.group2_dadi_group2.npara.qc01.sites2791392	[40]	345447.57	-1.67
+outQ0.unfold.ngspara.min5.group2_dadi_group2.npara.qc01.sites2791392	[40]	345447.57	-1.67
+outQ0.unfold.ngspara.min5.group2_dadi_group2.npara.qc01.sites2791392	[40]	345447.57	-1.67
+outQ0.unfold.ngspara.group1_dadi_group1.npara.qc05.sites2787376	[40]	978334.56	-1.13
+outQ0.unfold.ngspara.group1_dadi_group1.npara.qc01.sites2865301	[40]	1030031.18	-1.07
+outQ0.unfold.ngspara.dep.group1_dadi_group1.npara.qc05.sites2787376	[40]	970806.42	-1.12
+outQ0.unfold.ngspara.group1_dadi_group1.npara.qc05.sites2787376	[40]	978334.56	-1.13
+outQ0.unfold.ngspara.group1_dadi_group1.npara.qc05.sites2787376	[40]	978334.56	-1.13
+outQ0.unfold.ngspara.dep.group1_dadi_group1.npara.qc05.sites2787376	[40]	970806.42	-1.12
+out.unfold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2106924.57	-1.11
+out.unfold.group2_dadi_snp2134712_outQ0_dp_het05_group2	[40]	2106924.57	-1.11
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[22]	205204.66	-0.77
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	101974.08	-1.94
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	88147.26	-2.09
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100634.37	-2.1
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	101974.08	-1.94
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	101974.08	-1.94
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	88147.26	-2.09
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100634.37	-2.1
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	123792.36	-2.07
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	123792.36	-2.07
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	101974.08	-1.94
+outQ0.unfold.group1_dadi_snp_group1_sites_stats_qc_dep_maf005_qc001_ngpara_sorted_USE.saf	[40]	100398.86	-1.94
+outQ0.unfold.group2_dadi_snp_group2_sites_stats_qc_dep_maf005_qc001_ngpara_sorted_USE.saf	[40]	83487.41	-2.04
+outQ0.unfold.group3_dadi_snp_group3_sites_stats_qc_dep_maf005_qc001_ngpara_sorted_USE.saf	[40]	91246.88	-2.0
+outQ0.unfold.group4_dadi_snp_group4_sites_stats_qc_dep_maf005_qc001_ngpara_sorted_USE.saf	[40]	127975.55	-2.08
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[22]	197566.14	-0.95
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100371.16	-2.05
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	87964.35	-2.1
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100445.87	-2.11
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	123525.61	-2.08
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[22]	197566.14	-0.95
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100371.16	-2.05
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	87964.35	-2.1
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100445.87	-2.11
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	123525.61	-2.08
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[22]	197566.14	-0.95
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100371.16	-2.05
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	87964.35	-2.1
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	100445.87	-2.11
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_chrOnly_USE.saf	[40]	123525.61	-2.08
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly	[22]	170454.08	-0.74
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3	[22]	241230.15	-0.68
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly	[40]	67671.18	-2.29
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3	[40]	255816.6	-1.87
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly	[40]	71697.82	-2.09
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3	[40]	240910.41	-1.65
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly	[40]	83099.04	-2.11
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3	[40]	268991.36	-1.69
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly	[40]	103007.14	-2.09
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_maf005_ngspara_n80_chrOnly_min3	[40]	305737.84	-1.72
+outQ0.unfold.Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[22]	434320.24	-1.12
+outQ0.unfold.group1_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40]	301882.55	-2.04
+outQ0.unfold.group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40]	355929.31	-2.01
+outQ0.unfold.group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40]	380206.35	-2.0
+outQ0.unfold.group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40]	438893.77	-2.06
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	444001.5	0.23
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	339902.54	0.08
+outQ0.unfold.group1_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	380214.39	0.07
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	472699.58	0.2
+outQ0.unfold.group2_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	371442.47	0.06
+outQ0.unfold.group2_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	413972.89	0.08
+outQ0.unfold.group3_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	500811.35	0.19
+outQ0.unfold.group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	421890.54	0.05
+outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	556220.74	0.19
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	444001.5	0.23
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	339902.54	0.08
+outQ0.unfold.group1_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	380214.39	0.07
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	472699.58	0.2
+outQ0.unfold.group2_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	371442.47	0.06
+outQ0.unfold.group2_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	413972.89	0.08
+outQ0.unfold.group3_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	500811.35	0.19
+outQ0.unfold.group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	421890.54	0.05
+outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	556220.74	0.19
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	138964.85	0.31
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	82329.96	0.12
+outQ0.unfold.group1_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	88287.01	0.11
+outQ0.unfold.group1_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	96533.97	0.11
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	147899.71	0.27
+outQ0.unfold.group2_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	101591.85	0.09
+outQ0.unfold.group2_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	107971.74	0.11
+outQ0.unfold.group3_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	159375.7	0.26
+outQ0.unfold.group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	117253.28	0.07
+outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	174596.6	0.26
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	444001.5	0.23
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	339902.54	0.08
+outQ0.unfold.group1_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	380214.39	0.07
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	472699.58	0.2
+outQ0.unfold.group2_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	371442.47	0.06
+outQ0.unfold.group2_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	413972.89	0.08
+outQ0.unfold.group3_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	500811.35	0.19
+outQ0.unfold.group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	421890.54	0.05
+outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 22]	556220.74	0.19
