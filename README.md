@@ -1,14 +1,20 @@
 # kp_dadi
 
-*This branch is in development - not ready for public use! Please email kepra3@gmail.com for enquiries.*
+*This branch is in development - not ready for public use!*
 
-*An electronic notebook by Katharine Prata (originally posted June 2021)*
+*Please email kepra3@gmail.com for enquiries and comments. 
+You are welcome to raise an issue if there is a problem with a script.*
+
+**An electronic notebook by Katharine E. Prata (originally posted June 2021).**
 
 A workflow for manually optimising the Diffusion Approximations for Demographic Inference (dadi) 
 [(Gutenkunst et el. 2009)](https://dx.plos.org/10.1371/journal.pgen.1000695).
 
-The scripts presented here were altered from the original dadi example [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/) and are written for ease of interpretation.
-This workflow has followed the advice offered by Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user). Code was initially written for the manuscript, [Prata et al., 2022](https://onlinelibrary.wiley.com/doi/10.1111/mec.16391) published in *Molecular Ecology* (checkout: dc97a7f on *3 June 2021*).
+The scripts presented here were altered from the original dadi example [scripts](https://bitbucket.org/gutenkunstlab/dadi/src/master/) 
+and are written for ease of interpretation.
+This workflow has followed the advice offered by Ryan Gutenkunst on the [dadi-user google group](https://groups.google.com/g/dadi-user). 
+Code was initially written for the manuscript, [Prata et al., 2022](https://onlinelibrary.wiley.com/doi/10.1111/mec.16391) 
+published in *Molecular Ecology* (checkout: dc97a7f on *3 June 2021*).
 
 This workflow will run through the example from [Prata et al (2022)](https://onlinelibrary.wiley.com/doi/10.1111/mec.16391).
 
