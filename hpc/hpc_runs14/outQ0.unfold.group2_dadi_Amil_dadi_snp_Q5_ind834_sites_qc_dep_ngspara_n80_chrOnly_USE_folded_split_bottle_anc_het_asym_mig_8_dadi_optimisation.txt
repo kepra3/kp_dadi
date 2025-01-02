@@ -1,0 +1,2 @@
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_folded	no	split_bottle_anc_het_asym_mig	3	-159361.25	318744.5	36644599.48	5273.39	8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,1.0	31.4939,99.2023,3.0777,9.9398,7.666,1.0762,7.3675,9.4354,2.8466,3.0922,0.0876	nu1, nu2, nu1F, nu2F, T1, T2, m12, m21, me12, me21, P

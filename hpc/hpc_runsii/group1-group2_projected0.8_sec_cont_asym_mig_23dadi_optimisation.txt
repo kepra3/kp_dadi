@@ -1,0 +1,2 @@
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	sec_cont_asym_mig	3	-19575.2349	39162.4698	49674.7185	29610.3625	1.0,10.0,1.0,10.0,10.0,10.0	0.3045,3.8811,1.2849,4.6189,1.3535,5.3743	nu1, nu2, m12, m21, T1, T2
