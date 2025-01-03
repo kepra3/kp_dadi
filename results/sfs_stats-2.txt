@@ -6,3 +6,9 @@ AG1-AG2	[40 18]	folded	873.0	0.14
 AG1-AG2_subsampled	[40 18]	873.0	0.14
 AG1-AG2_subsampled	[40 18]	873.0	0.14
 AG1-AG2_subsampled	[40 18]	873.0	0.14
+group1	[40]	folded	16826.0	-2.12
+group1.recode	[40]	folded	16826.0	-2.12
+group1.recode	[40]	folded	16826.0	-2.12
+group1.recode	[36]	folded	15757.69	-2.08
+group1.cv	[40]	folded	16826.0	-2.12
+group1.cv	[32]	folded	14627.33	-2.04

@@ -141,7 +141,12 @@ dmypy.json
 ahya.group1.hwe.miss5.vcf
 ahya.group1.ld05.miss10.vcf
 ahya.group1.miss10.vcf
+*.vcf.gz
+*recode.vcf
+group1.cv.vcf
 
 # Specific project working files 
 scrap/
-scrap/*
+results/gadma/
+results/output-1-2timeperiod-nomask/
+documents/

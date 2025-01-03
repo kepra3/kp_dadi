@@ -221,6 +221,12 @@ def get_settings(model, ALL=False):
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.split_sizechange_second_hetero_asym_mig
+    elif model == "gadma_model":
+        num = 14
+        p_labels = "t1, nu11, nu11_1, nu11_2, t2, nu21, nu22, m2_12, m2_21, t3, nu31, nu32, m3_12, m3_21"
+        model_fun = demo_models_kp.gadma_model
+        upper = [5.0, 100.0, 100.0, 100.0, 5.0, 100.0, 100.0, 10.0, 10.0, 5.0, 100.0, 100.0, 10.0, 10.0]
+        lower = [1e-15, 0.01, 0.01, 0.01, 1e-15, 0.01, 0.01, 0.0, 0.0, 1e-15, 0.01, 0.01, 0.0, 0.0]
     else:
         raise ValueError(
             'Model nickname undefined please check in SETTINGS.py you are using the correct model nickname!')

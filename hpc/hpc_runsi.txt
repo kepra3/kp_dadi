@@ -1,0 +1,64 @@
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-5730.5944	11471.1888	104391.9329	5242.9703	1.0,1.0,1.0,1.0,1.0	24.4046,7.2392,0.1561,0.3424,2.6202	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-6997.4354	14004.8708	41997.5831	8385.4406	1.0,10.0,1.0,10.0,1.0	19.9564,4.5211,0.1215,0.5073,1.4477	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-19726.6357	39463.2714	52381.1837	39555.9669	1.0,10.0,1.0,10.0,10.0	0.2476,1.8313,1.5189,6.7301,14.0631	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-6140.0968	12290.1936	53976.1648	3238.1083	1.0,10.0,10.0,1.0,1.0	37.9194,9.5645,0.1088,0.2321,4.6663	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-7567.2646	15144.5292	915223.238	5884.3076	1.0,10.0,10.0,1.0,10.0	28.6572,2.6765,0.1231,1.6084,2.2495	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-9999.4848	20008.9696	41968.8042	5112.2376	1.0,10.0,10.0,10.0,1.0	3.5715,15.6152,0.7586,0.0036,2.5649	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-12102.9465	24215.893	23944.557	7516.4908	1.0,10.0,10.0,10.0,10.0	0.321,17.2212,5.1232,0.1295,1.8004	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-9793.4893	19596.9786	34180.0284	9073.9611	10.0,1.0,1.0,1.0,1.0	3.7268,6.2448,0.5436,0.3664,1.1288	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-29862.8133	59735.6266	85093.2696	29707.3393	10.0,1.0,1.0,1.0,10.0	32.3658,0.4102,3.758,0.6323,7.544	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-10141.4682	20292.9364	40392.8987	7088.1714	10.0,1.0,1.0,10.0,1.0	149.13,0.2869,1.0494,9.9994,2.2031	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-7250.1723	14510.3446	81739.7687	3703.8215	10.0,1.0,1.0,10.0,10.0	77.5125,2.634,0.0649,1.2047,4.3921	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-8801.3437	17612.6874	34849.9863	7159.4183	1.0,1.0,1.0,1.0,10.0	45.5256,1.9542,0.3522,1.2104,2.1064	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-29901.0078	59812.0156	84265.8711	81115.4757	10.0,1.0,10.0,1.0,1.0	37.5133,0.1511,9.9982,1.7196,7.5219	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-29862.6528	59735.3056	85123.6981	57915.6865	10.0,1.0,10.0,1.0,10.0	16.78,0.2109,7.317,1.2216,4.6903	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-29862.6069	59735.2138	85191.9308	71641.8503	10.0,1.0,10.0,10.0,1.0	13.2695,0.1705,9.0639,1.5122,3.9684	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-21011.5979	42033.1958	70476.2504	13795.8863	10.0,1.0,10.0,10.0,10.0	9.9096,1.1143,1.645,0.7812,0.7966	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-9226.3654	18462.7308	24165.1241	5122.9738	10.0,10.0,1.0,1.0,1.0	2.5077,15.5504,0.8054,0.0729,2.6687	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-12352.983	24715.966	28595.7523	9629.7032	10.0,10.0,1.0,1.0,10.0	1.3975,6.709,0.956,0.9131,1.2719	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-7222.3396	14454.6792	23710.5836	7300.2125	10.0,10.0,1.0,10.0,1.0	38.0162,0.7908,0.1346,3.3491,1.9011	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-8634.2486	17278.4972	28297.3227	5874.0455	10.0,10.0,1.0,10.0,10.0	149.8847,0.2765,0.7058,9.8035,2.8316	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-9286.0533	18582.1066	387100.5772	10372.7775	10.0,10.0,10.0,1.0,1.0	17.8581,2.3331,0.0965,1.7308,1.0126	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-14508.9056	29027.8112	35357.7448	10424.0369	10.0,10.0,10.0,1.0,10.0	7.7835,3.0727,0.4399,0.1303,0.9679	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-20536.9805	41083.961	53442.0395	64044.2588	1.0,1.0,1.0,10.0,1.0	0.1404,2.391,2.3489,9.8409,1.0058	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-5649.5945	11309.189	19275.0012	6587.1538	10.0,10.0,10.0,10.0,1.0	38.987,3.5291,0.078,0.6559,2.1861	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-69759.6005	139529.201	967108250010866.2	1169.3057	10.0,10.0,10.0,10.0,10.0	8.2739,148.8216,9.9954,4.4428,14.8623	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-21641.8966	43293.7932	70735.0104	68985.8833	1.0,1.0,1.0,10.0,10.0	0.2111,2.8922,0.2612,9.33,1.5651	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-10389.252	20788.504	22172.5745	6295.071	1.0,1.0,10.0,1.0,1.0	0.9905,15.676,1.7801,0.0567,2.1591	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-16396.1897	32802.3794	442194.1707	1194.5482	1.0,1.0,10.0,1.0,10.0	149.7518,2.3631,0.2428,1.6226,14.9596	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-10966.5244	21943.0488	22904.8774	7351.4977	1.0,1.0,10.0,10.0,1.0	0.6839,14.888,2.62,0.0026,1.7501	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-6954.355	13918.71	32785.7777	5701.1913	1.0,1.0,10.0,10.0,10.0	50.6592,0.7295,0.0812,3.8782,2.6258	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-19571.8556	39153.7112	49645.544	24417.4489	1.0,10.0,1.0,1.0,1.0	0.3671,4.569,1.0821,3.8366,10.0239	nu1, nu2, m12, m21, T
+Pop	Mask	Model	Folds	log-likelihood	AIC	chi-squared	theta	initial_params	optimised_params	optimised_params_labels
+group1-group2_projected0.8	no	asym_mig	3	-9815.8244	19641.6488	210927.2862	7700.9106	1.0,10.0,1.0,1.0,10.0	4.9415,6.4586,0.687,0.4357,1.4458	nu1, nu2, m12, m21, T

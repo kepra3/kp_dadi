@@ -41,7 +41,7 @@ setwd("~/git/kp_dadi/scripts/")
 # Args
 
 # Load data
-results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
+results <- read.table("../results/opt1dadi_optimisation.txt", sep = "\t",
                       header = TRUE)
 num_runs <- 3
 
@@ -56,9 +56,9 @@ str(results)
 results$log.likelihood <- as.numeric(results$log.likelihood)
 str(results)
 
-results <- results[results$log.likelihood < -15,]
-results[results$log.likelihood == -1297.27,] <- NA
-results <- na.omit(results)
+#results <- results[results$log.likelihood < -15,]
+#results[results$log.likelihood == -1297.27,] <- NA
+#results <- na.omit(results)
 
 # Remove complicated models (including het and test between no migration vs. migration models)
 #remove_models <- c("het_asym_mig", "anc_het_asym_mig", "sec_het_asym_mig",
@@ -135,7 +135,7 @@ ggplot(dat, aes(AIC, Model, color = AIC)) +
   theme_bw() +
   facet_wrap(~Pop_short, nrow=4, ncol=3) +
   theme(axis.text.x = element_text(angle = 90))
-ggsave(paste0("../plots/model_summaries/Ahya_", num_runs, "_13-11-24.pdf"), units = "cm",
+ggsave(paste0("../plots/model_summaries/Ahya_", num_runs, "_2-1-25.pdf"), units = "cm",
        width = 25, height = 30)
 
 ggplot(dat[dat$Pop_short %in% pop_order[1:6],], aes(AIC, Model, color = AIC)) + 

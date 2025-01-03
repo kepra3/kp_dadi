@@ -35,7 +35,7 @@ def main(function, snps, method, model, sims, eps, opt, PTS):
     fs = Spectrum.from_file(fs_path)
     ns = fs.sample_sizes
 
-    # The parameter confidence interval txt file which will be output
+    # The parameter confidence interval txt file which will be output-1-1timeperiod-lowmask
     out_name = "../results/{}_{}_confidence_intervals.txt".format(snps, model)
 
     # Mask singletons and doubletons

@@ -34,7 +34,7 @@ import numpy
 import SETTINGS
 
 
-def main(fs, model, masked, folds, int_params, PTS, method=None, path=None):
+def main(fs, model, masked, folds, maxiter, int_params, PTS, method=None, path=None):
     # Import and define data constants
     if method == "subsample":
         data = dadi.Spectrum.from_file('../data/fs/{}_subsampled.fs'.format(fs))
@@ -124,7 +124,7 @@ def main(fs, model, masked, folds, int_params, PTS, method=None, path=None):
     param_opt = dadi.Inference.optimize_log_fmin(p1, data, func_ex, PTS,
                                                  lower_bound=lower,
                                                  upper_bound=upper,
-                                                 verbose=1, maxiter=100)
+                                                 verbose=1, maxiter=maxiter)
     # The verbose argument controls how often progress of the optimizer should be
     # printed. It's useful to keep track of optimisation process.
 
@@ -183,6 +183,7 @@ if __name__ == '__main__':
     parser.add_argument("masked", help="Masking method (e.g., 'mid').")
     parser.add_argument("method", help="Whether fs is projected, subsampled or not (e.g., 'projection')")
     parser.add_argument("folds", type=int, help="Number of folds for cross-validation.", nargs=1)
+    parser.add_argument("maxiter", type=int, help="How long optimiser should run")
     parser.add_argument("out_path", help="Output path for results.")
 
     # Optional arguments
@@ -201,6 +202,7 @@ if __name__ == '__main__':
     masked = args.masked
     method = args.method
     folds = args.folds
+    maxiter = args.maxiter
     int_params = args.int_params
 
     # Need to manually define in SETTINGS.py
@@ -213,4 +215,4 @@ if __name__ == '__main__':
     # then add path variable to main function.
     path = "{}".format(args.out_path)
 
-    main(fs, model, masked, folds, int_params, PTS, method=method, path=path)
+    main(fs, model, masked, folds, maxiter, int_params, PTS, method=method, path=path)

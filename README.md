@@ -113,12 +113,12 @@ Using the `optimise_manual.py` script:
 E.g.,
 ```bash
 # Run script
-$ python optimise_manual.py AG1-AG2 iso_inbred low subsample 3 '../results/test-' -p 1 1 1 1 1 
+$ python optimise_manual.py AG1-AG2 iso_inbred low subsample 3 50 '../results/test-' -p 1 1 1 1 1 
 # Find help
 $ python optimise_manual.py -h
 ```
 Arguments: (1) name of your sfs, (2) model, (3) masked low, mid or no, (4) method: subsample or projection or no, (5) number of 
-folds, (6) path for output results file and (optional-7) initial parameter values (where you start the optimisation)
+folds, (6) maxiter - how long you want optimisation to run, (7) path for output results file and (optional-8) initial parameter values (where you start the optimisation)
 
 If using these scripts please make sure your `PTS` for model extrapolation are defined appropriately in `SETTINGS.py`. You can use 
 three grid sizes with the first being much larger (double) than your largest population, and the second and third, each larger than the previous (e.g., if largest population size is 20 haplotypes, the PTS = [40, 50, 60]). The nicknames for the models are also defined within `SETTINGS.py` - please check what they should be and check whether your upper and lower parameter limits are ok.  You may need to change PTS and upper/lower limits if there are issues with optimisation.
