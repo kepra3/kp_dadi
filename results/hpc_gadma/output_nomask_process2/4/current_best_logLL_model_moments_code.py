@@ -7,17 +7,16 @@ def model_func(params, ns):
 	sts = moments.LinearSystem_1D.steady_state_1D(np.sum(ns))
 	fs = moments.Spectrum(sts)
 	fs = moments.Manips.split_1D_to_2D(fs, ns[0], ns[1])
-	nu1_func = lambda t: nu_1 * (nu11 / nu_1) ** (t / t1)
-	nu2_func = lambda t: nu_2 + (nu12 - nu_2) * (t / t1)
+	nu1_func = lambda t: nu_1 + (nu11 - nu_1) * (t / t1)
 	migs = np.array([[0, m1_12], [m1_21, 0]])
-	fs.integrate(tf=t1, Npop=lambda t: [nu1_func(t), nu2_func(t)], m=migs, dt_fac=0.01)
+	fs.integrate(tf=t1, Npop=lambda t: [nu1_func(t), nu12], m=migs, dt_fac=0.01)
 	return fs
 
 data = moments.Spectrum.from_file('/Users/uqkprat2/git/kp_dadi/data/fs/group1-group2_projected0.8.fs')
 data = data.project([16, 16])
 ns = data.sample_sizes
 
-p0 = [3.5379871541375048, 0.836537800438023, 1.2962503538418497, 81.00744460322598, 4.086701937144961, 0, 1.5943616421270155]
+p0 = [0.01925471823263748, 0.8848170780212407, 2.6759007997336184, 29.20502854764349, 7.218719839995266, 0, 0.7632170095267924]
 lower_bound = [0.01, 0.01, 1e-15, 0.01, 0.01, 0.0, 0.0]
 upper_bound = [100.0, 100.0, 5.0, 100.0, 100.0, 10.0, 10.0]
 model = model_func(p0, ns)
