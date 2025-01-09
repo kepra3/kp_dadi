@@ -83,7 +83,6 @@ def bottlegrowth(params, ns, pts):
 
 
 def bottleneck(params, ns, pts):
-
     nuB, nuF, TB, TF = params
 
     xx = Numerics.default_grid(pts)
@@ -94,6 +93,7 @@ def bottleneck(params, ns, pts):
 
     fs = Spectrum.from_phi(phi, ns, (xx,))
     return fs
+
 
 # Models for testing two population scenarios.
 def no_divergence(notused, ns, pts):
@@ -529,6 +529,7 @@ def anc_hetero_asym_migration(params, ns, pts):
     fs = P * fsN + (1 - P) * fsI
     return fs
 
+
 def sec_contact_hetero_asym_migration(params, ns, pts):
     """
     Split with no gene flow, followed by period of asymmetrical gene flow.
@@ -565,7 +566,7 @@ def sec_contact_hetero_asym_migration(params, ns, pts):
 
     fsI = Spectrum.from_phi(phiI, ns, (xx, xx))
 
-    fs = P*fsN+(1-P)*fsI
+    fs = P * fsN + (1 - P) * fsI
     return fs
 
 
@@ -621,6 +622,7 @@ def split_bottlegrowth_hetero_asym_mig(params, ns, pts):
 
     fs = P * fsN + (1 - P) * fsI
     return fs
+
 
 def split_bottlegrowth_ancient_hetero_asym_mig(params, ns, pts):
     """
@@ -749,7 +751,7 @@ def split_sizechange_hetero_asym_mig(params, ns, pts):
     ns: Number of samples in resulting Spectrum
     pts: Number of grid points to use in integration.
     """
-    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1,  me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P = params
+    nu1T1, nu2T1, nu1T2, nu2T2, T1, T2, m12T1, m21T1, me12T1, me21T1, m12T2, m21T2, me12T2, me21T2, P = params
 
     xx = Numerics.default_grid(pts)
 
@@ -820,6 +822,21 @@ def split_sizechange_ancient_hetero_asym_mig(params, ns, pts):
     return fs
 
 
+def gadma_model(params, ns, pts):
+    t1, nu11, nu11_1, nu11_2, t2, nu21, nu22, m2_12, m2_21, t3, nu31, nu32, m3_12, m3_21 = params
+    _Nanc_size = 1.0  # This value can be used in splits with fractions
+    xx = Numerics.default_grid(pts)
+    phi = PhiManip.phi_1D(xx)
+    nu1_func = lambda t: _Nanc_size + (nu11 - _Nanc_size) * (t / t1)
+    phi = Integration.one_pop(phi, xx, T=t1, nu=nu1_func)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+    nu1_func = lambda t: nu11_1 * (nu21 / nu11_1) ** (t / t2)
+    phi = Integration.two_pops(phi, xx, T=t2, nu1=nu1_func, nu2=nu22, m12=m2_12, m21=m2_21)
+    phi = Integration.two_pops(phi, xx, T=t3, nu1=nu31, nu2=nu32, m12=m3_12, m21=m3_21)
+    sfs = Spectrum.from_phi(phi, ns, [xx] * len(ns))
+    return sfs
+
+
 def split_sizechange_second_hetero_asym_mig(params, ns, pts):
     """
     Split into two populations
@@ -865,6 +882,7 @@ def split_sizechange_second_hetero_asym_mig(params, ns, pts):
 
     fs = P * fsN + (1 - P) * fsI
     return fs
+
 
 # Previous
 def iso_inbreeding(params, ns, pts):

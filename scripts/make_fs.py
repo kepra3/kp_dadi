@@ -48,9 +48,11 @@ def main(snps, fold, masked, method, genotypes):
 
     # Configuring haplotypes and genotypes
     if len(pop_ids) == 1:
+        print("One dimensional sfs")
         proj = [genotypes[0] * 2]
         subsample = {pop_ids[0]: genotypes[0]}
     elif len(pop_ids) == 2:
+        print("Two dimensional sfs")
         proj = [genotypes[0] * 2, genotypes[1] * 2]
         subsample = {pop_ids[0]: genotypes[0], pop_ids[1]: genotypes[1]}
     else:

@@ -91,7 +91,7 @@ def main(snps, fold, method, mask):
             project_int = int(project)
             fs = fs.project([project_int])
             extras += "project"
-            fs.to_file("../data/fs/{}_projected0.8.fs".format(snps))
+            fs.to_file("../data/fs/{}_projected0.8{}.fs".format(snps, extras))
         dadi.Plotting.plot_1d_fs(fs)
     elif len(fs.sample_sizes == 2):
         # Projecting
@@ -100,7 +100,7 @@ def main(snps, fold, method, mask):
             project_int = [int(x) for x in project]
             fs = fs.project([project_int[0], project_int[1]])
             extras += "project"
-            fs.to_file("../data/fs/{}_projected0.8.fs".format(snps))
+            fs.to_file("../data/fs/{}_projected0.8{}.fs".format(snps, extras))
         dadi.Plotting.plot_single_2d_sfs(fs, vmin=1, cmap=colour_map)
 
     fig1.tight_layout()
