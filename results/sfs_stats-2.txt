@@ -12,3 +12,5 @@ group1.recode	[40]	folded	16826.0	-2.12
 group1.recode	[36]	folded	15757.69	-2.08
 group1.cv	[40]	folded	16826.0	-2.12
 group1.cv	[32]	folded	14627.33	-2.04
+group1.cvnohet	[40]	folded	20464.0	-0.96
+group1.cvnohet	[32]	folded	18265.33	-0.81

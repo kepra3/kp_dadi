@@ -144,6 +144,7 @@ ahya.group1.miss10.vcf
 *.vcf.gz
 *recode.vcf
 group1.cv.vcf
+group1.cvnohet.vcf
 
 # Specific project working files 
 scrap/

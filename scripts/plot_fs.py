@@ -1,110 +1,109 @@
-#!/usr/anaconda3/bin/python
-# -*- coding: utf-8 -*-
-# remember to edit python environment if required.
-
-"""
-@author: kprata
-@date created: 25/1/24
-@description: Plotting the fs spectrum for a premade .fs file
-"""
-
 import argparse
 import os
-import dadi
 import numpy as np
-import copy
+import dadi
 import pylab
-import matplotlib.pyplot as pyplot
+import copy
 
 
-def main(snps, fold, method, mask):
-    # Import spectrum
-    fs = dadi.Spectrum.from_file('../data/fs/{}.fs'.format(snps))
-    pops = "{}".format(snps)
-    pop_ids = pops.split("-")
-
+def apply_mask(fs, mask):
+    """Apply masking based on the specified type."""
     if mask == "low" and len(fs.sample_sizes) == 2:
-        fs.mask[1, 0] = True
-        fs.mask[0, 1] = True
-        fs.mask[2, 0] = True
-        fs.mask[0, 2] = True
-        fs.mask[1, 1] = True
+        indices = [(1, 0), (0, 1), (2, 0), (0, 2), (1, 1)]
+        for i, j in indices:
+            fs.mask[i, j] = True
     elif mask == "mid" and len(fs.sample_sizes) == 1:
-        mid = fs.sample_sizes / 2
-        mid = int(mid[0])
+        mid = int(fs.sample_sizes[0] / 2)
         fs.mask[mid] = True
     else:
-        print("No masking")
+        print("No masking applied")
 
+
+def calculate_statistic(fs):
+    """Calculate the appropriate statistic based on sample size dimensions."""
     if len(fs.sample_sizes) == 2:
-        statistic_name = "FST"
-        statistic = fs.Fst()
+        return "FST", fs.Fst()
     elif len(fs.sample_sizes) == 1:
-        statistic_name = "TajimasD"
-        statistic = fs.Tajima_D()
+        return "TajimasD", fs.Tajima_D()
     else:
-        print("Choose dim")
+        raise ValueError("Unsupported dimensionality for the site frequency spectrum")
 
-    # make a file with statistics about your sfs
-    stats_out_name = "../results/sfs_stats-2.txt"
+
+def write_statistics(stats_out_name, snps, fs, statistic_name, statistic_value):
+    """Write statistics to the output file."""
     with open(stats_out_name, 'a') as stats_out:
         if stats_out.tell() == 0:
             print('Creating a new file')
             stats_out.write("Pop\tSample sizes\tSum of SFS\t{}\n".format(statistic_name))
-        else:
-            print('file exists, appending')
+        stats_out.write(
+            f"{snps}\t{fs.sample_sizes}\t{np.around(fs.S(), 2)}\t{np.around(statistic_value, 2)}\n"
+        )
 
-    # Printing out stats for the fs
-    print("\nThe datafile will be named {}".format(snps))
-    print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
-    print("Data for site frequency spectrum:\n")
-    print("Sample sizes: {}".format(fs.sample_sizes))
-    print("Sum of SFS: {}".format(np.around(fs.S(), 2)))
-    print("{} of SFS: {}".format(statistic_name, np.around(statistic, 2)))
-    print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 
-    with open(stats_out_name, "a") as stats_out:
-        stats_out.write("{0}\t{1}\t{2}\t{3}\n".format(snps, fs.sample_sizes, np.around(fs.S(), 2),
-                                                      np.around(statistic, 2)))
-
-    # Plotting settings
-    fig_size = (5, 5)
-    fig1 = pylab.figure(figsize=fig_size)
-    colour_map = copy.copy(pylab.cm.get_cmap("hsv"))
-
+def plot_spectrum(fs, snps, fold, method, mask, outpath):
+    """Plot the site frequency spectrum."""
     extras = ""
+    colour_map = copy.copy(pylab.cm.get_cmap("hsv"))
 
     # Folding
     if fold == "folded":
         fs = fs.fold()
         extras += "fold"
-        fs.to_file("../data/fs/{}_folded.fs".format(snps))
 
+    # Masking
     if mask != "no":
-        extras += "mask{}".format(mask)
+        extras += f"mask{mask}"
 
-    print("Plotting spetrum for {}".format(snps))
-
+    # Plotting and projecting
+    fig = pylab.figure(figsize=(5, 5))
     if len(fs.sample_sizes) == 1:
         if method == "projection":
-            project = fs.sample_sizes * 0.8
-            project_int = int(project)
+            project_int = int(fs.sample_sizes[0] * 0.8)
             fs = fs.project([project_int])
             extras += "project"
-            fs.to_file("../data/fs/{}_projected0.8{}.fs".format(snps, extras))
         dadi.Plotting.plot_1d_fs(fs)
-    elif len(fs.sample_sizes == 2):
-        # Projecting
+    elif len(fs.sample_sizes) == 2:
         if method == "projection":
-            project = fs.sample_sizes * 0.8
-            project_int = [int(x) for x in project]
-            fs = fs.project([project_int[0], project_int[1]])
+            project_int = [int(x * 0.8) for x in fs.sample_sizes]
+            fs = fs.project(project_int)
             extras += "project"
-            fs.to_file("../data/fs/{}_projected0.8{}.fs".format(snps, extras))
         dadi.Plotting.plot_single_2d_sfs(fs, vmin=1, cmap=colour_map)
 
-    fig1.tight_layout()
-    fig1.savefig("../plots/spectra/" + snps + extras + ".png", dpi=300)
+    # Save processed .fs file
+    out_dir = os.path.join("../data/fs", outpath) if outpath else "../data/fs"
+    os.makedirs(out_dir, exist_ok=True)
+    fs_file_path = os.path.join(out_dir, f"{snps}_{extras}.fs")
+    fs.to_file(fs_file_path)
+    print(f"Saved fs to {fs_file_path}")
+
+    # Save plot
+    fig.tight_layout()
+    plot_file_path = os.path.join("../plots/spectra/", f"{snps}_{extras}.png")
+    fig.savefig(plot_file_path, dpi=300)
+    print(f"Saved plot to {plot_file_path}")
+    pylab.close(fig)
+
+
+def main(filepath, fold, method, mask, outpath):
+    """Main script functionality."""
+    # Extract SNPs name from the file path
+    snps = os.path.splitext(os.path.basename(filepath))[0]
+
+    # Import spectrum
+    fs = dadi.Spectrum.from_file(filepath)
+
+    # Apply masking
+    apply_mask(fs, mask)
+
+    # Calculate statistics
+    statistic_name, statistic = calculate_statistic(fs)
+
+    # Write statistics to file
+    stats_out_name = "../results/sfs_stats.txt"
+    write_statistics(stats_out_name, snps, fs, statistic_name, statistic)
+
+    # Plot spectrum
+    plot_spectrum(fs, snps, fold, method, mask, outpath)
 
 
 if __name__ == '__main__':
@@ -112,13 +111,13 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog="Plotting fs",
         description="A script for plotting fs from .fs file.",
-        usage="%(prog)s [options] <snps> <fold> <method> <mask>"
+        usage="%(prog)s [options] <filepath> <fold> <method> <mask>"
     )
 
     # Required positional arguments
     parser.add_argument(
-        "snps",
-        help="Name of the data .fs file."
+        "filepath",
+        help="Path to the data .fs file."
     )
     parser.add_argument(
         "fold",
@@ -135,14 +134,15 @@ if __name__ == '__main__':
         help="Type of masking to use (e.g., 'mid', 'low', or 'no')."
     )
 
+    # Optional arguments
+    parser.add_argument(
+        "-o", "--outpath",
+        help="Optional subdirectory for saving processed .fs file and plots. "
+             "Defaults to '../data/fs/'."
+    )
+
     # Parse arguments
     args = parser.parse_args()
 
-    # Set variables from parsed arguments
-    snps = args.snps
-    fold = args.fold
-    method = args.method
-    mask = args.mask
-
     # Call the main function
-    main(snps, fold, method, mask)
+    main(args.filepath, args.fold, args.method, args.mask, args.outpath)
