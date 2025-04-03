@@ -12,13 +12,13 @@
 #	If it is resumed from other directory and output directory 
 #	isn't set, GADMA will add '_resumed' for previous output 
 #	directory.
-Output directory: ../results/hpc_gadma/output_nomask_process2
+Output directory: ../results/hpc_gadma/output_nomask_process1.1
 
 
 #!!!
 #	Input file can be sfs file (should end with .fs) or 
 #	file of SNP's in dadi format (should end with .txt).
-Input file: ../data/fs/group1-group2_projected0.8.fs
+Input file: ../data/fs/group1-group2.fs
 
 #	'Population labels' is sequence of population names (the same
 #	names as in input file)
@@ -41,7 +41,7 @@ Population labels: Null
 #	project it to 21x21x21 by set 'Projections' parameter 
 #	to 20, 20, 20.
 #	Default: from input file
-Projections: [16, 16]
+Projections: Null
 
 #!!!
 #	Are SNP's linked or unlinked?
@@ -57,7 +57,7 @@ Linked SNP's: True
 #	the directory with bootstrapped data. 
 #	Bootstrap should be done over the regions of genome.
 #	Default: None
-Directory with bootstrap: ../data/fs/projected_group1-group2
+Directory with bootstrap: ../data/fs/outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE.saf_boots
 
 
 #!!!
@@ -71,7 +71,7 @@ Engine: dadi
 #	of points in grid. Otherwise this pts would be used in dadi's code.
 #	Default: Let n = max number of individuals in one population, 
 #	then pts = n, n+10, n+20
-Pts: [40, 60, 80]
+Pts: [42, 62, 82]
 
 #!!!
 #	Print parameters of model in units of N_ref = N_A.
@@ -98,7 +98,7 @@ Time for generation: Null
 #	Use sudden changes of population sizes only. Decreases 
 #	the number of parameters.
 #	Default: False
-Only sudden: False
+Only sudden: True
 
 #	Disable migrations in demographic models.
 #	Default: False
@@ -128,8 +128,8 @@ Custom filename: Null
 #	s: 0 - 1
 #	This bounds will be taken automatically if identifications are set.
 #	Default: None
-Lower bound: [1e-2, 0, 0, 0]
-Upper bound: [100, 10, 10, 1]
+Lower bound: Null
+Upper bound: Null
 #	An identifier list:
 #	T - time
 #	N - size of population
@@ -137,7 +137,7 @@ Upper bound: [100, 10, 10, 1]
 #	s - split event,  proportion in which population size
 #	is divided to form two new populations.
 #	Default: None
-Parameter identifiers: [nuB, nuF, TB, TF]
+Parameter identifiers: Null
 
 # 2. Structure is for not custom models!
 #	Structure of model for one population - number of time periods 
@@ -154,7 +154,7 @@ Initial structure: 1,1
 
 #	Structure of final model:
 #	Default: equals to initial structure
-Final structure: 2,2
+Final structure: 1,2
 
 
 #!!!
