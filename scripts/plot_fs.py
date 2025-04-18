@@ -2,6 +2,8 @@ import argparse
 import os
 import numpy as np
 import dadi
+import matplotlib
+matplotlib.use('Agg')
 import pylab
 import copy
 
