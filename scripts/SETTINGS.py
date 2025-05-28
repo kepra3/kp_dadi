@@ -221,12 +221,30 @@ def get_settings(model, ALL=False):
         upper = [200, 200, 200, 200, 15, 15, 10, 10, 10, 10, 1]
         lower = [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
         model_fun = demo_models_kp.split_sizechange_second_hetero_asym_mig
-    elif model == "gadma_model":
-        num = 14
-        p_labels = "t1, nu11, nu11_1, nu11_2, t2, nu21, nu22, m2_12, m2_21, t3, nu31, nu32, m3_12, m3_21"
-        model_fun = demo_models_kp.gadma_model
-        upper = [5.0, 100.0, 100.0, 100.0, 5.0, 100.0, 100.0, 10.0, 10.0, 5.0, 100.0, 100.0, 10.0, 10.0]
-        lower = [1e-15, 0.01, 0.01, 0.01, 1e-15, 0.01, 0.01, 0.0, 0.0, 1e-15, 0.01, 0.01, 0.0, 0.0]
+    elif model == "twoepoch_het_mig":
+        num = 17
+        p_labels = "nu_1, nu_2, t1, nu11, nu12, m1_12, me1_12, m1_21, me1_21, t2, nu21, nu22, m2_12, m2_21, me2_12, me2_21, P"
+        model_fun = demo_models_kp.twoepoch_het_mig
+        upper = [200, 200, 10, 200, 200, 10, 10, 10, 10, 10, 200, 200, 10, 10, 10, 10, 1]
+        lower = [1e-3, 1e-3, 0, 1e-3, 1e-3, 0, 0, 0, 0, 0, 1e-3, 1e-3, 0, 0, 0, 0, 0]
+    elif model == "model_split1_then_23":
+        num = 5
+        p_labels = "nu1, nu2, nu3, T1_23, T23"
+        model_fun = demo_models_kp.model_split1_then_23
+        upper = [100, 100, 100, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0, 0]
+    elif model == "model_split2_then_13":
+        num = 5
+        p_labels = "nu1, nu2, nu3, T1_23, T23"
+        model_fun = demo_models_kp.model_split2_then_13
+        upper = [100, 100, 100, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0, 0]
+    elif model == "model_split3_then_12":
+        num = 5
+        p_labels = "nu1, nu2, nu3, T1_23, T23"
+        model_fun = demo_models_kp.model_split3_then_12
+        upper = [100, 100, 100, 10, 10]
+        lower = [0.001, 0.001, 0.001, 0, 0]
     else:
         raise ValueError(
             'Model nickname undefined please check in SETTINGS.py you are using the correct model nickname!')

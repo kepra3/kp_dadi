@@ -1584,3 +1584,33 @@ outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnl
 outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE.saf_98_boot	[40 22]	556886.54	0.19
 outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE.saf_99_boot	[40 22]	556482.94	0.19
 outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE.saf_100_boot	[40 22]	556203.99	0.19
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.fold.group2_dadi_group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40 40]	362014.76	0.0
+outQ0.unfold.group1_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 17]	111991.19	0.33
+outQ0.unfold.group1_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 32]	70052.17	0.12
+outQ0.unfold.group1_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 32]	76247.09	0.12
+outQ0.unfold.group2_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 17]	118359.4	0.29
+outQ0.unfold.group2_dadi_group3_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 32]	80497.72	0.1
+outQ0.unfold.group2_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 32]	84843.52	0.12
+outQ0.unfold.group3_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 17]	127781.61	0.28
+outQ0.unfold.group3_dadi_group4_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 32]	92922.75	0.08
+outQ0.unfold.group4_dadi_Amil_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_projected0.8	[32 17]	139754.46	0.28
+group1-group2_projected0.8	[32 32]	285376.87	0.09
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE	[40 40]	323336.46	0.08
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_foldproject	[32 32]	285376.87	0.09
+outQ0.unfold.group1_dadi_group2_dadi_snp_Q5_ind834_sites_qc_dep_ngspara_n80_chrOnly_USE_foldproject	[32 32]	285376.87	0.09
