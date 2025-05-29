@@ -6,10 +6,9 @@
 @date created: 5/5/21
 @description: Custom models for demographic analysis using the site frequency spectrum.
 
-Compatible with python 3.6.11 and dadi 2.1.1
+Compatible with python 3.6.11 and 2.1.1
 """
-from dadi import Numerics, PhiManip, Integration
-from dadi.Spectrum_mod import Spectrum
+from dadi import Numerics, PhiManip, Integration, Spectrum
 import numpy as np
 
 
@@ -821,20 +820,39 @@ def split_sizechange_ancient_hetero_asym_mig(params, ns, pts):
     fs = P * fsN + (1 - P) * fsI
     return fs
 
+def twoepoch_het_mig(params, ns, pts):
+    """
+    Heterogeneous model with two populations and migration.
+    """
+    nu_1, nu_2, t1, nu11, nu12, m1_12, me1_12, m1_21, me1_21, t2, nu21, nu22, m2_12, m2_21, me2_12, me2_21, P   = params
 
-def gadma_model(params, ns, pts):
-    t1, nu11, nu11_1, nu11_2, t2, nu21, nu22, m2_12, m2_21, t3, nu31, nu32, m3_12, m3_21 = params
     _Nanc_size = 1.0  # This value can be used in splits with fractions
+
     xx = Numerics.default_grid(pts)
-    phi = PhiManip.phi_1D(xx)
-    nu1_func = lambda t: _Nanc_size + (nu11 - _Nanc_size) * (t / t1)
-    phi = Integration.one_pop(phi, xx, T=t1, nu=nu1_func)
-    phi = PhiManip.phi_1D_to_2D(xx, phi)
-    nu1_func = lambda t: nu11_1 * (nu21 / nu11_1) ** (t / t2)
-    phi = Integration.two_pops(phi, xx, T=t2, nu1=nu1_func, nu2=nu22, m12=m2_12, m21=m2_21)
-    phi = Integration.two_pops(phi, xx, T=t3, nu1=nu31, nu2=nu32, m12=m3_12, m21=m3_21)
-    sfs = Spectrum.from_phi(phi, ns, [xx] * len(ns))
-    return sfs
+
+    phiN = PhiManip.phi_1D(xx)
+    phiN = PhiManip.phi_1D_to_2D(xx, phiN)
+
+    phiN = Integration.two_pops(phiN, xx, T=t1, nu1=nu_1, nu2=nu_2, m12=0, m21=0)
+    phiN = Integration.two_pops(phiN, xx, T=t1, nu1=nu11, nu2=nu12, m12=m1_12, m21=m1_21)
+    phiN = Integration.two_pops(phiN, xx, T=t2, nu1=nu21, nu2=nu22, m12=m2_12, m21=m2_21)
+
+    fsN = Spectrum.from_phi(phiN, ns, [xx]*len(ns))
+    
+    phiI = PhiManip.phi_1D(xx)
+    phiI = PhiManip.phi_1D_to_2D(xx, phiI)
+
+    phiI = Integration.two_pops(phiI, xx, T=t1, nu1=nu_1, nu2=nu_2, m12=0, m21=0)
+
+    phiI = Integration.two_pops(phiI, xx, T=t1, nu1=nu11, nu2=nu12, m12=me1_12, m21=me1_21)
+
+    phiI = Integration.two_pops(phiI, xx, T=t2, nu1=nu21, nu2=nu22, m12=me2_12, m21=me2_21)
+    
+    fsI = Spectrum.from_phi(phiI, ns, [xx]*len(ns))
+
+
+    fs = P * fsN + (1 - P) * fsI
+    return fs
 
 
 def split_sizechange_second_hetero_asym_mig(params, ns, pts):
@@ -1347,3 +1365,119 @@ def mig_sec_cont23(params, ns, pts):
 
     fs = Spectrum.from_phi_inbreeding(phi, ns, (xx, xx, xx), (F1, F2, F3), (2, 2, 2))
     return fs
+
+def model_split1_then_23(params, ns, pts):
+    """
+    A 3-population split: first pop1 vs (pop2, pop3), then pop2 vs pop3.
+
+    params = [nu1, nu2, nu3, T1_23, T23]
+        nu1, nu2, nu3: population sizes of pop1, pop2, pop3
+        T1_23: time since pop1 split from ancestor of (pop2, pop3)
+        T23: time since pop2 and pop3 split from each other
+    ns: sample sizes (n1, n2, n3)
+    pts: grid sizes for numerical integration
+    """
+    nu1, nu2, nu3, T1_23, T23 = params
+
+    xx = Numerics.default_grid(pts)
+
+    # Start from 1D ancestral population
+    phi = PhiManip.phi_1D(xx)
+
+    # Split into pop1 and ancestral pop23
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+
+    # Integrate until pop2 and pop3 split
+    phi = Integration.two_pops(phi, xx, T1_23, nu1=nu1, nu2=1.0)
+
+    # Split ancestral pop23 into pop2 and pop3 (pop1 stays untouched)
+    phi = PhiManip.phi_2D_to_3D_split_2(xx, phi)
+
+    # Final integration with 3 populations
+    phi = Integration.three_pops(phi, xx, T23, nu1=nu1, nu2=nu2, nu3=nu3)
+
+    # Convert phi to frequency spectrum
+    fs = Spectrum.from_phi(phi, ns, (xx, xx, xx))
+    return fs
+
+def model_split2_then_13(params, ns, pts):
+    """
+    Three-population model:
+        - First, pop2 splits from ancestor of (pop1, pop3)
+        - Then, pop1 and pop3 split
+
+    params = [nu1, nu2, nu3, T2_13, T13]
+        nu1, nu2, nu3: final population sizes
+        T2_13: time since pop2 split from ancestor of (1,3)
+        T13: time since pop1 and pop3 split from each other
+
+    ns: sample sizes [n1, n2, n3]
+    pts: grid sizes for numerical integration
+    """
+    nu1, nu2, nu3, T2_13, T13 = params
+
+    xx = Numerics.default_grid(pts)
+
+    # Start from 1D ancestral population
+    phi = PhiManip.phi_1D(xx)
+
+    # First split: pop2 and ancestor of (pop1, pop3)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+    phi = Integration.two_pops(phi, xx, T2_13, nu1=1.0, nu2=1.0)  # ancestral sizes
+
+    # Second split: ancestor splits into pop1 and pop3
+    phi = PhiManip.phi_2D_to_3D_split_1(xx, phi)
+
+    # Final integration of 3 pops
+    phi = Integration.three_pops(phi, xx, T13, nu1=nu1, nu2=nu2, nu3=nu3)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx, xx))
+    return fs
+
+def model_split3_then_12(params, ns, pts):
+    """
+    Three-population model:
+        - First, pop3 splits from ancestor of (pop1, pop2)
+        - Then, pop1 and pop2 split
+
+    params = [nu1, nu2, nu3, T3_12, T12]
+        nu1, nu2, nu3: final population sizes
+        T3_12: time since pop3 split from ancestor of (1,2)
+        T12: time since pop1 and pop2 split
+
+    ns: sample sizes [n1, n2, n3]
+    pts: grid sizes
+    """
+    nu1, nu2, nu3, T3_12, T12 = params
+
+    xx = Numerics.default_grid(pts)
+
+    # Start from 1D ancestral population
+    phi = PhiManip.phi_1D(xx)
+
+    # First split: pop3 and ancestor of (pop1, pop2)
+    phi = PhiManip.phi_1D_to_2D(xx, phi)
+    phi = Integration.two_pops(phi, xx, T3_12, nu1=1.0, nu2=1.0)  # ancestral sizes
+
+    # Second split: (1,2) split
+    phi = PhiManip.phi_2D_to_3D_split_1(xx, phi)
+
+    # Final integration of all three pops
+    phi = Integration.three_pops(phi, xx, T12, nu1=nu1, nu2=nu2, nu3=nu3)
+
+    fs = Spectrum.from_phi(phi, ns, (xx, xx, xx))
+    return fs
+
+def model_three_way_split(params, ns, pts):
+    """
+    Simultaneous 3-way split from a common ancestor.
+
+    params = [nu1, nu2, nu3, T]
+        nu1, nu2, nu3: final population sizes
+        T: time since all 3 populations split simultaneously
+
+    ns: sample sizes [n1, n2, n3]
+    pts: grid sizes
+    """
+    # TODO: work out the correct phi manipulations for this model
+    return None
