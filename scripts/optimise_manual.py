@@ -174,7 +174,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog="dadi Optimisation",
         description="A script for optimising dadi models. Specify datafile, model, and other parameters.",
-        usage="%(prog)s [options] <fs> <model> <masked> <method> <folds> <out_path>"
+        usage="%(prog)s [options] <fs> <model> <masked> <method> <folds> <maxiter> <out_path>"
     )
 
     # Required positional arguments
