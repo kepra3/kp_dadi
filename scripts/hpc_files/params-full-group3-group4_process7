@@ -41,7 +41,7 @@ Population labels: [group3, group4]
 #	project it to 21x21x21 by set 'Projections' parameter 
 #	to 20, 20, 20.
 #	Default: from input file
-Projections: [32, 32]
+
 
 #!!!
 #	Are SNP's linked or unlinked?

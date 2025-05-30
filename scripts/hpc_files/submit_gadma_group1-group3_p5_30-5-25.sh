@@ -15,4 +15,4 @@ module load python/3.9.5-gcccore-10.3.0
 source $EBROOTANACONDA3/etc/profile.d/conda.sh
 conda activate gadma_env
 
-gadma -p params-nomask-group1-group3_process5
+gadma -p params-full-group1-group3_process5
