@@ -12,13 +12,13 @@
 #	If it is resumed from other directory and output directory 
 #	isn't set, GADMA will add '_resumed' for previous output 
 #	directory.
-Output directory: ../results/gadma/output_nomask_group1-group2_het_process
+Output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_nomask_group1-group2_het_process
 
 
 #!!!
 #	Input file can be sfs file (should end with .fs) or 
 #	file of SNP's in dadi format (should end with .txt).
-Input file: ../data/fs/group1-group2_projected0.8.fs
+Input file: ../data/fs/group1-group2.fs
 
 #	'Population labels' is sequence of population names (the same
 #	names as in input file)

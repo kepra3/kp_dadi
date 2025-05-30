@@ -233,8 +233,8 @@ for (group in unique(gadma_pu_long$Groups)) {
   df_group = gadma_pu_long[gadma_pu_long$Groups == group,]
   # Filter to top 5 rows by LogLikelihood (highest = least negative)
   top5_runs <- df_group |>
-    dplyr::group_by(Run) |>
-    dplyr::summarise(LogLikelihood = mean(LogLikelihood), .groups = "drop") |>
+    #dplyr::group_by(Run) |>
+    #dplyr::summarise(LogLikelihood = mean(LogLikelihood), .groups = "drop") |>
     dplyr::arrange(desc(LogLikelihood)) |>
     dplyr::slice_head(n = 5)
   df_group <- df_group[df_group$Run %in% top5_runs$Run, ]
@@ -265,54 +265,41 @@ for (group in unique(gadma_pu_long$Groups)) {
   ggsave(paste0("../plots/gadma_params/", group, "_physical-param-confi.pdf"),
          units = "cm", width = 20, height = 20)
 }
+
 gadma_top <- gadma_results_pu[0,]
+summary_list <- list()
+
 for (group in unique(gadma_results_pu$Groups)) {
-  df_group = gadma_results_pu[gadma_results_pu$Groups == group,]
-  # Filter to top 5 rows by LogLikelihood (highest = least negative)
+  df_group <- gadma_results_pu[gadma_results_pu$Groups == group,]
+  
   top_run <- df_group |>
-    dplyr::arrange(desc(LogLikelihood)) |>
-    dplyr::slice_head(n = 1)
-  row <- df_group[df_group$LogLikelihood %in% top_run$LogLikelihood, ]
-  gadma_top <- rbind(gadma_top, row)
+    arrange(desc(LogLikelihood)) |>
+    slice_head(n = 5)
+  
+  gadma_top <- rbind(gadma_top, top_run)
+  
+  # Calculate min and max for columns in thousands
+  min_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), min))
+  max_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), max))
+  # dived by 1000 for generations and pop sizes
+  min_vals[,c(1,2,3,6,7,8,11,12)] <- min_vals[,c(1,2,3,6,7,8,11,12)]/1000
+  max_vals[,c(1,2,3,6,7,8,11,12)] <- max_vals[,c(1,2,3,6,7,8,11,12)]/1000
+  # Combine min and max as "min-max"
+  min_max <- Map(function(min, max) sprintf("%.1f–%.1f", min, max), min_vals, max_vals)
+  min_max_df <- as.data.frame(min_max)
+  names(min_max_df) <- names( top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)])
+  
+  min_max_df$Group <- group
+  summary_list[[group]] <- min_max_df
 }
-div <- gadma_top[order(gadma_top$T1gen), c(1,21)]
-div
-#div b/w group1-Amil
-#220,000 generations
-#450,000 - 1,00,000 years
 
-#div b/w group2-Amil
-#130,000 generations
-#260,000 - 640,000 years
+summary_table <- bind_rows(summary_list) |> relocate(Group)
 
-#div b/w group3-Amil
-#130,000 generations
-#260,000 - 640,000 years
+custom_order <- c(
+  "group1-group2", "group1-group3", "group1-group4",
+  "group2-group3", "group2-group4", "group3-group4",
+  "group1-Amil", "group2-Amil", "group3-Amil", "group4-Amil"
+)
 
-#div b/w group4-Amil
-#132,000 generations
-#265,000 - 660,000 years
-
-#div b/w group1-group2
-#90,000 generations
-#170,000 - 450,000 years
-
-#div b/w group1-group3
-#200,000 generations
-#400,000 - 1,000,000 years
-
-#div b/w group1-group4
-#200,000 generations
-#400,000 - 1,00,000 years
-
-#div b/w group2-group3
-#97,000 generations
-#193,000 - 485,000 years
-
-#div b/w group2-group4
-#40,000 generations
-#170,000 - 410,000 years
-
-#div b/w group3-group4
-#84,000 generations
-#170,000 - 420,000 years
+summary_table$Group <- factor(summary_table$Group, levels = custom_order)
+summary_table <- summary_table[order(summary_table$Group),]

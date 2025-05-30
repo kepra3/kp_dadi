@@ -41,9 +41,9 @@ setwd("~/git/kp_dadi/scripts/")
 # Args
 
 # Load data
-results <- read.table("../results/opt1dadi_optimisation.txt", sep = "\t",
+results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
-num_runs <- 3
+num_runs <- 1
 
 #results <- results[331:length(results[,1]),]
 
@@ -56,9 +56,9 @@ str(results)
 results$log.likelihood <- as.numeric(results$log.likelihood)
 str(results)
 
-#results <- results[results$log.likelihood < -15,]
-#results[results$log.likelihood == -1297.27,] <- NA
-#results <- na.omit(results)
+results <- results[results$log.likelihood < -15,]
+results[results$log.likelihood == -1297.27,] <- NA
+results <- na.omit(results)
 
 # Remove complicated models (including het and test between no migration vs. migration models)
 #remove_models <- c("het_asym_mig", "anc_het_asym_mig", "sec_het_asym_mig",
