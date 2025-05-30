@@ -1,0 +1,77 @@
+Data reading
+Number of populations: 2
+Projections: [40, 40]
+Population labels: ['group1', 'group2']
+Outgroup: False
+[92m--Successful data reading (0.00 s)--[0m
+
+[92m--Successful arguments parsing--[0m
+
+Bootstrap data reading
+Number of files found: 100
+[92m--Successful bootstrap data reading (0.12 s)--[0m
+
+Parameters of launch are saved in output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_group1-group2_het_process/params_file
+All output is saved in output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_group1-group2_het_process/GADMA.log
+
+[94m--Start pipeline--[0m
+Run launch number 2
+Run launch number 1
+Run launch number 3
+Run launch number 4
+7172.44172 323336.4601
+
+[000:01:00]
+No models yet
+7576.692155000001 323336.4601
+
+[000:02:00]
+No models yet
+24154.901573 323336.4601
+25347.301493000003 323336.4601
+7860.890949000001 323336.4601
+
+[000:03:00]
+No models yet
+805.0480470000001 323336.4601
+18051.872501 323336.4601
+
+[000:04:00]
+No models yet
+19857.418702000006 323336.4601
+6080.614774000001 323336.4601
+
+[000:05:00]
+No models yet
+18059.628544000003 323336.4601
+25325.709668999996 323336.4601
+13349.325828 323336.4601
+
+[000:06:00]
+All best by log-likelihood models
+Number	log-likelihood	Model	Units
+Run 1	-23003.77	(nu_1=0.04001,	nu_2=1.27213,	t1=5.29e-09,	nu11=0.55006,	nu12=1.12971,	me1_12=0,	me1_21=0.00e+00,	t2=1.31463,	nu21=16.20445,	nu22=13.47541,	me2_12=3.79203,	me2_21=0,	P1=0.25228,	P2=0.49214)	mmmmmmmmm	genetic
+
+INFO: Some parameters of the best model hit their bounds: t1, me1_12, me1_21, me2_21 hit lower bounds
+[93mRun 1 warning: failed to draw model due to the following exception: Model <class 'gadma.models.custom_demographic_model.CustomDemographicModel'> is not supported by demes engine.
+The supported models are: [<class 'gadma.models.demographic_model.EpochDemographicModel'>, <class 'gadma.models.structure_demographic_model.StructureDemographicModel'>].[0m.
+
+You can find the Python code of the best model in the output directory.
+
+25347.301493 323336.4601
+5099.7319689999995 323336.4601
+18059.628544000003 323336.4601
+7868.646991999999 323336.4601
+
+[000:07:00]
+All best by log-likelihood models
+Number	log-likelihood	Model	Units
+Run 1	-23003.77	(nu_1=0.04001,	nu_2=1.27213,	t1=5.29e-09,	nu11=0.55006,	nu12=1.12971,	me1_12=0,	me1_21=0.00e+00,	t2=1.31463,	nu21=16.20445,	nu22=13.47541,	me2_12=3.79203,	me2_21=0,	P1=0.25228,	P2=0.49214)	mmmmmmmmm	genetic
+Run 4	-48255.84	(nu_1=4.80787,	nu_2=0.49842,	t1=1.47801,	nu11=13.06922,	nu12=19.30692,	me1_12=2.80614,	me1_21=0.58968,	t2=0.00184,	nu21=0.36403,	nu22=0.75034,	me2_12=0,	me2_21=2.1677,	P1=0.00061,	P2=0.22217)	r	genetic
+
+INFO: Some parameters of the best model hit their bounds: t1, me1_12, me1_21, me2_21 hit lower bounds
+[93mRun 1 warning: failed to draw model due to the following exception: Model <class 'gadma.models.custom_demographic_model.CustomDemographicModel'> is not supported by demes engine.
+The supported models are: [<class 'gadma.models.demographic_model.EpochDemographicModel'>, <class 'gadma.models.structure_demographic_model.StructureDemographicModel'>].[0m.
+
+You can find the Python code of the best model in the output directory.
+

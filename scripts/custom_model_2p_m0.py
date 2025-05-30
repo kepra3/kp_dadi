@@ -3,16 +3,16 @@
 import dadi
 from dadi import Numerics, PhiManip, Integration, Spectrum
 
-def model_func_two_proportions(params, ns, pts):
+def model_func(params, ns, pts):
     """
     Heterogeneous model with two populations and migration.
-    18 parameters: ... as before ..., P1, P2
-    P1: proportion with normal migration in first time period
-    P2: proportion with normal migration in second time period
+    14 parameters: ... as before ..., P1, P2
+    P1: proportion with no migration in first time period
+    P2: proportion with no migration in second time period
     """
-    nu_1, nu_2, t1, nu11, nu12, m1_12, me1_12, m1_21, me1_21, t2, nu21, nu22, m2_12, m2_21, me2_12, me2_21, P1, P2 = params
+    nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2 = params
 
-     _Nanc_size = 1.0  # This value can be used in splits with fractions
+    _Nanc_size = 1.0  # This value can be used in splits with fractions
      
     xx = Numerics.default_grid(pts)
 

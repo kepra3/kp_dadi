@@ -12,13 +12,13 @@
 #	If it is resumed from other directory and output directory 
 #	isn't set, GADMA will add '_resumed' for previous output 
 #	directory.
-Output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_group1-group2_het_process
+Output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_het_group4-Amil_process3_30-5-25
 
 
 #!!!
 #	Input file can be sfs file (should end with .fs) or 
 #	file of SNP's in dadi format (should end with .txt).
-Input file: /scratch/user/uqkprat2/analysis/kp_dadi/data/fs/group1-group2.fs
+Input file: /scratch/user/uqkprat2/analysis/kp_dadi/data/fs/group4-Amil.fs
 
 #	'Population labels' is sequence of population names (the same
 #	names as in input file)
@@ -33,7 +33,7 @@ Input file: /scratch/user/uqkprat2/analysis/kp_dadi/data/fs/group1-group2.fs
 #	then we can write YRI, CEU, CHB or YRI, CHB, CEU 
 #	(YRI must be at the first place)
 #	Default: from input file
-Population labels: [group1, group2]
+Population labels: [group4, Amil]
 
 #	Also one can project your spectrum to less size.
 #	For example, we have 80 individuals in each of three 
@@ -57,7 +57,7 @@ Linked SNP's: True
 #	the directory with bootstrapped data. 
 #	Bootstrap should be done over the regions of genome.
 #	Default: None
-Directory with bootstrap:  /scratch/user/uqkprat2/analysis/kp_dadi/data/fs/group1-group2
+Directory with bootstrap:  /scratch/user/uqkprat2/analysis/kp_dadi/data/fs/group4-Amil
 
 
 #!!!
@@ -71,7 +71,7 @@ Engine: dadi
 #	of points in grid. Otherwise this pts would be used in dadi's code.
 #	Default: Let n = max number of individuals in one population, 
 #	then pts = n, n+10, n+20
-Pts: [50, 70, 90]
+Pts: [60, 70, 100]
 
 #!!!
 #	Print parameters of model in units of N_ref = N_A.
@@ -116,7 +116,7 @@ No migrations:
 #	or
 #	def model_func(params, ns) in case of moments
 #	Default: None
-Custom filename: /scratch/user/uqkprat2/analysis/kp_dadi/scripts/custom_model.py
+Custom filename: /scratch/user/uqkprat2/analysis/kp_dadi/scripts/custom_model_2p_m0.py
 
 #	Now one should specify either bounds or identifications 
 #	of custom model's parameters. All values are in Nref units.
@@ -128,8 +128,8 @@ Custom filename: /scratch/user/uqkprat2/analysis/kp_dadi/scripts/custom_model.py
 #	s: 0 - 1
 #	This bounds will be taken automatically if identifications are set.
 #	Default: None
-Lower bound: 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0, 0, 0, 1e-2, 1e-2, 0, 0, 0, 0, 0
-Upper bound: 100, 100, 5, 100, 100, 10, 10, 10, 10, 5, 100, 100, 10, 10, 10, 10, 1
+Lower bound: 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0, 1e-2, 1e-2, 0, 0, 0, 0
+Upper bound: 100, 100, 10, 100, 100, 10, 10, 10, 100, 100, 10, 10, 1, 1
 #	An identifier list:
 #	T - time
 #	N - size of population
@@ -137,7 +137,7 @@ Upper bound: 100, 100, 5, 100, 100, 10, 10, 10, 10, 5, 100, 100, 10, 10, 10, 10,
 #	s - split event,  proportion in which population size
 #	is divided to form two new populations.
 #	Default: None
-Parameter identifiers: [nu_1, nu_2, t1, nu11, nu12, m1_12, me1_12, m1_21, me1_21, t2, nu21, nu22, m2_12, m2_21, me2_12, me2_21, P]
+Parameter identifiers: [nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2]
 
 # 2. Structure is for not custom models!
 #	Structure of model for one population - number of time periods 

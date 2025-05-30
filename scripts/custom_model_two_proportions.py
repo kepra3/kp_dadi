@@ -3,7 +3,7 @@
 import dadi
 from dadi import Numerics, PhiManip, Integration, Spectrum
 
-def model_func_two_proportions(params, ns, pts):
+def model_func(params, ns, pts):
     """
     Heterogeneous model with two populations and migration.
     18 parameters: ... as before ..., P1, P2
