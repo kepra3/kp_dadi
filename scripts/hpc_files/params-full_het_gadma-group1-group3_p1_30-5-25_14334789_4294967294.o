@@ -1,0 +1,31 @@
+Data reading
+Number of populations: 2
+Projections: [40, 40]
+Population labels: ['group1', 'group3']
+Outgroup: False
+[92m--Successful data reading (0.00 s)--[0m
+
+[92m--Successful arguments parsing--[0m
+
+Bootstrap data reading
+Number of files found: 100
+[92m--Successful bootstrap data reading (0.09 s)--[0m
+
+Parameters of launch are saved in output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_het_group1-group3_process1_30-5-25/params_file
+All output is saved in output directory: /scratch/user/uqkprat2/analysis/kp_dadi/results/gadma/output_full_het_group1-group3_process1_30-5-25/GADMA.log
+
+[94m--Start pipeline--[0m
+Run launch number 1
+Run launch number 2
+Run launch number 3
+Run launch number 4
+9389.612690000002 339902.540595
+299.116297 339902.540595
+6508.252677000001 339902.540595
+8788.035387 339902.540595
+
+[000:01:00]
+No models yet
+9389.612690000002 339902.540595
+9389.612691000002 339902.540595
+3752.962159 339902.540595

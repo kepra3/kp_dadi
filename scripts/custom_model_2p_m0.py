@@ -16,7 +16,7 @@ def model_func(params, ns, pts):
      
     xx = Numerics.default_grid(pts)
 
-    # First time period: mix normal and island with P1
+    # First time period: mix no migration at P1 with 1-P1 gene flow
     phiN1 = PhiManip.phi_1D(xx)
     phiN1 = PhiManip.phi_1D_to_2D(xx, phiN1)
     phiN1 = Integration.two_pops(phiN1, xx, T=t1, nu1=nu_1, nu2=nu_2, m12=0, m21=0)
@@ -29,7 +29,7 @@ def model_func(params, ns, pts):
 
     phi1 = P1 * phiN1 + (1 - P1) * phiI1
 
-    # Second time period: mix normal and island with P2
+    # Second time period: mix no migration at P2 with 1-P2 gene flow
     phiN2 = Integration.two_pops(phi1, xx, T=t2, nu1=nu21, nu2=nu22, m12=0, m21=0)
     phiI2 = Integration.two_pops(phi1, xx, T=t2, nu1=nu21, nu2=nu22, m12=me2_12, m21=me2_21)
 
