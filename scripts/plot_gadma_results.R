@@ -16,53 +16,43 @@ convert_params <- function(gadma_results) {
     # effective sequence params
     if (gadma_results[i, 1] == "group1-group2") {
       cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group2_dadi.pos.gz")
-      gadma_results$sfs.snps[i] = 285376.87
-      #323336.46
+      gadma_results$sfs.snps[i] = 323336.46 # proj: 285376.87
       gadma_results$unfil.snps[i] = 33523695
       } else if (gadma_results[i, 1] == "group1-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 111991.19
-          #444001.5
+        gadma_results$sfs.snps[i] = 444001.5 # proj: 111991.19
         gadma_results$unfil.snps[i]  = 32965107
       } else if (gadma_results[i, 1] == "group1-group3") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group3_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 70052.17
-        #339902.54
+        gadma_results$sfs.snps[i] = 339902.54 # proj: 70052.17
         gadma_results$unfil.snps[i] = 33812349
       } else if (gadma_results[i, 1] == "group1-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 76247.09
-        #380214.39
+        gadma_results$sfs.snps[i] = 380214.39 # proj: 76247.09
         gadma_results$unfil.snps[i] = 34517876
       } else if (gadma_results[i, 1] == "group2-group3") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_group3_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 80497.72
-        #371442.47
+        gadma_results$sfs.snps[i] = 371442.47 # proj: 80497.72
         gadma_results$unfil.snps[i] = 34492471
       } else if (gadma_results[i, 1] == "group2-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 84843.52
-          #413972.89
+        gadma_results$sfs.snps[i] = 413972.89 # proj: 84843.52
         gadma_results$unfil.snps[i] = 36046531
       } else if (gadma_results[i, 1] == "group3-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group3_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 92922.75
-          #421890.54
+        gadma_results$sfs.snps[i] = 421890.54 # proj: 92922.75
         gadma_results$unfil.snps[i] = 35072420
       } else if (gadma_results[i, 1] == "group2-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 118359.4
-          #472699.58
+        gadma_results$sfs.snps[i] = 472699.58 # proj: 118359.4
         gadma_results$unfil.snps[i] = 34184556
       } else if (gadma_results[i, 1] == "group3-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group3_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 127781.61
-          #500811.35
+        gadma_results$sfs.snps[i] = 500811.35 # proj: 127781.61
         gadma_results$unfil.snps[i] = 34598003
       } else if (gadma_results[i, 1] == "group4-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group4_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 139754.46
-        # snps before projection 556220.74
+        gadma_results$sfs.snps[i] = 556220.74 # proj: 139754.46
         gadma_results$unfil.snps[i] = 35256168
       } else {
         skip_groups = append(skip_groups, paste(gadma_results[i, 1]))
@@ -136,7 +126,7 @@ convert_params <- function(gadma_results) {
 
 setwd("~/git/kp_dadi/scripts/")
 # Import results
-gadma_results <- read.delim("../results/gadma_results_combined.txt")
+gadma_results <- read.delim("../results/gadma_het_results_combined.txt")
 
 # Reformat so each parameter is a column
 param_names <- gadma_results$ModelParameters[1] |>
