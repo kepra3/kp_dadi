@@ -87,13 +87,14 @@ convert_params <- function(gadma_results) {
   
   # T1 population sizes
   gadma_results$N1.T1 = gadma_results$nu11 * gadma_results$nref
-  gadma_results$N2.T1 = gadma_results$nu21 * gadma_results$nref
+  #gadma_results$N2.T1 = gadma_results$nu21 * gadma_results$nref
+  gadma_results$N2.T1 = gadma_results$nu12 * gadma_results$nref # for het models
   
   # T1 migration rate
-  gadma_results$rM12.T1 = ifelse(gadma_results$m1_12 == 0, 0,
-                                gadma_results$m1_12/(2*gadma_results$nref))
-  gadma_results$rM21.T1 = ifelse(gadma_results$m1_21 == 0, 0,
-                                gadma_results$m1_21/(2*gadma_results$nref))
+  gadma_results$rM12.T1 = ifelse(gadma_results$me1_12 == 0, 0,
+                                gadma_results$me1_12/(2*gadma_results$nref))
+  gadma_results$rM21.T1 = ifelse(gadma_results$me1_21 == 0, 0,
+                                gadma_results$me1_21/(2*gadma_results$nref))
   
   # T1 migration rate
   # number of migrants
@@ -108,19 +109,19 @@ convert_params <- function(gadma_results) {
   gadma_results$T2years.2 = gadma_results$T2gen * gen.big
   
   # T2 population sizes
-  gadma_results$N1.T2 = gadma_results$nu12 * gadma_results$nref
+  #gadma_results$N1.T2 = gadma_results$nu12 * gadma_results$nref
+  gadma_results$N1.T2 = gadma_results$nu21 * gadma_results$nref
   gadma_results$N2.T2 = gadma_results$nu22 * gadma_results$nref
   
   # T2 migration rate
-  gadma_results$rM12.T2 = gadma_results$m2_12/(2*gadma_results$nref)
-  gadma_results$rM21.T2 = gadma_results$m2_21/(2*gadma_results$nref)
+  gadma_results$rM12.T2 = gadma_results$me2_12/(2*gadma_results$nref)
+  gadma_results$rM21.T2 = gadma_results$me2_21/(2*gadma_results$nref)
   
   # T2 migrants
   gadma_results$M12.T2 = ifelse(gadma_results$rM12.T2 == 0, 0,
                                  gadma_results$rM12.T2*gadma_results$N1.T2)
   gadma_results$M21.T2 = ifelse(gadma_results$rM21.T2 == 0, 0,
                                  gadma_results$rM21.T2*gadma_results$N2.T2)
-  
   return(gadma_results)
 }
 
@@ -149,8 +150,9 @@ rm(model_values_df, model_values_matrix, param_names)
 
 # Fix group comparison names
 gadma_results <- gadma_results %>%
-  mutate(Groups = str_split_fixed(Directory, "_", 4)[, 3]) %>%
+  mutate(Groups = str_split_fixed(Directory, "_", 5)[, 4]) %>% # was 4 and 3
   mutate(Groups = str_replace_all(Groups, "grp", "group")) %>%
+  mutate(Groups = str_replace_all(Groups, "het", "group1-group2")) %>%
   mutate(Groups = str_replace_all(Groups, "-process.*", ""))
 
 gadma_results$Groups <- as.factor(gadma_results$Groups)
@@ -163,6 +165,15 @@ for (group in unique(gadma_results$Groups)) {
 
 gadma_results <- gadma_results %>% 
   select(Groups, everything(), -Directory)
+
+str(gadma_results)
+# Remove results where theta could not be calculated
+gadma_results$Theta[gadma_results$Theta == "--"] = NA
+gadma_results <- na.omit(gadma_results)
+gadma_results$Theta <- as.numeric(gadma_results$Theta)
+colnames(gadma_results)[colnames(gadma_results) == "Theta"] <- "theta"
+gadma_results <- gadma_results[gadma_results$theta > 1000 & gadma_results$theta < 1e6,]
+gadma_results <- gadma_results[gadma_results$LogLikelihood < -2000,]
 
 # Reshape to long format for plotting
 gadma_long <- gadma_results %>%
@@ -205,15 +216,21 @@ gadma_results_pu <- convert_params(gadma_results)
 # Reshape to long format
 gadma_pu_long <- gadma_results_pu %>%
   pivot_longer(
-    cols = c(nref:M21.T2),
+    cols = c(P1,P2,nref:M21.T2),
     names_to = "Physical.Parameter",
     values_to = "Physical.Value"
   )
 
+#parameter_order <- c("nref", "T1gen", "T1years.1", "T1years.2", "N1.0", "N2.0",
+#                     "M12.T1", "M21.T1", "rM12.T1", "rM21.T1", "N1.T1", "N2.T1",
+#                     "T2gen", "T2years.1", "T2years.2",
+#                     "M12.T2", "M21.T2", "rM12.T2", "rM21.T2", "N1.T2", "N2.T2")
 parameter_order <- c("nref", "T1gen", "T1years.1", "T1years.2", "N1.0", "N2.0",
                      "M12.T1", "M21.T1", "rM12.T1", "rM21.T1", "N1.T1", "N2.T1",
+                     "P1",
                      "T2gen", "T2years.1", "T2years.2",
-                     "M12.T2", "M21.T2", "rM12.T2", "rM21.T2", "N1.T2", "N2.T2")
+                     "M12.T2", "M21.T2", "rM12.T2", "rM21.T2", "N1.T2", "N2.T2",
+                     "P2")
 
 gadma_pu_long <- gadma_pu_long |>
   mutate(Physical.Parameter = factor(Physical.Parameter, levels = parameter_order))
@@ -252,7 +269,7 @@ for (group in unique(gadma_pu_long$Groups)) {
       axis.title.x = element_text(margin = margin(t = 10))
     )
   print(p)
-  ggsave(paste0("../plots/gadma_params/", group, "_physical-param-confi.pdf"),
+  ggsave(paste0("../plots/gadma_params/", group, "het_physical-param-confi.pdf"),
          units = "cm", width = 20, height = 20)
 }
 
@@ -269,15 +286,18 @@ for (group in unique(gadma_results_pu$Groups)) {
   gadma_top <- rbind(gadma_top, top_run)
   
   # Calculate min and max for columns in thousands
-  min_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), min))
-  max_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), max))
+  #min_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), min))
+  min_vals <- top_run[, c(17,18,22:42)] |> summarise(across(everything(), min))
+  max_vals <- top_run[, c(17:18,22:42)] |> summarise(across(everything(), max))
+  min_vals <- min_vals[,c(3,7,8,4,9,10,13,14,1,15,18,19,22,23,2)]
+  max_vals <- max_vals[,c(3,7,8,4,9,10,13,14,1,15,18,19,22,23,2)]
   # dived by 1000 for generations and pop sizes
-  min_vals[,c(1,2,3,6,7,8,11,12)] <- min_vals[,c(1,2,3,6,7,8,11,12)]/1000
-  max_vals[,c(1,2,3,6,7,8,11,12)] <- max_vals[,c(1,2,3,6,7,8,11,12)]/1000
+  min_vals[,c(1:6,10:12)] <- min_vals[,c(1:6,10:12)]/1000
+  max_vals[,c(1:6,10:12)] <- max_vals[,c(1:6,10:12)]/1000
   # Combine min and max as "min-max"
   min_max <- Map(function(min, max) sprintf("%.1f–%.1f", min, max), min_vals, max_vals)
   min_max_df <- as.data.frame(min_max)
-  names(min_max_df) <- names( top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)])
+  names(min_max_df) <- names(min_vals)
   
   min_max_df$Group <- group
   summary_list[[group]] <- min_max_df
