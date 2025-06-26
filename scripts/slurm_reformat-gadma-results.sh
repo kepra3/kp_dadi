@@ -7,8 +7,8 @@
 #SBATCH --time=24:00:00         # walltime
 #SBATCH --account=a_riginos     # group account name
 #SBATCH --partition=general     # queue name
-#SBATCH -o reformat_results-full2het_%A_%a.o # standard output
-#SBATCH -e reformat_results-full2het_%A_%a.e # standard error
+#SBATCH -o reformat_results-full_%A_%a.o # standard output
+#SBATCH -e reformat_results-full_%A_%a.e # standard error
 
 module load anaconda3/2023.09-0
 module load python/3.9.5-gcccore-10.3.0
@@ -17,4 +17,4 @@ conda activate gadma_env
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
 
-python reformat-gadma-results_custom.py '../results/gadma/full_2het' '../results/gadma_full_2het_results_combined.txt' 'custom_model_2p_2het.py' 'no_proj'
+python reformat-gadma-results.py '../results/gadma/full' '../results/gadma_full_results_combined.txt'
