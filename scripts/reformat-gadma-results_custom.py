@@ -4,6 +4,8 @@ import argparse
 import dadi
 import numpy as np
 import importlib.util
+import warnings
+import sys
 
 parser = argparse.ArgumentParser(
     prog="Reformat GADMA Results",
@@ -13,12 +15,14 @@ parser = argparse.ArgumentParser(
 parser.add_argument("base_dir", help="Base directory containing model results.")
 parser.add_argument("output_file", help="Output file to write the reformatted results.")
 parser.add_argument("model_py", help="Path to the custom model Python file.")
+parser.add_argument("projection", help="Projection or not (e.g., '0.8' or 'no_proj')", default="0.8")
 
 args = parser.parse_args()
 
 base_dir = args.base_dir
 output_file = args.output_file
 model_py = args.model_py
+proj = args.projection
 
 # Load model function dynamically
 spec = importlib.util.spec_from_file_location('module', model_py)
@@ -33,39 +37,43 @@ logL_pattern = re.compile(r"Run\s+\d+\s+(-?\d+\.?\d*)")
 
 with open(output_file, "w") as out:
     out.write("Directory\tRun\tLogLikelihood\tModelParameters\tModelValues\tTheta\n")
+    out.flush()
     for root, dirs, files in os.walk(base_dir):
         if "all_extracted_models.txt" in files:
             dir_name = os.path.basename(root)
             file_path = os.path.join(root, "all_extracted_models.txt")
-            print(f"Processing file: {file_path}")
+            print(f"Processing file: {file_path}", flush=True)
 
             # Extract group name for fs file (matches e.g. group1-group2 anywhere after an underscore)
             group_match = re.search(r'_([^_]+-[^_]+)', dir_name)
             if not group_match:
-                print(f"Could not extract group name from directory: {dir_name}")
+                print(f"Could not extract group name from directory: {dir_name}", flush=True)
                 continue
             group_name = group_match.group(1)
-            fs_file = f"/scratch/user/uqkprat2/analysis/kp_dadi/data/fs/{group_name}.fs"
+            if proj == "no_proj":
+                fs_file = f"/scratch/user/uqkprat2/analysis/kp_dadi/data/fs/{group_name}.fs"
+            else:
+                fs_file = f"/scratch/user/uqkprat2/analysis/kp_dadi/data/fs/{group_name}_projected{proj}.fs"
 
             # Load fs file for dadi
             try:
                 data = dadi.Spectrum.from_file(fs_file)
                 ns = data.sample_sizes
-                pts = [50, 70, 90]
+                pts = [60, 70, 100]
                 func_ex = dadi.Numerics.make_extrap_log_func(model_func)
             except Exception as e:
-                print(f"Could not load fs file {fs_file}: {e}")
+                print(f"Could not load fs file {fs_file}: {e}", flush=True)
                 continue
 
             with open(file_path) as f:
                 lines = f.readlines()[2:]  # Skip the first two header lines
-                print(f"Number of lines after header: {len(lines)}")
+                print(f"Number of lines after header: {len(lines)}", flush=True)
             for line in lines:
                 run_match = run_pattern.search(line)
                 logL_match = logL_pattern.search(line)
 
                 if not run_match or not logL_match:
-                    print("No run or logL match found, skipping line.")
+                    print("No run or logL match found, skipping line.", flush=True)
                     continue
 
                 run = f"Run {run_match.group(1)}"
@@ -74,13 +82,13 @@ with open(output_file, "w") as out:
                 # Extract parameter string inside parentheses
                 param_str_match = re.search(r"\(([^)]+)\)", line)
                 if not param_str_match:
-                    print("No parameter string found, skipping line.")
+                    print("No parameter string found, skipping line.", flush=True)
                     continue
                 param_str = param_str_match.group(1)
                 params = param_pattern.findall(param_str)
 
                 if not params:
-                    print("No parameters found, skipping line.")
+                    print("No parameters found, skipping line.", flush=True)
                     continue
 
                 names = [n for n, v in params]
@@ -89,14 +97,20 @@ with open(output_file, "w") as out:
 
                 # Calculate theta using dadi
                 try:
-                    model = func_ex(values_float, ns, pts)
-                    theta = dadi.Inference.optimal_sfs_scaling(model, data)
+                    with warnings.catch_warnings(record=True) as w:
+                        warnings.simplefilter("always")
+                        model = func_ex(values_float, ns, pts)
+                        theta = dadi.Inference.optimal_sfs_scaling(model, data)
+                        if w:
+                            theta = str(theta) + "e"
                 except Exception as e:
-                    print(f"Error calculating theta for {run}: {e}")
+                    print(f"Error calculating theta for {run}: {e}", flush=True)
                     theta = "NA"
 
                 names_str = f"({', '.join(names)})"
                 values_str = f"({', '.join(values)})"
 
-                print(f"Writing: {dir_name}\t{run}\t{logL}\t{names_str}\t{values_str}\t{theta}")
+                print(f"Writing: {dir_name}\t{run}\t{logL}\t{names_str}\t{values_str}\t{theta}", flush=True)
+                print(f"Writing: {dir_name}\t{run}\t{logL}\t{names_str}\t{values_str}\t{theta}", file=sys.stderr, flush=True)
                 out.write(f"{dir_name}\t{run}\t{logL}\t{names_str}\t{values_str}\t{theta}\n")
+                out.flush()
