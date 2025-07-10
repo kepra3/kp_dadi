@@ -16,55 +16,36 @@ from dadi import Numerics, Spectrum, Inference, Godambe
 import demo_models_kp
 import numpy as np
 import argparse
+import plot_fs
+import SETTINGS
+import os
+from glob import glob
 
 
-def main(function, snps, method, model, sims, eps, opt, PTS):
+def main(filepath, bootpath, function, model, sims, eps, opt, PTS):
     """
     eps: Fractional stepsize to use when taking finite-difference derivatives.
         Note that if eps*param is < 1e-6, then the step size for that parameter
         will simply be eps, to avoid numerical issues with small parameter
         perturbations.
     """
-    # Import spectrum
-    if method == "subsample":
-        fs_path = "../data/fs/{}_subsampled.fs".format(snps)
-    elif method == "projection":
-        fs_path = "../data/fs/{}_projected.fs".format(snps)
-    else:
-        fs_path = "../data/fs/{}.fs".format(snps)
-    fs = Spectrum.from_file(fs_path)
-    ns = fs.sample_sizes
+    # Extract SNPs name from the file path
+    snps = os.path.splitext(os.path.basename(filepath))[0]
 
-    # The parameter confidence interval txt file which will be output-1-1timeperiod-lowmask
+    # Import spectrum
+    fs = dadi.Spectrum.from_file(filepath)
+
+    # The parameter confidence interval txt file
     out_name = "../results/{}_{}_confidence_intervals.txt".format(snps, model)
 
-    # Mask singletons and doubletons
-    fs.mask[1, 0] = True
-    fs.mask[0, 1] = True
-    fs.mask[2, 0] = True
-    fs.mask[0, 2] = True
-    fs.mask[1, 1] = True
+    # Calculate statistics
+    statistic_name, statistic = plot_fs.calculate_statistic(fs)
+    print(statistic_name, statistic)
 
-    # Print information about the spectrum
-    print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
-    print("Data for site frequency spectrum:\n")
-    print("Sample sizes: {}".format(fs.sample_sizes))
-    print("Sum of SFS: {}".format(np.around(fs.S(), 2)))
-    print("FST of SFS: {}".format(np.around(fs.Fst(), 2)))
-    print("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
-
-    # Models of choice
-    if model == "iso_inbred":
-        model_fun = demo_models_kp.iso_inbreeding
-    elif model == "mig_inbred":
-        model_fun = demo_models_kp.mig_inbreeding
-    elif model == "anc_mig":
-        model_fun = demo_models_kp.anc_sym_mig_inbred
-    elif model == "sec_cont":
-        model_fun = demo_models_kp.sec_contact_sym_mig_inbred
-    else:
-        model_fun = False
-        print("Choose a correct model")
+    # Need to manually alter the upper and lower parameter limits in settings files,
+    # model functions are defined in demo_models_kp.py
+    # Use nicknames for models, e.g., "snm" instead of model function name, e.g., "no_divergence"
+    model_fun, num, p_labels, upper, lower = SETTINGS.get_settings(model, ALL=True)
 
     # Model function
     func_ex = Numerics.make_extrap_log_func(model_fun)
@@ -78,9 +59,10 @@ def main(function, snps, method, model, sims, eps, opt, PTS):
     theta = Inference.optimal_sfs_scaling(sim_model, fs)
     print('Optimal value of theta: {0}'.format(theta))
 
-    # Import all bootstraps
-    all_boot = [Spectrum.from_file('../results/bootstraps/{}_bootstrap_vcf_{}.fs'.format(snps, i))
-                for i in range(0, sims)]
+    # Import all bootstraps from the specified directory
+    bootstrap_files = sorted(glob(os.path.join(bootpath, "*.fs")))
+    all_boot = [Spectrum.from_file(f) for f in bootstrap_files]
+    print(f"Loaded {len(all_boot)} bootstrap spectra from {bootpath}")
 
     # Godambe uncertainties
     # param_confidence_intervals contains the estimated standard deviations of each parameter,
@@ -120,57 +102,58 @@ def main(function, snps, method, model, sims, eps, opt, PTS):
     upp = np.around(upp, 4)
     print('Estimated parameter upper from {0}: {1}'.format(function, upp))
 
-    # If statements are to adjust the number of columns with the varying number of parameters within each of my models
-    if model == "iso_inbred":
-        with open(out_name, 'a') as file_out:
-            file_out.write('Pops\tModel\ttheta\tnu1\tnu2\tF1\tF2\tT\teps\n')
-        with open(out_name, 'a') as file_out:
-            file_out.write(f'{snps}\t{model}\t{low[-1]}\t{low[0]}\t{low[1]}\t{low[2]}\t{low[3]}\t{low[4]}\t{eps}\n')
-        with open(out_name, 'a') as file_out:
-            file_out.write(f'{snps}\t{model}\t{upp[-1]}\t{upp[0]}\t{upp[1]}\t{upp[2]}\t{upp[3]}\t{upp[4]}\t{eps}\n')
-    elif model == "mig_inbred":
-        with open(out_name, 'a') as file_out:
-            file_out.write('Pops\tModel\ttheta\tnu1\tnu2\tF1\tF2\tm\tT\teps\n')
-        with open(out_name, 'a') as fh_out:
-            fh_out.write(
-                f'{snps}\t{model}\t{low[-1]}\t{low[0]}\t{low[1]}\t{low[2]}\t{low[3]}\t{low[4]}\t{low[5]}\t{eps}\n')
-        with open(out_name, 'a') as fh_out:
-            fh_out.write(
-                f'{snps}\t{model}\t{upp[-1]}\t{upp[0]}\t{upp[1]}\t{upp[2]}\t{upp[3]}\t{upp[4]}\t{upp[5]}\t{eps}\n')
-    else:
-        with open('a', out_name) as file_out:
-            file_out.write('Pops\tModel\ttheta\tnu1\tnu2\tF1\tF2\tm\tT1\tT2\teps\n')
-        with open(out_name, 'a') as fh_out:
-            fh_out.write(
-                f'{snps}\t{model}\t{low[-1]}\t{low[0]}\t{low[1]}\t{low[2]}\t{low[3]}\t{low[4]}\t{low[5]}'
-                f'\t{low[6]}\t{eps}\n')
-        with open(out_name, 'a') as file_out:
-            file_out.write(f'{snps}\t{model}\t{upp[-1]}\t{upp[0]}\t{upp[1]}\t{upp[2]}\t{upp[3]}\t{upp[4]}\t{upp[5]}'
-                           f'\t{upp[6]}\t{eps}\n')
+    # Write results to file
+    with open(out_name, "w") as out:
+        out.write(f"# Results for {snps} model: {model}\n")
+        out.write(f"Log-likelihood:\t{ll_model}\n")
+        out.write(f"Theta:\t{theta}\n")
+        out.write("Parameter\tOptimised\tLower_CI\tUpper_CI\n")
+        for i, label in enumerate(p_labels + ["theta"]):
+            out.write(f"{label}\t{opt[i]}\t{low[i]}\t{upp[i]}\n")
+    print(f"Results written to {out_name}")
 
 
 if __name__ == "__main__":
     # Arguments
-    parser = argparse.ArgumentParser(prog="Parameter uncertainty")
-    parser.add_argument("function")
-    parser.add_argument("snps")
-    parser.add_argument("method")
-    parser.add_argument("model")
-    parser.add_argument("sims", type=int)
-    parser.add_argument("eps", type=float)
-    parser.add_argument("-o", "--opt_params", nargs="+", type=float)
+    parser = argparse.ArgumentParser(prog="Parameter uncertainty",
+    description="A script for obtaining parameter uncertainty from optimised parameters and bootstraps.",
+    usage="%(prog)s [options] <filepath> <bootpath> <function> <model> <sims> <eps> [opt_params]")
+    parser.add_argument(
+        "filepath",
+        help="Path to the data .fs file."
+    )
+    parser.add_argument(
+        "bootpath",
+        help="Directory for bootstraps, e.g., '../results/bootstraps/'"
+    )
+    parser.add_argument(
+        "function",
+        help="Function to use for uncertainty estimation (e.g., 'GIM' or 'FIM')."
+    )
+    parser.add_argument(
+        "model",
+        help="Model to use for the analysis from kp_dadi."
+    )
+    parser.add_argument(
+        "sims",
+        help="Number of bootstraps",
+        type=int
+    )
+    parser.add_argument(
+        "eps",
+        help="eps setting (e.g., 0.01, 0.001, 0.0001)",
+        type=float
+    )
+    parser.add_argument(
+        "-o", "--opt_params",
+        help="optimised paramaters for specific model",
+        nargs="+", type=float
+        )
     args: Namespace = parser.parse_args()
 
-    # Setting variables
-    function = args.snps
-    snps = args.snps
-    method = args.method
-    model = args.model
-    sims = args.sims
-    eps = args.eps
-    opt = args.opt_params
+    # Need to manually define in SETTINGS.py
+    # Define optimisation bounds
+    PTS = SETTINGS.SET_PTS
+    print("PTS is {}".format(PTS))
 
-    # Extrapolation of grid size
-    PTS = [50, 60, 70]
-
-    main(function, snps, method, model, sims, eps, opt, PTS)
+    main(args.filepath, args.bootpath, args.function, args.model, args.sims, args.eps, args.opt, PTS)

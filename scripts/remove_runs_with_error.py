@@ -43,5 +43,6 @@ with open(args.output_file) as inf, open(args.filtered_output_file, "w") as outf
             key = (parts[0].strip(), parts[1].strip())
             if key in bad_ids:
                 #print(f"DEBUG: Skipping line due to bad_id: {key}")
+                pass
             else:
                 outf.write(line)
