@@ -1,0 +1,211 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Processing file: ../results/gadma/proj_1het/output_proj_het_group3-group4_process2_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group3-group4_process2_02-7-25	Run 6	-4650.68	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(4.93302, 24.75208, 1.40661, 19.0121, 24.19655, 6.53017, 4.57056, 0.02891, 5.30177, 47.97282, 9.98753, 3.46861, 0.57016, 0.18923)	7486.959952148098
+Writing: output_proj_het_group3-group4_process2_02-7-25	Run 2	-5587.55	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(11.48236, 9.42482, 2.99022, 11.90681, 138.90051, 0.1017, 0.03403, 0.45211, 23.02283, 27.03621, 2.57766, 0.16201, 0.00e+00, 0.22407)	3990.4276101962832
+Writing: output_proj_het_group3-group4_process2_02-7-25	Run 3	-8154.84	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.03234, 0.14175, 0.82679, 0.42527, 10.0, 6.57707, 1.75983, 9.33039, 18.06027, 2.78549, 0.86031, 0.00e+00, 0.20467)	11090.121096829289
+Writing: output_proj_het_group3-group4_process2_02-7-25	Run 1	-8171.85	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.06546, 0.24935, 0.99995, 0.69119, 6.21791, 4.22892, 2.06019, 11.15395, 21.37593, 2.37994, 0.75883, 0.00e+00, 0.20796)	9362.825241015962
+Writing: output_proj_het_group3-group4_process2_02-7-25	Run 5	-8218.56	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.11942, 0.55465, 1.42031, 1.0, 6.42859, 3.19757, 2.59628, 13.37102, 27.86117, 2.05297, 0.54813, 0.00e+00, 0.21015)	7434.028439092414
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group3_process7_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group3_process7_02-7-25	Run 5	-6444.62	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.60483, 200.0, 1.1955, 13.44134, 12.55337, 0.001, 1.11402, 0.03537, 18.17287, 200.0, 7.63107, 2.57006, 0.20927, 0.43527)	9202.772235696488
+Writing: output_proj_het_group1-group3_process7_02-7-25	Run 1	-7887.84	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 0.58346, 1.38467, 200.0, 0.44862, 1.49603, 0.7573, 11.78431, 13.12447, 6.54586, 3.4217, 0.00292, 0.52817)	10276.76458343782
+Writing: output_proj_het_group1-group3_process7_02-7-25	Run 3	-8008.26	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 0.67907, 1.0, 200.0, 0.41411, 1.3189, 0.95648, 13.1254, 16.3091, 3.36879, 1.31899, 0.0003, 0.48367)	8809.343520165748
+Writing: output_proj_het_group1-group3_process7_02-7-25	Run 4	-8887.54	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.0, 200.0, 1.3924, 0.26841, 200.0, 0.65141, 1.91871, 1.15949, 12.4671, 16.68729, 1.53363, 0.93686, 0.00e+00, 0.38322)	8796.194327762567
+Writing: output_proj_het_group1-group3_process7_02-7-25	Run 7	-9062.98	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.21896, 4.83345, 0.39481, 0.1381, 200.0, 0.00e+00, 6.03464, 0.49282, 5.80346, 6.83952, 2.32837, 2.1349, 0.00024, 0.32834)	20997.51932101137
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group3_process6_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group3_process6_02-7-25	Run 1	-1599.57	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.45247, 4.08538, 1.47458, 12.59947, 5.85019, 0.43668, 1.97614, 4.08431, 17.66935, 200.0, 10.0, 8.34643, 0.88501, 0.88959)	0.13716063750577756
+Writing: output_proj_het_group1-group3_process6_02-7-25	Run 4	-6394.15	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(2.02626, 15.87441, 1.53061, 22.68833, 33.28161, 8.10352, 6.61461, 0.02118, 7.31068, 4.14476, 8.9161, 10.0, 0.70746, 0.39208)	5839.073038921417
+Writing: output_proj_het_group1-group3_process6_02-7-25	Run 3	-9524.00	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 1.02106, 0.82819, 1.00047, 91.27032, 0.33349, 1.53168, 1.43841, 19.8129, 20.0643, 1.40051, 10.0, 8e-05, 0.46368)	8269.383955360208
+Writing: output_proj_het_group1-group3_process6_02-7-25	Run 2	-9798.30	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.5301, 200.0, 0.73996, 0.0194, 200.0, 7.78053, 3.18988, 0.99905, 10.65739, 10.20356, 0.36473, 1.54106, 0.00e+00, 0.18336)	12527.300163671849
+No run or logL match found, skipping line.
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group4-Amil_process8_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group4-Amil_process8_02-7-25	Run 3	-1457.69	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.30814, 1.09913, 7.08e-08, 1.49496, 0.21322, 5.11358, 1.45969, 8.18097, 3.23465, 68.18207, 8.72411, 9.99667, 0.72101, 0.79512)	21.8548325182005
+Writing: output_proj_het_group4-Amil_process8_02-7-25	Run 6	-1470.20	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.42906, 0.5645, 0.00e+00, 11.07983, 0.13308, 6.01052, 0.00e+00, 15.0, 13.00527, 29.08524, 7.90103, 10.0, 0.90405, 0.83919)	765.428904885904
+Writing: output_proj_het_group4-Amil_process8_02-7-25	Run 2	-7533.09	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.71282, 200.0, 1.23076, 14.32376, 4.41219, 0.01517, 0.06941, 0.29957, 16.40915, 6.77789, 0.37942, 3.10803, 6.61e-18, 0.4801)	17468.59818991909
+Writing: output_proj_het_group4-Amil_process8_02-7-25	Run 1	-8411.27	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.73788, 200.0, 1.09197, 14.82993, 4.41578, 0.01319, 0.001, 0.29481, 14.0178, 5.56953, 0.38117, 3.05124, 8e-05, 0.43673)	18613.554558625754
+Writing: output_proj_het_group4-Amil_process8_02-7-25	Run 8	-12614.64	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.1311, 200.0, 0.38841, 0.94143, 8.11756, 0.14405, 0.68436, 0.6464, 8.61906, 2.994, 0.33809, 2.35275, 0.00139, 0.37956)	32333.15604543459
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group2_process5_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group2_process5_02-7-25	Run 7	-1614.03	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.03013, 0.20464, 9.18629, 21.80301, 200.0, 4.10251, 5.34175, 1.57195, 0.13277, 13.41992, 2.94468, 0, 0.00e+00, 0.48171)	0.00012718568064968528
+Writing: output_proj_het_group1-group2_process5_02-7-25	Run 6	-6433.37	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.67845, 90.62693, 1.22498, 17.11031, 12.73183, 0.001, 1.1342, 0.0203, 6.87627, 200.0, 10.0, 9.33663, 0.29978, 0.41649)	8384.7138839549
+Writing: output_proj_het_group1-group2_process5_02-7-25	Run 2	-7011.66	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.12139, 200.0, 0.66054, 2.03641, 200.0, 0.32246, 1.23147, 0.79629, 14.66404, 15.03977, 10.0, 5.00236, 0.01161, 0.57825)	8621.508013372277
+Writing: output_proj_het_group1-group2_process5_02-7-25	Run 3	-7084.94	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.08277, 200.0, 0.85165, 2.13622, 62.85419, 0.27556, 0.94454, 1.0227, 18.13436, 19.15024, 7.84693, 3.89188, 0.001, 0.57241)	7044.886376726913
+Writing: output_proj_het_group1-group2_process5_02-7-25	Run 4	-7432.29	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 0.77626, 1.001, 97.70672, 0.41377, 1.14992, 1.14775, 16.65597, 19.50232, 5.05086, 2.21491, 0.00e+00, 0.54126)	7229.8071743642395
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group2_process2_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group2_process2_02-7-25	Run 3	-7218.40	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.25869, 22.4211, 1.48008, 21.67703, 24.89662, 0.4667, 0.45335, 0.00455, 200.0, 21.38458, 8.68289, 10.0, 0.39046, 0.00699)	5832.263769706684
+Writing: output_proj_het_group1-group2_process2_02-7-25	Run 2	-8180.75	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.00292, 200.0, 0.8533, 33.02436, 10.95426, 8.23758, 10.0, 0.00479, 0.46251, 15.70039, 8.77953, 10.0, 0.51456, 0.00626)	9058.680971770515
+Writing: output_proj_het_group1-group2_process2_02-7-25	Run 4	-9682.01	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.2276, 200.0, 0.87564, 1.53759, 36.35102, 0.00e+00, 1.05433, 1.70557, 19.74368, 34.29359, 3.57187, 0.00e+00, 0.05829, 0.51847)	5372.315035145146
+Writing: output_proj_het_group1-group2_process2_02-7-25	Run 1	-12235.72	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.03588, 27.70045, 0.00505, 0.01495, 200.0, 7.4087, 0.49411, 2.15356, 21.28621, 21.37522, 0.00e+00, 3.67723, 0.04095, 0.43093)	7109.846920875081
+No run or logL match found, skipping line.
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group4_process7_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group4_process7_02-7-25	Run 5	-1681.10	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(2.38424, 3.96826, 6.86e-11, 3.31407, 0.95635, 3.72547, 0.22451, 13.49208, 122.62206, 0.42941, 5.86941, 6.29379, 0.31073, 0.4324)	0.09497411989941427
+Writing: output_proj_het_group1-group4_process7_02-7-25	Run 8	-6464.06	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.58393, 200.0, 1.09693, 12.24467, 14.82473, 0.01343, 1.22453, 0.0271, 8.66805, 40.33765, 9.99999, 2.94475, 0.2519, 0.39908)	10668.46463322744
+Writing: output_proj_het_group1-group4_process7_02-7-25	Run 6	-6637.13	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.13064, 61.42504, 1.4437, 16.96104, 21.70107, 0.12387, 0.09317, 0.09108, 32.01227, 41.02394, 2.77326, 9.9997, 0.17914, 0.50476)	7066.086956755859
+Writing: output_proj_het_group1-group4_process7_02-7-25	Run 7	-7150.34	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.0, 23.51601, 1.25578, 9.42454, 35.4899, 0.09865, 0.04999, 0.35345, 23.15524, 24.02344, 1.85912, 1.12365, 0.00e+00, 0.42885)	6891.961312985081
+Writing: output_proj_het_group1-group4_process7_02-7-25	Run 3	-7506.85	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.19044, 90.09622, 1.26702, 3.24767, 94.23189, 0.15166, 0.69661, 0.54873, 16.8276, 17.8306, 2.71662, 0.00036, 0.08189, 0.49881)	7692.556134952037
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group3_process3_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group3_process3_02-7-25	Run 6	-2368.02	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.26805, 0.71062, 2.08557, 24.91359, 25.66637, 0.64515, 0, 8.3643, 17.03634, 115.95163, 10.0, 4.96806, 0.10081, 0.11824)	0.025054105519645008
+Writing: output_proj_het_group1-group3_process3_02-7-25	Run 4	-7726.81	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 1.05588, 2.37075, 109.39601, 0.21824, 0.8054, 1.0317, 17.9563, 19.96915, 2.97899, 1.02467, 0.00188, 0.50976)	6792.242027636564
+Writing: output_proj_het_group1-group3_process3_02-7-25	Run 2	-7993.74	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 0.62654, 1.001, 200.0, 0.49683, 1.47858, 0.95956, 13.06636, 16.26151, 5.46618, 2.05105, 0.00105, 0.52227)	9030.821916657866
+Writing: output_proj_het_group1-group3_process3_02-7-25	Run 5	-8335.57	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 1.00526, 0.99995, 47.88718, 0.33048, 0.8993, 1.37729, 17.60421, 23.66341, 1.82206, 0.69801, 0.00e+00, 0.44621)	6453.303706402372
+Writing: output_proj_het_group1-group3_process3_02-7-25	Run 7	-9232.02	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.07597, 200.0, 1.22148, 0.17633, 200.0, 1.49739, 2.46363, 1.25877, 13.1962, 15.93285, 1.55698, 1.23584, 0.00e+00, 0.39207)	8944.601418294344
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group3-Amil_process6_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group3-Amil_process6_02-7-25	Run 2	-1388.39	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.72019, 10.57589, 1.28196, 11.15208, 6.13062, 0.94964, 0.42879, 6.86072, 38.63222, 5.48996, 9.8879, 10.0, 0.96639, 0.88463)	0.0016471235853570067
+Writing: output_proj_het_group3-Amil_process6_02-7-25	Run 3	-1388.48	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.52962, 1.37468, 8.81206, 6.31098, 0.02524, 0.00e+00, 0.00e+00, 11.52913, 200.0, 1.06024, 3.62284, 10.0, 0.18385, 0.19596)	4.598480807883554
+Writing: output_proj_het_group3-Amil_process6_02-7-25	Run 5	-1389.46	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.50546, 0.27912, 0.94326, 14.92786, 4.66698, 0.1569, 2.12217, 5.10535, 3.11934, 200.0, 10.0, 10.0, 0.43333, 0.57467)	971.3233173035441
+Writing: output_proj_het_group3-Amil_process6_02-7-25	Run 6	-7742.50	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.70515, 200.0, 1.15779, 11.99183, 4.86839, 0.0163, 0.05866, 0.22529, 13.58461, 7.29013, 0.5848, 4.19601, 0.00029, 0.53142)	16921.903241847875
+Writing: output_proj_het_group3-Amil_process6_02-7-25	Run 8	-9269.56	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.57209, 200.0, 0.80462, 10.66825, 4.09716, 0.001, 8.36e-14, 0.33305, 10.4881, 5.50298, 0.40226, 2.59199, 0.23879, 0.43834)	20343.39066201545
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group3_process8_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group3_process8_02-7-25	Run 1	-6661.36	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.08148, 131.60008, 1.21526, 15.99398, 16.06492, 0.55758, 0.86785, 0.0193, 200.0, 200.0, 8.37173, 10.0, 0.52283, 0.43341)	7477.840053940872
+Writing: output_proj_het_group1-group3_process8_02-7-25	Run 3	-6681.15	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.50201, 200.0, 1.05442, 12.60581, 10.36563, 0.00e+00, 1.47901, 0.03559, 10.28915, 200.0, 6.7712, 3.13388, 0.23254, 0.4156)	10540.592600298904
+Writing: output_proj_het_group1-group3_process8_02-7-25	Run 2	-7665.20	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 1.15652, 2.34477, 200.0, 0.155, 0.6883, 0.87645, 16.93597, 17.50511, 1.64164, 0.52269, 0.001, 0.43053)	6903.7549251718565
+Writing: output_proj_het_group1-group3_process8_02-7-25	Run 4	-7679.26	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 0.79384, 1.91318, 200.0, 0.29977, 1.07897, 0.79779, 14.11139, 15.30524, 4.41152, 1.51908, 0.00228, 0.5231)	8620.673536968128
+Writing: output_proj_het_group1-group3_process8_02-7-25	Run 6	-7752.93	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 200.0, 1.13494, 2.15823, 200.0, 0.19107, 0.72272, 0.99132, 16.79748, 19.2516, 1.73534, 0.585, 0.00323, 0.4405)	6696.132283148625
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-Amil_process3_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-Amil_process3_02-7-25	Run 8	-8122.70	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.26455, 11.16414, 1.60235, 16.32062, 9.37305, 4.62617, 10.0, 0.02741, 22.24512, 8.33255, 4.80076, 7.06432, 0.79403, 0.6231)	12174.527682775977
+Writing: output_proj_het_group2-Amil_process3_02-7-25	Run 2	-9196.53	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.58053, 200.0, 0.97061, 9.75516, 4.78116, 1.15e-17, 7.1982, 0.02568, 13.09793, 7.78869, 4.70373, 5.23203, 0.61867, 0.62365)	21505.0835491671
+Writing: output_proj_het_group2-Amil_process3_02-7-25	Run 7	-12340.27	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.1049, 200.0, 0.43789, 1.001, 200.0, 0.43197, 0.78923, 0.77884, 9.79278, 4.65449, 3.47705, 7.255, 0.06143, 0.65298)	21605.692331503622
+Writing: output_proj_het_group2-Amil_process3_02-7-25	Run 3	-13403.64	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.55032, 95.33753, 0.94228, 10.08428, 4.78392, 0.30347, 1.21498, 0.00e+00, 0.10551, 4.73949, 0.40861, 0.00e+00, 0.38583, 0.14814)	20300.966101717146
+Writing: output_proj_het_group2-Amil_process3_02-7-25	Run 6	-14392.54	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(27.2546, 200.0, 1.02216, 0.04245, 200.0, 4.82796, 2.47395, 1.21671, 9.8112, 5.46729, 0.57886, 1.65795, 0.00e+00, 0.52483)	19529.71364347971
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-Amil_process6_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-Amil_process6_02-7-25	Run 8	-1370.70	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(2.1881, 63.0243, 1.19289, 1.18457, 9.80201, 4.5763, 0.00e+00, 6.20673, 199.75402, 200.0, 10.0, 6.49319, 0.24968, 0.37992)	19045.65968391454
+Writing: output_proj_het_group2-Amil_process6_02-7-25	Run 5	-1370.70	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.12994, 200.0, 5.52026, 0.52641, 20.28774, 0.00e+00, 2.8467, 6.13744, 200.0, 1.0, 8.24637, 10.0, 0.28981, 0.58004)	147.1312326646748
+Writing: output_proj_het_group2-Amil_process6_02-7-25	Run 2	-8065.55	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.83291, 200.0, 1.20538, 12.94179, 5.37058, 0.01481, 0.001, 0.27866, 16.04248, 8.14522, 0.47587, 3.2128, 0.00012, 0.50784)	14616.65056252524
+Writing: output_proj_het_group2-Amil_process6_02-7-25	Run 1	-8566.65	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.73275, 200.0, 1.11311, 11.70689, 5.5158, 2.85e-18, 10.0, 0.0142, 11.68741, 54.98008, 9.23754, 10.0, 0.67593, 0.64356)	18566.805812891715
+Writing: output_proj_het_group2-Amil_process6_02-7-25	Run 6	-11896.50	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.16809, 200.0, 0.42268, 1.0, 12.35801, 0.12035, 0.33481, 0.67441, 8.8938, 3.86581, 0.34768, 1.98563, 0.00e+00, 0.41775)	24780.192515828177
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-Amil_process6_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-Amil_process6_02-7-25	Run 1	-1361.05	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.1223, 1.93316, 0.60635, 4.66018, 3.7317, 1.83158, 0.60346, 4.50535, 200.0, 16.24459, 8.24089, 10.0, 0.48807, 0.90106)	349.283159063521
+Writing: output_proj_het_group1-Amil_process6_02-7-25	Run 3	-1362.52	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.3219, 200.0, 0.64841, 7.84484, 4.02053, 0.48019, 2.35414, 11.94863, 115.3698, 11.03328, 4.23078, 10.0, 0.94096, 0.57598)	4.695505451444151
+Writing: output_proj_het_group1-Amil_process6_02-7-25	Run 8	-7475.23	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.26673, 200.0, 0.55097, 5.26592, 3.91428, 0.02552, 0.17294, 0.11488, 9.65212, 3.58965, 0.85579, 8.71861, 0.26576, 0.55326)	26962.178571542634
+Writing: output_proj_het_group1-Amil_process6_02-7-25	Run 5	-7924.68	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.27878, 200.0, 0.54695, 5.22785, 4.29074, 0.001, 0.24069, 0.14535, 9.46624, 3.59239, 0.68176, 5.92272, 0.42762, 0.51376)	26256.52250351504
+Writing: output_proj_het_group1-Amil_process6_02-7-25	Run 4	-8764.20	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.34225, 19.84722, 0.75003, 6.96992, 4.88795, 0.001, 1.15156, 0.01662, 159.72788, 2.68543, 9.33653, 10.0, 0.4206, 0.65482)	23608.381829005957
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group4_process6_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group4_process6_02-7-25	Run 2	-6890.06	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.84775, 199.92653, 1.31026, 15.29068, 21.014, 0.07646, 0.09176, 0.25133, 23.20218, 18.75942, 0.78098, 3.76844, 0.20062, 0.36538)	7565.110867808497
+Writing: output_proj_het_group1-group4_process6_02-7-25	Run 1	-6974.24	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.0, 153.27375, 1.06258, 11.04506, 19.87944, 1.84874, 0.00e+00, 0.04078, 200.0, 39.7768, 4.15524, 6.03768, 0.63937, 0.40195)	8479.36288835846
+Writing: output_proj_het_group1-group4_process6_02-7-25	Run 6	-7185.23	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.0, 16.82004, 1.48091, 14.74286, 52.84491, 0.83, 0.00e+00, 0.04118, 46.64682, 4.53326, 3.96063, 7.3427, 0.54622, 0.35626)	6607.868749492858
+Writing: output_proj_het_group1-group4_process6_02-7-25	Run 4	-7384.78	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.28117, 200.0, 0.64603, 7.39165, 11.7541, 0.00e+00, 2.61655, 0.02486, 4.70019, 4.48084, 10.0, 1.70295, 0.17574, 0.33599)	17807.058761834753
+Writing: output_proj_het_group1-group4_process6_02-7-25	Run 8	-7759.31	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.15882, 200.0, 0.98184, 2.98186, 200.0, 0.21117, 0.91524, 0.49974, 12.99849, 14.96581, 5.42976, 0.41011, 0.03489, 0.57158)	9287.98176740023
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-group3_process5_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-group3_process5_02-7-25	Run 1	-4934.81	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(8.86171, 9.59273, 1.6404, 25.75246, 28.80748, 7.0058, 6.21241, 0.02451, 11.04799, 7.54458, 7.58805, 8.08784, 0.65006, 0.29448)	5830.778280391534
+Writing: output_proj_het_group2-group3_process5_02-7-25	Run 2	-4981.07	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(9.24997, 9.70792, 1.57667, 23.34415, 26.96646, 6.48254, 5.67257, 0.0186, 14.67033, 7.77236, 9.88864, 10.0, 0.64822, 0.29955)	6052.2022144075545
+Writing: output_proj_het_group2-group3_process5_02-7-25	Run 6	-8448.45	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.02028, 200.0, 0.44844, 1.0, 0.85125, 2.31972, 6.56339, 1.73112, 14.89447, 14.98015, 2.11291, 2.26185, 0.00e+00, 0.34998)	9151.05647499021
+Writing: output_proj_het_group2-group3_process5_02-7-25	Run 4	-8499.32	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.01, 0.01, 0.44895, 0.30225, 1.0, 10.0, 1.06648, 1.00266, 8.63135, 8.94051, 3.00846, 2.92992, 0.00e+00, 0.31964)	15559.704911905774
+Writing: output_proj_het_group2-group3_process5_02-7-25	Run 7	-8591.43	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.0, 122.50046, 1.75825, 28.65401, 10.18601, 0.001, 2.00593, 0.03784, 3.67982, 200.0, 6.06735, 4.10238, 0.25649, 0.32817)	8215.711849869576
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-group4_process5_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-group4_process5_02-7-25	Run 4	-5023.27	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(7.41066, 11.59996, 2.43386, 30.78675, 68.39815, 10.0, 4.09726, 0.06304, 11.75913, 9.26521, 3.03039, 2.26068, 0.61397, 0.39178)	4542.716578607102
+Writing: output_proj_het_group2-group4_process5_02-7-25	Run 7	-5285.61	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(5.11196, 17.79641, 1.55561, 24.34107, 27.08869, 6.08147, 4.68341, 0.01562, 5.3878, 153.59708, 10.0, 8.42691, 0.64274, 0.42891)	6701.959075158135
+Writing: output_proj_het_group2-group4_process5_02-7-25	Run 3	-6105.36	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(4.77657, 6.1932, 1.98564, 41.13084, 200.0, 0.08228, 0.06203, 0.94444, 24.03316, 30.66615, 6.56857, 2.45497, 0.04816, 0.53623)	4618.861016245531
+Writing: output_proj_het_group2-group4_process5_02-7-25	Run 1	-6220.76	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(4.86154, 60.27279, 1.56062, 39.99301, 20.21507, 3.26e-13, 0.001, 0.10356, 7.99507, 200.0, 4.25787, 3.6597, 0.2204, 0.35459)	6453.555627667049
+Writing: output_proj_het_group2-group4_process5_02-7-25	Run 2	-8082.24	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.25631, 0.75159, 0.7633, 2.52588, 3.24393, 0.57844, 2.12038, 17.04134, 25.04194, 2.67958, 1.66095, 0.00118, 0.45542)	7754.967654861789
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group1-group2_process1_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group1-group2_process1_02-7-25	Run 7	-5993.41	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.96767, 200.0, 1.23942, 30.2965, 12.65667, 0.04285, 0.10766, 0.21289, 13.63126, 23.12822, 0.85966, 4.58639, 0.07328, 0.39511)	6801.46937278818
+Writing: output_proj_het_group1-group2_process1_02-7-25	Run 5	-6078.73	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(2.04034, 13.43533, 1.79245, 24.4442, 44.35519, 7.11432, 5.99625, 0.0286, 13.56279, 4.47845, 5.10812, 7.5858, 0.68876, 0.39878)	4889.56175578859
+Writing: output_proj_het_group1-group2_process1_02-7-25	Run 3	-6376.96	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.66129, 173.38352, 1.25738, 15.55224, 13.43295, 0.01618, 1.00614, 0.02279, 19.65671, 200.0, 10.0, 7.10563, 0.26816, 0.45927)	8149.775134351772
+Writing: output_proj_het_group1-group2_process1_02-7-25	Run 8	-6517.06	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.92071, 200.0, 1.05425, 13.60545, 16.96798, 1.32473, 0.00e+00, 0.05754, 200.0, 26.93443, 1.6486, 5.03996, 0.57246, 0.40568)	7272.289931452103
+Writing: output_proj_het_group1-group2_process1_02-7-25	Run 1	-6993.42	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.13005, 200.0, 0.73089, 2.18752, 200.0, 0.29714, 1.08784, 0.85403, 15.96955, 16.17424, 10.0, 4.71661, 0.01081, 0.58059)	7973.219985483842
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-group4_process4_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-group4_process4_02-7-25	Run 8	-4968.81	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(6.32731, 14.44054, 1.92073, 28.22437, 38.63484, 6.20663, 4.57565, 0.01752, 5.75246, 9.48295, 10.0, 8.01703, 0.6528, 0.41495)	5587.988121636843
+Writing: output_proj_het_group2-group4_process4_02-7-25	Run 1	-5005.54	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(5.86764, 15.57864, 1.83121, 29.62021, 34.67473, 6.88335, 5.22119, 0.01842, 4.53875, 16.01567, 10.0, 7.55873, 0.65852, 0.41672)	5797.954880983631
+Writing: output_proj_het_group2-group4_process4_02-7-25	Run 3	-5441.61	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(12.40377, 10.78146, 2.64468, 23.99574, 110.82557, 7.08313, 2.46175, 0.01084, 3.43533, 1.0, 10.0, 10.0, 0.52603, 0.34194)	4276.024241135577
+Writing: output_proj_het_group2-group4_process4_02-7-25	Run 2	-8110.89	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.03417, 0.83309, 0.95781, 1.95792, 2.57085, 0.75254, 2.46976, 18.5213, 28.31353, 1.97843, 1.0741, 0.00097, 0.43118)	6897.493126712432
+Writing: output_proj_het_group2-group4_process4_02-7-25	Run 5	-8116.74	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(200.0, 0.02847, 0.50037, 0.4881, 1.24339, 5.01503, 1.05798, 1.56535, 11.66582, 17.84559, 3.2357, 1.74701, 0.00065, 0.43246)	10929.560450153804
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group4-Amil_process2_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group4-Amil_process2_02-7-25	Run 2	-1437.66	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(1.54418, 4.92719, 1.54342, 72.60558, 11.77719, 0.12518, 0.46779, 6.12142, 200.0, 60.59418, 5.37028, 10.0, 0.50266, 0.00459)	2526.414370818302
+Writing: output_proj_het_group4-Amil_process2_02-7-25	Run 6	-7014.84	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.79182, 200.0, 1.342, 14.13834, 4.68928, 0.03427, 0.1269, 0.11152, 19.58241, 8.05897, 1.19881, 9.29445, 0.30787, 0.58278)	17546.203611069614
+Writing: output_proj_het_group4-Amil_process2_02-7-25	Run 7	-7051.13	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.7979, 200.0, 1.33132, 15.95495, 4.86234, 0.0196, 0.07188, 0.17769, 15.15483, 6.68276, 0.71802, 5.41783, 0.11585, 0.52823)	17032.026509025593
+Writing: output_proj_het_group4-Amil_process2_02-7-25	Run 5	-8228.02	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.9482, 200.0, 1.29705, 16.9389, 5.44206, 1.69449, 10.0, 0.01459, 3.56793, 9.76844, 8.20686, 10.0, 0.70449, 0.59794)	17883.50904881356
+Writing: output_proj_het_group4-Amil_process2_02-7-25	Run 3	-9429.86	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.65281, 200.0, 1.31401, 12.60667, 4.29519, 0.001, 1.80962, 0.02107, 18.91902, 34.56907, 5.80704, 7.97179, 0.48263, 0.58567)	20705.302157850907
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group2-Amil_process5_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
+Writing: output_proj_het_group2-Amil_process5_02-7-25	Run 1	-1374.49	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(8.75251, 2.42958, 10.07976, 0.29692, 105.37761, 10.0, 5.79824, 4.22248, 11.05769, 7.12062, 4.43994, 1.79542, 0.00701, 0.66373)	490.6445935073099
+Writing: output_proj_het_group2-Amil_process5_02-7-25	Run 6	-1396.78	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.81485, 0.92244, 0.85689, 17.5274, 0.14092, 0.4895, 0.76874, 5.12961, 200.0, 197.02997, 8.65981, 10.0, 0.3927, 0.23531)	11504.717682417267
+Writing: output_proj_het_group2-Amil_process5_02-7-25	Run 8	-7652.78	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.85861, 200.0, 1.17886, 12.8924, 5.3785, 0.03047, 0.00e+00, 0.09155, 14.54564, 8.16238, 1.53313, 10.0, 0.36269, 0.5644)	15803.61640522615
+Writing: output_proj_het_group2-Amil_process5_02-7-25	Run 5	-7787.30	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.62236, 200.0, 1.01547, 10.63058, 4.61535, 0.01739, 0.04724, 0.2586, 13.66718, 7.13841, 0.5065, 3.63965, 0.00e+00, 0.52003)	17081.671235862395
+Writing: output_proj_het_group2-Amil_process5_02-7-25	Run 7	-8166.15	(nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2)	(0.85309, 200.0, 1.21475, 12.78585, 6.09393, 1.44268, 8.94237, 0.01303, 13.30149, 65.18497, 9.10452, 9.29371, 0.70751, 0.64013)	16140.051907166255
+No run or logL match found, skipping line.
+Processing file: ../results/gadma/proj_1het/output_proj_het_group3-Amil_process2_02-7-25/all_extracted_models.txt
+Number of lines after header: 7
+No run or logL match found, skipping line.
