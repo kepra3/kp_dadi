@@ -8,7 +8,7 @@ library(tidyverse)
 library(scales)
 
 # Functions
-convert_params <- function(gadma_results) {
+convert_params <- function(gadma_results, model, proj) {
   skip_groups = character(length = 0L)
   gadma_results$unfil.snps = NA
   gadma_results$sfs.snps = NA
@@ -16,43 +16,83 @@ convert_params <- function(gadma_results) {
     # effective sequence params
     if (gadma_results[i, 1] == "group1-group2") {
       cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group2_dadi.pos.gz")
-      gadma_results$sfs.snps[i] = 323336.46 # proj: 285376.87
+      if (proj == "proj") {
+        gadma_results$sfs.snps[i] = 285376.87
+      } else {
+        gadma_results$sfs.snps[i] = 323336.46
+      }
       gadma_results$unfil.snps[i] = 33523695
       } else if (gadma_results[i, 1] == "group1-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 444001.5 # proj: 111991.19
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 111991.19
+        } else {
+          gadma_results$sfs.snps[i] = 444001.5
+        }
         gadma_results$unfil.snps[i]  = 32965107
       } else if (gadma_results[i, 1] == "group1-group3") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group3_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 339902.54 # proj: 70052.17
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 70052.17
+        } else {
+          gadma_results$sfs.snps[i] = 339902.54
+        }
         gadma_results$unfil.snps[i] = 33812349
       } else if (gadma_results[i, 1] == "group1-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group1_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 380214.39 # proj: 76247.09
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 76247.09
+        } else {
+          gadma_results$sfs.snps[i] = 380214.39
+        }
         gadma_results$unfil.snps[i] = 34517876
       } else if (gadma_results[i, 1] == "group2-group3") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_group3_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 371442.47 # proj: 80497.72
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 80497.72
+        } else {
+          gadma_results$sfs.snps[i] = 371442.47
+        }
         gadma_results$unfil.snps[i] = 34492471
       } else if (gadma_results[i, 1] == "group2-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 413972.89 # proj: 84843.52
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 84843.52
+        } else {
+          gadma_results$sfs.snps[i] = 413972.89
+        }
         gadma_results$unfil.snps[i] = 36046531
       } else if (gadma_results[i, 1] == "group3-group4") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group3_dadi_group4_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 421890.54 # proj: 92922.75
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 92922.75
+        } else {
+          gadma_results$sfs.snps[i] = 421890.54
+        }
         gadma_results$unfil.snps[i] = 35072420
       } else if (gadma_results[i, 1] == "group2-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group2_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 472699.58 # proj: 118359.4
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 118359.4
+        } else {
+          gadma_results$sfs.snps[i] = 472699.58
+        }
         gadma_results$unfil.snps[i] = 34184556
       } else if (gadma_results[i, 1] == "group3-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group3_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 500811.35 # proj: 127781.61
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 127781.61
+        } else {
+          gadma_results$sfs.snps[i] = 500811.35
+        }
         gadma_results$unfil.snps[i] = 34598003
       } else if (gadma_results[i, 1] == "group4-Amil") {
         cat("\nunfiltered snps for: out_QCbasic_noSites_group4_dadi_Amil_dadi.pos.gz")
-        gadma_results$sfs.snps[i] = 556220.74 # proj: 139754.46
+        if (proj == "proj") {
+          gadma_results$sfs.snps[i] = 139754.46
+        } else {
+          gadma_results$sfs.snps[i] = 556220.74
+        }
         gadma_results$unfil.snps[i] = 35256168
       } else {
         skip_groups = append(skip_groups, paste(gadma_results[i, 1]))
@@ -78,8 +118,8 @@ convert_params <- function(gadma_results) {
   
   # Divergence time
   gadma_results$T1gen = 2 * gadma_results$nref * gadma_results$t1
-  gadma_results$T1years.1 = gadma_results$T1gen * gen.small
-  gadma_results$T1years.2 = gadma_results$T1gen * gen.big
+  #gadma_results$T1years.1 = gadma_results$T1gen * gen.small
+  #gadma_results$T1years.2 = gadma_results$T1gen * gen.big
   
   # Population sizes after divergence
   gadma_results$N1.0 = gadma_results$nu_1 * gadma_results$nref
@@ -87,47 +127,86 @@ convert_params <- function(gadma_results) {
   
   # T1 population sizes
   gadma_results$N1.T1 = gadma_results$nu11 * gadma_results$nref
-  #gadma_results$N2.T1 = gadma_results$nu21 * gadma_results$nref
-  gadma_results$N2.T1 = gadma_results$nu12 * gadma_results$nref # for het models
+  gadma_results$N2.T1 = gadma_results$nu12 * gadma_results$nref
   
   # T1 migration rate
-  gadma_results$rM12.T1 = ifelse(gadma_results$me1_12 == 0, 0,
-                                gadma_results$me1_12/(2*gadma_results$nref))
-  gadma_results$rM21.T1 = ifelse(gadma_results$me1_21 == 0, 0,
-                                gadma_results$me1_21/(2*gadma_results$nref))
+  if (model != "1het") {
+    gadma_results$rM12.T1 = ifelse(gadma_results$m1_12 == 0, 0,
+                                   gadma_results$m1_12/(2*gadma_results$nref))
+    gadma_results$rM21.T1 = ifelse(gadma_results$m1_21 == 0, 0,
+                                   gadma_results$m1_21/(2*gadma_results$nref))
+  }
   
-  # T1 migration rate
-  # number of migrants
+  if (model == "2het" | model == "1het") {
+    # T1 migration effective rate
+    gadma_results$rMe12.T1 = ifelse(gadma_results$me1_12 == 0, 0,
+                                    gadma_results$me1_12/(2*gadma_results$nref))
+    gadma_results$rMe21.T1 = ifelse(gadma_results$me1_21 == 0, 0,
+                                    gadma_results$me1_21/(2*gadma_results$nref))
+  }
+  
+  # T1 number of migrants
+  if (model != "1het") {
   gadma_results$M12.T1 = ifelse(gadma_results$rM12.T1 == 0, 0,
                                  gadma_results$rM12.T1 * gadma_results$N1.T1)
   gadma_results$M21.T1 = ifelse(gadma_results$rM21.T1 == 0, 0,
                                  gadma_results$rM21.T1 * gadma_results$N2.T1)
+  }
+  if (model == "2het" | model == "1het") {
+  # T1 number of effective migrants
+  gadma_results$Me12.T1 = ifelse(gadma_results$rMe12.T1 == 0, 0,
+                                gadma_results$rMe12.T1 * gadma_results$N1.T1)
+  gadma_results$Me21.T1 = ifelse(gadma_results$rMe21.T1 == 0, 0,
+                                gadma_results$rMe21.T1 * gadma_results$N2.T1)
+  }
   
   # T2
   gadma_results$T2gen = 2 * gadma_results$nref * gadma_results$t2
-  gadma_results$T2years.1 = gadma_results$T2gen * gen.small
-  gadma_results$T2years.2 = gadma_results$T2gen * gen.big
+  #gadma_results$T2years.1 = gadma_results$T2gen * gen.small
+  #gadma_results$T2years.2 = gadma_results$T2gen * gen.big
   
   # T2 population sizes
-  #gadma_results$N1.T2 = gadma_results$nu12 * gadma_results$nref
   gadma_results$N1.T2 = gadma_results$nu21 * gadma_results$nref
   gadma_results$N2.T2 = gadma_results$nu22 * gadma_results$nref
   
   # T2 migration rate
-  gadma_results$rM12.T2 = gadma_results$me2_12/(2*gadma_results$nref)
-  gadma_results$rM21.T2 = gadma_results$me2_21/(2*gadma_results$nref)
-  
+  if (model != "1het") {
+  gadma_results$rM12.T2 = ifelse(gadma_results$m2_12 == 0, 0, 
+                                 gadma_results$m2_12/(2*gadma_results$nref))
+  gadma_results$rM21.T2 = ifelse(gadma_results$m2_21 == 0, 0,
+                                 gadma_results$m2_21/(2*gadma_results$nref))
+  }
+  if (model == "2het" | model == "1het") {
+  # T2 effective migration rate
+  gadma_results$rMe12.T2 = ifelse(gadma_results$me2_12 == 0, 0, 
+                                 gadma_results$me2_12/(2*gadma_results$nref))
+  gadma_results$rMe21.T2 = ifelse(gadma_results$me2_21 == 0, 0,
+                                 gadma_results$me2_21/(2*gadma_results$nref))
+  }
+  if (model != "1het") {
   # T2 migrants
   gadma_results$M12.T2 = ifelse(gadma_results$rM12.T2 == 0, 0,
                                  gadma_results$rM12.T2*gadma_results$N1.T2)
   gadma_results$M21.T2 = ifelse(gadma_results$rM21.T2 == 0, 0,
                                  gadma_results$rM21.T2*gadma_results$N2.T2)
+  }
+  if (model == "2het" | model == "1het") {
+  # T2 effective migrants
+  gadma_results$Me12.T2 = ifelse(gadma_results$rMe12.T2 == 0, 0,
+                                gadma_results$rMe12.T2*gadma_results$N1.T2)
+  gadma_results$Me21.T2 = ifelse(gadma_results$rMe21.T2 == 0, 0,
+                                gadma_results$rMe21.T2*gadma_results$N2.T2)
+  }
   return(gadma_results)
 }
 
 setwd("~/git/kp_dadi/scripts/")
+
 # Import results
-gadma_results <- read.delim("../results/gadma_het_results_combined.txt")
+gadma_results <- read.delim("../results/gadma_proj_2het_results_combined_noerror.txt")
+proj = "proj"
+model = "2het"
+optim <- paste(proj, model, sep = "_")
 
 # Reformat so each parameter is a column
 param_names <- gadma_results$ModelParameters[1] |>
@@ -148,32 +227,35 @@ gadma_results <- bind_cols(gadma_results |> select(-ModelParameters, -ModelValue
 
 rm(model_values_df, model_values_matrix, param_names)
 
+if (model == "") {
+  num1 <- 4
+  num2 <- 3
+} else {
+  num1 <- 5
+  num2 <- 4
+}
 # Fix group comparison names
 gadma_results <- gadma_results %>%
-  mutate(Groups = str_split_fixed(Directory, "_", 5)[, 4]) %>% # was 4 and 3
+  mutate(Groups = str_split_fixed(Directory, "_", num1)[, num2]) %>%
   mutate(Groups = str_replace_all(Groups, "grp", "group")) %>%
   mutate(Groups = str_replace_all(Groups, "het", "group1-group2")) %>%
   mutate(Groups = str_replace_all(Groups, "-process.*", ""))
 
 gadma_results$Groups <- as.factor(gadma_results$Groups)
 
-for (group in unique(gadma_results$Groups)) {
-  gadma_group <- gadma_results[gadma_results$Groups == group,]
-  max_idx <- which.max(gadma_group$LogLikelihood)
-  print(gadma_group[max_idx,])
-}
-
 gadma_results <- gadma_results %>% 
   select(Groups, everything(), -Directory)
 
 str(gadma_results)
-# Remove results where theta could not be calculated
-gadma_results$Theta[gadma_results$Theta == "--"] = NA
-gadma_results <- na.omit(gadma_results)
-gadma_results$Theta <- as.numeric(gadma_results$Theta)
 colnames(gadma_results)[colnames(gadma_results) == "Theta"] <- "theta"
-gadma_results <- gadma_results[gadma_results$theta > 1000 & gadma_results$theta < 1e6,]
-gadma_results <- gadma_results[gadma_results$LogLikelihood < -2000,]
+# Remove results where theta could not be calculated or model messed up optimisation (e.g., resulted in unplottable model)
+gadma_results$theta[gadma_results$theta == "--"] = NA
+gadma_results <- na.omit(gadma_results)
+gadma_results$theta <- as.numeric(gadma_results$theta)
+gadma_results <- gadma_results[gadma_results$theta > 100 & gadma_results$theta < 1e6,]
+if (optim == "full_1het" | optim == "full_2het") {
+  gadma_results <- gadma_results[gadma_results$LogLikelihood < -2500,]
+}
 
 # Reshape to long format for plotting
 gadma_long <- gadma_results %>%
@@ -211,26 +293,34 @@ for (group in levels(gadma_long$Groups)) {
   print(p)
 }
 
-gadma_results_pu <- convert_params(gadma_results)
+# best models
+for (group in unique(gadma_results$Groups)) {
+  gadma_group <- gadma_results[gadma_results$Groups == group,]
+  max_idx <- which.max(gadma_group$LogLikelihood)
+  print(gadma_group[max_idx,])
+}
+
+gadma_results_pu <- convert_params(gadma_results, model = model, proj = proj)
+
+# Change order here as well
+if (model == "2het") {
+  param_cols <- c(26,27,28,29,36:39,30,31,21,
+                  40,47:50,41,42,22)
+} else if (model == "1het") {
+  param_cols <- c(23:25,28:31,26:27,17,32,35:38,33:34,18)
+} else if (model == "") {
+  param_cols <- c(21:23,28,29,26:27,24:25,30,33:36,31:32)
+}
 
 # Reshape to long format
 gadma_pu_long <- gadma_results_pu %>%
   pivot_longer(
-    cols = c(P1,P2,nref:M21.T2),
+    cols = param_cols,
     names_to = "Physical.Parameter",
     values_to = "Physical.Value"
   )
 
-#parameter_order <- c("nref", "T1gen", "T1years.1", "T1years.2", "N1.0", "N2.0",
-#                     "M12.T1", "M21.T1", "rM12.T1", "rM21.T1", "N1.T1", "N2.T1",
-#                     "T2gen", "T2years.1", "T2years.2",
-#                     "M12.T2", "M21.T2", "rM12.T2", "rM21.T2", "N1.T2", "N2.T2")
-parameter_order <- c("nref", "T1gen", "T1years.1", "T1years.2", "N1.0", "N2.0",
-                     "M12.T1", "M21.T1", "rM12.T1", "rM21.T1", "N1.T1", "N2.T1",
-                     "P1",
-                     "T2gen", "T2years.1", "T2years.2",
-                     "M12.T2", "M21.T2", "rM12.T2", "rM21.T2", "N1.T2", "N2.T2",
-                     "P2")
+parameter_order <- colnames(gadma_results_pu[,param_cols])
 
 gadma_pu_long <- gadma_pu_long |>
   mutate(Physical.Parameter = factor(Physical.Parameter, levels = parameter_order))
@@ -269,47 +359,84 @@ for (group in unique(gadma_pu_long$Groups)) {
       axis.title.x = element_text(margin = margin(t = 10))
     )
   print(p)
-  ggsave(paste0("../plots/gadma_params/", group, "het_physical-param-confi.pdf"),
+  ggsave(paste0("../plots/gadma_params/", group, "_", optim,
+                "_physical-param-confi.pdf"),
          units = "cm", width = 20, height = 20)
 }
 
-gadma_top <- gadma_results_pu[0,]
-summary_list <- list()
+summarise_data <- function(gadma_results_pu, param_cols) {
+  summary_list <- list()
+  for (group in unique(gadma_results_pu$Groups)) {
+    df_group <- gadma_results_pu[gadma_results_pu$Groups == group,]
+    
+    top_runs <- df_group |>
+      arrange(desc(LogLikelihood)) |>
+      slice_head(n = 3)
+    
+    # Calculate min and max for columns in thousands
+    min_vals <- top_runs[, param_cols] |> summarise(across(everything(), min))
+    max_vals <- top_runs[, param_cols] |> summarise(across(everything(), max))
+    # dived by 1000 for generations and pop sizes
+    desired_cols <- c("nref", "T1gen", "N1.0", "N2.0", "N1.T1", "N2.T1", "T2gen", "N1.T2", "N2.T2")
+    existing_cols <- desired_cols[desired_cols %in% names(min_vals)]
+    min_vals[existing_cols] <- lapply(min_vals[existing_cols], function(x) x / 1000)
+    max_vals[existing_cols] <- lapply(max_vals[existing_cols], function(x) x / 1000)
+    #if (min_vals$P1 > 0.5 & max_vals$P1 >0.5) {
+      # Combine min and max as "min-max"
+      #min_max <- Map(function(min, max) sprintf("%.1f–%.1f", min, max), min_vals, max_vals)
+      #min_max_df <- as.data.frame(min_max)
+      #names(min_max_df) <- names(min_vals)
+    #}
+    min_max_df <- rbind(round(min_vals,1), round(max_vals,1))
+    
+    min_max_df$Group <- group
+    summary_list[[group]] <- min_max_df
+  }
+  
+  summary_table <- bind_rows(summary_list) |> relocate(Group)
+  
+  custom_order <- c(
+    "group1-group2", "group1-group3", "group1-group4",
+    "group2-group3", "group2-group4", "group3-group4",
+    "group1-Amil", "group2-Amil", "group3-Amil", "group4-Amil"
+  )
+  
+  summary_table$Group <- factor(summary_table$Group, levels = custom_order)
+  summary_table <- summary_table[order(summary_table$Group),]
+  return(summary_table)
+}
 
+summary_table <- summarise_data(gadma_results_pu, param_cols)
+
+# Alternative way because of proportion columns ####
+gadma_top <- gadma_results_pu[0,] 
 for (group in unique(gadma_results_pu$Groups)) {
   df_group <- gadma_results_pu[gadma_results_pu$Groups == group,]
   
   top_run <- df_group |>
     arrange(desc(LogLikelihood)) |>
-    slice_head(n = 5)
+    slice_head(n = 3) |>
+    slice(c(1, n()))
   
   gadma_top <- rbind(gadma_top, top_run)
-  
-  # Calculate min and max for columns in thousands
-  #min_vals <- top_run[, c(21,24,25,30,31,32,26,27,39,40,35,36)] |> summarise(across(everything(), min))
-  min_vals <- top_run[, c(17,18,22:42)] |> summarise(across(everything(), min))
-  max_vals <- top_run[, c(17:18,22:42)] |> summarise(across(everything(), max))
-  min_vals <- min_vals[,c(3,7,8,4,9,10,13,14,1,15,18,19,22,23,2)]
-  max_vals <- max_vals[,c(3,7,8,4,9,10,13,14,1,15,18,19,22,23,2)]
-  # dived by 1000 for generations and pop sizes
-  min_vals[,c(1:6,10:12)] <- min_vals[,c(1:6,10:12)]/1000
-  max_vals[,c(1:6,10:12)] <- max_vals[,c(1:6,10:12)]/1000
-  # Combine min and max as "min-max"
-  min_max <- Map(function(min, max) sprintf("%.1f–%.1f", min, max), min_vals, max_vals)
-  min_max_df <- as.data.frame(min_max)
-  names(min_max_df) <- names(min_vals)
-  
-  min_max_df$Group <- group
-  summary_list[[group]] <- min_max_df
 }
 
-summary_table <- bind_rows(summary_list) |> relocate(Group)
+gadma_top <- gadma_top[,c(1,3,4,param_cols)]
 
+desired_cols <- c("nref", "T1gen", "N1.0", "N2.0", "N1.T1", "N2.T1", "T2gen", "N1.T2", "N2.T2")
+existing_cols <- desired_cols[desired_cols %in% names(gadma_top)]
+gadma_top[existing_cols] <- lapply(gadma_top[existing_cols], function(x) x / 1000)
 custom_order <- c(
   "group1-group2", "group1-group3", "group1-group4",
   "group2-group3", "group2-group4", "group3-group4",
   "group1-Amil", "group2-Amil", "group3-Amil", "group4-Amil"
 )
 
-summary_table$Group <- factor(summary_table$Group, levels = custom_order)
-summary_table <- summary_table[order(summary_table$Group),]
+gadma_top$Groups <- factor(gadma_top$Groups, levels = custom_order)
+gadma_top <- gadma_top[order(gadma_top$Groups),]
+# get rid of rM for now
+gadma_top <- gadma_top %>%
+  select(-any_of(c("rMe12.T1", "rMe21.T1", "rM12.T1", "rM21.T1",
+                   "rMe12.T2", "rMe21.T2", "rM.12.T2", "rM21.T2")))
+gadma_top[,2:ncol(gadma_top)] <- round(gadma_top[,2:ncol(gadma_top)], 2)
+
