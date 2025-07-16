@@ -197,15 +197,16 @@ convert_params <- function(gadma_results, model, proj) {
   gadma_results$Me21.T2 = ifelse(gadma_results$rMe21.T2 == 0, 0,
                                 gadma_results$rMe21.T2*gadma_results$N2.T2)
   }
+  gadma_results$T1gen = gadma_results$T1gen + gadma_results$T2gen
   return(gadma_results)
 }
 
 setwd("~/git/kp_dadi/scripts/")
 
 # Import results
-gadma_results <- read.delim("../results/gadma_proj_2het_results_combined_noerror.txt")
+gadma_results <- read.delim("../results/gadma_proj_1het_results_combined_noerror.txt")
 proj = "proj"
-model = "2het"
+model = "1het"
 optim <- paste(proj, model, sep = "_")
 
 # Reformat so each parameter is a column
@@ -315,7 +316,7 @@ if (model == "2het") {
 # Reshape to long format
 gadma_pu_long <- gadma_results_pu %>%
   pivot_longer(
-    cols = param_cols,
+    cols = all_of(param_cols),
     names_to = "Physical.Parameter",
     values_to = "Physical.Value"
   )
@@ -439,4 +440,27 @@ gadma_top <- gadma_top %>%
   select(-any_of(c("rMe12.T1", "rMe21.T1", "rM12.T1", "rM21.T1",
                    "rMe12.T2", "rMe21.T2", "rM.12.T2", "rM21.T2")))
 gadma_top[,2:ncol(gadma_top)] <- round(gadma_top[,2:ncol(gadma_top)], 2)
+
+
+# Find optimal run
+
+gadma_results[gadma_results$Groups == "group1-group2" & gadma_results$LogLikelihood == -5683.32,]
+
+gadma_results[gadma_results$Groups == "group1-group3" & gadma_results$LogLikelihood == -6067.67,]
+
+gadma_results[gadma_results$Groups == "group1-group4" & gadma_results$LogLikelihood == -6184.24,]
+
+gadma_results[gadma_results$Groups == "group2-group3" & gadma_results$LogLikelihood == -4913.41,]
+
+gadma_results[gadma_results$Groups == "group2-group4" & gadma_results$LogLikelihood == -4968.81,]
+
+gadma_results[gadma_results$Groups == "group3-group4" & gadma_results$LogLikelihood == -4632.39,]
+
+gadma_results[gadma_results$Groups == "group1-Amil" & gadma_results$LogLikelihood == -7230.64,]
+
+gadma_results[gadma_results$Groups == "group2-Amil" & gadma_results$LogLikelihood == -7114.40,]
+
+gadma_results[gadma_results$Groups == "group3-Amil" & gadma_results$LogLikelihood == -7319.05,]
+
+gadma_results[gadma_results$Groups == "group4-Amil" & gadma_results$LogLikelihood == -6813.63,]
 
