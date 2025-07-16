@@ -1,0 +1,143 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Population pair is: group1-group2
+Optimised params are: 1.57385 14.38612 2.0523 32.82016 31.42617 0.03789 0.08346 0.09877 17.62229 16.6836 2.19519 9.99955 0.17433 0.47632
+Running confidence intervals for 1het with epsilon 0.01 for group1-group2
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08620121566333719
+Maximum log composite likelihood: -2673.939110411453
+Optimal value of theta: 4662.346270010007
+Loaded 200 bootstrap spectra from ../data/fs/projected_group1-group2/
+Estimated parameter standard deviations from GIM: [5.39681602 1.29337608 4.94382307 3.77118701 5.8788538  2.18914241
+ 5.2060107  4.62723698 1.2682321  2.70328634 5.72581861 4.74580493
+ 0.40886025 0.64404555 4.12261779]
+Optimised parameters: [1.57385, 14.38612, 2.0523, 32.82016, 31.42617, 0.03789, 0.08346, 0.09877, 17.62229, 16.6836, 2.19519, 9.99955, 0.17433, 0.47632, 4662.346270010007]
+Estimated parameter lower from GIM: [-3.82296602e+00  1.30927439e+01 -2.89152307e+00  2.90489730e+01
+  2.55473162e+01 -2.15125241e+00 -5.12255070e+00 -4.52846698e+00
+  1.63540579e+01  1.39803137e+01 -3.53062861e+00  5.25374507e+00
+ -2.34530251e-01 -1.67725547e-01  4.65822365e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [   0.       13.0927    0.       29.049    25.5473    0.        0.
+    0.       16.3541   13.9803    0.        5.2537    0.        0.
+ 4658.2237]
+Estimated parameter upper from GIM: [6.9707000e+00 1.5679500e+01 6.9961000e+00 3.6591300e+01 3.7305000e+01
+ 2.2270000e+00 5.2895000e+00 4.7260000e+00 1.8890500e+01 1.9386900e+01
+ 7.9210000e+00 1.4745400e+01 5.8320000e-01 1.1204000e+00 4.6664689e+03]
+Running confidence intervals for 1het with epsilon 0.001 for group1-group2
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08620121566333719
+Maximum log composite likelihood: -2673.939110411453
+Optimal value of theta: 4662.346270010007
+Loaded 200 bootstrap spectra from ../data/fs/projected_group1-group2/
+Estimated parameter standard deviations from GIM: [ 5.94275432  1.2467957   4.02336272  3.94787053  4.77955414  0.21501294
+  3.53556424 19.16705048  9.27270188  9.163164   21.06723551 19.21828292
+  2.95311977  1.40730629  3.12413626]
+Optimised parameters: [1.57385, 14.38612, 2.0523, 32.82016, 31.42617, 0.03789, 0.08346, 0.09877, 17.62229, 16.6836, 2.19519, 9.99955, 0.17433, 0.47632, 4662.346270010007]
+Estimated parameter lower from GIM: [-4.36890432e+00  1.31393243e+01 -1.97106272e+00  2.88722895e+01
+  2.66466159e+01 -1.77122939e-01 -3.45210424e+00 -1.90682805e+01
+  8.34958812e+00  7.52043600e+00 -1.88720455e+01 -9.21873292e+00
+ -2.77878977e+00 -9.30986291e-01  4.65922213e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [   0.       13.1393    0.       28.8723   26.6466    0.        0.
+    0.        8.3496    7.5204    0.        0.        0.        0.
+ 4659.2221]
+Estimated parameter upper from GIM: [7.5166000e+00 1.5632900e+01 6.0757000e+00 3.6768000e+01 3.6205700e+01
+ 2.5290000e-01 3.6190000e+00 1.9265800e+01 2.6895000e+01 2.5846800e+01
+ 2.3262400e+01 2.9217800e+01 3.1274000e+00 1.8836000e+00 4.6654704e+03]
+Running confidence intervals for 1het with epsilon 0.0001 for group1-group2
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08620121566333719
+Maximum log composite likelihood: -2673.939110411453
+Optimal value of theta: 4662.346270010007
+Loaded 200 bootstrap spectra from ../data/fs/projected_group1-group2/
+Estimated parameter standard deviations from GIM: [ 1.5937408   5.97854052  0.46981131  0.35558813  5.17024091 20.06795197
+ 17.38136256 80.51893311 42.82735915 23.63336618 83.29817784 82.48822375
+ 35.32165902  6.35211466  2.11310678]
+Optimised parameters: [1.57385, 14.38612, 2.0523, 32.82016, 31.42617, 0.03789, 0.08346, 0.09877, 17.62229, 16.6836, 2.19519, 9.99955, 0.17433, 0.47632, 4662.346270010007]
+Estimated parameter lower from GIM: [-1.98908024e-02  8.40757948e+00  1.58248869e+00  3.24645719e+01
+  2.62559291e+01 -2.00300620e+01 -1.72979026e+01 -8.04201631e+01
+ -2.52050691e+01 -6.94976618e+00 -8.11029878e+01 -7.24886737e+01
+ -3.51473290e+01 -5.87579466e+00  4.66023316e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [0.0000000e+00 8.4076000e+00 1.5825000e+00 3.2464600e+01 2.6255900e+01
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00 4.6602332e+03]
+Estimated parameter upper from GIM: [3.1676000e+00 2.0364700e+01 2.5221000e+00 3.3175700e+01 3.6596400e+01
+ 2.0105800e+01 1.7464800e+01 8.0617700e+01 6.0449600e+01 4.0317000e+01
+ 8.5493400e+01 9.2487800e+01 3.5496000e+01 6.8284000e+00 4.6644594e+03]
+Running confidence intervals for 1het with epsilon 0.00001 for group1-group2
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08620121566333719
+Maximum log composite likelihood: -2673.939110411453
+Optimal value of theta: 4662.346270010007
+Loaded 200 bootstrap spectra from ../data/fs/projected_group1-group2/
+Estimated parameter standard deviations from GIM: [0.04751824 0.75893836 0.01032403 0.21930458 0.42913143 0.13784269
+ 0.23645656 0.4987628  0.97486423 1.98107543 0.17255324 0.49690629
+ 0.24847764 0.25419852 0.13360646]
+Optimised parameters: [1.57385, 14.38612, 2.0523, 32.82016, 31.42617, 0.03789, 0.08346, 0.09877, 17.62229, 16.6836, 2.19519, 9.99955, 0.17433, 0.47632, 4662.346270010007]
+Estimated parameter lower from GIM: [ 1.52633176e+00  1.36271816e+01  2.04197597e+00  3.26008554e+01
+  3.09970386e+01 -9.99526865e-02 -1.52996563e-01 -3.99992796e-01
+  1.66474258e+01  1.47025246e+01  2.02263676e+00  9.50264371e+00
+ -7.41476350e-02  2.22121479e-01  4.66221266e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [1.5263000e+00 1.3627200e+01 2.0420000e+00 3.2600900e+01 3.0997000e+01
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 1.6647400e+01 1.4702500e+01
+ 2.0226000e+00 9.5026000e+00 0.0000000e+00 2.2210000e-01 4.6622127e+03]
+Estimated parameter upper from GIM: [1.6214000e+00 1.5145100e+01 2.0626000e+00 3.3039500e+01 3.1855300e+01
+ 1.7570000e-01 3.1990000e-01 5.9750000e-01 1.8597200e+01 1.8664700e+01
+ 2.3677000e+00 1.0496500e+01 4.2280000e-01 7.3050000e-01 4.6624799e+03]

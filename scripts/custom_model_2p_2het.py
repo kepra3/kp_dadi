@@ -6,9 +6,9 @@ from dadi import Numerics, PhiManip, Integration, Spectrum
 def model_func(params, ns, pts):
     """
     Heterogeneous model with two populations and migration.
-    14 parameters: ... as before ..., P1, P2
-    P1: proportion with no migration in first time period
-    P2: proportion with no migration in second time period
+    18 parameters
+    P1: proportion with m in first time period (1 - P1) for me
+    P2: proportion with m migration in second time period (1 - P2) for me
     """
     nu_1, nu_2, t1, nu11, nu12, m1_12, me1_12, m1_21, me1_21, t2, nu21, nu22, m2_12, me2_12, m2_21, me2_21, P1, P2 = params
 

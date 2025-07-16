@@ -1,0 +1,251 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Population pair is: group1-Amil
+Optimised params are: 0.32369 200 0.6451 6.08667 4.19974 0.01749 0.11777 0.09341 12.2419 4.22317 1.10576 10 0.14524 0.57673
+Running confidence intervals for 1het with epsilon 0.01 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [0.02421589 0.85268697 0.01692514 0.04670412 0.05588671 0.06374457
+ 0.08163409 0.68600475 0.26123774 0.0975899  0.61224756 0.69395233
+ 0.29187734 0.03951141 0.0389647 ]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [ 2.99474107e-01  1.99147313e+02  6.28174861e-01  6.03996588e+00
+  4.14385329e+00 -4.62545701e-02  3.61359107e-02 -5.92594750e-01
+  1.19806623e+01  4.12558010e+00  4.93512441e-01  9.30604767e+00
+ -1.46637338e-01  5.37218587e-01  2.42580982e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [2.99500000e-01 1.99147300e+02 6.28200000e-01 6.04000000e+00
+ 4.14390000e+00 0.00000000e+00 3.61000000e-02 0.00000000e+00
+ 1.19807000e+01 4.12560000e+00 4.93500000e-01 9.30600000e+00
+ 0.00000000e+00 5.37200000e-01 2.42580982e+04]
+Estimated parameter upper from GIM: [3.47900000e-01 2.00852700e+02 6.62000000e-01 6.13340000e+00
+ 4.25560000e+00 8.12000000e-02 1.99400000e-01 7.79400000e-01
+ 1.25031000e+01 4.32080000e+00 1.71800000e+00 1.06940000e+01
+ 4.37100000e-01 6.16200000e-01 2.42581762e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt
+Running confidence intervals for 1het with epsilon 0.001 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [0.14122417 0.95528117 0.12820874 0.1181068  0.03364882 0.10487054
+ 0.12246608 0.61284563 0.39716717 0.0601461  0.65682385 0.59944243
+ 0.24917008 0.06853573 0.05960996]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [ 1.82465833e-01  1.99044719e+02  5.16891262e-01  5.96856320e+00
+  4.16609118e+00 -8.73805387e-02 -4.69607771e-03 -5.19435632e-01
+  1.18447328e+01  4.16302390e+00  4.48936147e-01  9.40055757e+00
+ -1.03930084e-01  5.08194268e-01  2.42580776e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [1.82500000e-01 1.99044700e+02 5.16900000e-01 5.96860000e+00
+ 4.16610000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 1.18447000e+01 4.16300000e+00 4.48900000e-01 9.40060000e+00
+ 0.00000000e+00 5.08200000e-01 2.42580776e+04]
+Estimated parameter upper from GIM: [4.64900000e-01 2.00955300e+02 7.73300000e-01 6.20480000e+00
+ 4.23340000e+00 1.22400000e-01 2.40200000e-01 7.06300000e-01
+ 1.26391000e+01 4.28330000e+00 1.76260000e+00 1.05994000e+01
+ 3.94400000e-01 6.45300000e-01 2.42581968e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt
+Running confidence intervals for 1het with epsilon 0.0001 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [0.08946425 1.13616245 0.07778335 0.03685735 0.01697764 0.13468562
+ 0.20340315 0.09888491 0.24634034 0.12496259 0.01694212 0.01521024
+ 0.16040626 0.00828982 0.05218319]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [ 2.34225753e-01  1.98863838e+02  5.67316652e-01  6.04981265e+00
+  4.18276236e+00 -1.17195622e-01 -8.56331539e-02 -5.47491390e-03
+  1.19955597e+01  4.09820741e+00  1.08881788e+00  9.98478976e+00
+ -1.51662568e-02  5.68440176e-01  2.42580850e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [2.3420000e-01 1.9886380e+02 5.6730000e-01 6.0498000e+00 4.1828000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 1.1995600e+01 4.0982000e+00
+ 1.0888000e+00 9.9848000e+00 0.0000000e+00 5.6840000e-01 2.4258085e+04]
+Estimated parameter upper from GIM: [4.13200000e-01 2.01136200e+02 7.22900000e-01 6.12350000e+00
+ 4.21670000e+00 1.52200000e-01 3.21200000e-01 1.92300000e-01
+ 1.24882000e+01 4.34810000e+00 1.12270000e+00 1.00152000e+01
+ 3.05600000e-01 5.85000000e-01 2.42581894e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt
+Running confidence intervals for 1het with epsilon 0.00001 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [0.0261257  0.08121787 0.01616595 0.03352743 0.01449768 0.01572997
+ 0.03320803 0.03023786 0.03716102 0.01258254 0.00207522 0.05867171
+ 0.01254993 0.01218499 0.00917455]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [2.97564299e-01 1.99918782e+02 6.28934046e-01 6.05314257e+00
+ 4.18524232e+00 1.76003363e-03 8.45619685e-02 6.31721381e-02
+ 1.22047390e+01 4.21058746e+00 1.10368478e+00 9.94132829e+00
+ 1.32690072e-01 5.64545010e-01 2.42581280e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [2.9760000e-01 1.9991880e+02 6.2890000e-01 6.0531000e+00 4.1852000e+00
+ 1.8000000e-03 8.4600000e-02 6.3200000e-02 1.2204700e+01 4.2106000e+00
+ 1.1037000e+00 9.9413000e+00 1.3270000e-01 5.6450000e-01 2.4258128e+04]
+Estimated parameter upper from GIM: [3.49800000e-01 2.00081200e+02 6.61300000e-01 6.12020000e+00
+ 4.21420000e+00 3.32000000e-02 1.51000000e-01 1.23600000e-01
+ 1.22791000e+01 4.23580000e+00 1.10780000e+00 1.00587000e+01
+ 1.57800000e-01 5.88900000e-01 2.42581464e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt
+Running confidence intervals for 1het with epsilon 0.000001 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [0.00075482 0.00386965 0.0011715  0.00065235 0.00519158 0.00023771
+ 0.00060673 0.00035803 0.00158189 0.00243622 0.00137699 0.00395998
+ 0.00082708 0.00197694 0.00206659]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [3.22935181e-01 1.99996130e+02 6.43928504e-01 6.08601765e+00
+ 4.19454842e+00 1.72522882e-02 1.17163272e-01 9.30519652e-02
+ 1.22403181e+01 4.22073378e+00 1.10438301e+00 9.99604002e+00
+ 1.44412924e-01 5.74753061e-01 2.42581351e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [3.22900000e-01 1.99996100e+02 6.43900000e-01 6.08600000e+00
+ 4.19450000e+00 1.73000000e-02 1.17200000e-01 9.31000000e-02
+ 1.22403000e+01 4.22070000e+00 1.10440000e+00 9.99600000e+00
+ 1.44400000e-01 5.74800000e-01 2.42581351e+04]
+Estimated parameter upper from GIM: [3.24400000e-01 2.00003900e+02 6.46300000e-01 6.08730000e+00
+ 4.20490000e+00 1.77000000e-02 1.18400000e-01 9.38000000e-02
+ 1.22435000e+01 4.22560000e+00 1.10710000e+00 1.00040000e+01
+ 1.46100000e-01 5.78700000e-01 2.42581393e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt
+Running confidence intervals for 1het with epsilon 0.0000001 for group1-Amil
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 17]
+FST 0.2354917056322673
+Maximum log composite likelihood: -3754.049676766044
+Optimal value of theta: 24258.137191604845
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-Amil/
+Estimated parameter standard deviations from GIM: [1.67514076e-04 3.38159107e-05 1.47008513e-04 6.04829933e-05
+ 1.64510414e-04 6.39669953e-05 3.05398391e-05 7.88662819e-06
+ 3.38678623e-05 1.34177927e-04 8.50188202e-05 5.44850405e-05
+ 8.21093996e-05 3.11168198e-05 1.76139064e-03]
+Optimised parameters: [0.32369, 200.0, 0.6451, 6.08667, 4.19974, 0.01749, 0.11777, 0.09341, 12.2419, 4.22317, 1.10576, 10.0, 0.14524, 0.57673, 24258.137191604845]
+Estimated parameter lower from GIM: [3.23522486e-01 1.99999966e+02 6.44952991e-01 6.08660952e+00
+ 4.19957549e+00 1.74260330e-02 1.17739460e-01 9.34021134e-02
+ 1.22418661e+01 4.22303582e+00 1.10567498e+00 9.99994551e+00
+ 1.45157891e-01 5.76698883e-01 2.42581354e+04]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [3.23500000e-01 2.00000000e+02 6.45000000e-01 6.08660000e+00
+ 4.19960000e+00 1.74000000e-02 1.17700000e-01 9.34000000e-02
+ 1.22419000e+01 4.22300000e+00 1.10570000e+00 9.99990000e+00
+ 1.45200000e-01 5.76700000e-01 2.42581354e+04]
+Estimated parameter upper from GIM: [3.2390000e-01 2.0000000e+02 6.4520000e-01 6.0867000e+00 4.1999000e+00
+ 1.7600000e-02 1.1780000e-01 9.3400000e-02 1.2241900e+01 4.2233000e+00
+ 1.1058000e+00 1.0000100e+01 1.4530000e-01 5.7680000e-01 2.4258139e+04]
+Results written to ../results/group1-Amil_projected0.8_1het_confidence_intervals.txt

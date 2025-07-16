@@ -1,4 +1,4 @@
-#!/usr/anaconda3/env/dadi211/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -22,7 +22,7 @@ import os
 from glob import glob
 
 
-def main(filepath, bootpath, function, model, sims, eps, opt, PTS):
+def main(filepath, bootpath, function, model, eps, opt, PTS):
     """
     eps: Fractional stepsize to use when taking finite-difference derivatives.
         Note that if eps*param is < 1e-6, then the step size for that parameter
@@ -33,7 +33,9 @@ def main(filepath, bootpath, function, model, sims, eps, opt, PTS):
     snps = os.path.splitext(os.path.basename(filepath))[0]
 
     # Import spectrum
-    fs = dadi.Spectrum.from_file(filepath)
+    fs = Spectrum.from_file(filepath)
+    ns = fs.sample_sizes
+    print(f"Loaded spectrum with sample sizes: {ns}")
 
     # The parameter confidence interval txt file
     out_name = "../results/{}_{}_confidence_intervals.txt".format(snps, model)
@@ -102,16 +104,21 @@ def main(filepath, bootpath, function, model, sims, eps, opt, PTS):
     upp = np.around(upp, 4)
     print('Estimated parameter upper from {0}: {1}'.format(function, upp))
 
+    p_labels = [x.strip() for x in p_labels.split(",")]
+    
     # Write results to file
-    with open(out_name, "w") as out:
-        out.write(f"# Results for {snps} model: {model}\n")
-        out.write(f"Log-likelihood:\t{ll_model}\n")
-        out.write(f"Theta:\t{theta}\n")
-        out.write("Parameter\tOptimised\tLower_CI\tUpper_CI\n")
-        for i, label in enumerate(p_labels + ["theta"]):
-            out.write(f"{label}\t{opt[i]}\t{low[i]}\t{upp[i]}\n")
-    print(f"Results written to {out_name}")
-
+    if os.path.exists(out_name):
+        with open(out_name, "a") as out:
+            for i, label in enumerate(p_labels + ["theta"]):
+                out.write(f"{label}\t{opt[i]}\t{low[i]}\t{upp[i]}\t{eps}\n")
+        print(f"Results written to {out_name}")
+    else: 
+        with open(out_name, "w") as out:
+            out.write("Parameter\tOptimised\tLower_CI\tUpper_CI\teps\n")
+            for i, label in enumerate(p_labels + ["theta"]):
+                out.write(f"{label}\t{opt[i]}\t{low[i]}\t{upp[i]}\t{eps}\n")
+        print(f"Results written to {out_name}")
+        
 
 if __name__ == "__main__":
     # Arguments
@@ -135,11 +142,6 @@ if __name__ == "__main__":
         help="Model to use for the analysis from kp_dadi."
     )
     parser.add_argument(
-        "sims",
-        help="Number of bootstraps",
-        type=int
-    )
-    parser.add_argument(
         "eps",
         help="eps setting (e.g., 0.01, 0.001, 0.0001)",
         type=float
@@ -156,4 +158,4 @@ if __name__ == "__main__":
     PTS = SETTINGS.SET_PTS
     print("PTS is {}".format(PTS))
 
-    main(args.filepath, args.bootpath, args.function, args.model, args.sims, args.eps, args.opt, PTS)
+    main(args.filepath, args.bootpath, args.function, args.model, args.eps, args.opt_params, PTS)
