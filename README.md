@@ -200,3 +200,4 @@ Arguments: (1) fs_filepath, (2) bootstraps_dirpath, (3) FIM or GIM, (4) model,
 
 Official analysis results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
+## 5 - Using GADMA (coming soon!)
