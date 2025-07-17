@@ -122,9 +122,12 @@ def main(filepath, bootpath, function, model, eps, opt, PTS):
 
 if __name__ == "__main__":
     # Arguments
-    parser = argparse.ArgumentParser(prog="Parameter uncertainty",
-    description="A script for obtaining parameter uncertainty from optimised parameters and bootstraps.",
-    usage="%(prog)s [options] <filepath> <bootpath> <function> <model> <sims> <eps> [opt_params]")
+    parser = argparse.ArgumentParser(
+        prog="Parameter uncertainty",
+        description="A script for obtaining parameter uncertainty from optimised parameters and bootstraps.",
+        usage="%(prog)s [options] <filepath> <bootpath> <function> <model> <eps> [opt_params]",
+        add_help=True
+    )
     parser.add_argument(
         "filepath",
         help="Path to the data .fs file."

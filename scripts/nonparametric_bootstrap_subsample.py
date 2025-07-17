@@ -14,9 +14,11 @@ import numpy
 import os.path
 import demo_models_kp
 from dadi import Misc, Numerics, Inference
+import SETTINGS
+import plot_fs
 
 
-def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
+def main(snps, model, sims, genotypes, chunk_size, opt, PTS, mask_type):
     # import the spectrum and popfile from data/vcf and data/popfile
     snp_path = "../data/vcf/" + snps + ".vcf"
     pop_path = "../data/popfile/pop_" + snps + ".txt"
@@ -45,7 +47,7 @@ def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
 
         # Making subsampled bootstraps
         # Need to alter chunk_size here depending on how long your contigs are
-    boots_subsample = Misc.bootstraps_subsample_vcf(snp_path, pop_path, chunk_size=chunk_size, Nboot=args.sims,
+    boots_subsample = Misc.bootstraps_subsample_vcf(snp_path, pop_path, chunk_size=chunk_size, Nboot=sims,
                                                     subsample=subsample,
                                                     pop_ids=pop_ids, polarized=False)
     # Saving your bootstraps to file
@@ -54,7 +56,7 @@ def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
         if os.path.isfile(bootstrap_out_name):
             print("bootstrap exists")
         else:
-            boots_subsample[i].to_file("../results/bootstraps/{}_bootstrap_vcf_{}.fs".format(snps, i))
+            boots_subsample[i].to_file(bootstrap_out_name)
 
     # Place your models of choice here
     if model == "iso_inbred":
@@ -73,12 +75,8 @@ def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
 
     # Calculate how well your bootstraps fit your optimised parameters
     for i in range(0, sims):
-        # Uncomment below if not masking singletons and doubletons
-        boots_subsample[i].mask[1, 0] = True
-        boots_subsample[i].mask[0, 1] = True
-        boots_subsample[i].mask[2, 0] = True
-        boots_subsample[i].mask[0, 2] = True
-        boots_subsample[i].mask[1, 1] = True
+        # Use mask function from plot_fs.py
+        plot_fs.apply_mask(boots_subsample[i], mask_type)
         func_exec = Numerics.make_extrap_func(model_fun)
         sim_model = func_exec(opt, boots_subsample[i].sample_sizes, PTS)
         ll = Inference.ll_multinom(sim_model, boots_subsample[i])
@@ -110,13 +108,44 @@ def main(snps, model, sims, genotypes, chunk_size, opt, PTS):
 
 if __name__ == '__main__':
     # Arguments
-    parser = argparse.ArgumentParser(prog="vcf bootstraps")
-    parser.add_argument("snps")
-    parser.add_argument("model")
-    parser.add_argument("sims", type=int)
-    parser.add_argument("chunksize", type=int)
-    parser.add_argument("-g", "--genotypes", nargs="+", type=int)
-    parser.add_argument("-o", "--opt_params", nargs="+", type=float)
+    parser = argparse.ArgumentParser(
+        prog="vcf bootstraps",
+        description="Create non-parametric bootstraps using the subsample option.",
+        usage="%(prog)s [options] <snps> <model> <sims> <chunksize> [-g GENOTYPES] [-o OPT_PARAMS] [-m MASK]"
+    )
+    parser.add_argument(
+        "snps",
+        help="SNPs name (without extension)."
+    )
+    parser.add_argument(
+        "model",
+        help="Model to use for the analysis from kp_dadi."
+    )
+    parser.add_argument(
+        "sims",
+        type=int,
+        help="Number of bootstraps to generate."
+    )
+    parser.add_argument(
+        "chunksize",
+        type=int,
+        help="Chunk size for bootstrapping."
+    )
+    parser.add_argument(
+        "-g", "--genotypes",
+        nargs="+", type=int,
+        help="Genotype counts for each population."
+    )
+    parser.add_argument(
+        "-o", "--opt_params",
+        nargs="+", type=float,
+        help="Optimised parameters for the model."
+    )
+    parser.add_argument(
+        "-m", "--mask",
+        default="low",
+        help="Type of masking to use (e.g., 'mid', 'low', or 'no'). Default is 'low'."
+    )
     args: argparse.Namespace = parser.parse_args()
 
     # Setting variables
@@ -126,10 +155,11 @@ if __name__ == '__main__':
     genotypes = args.genotypes
     chunk_size = args.chunksize
     opt = args.opt_params
+    mask_type = args.mask
 
-    # Define optimisation bounds - use the same ones as before
-    PTS = [200, 210, 220]
+    # Import PTS from SETTINGS
+    PTS = SETTINGS.SET_PTS
 
-    main(snps, model, sims, genotypes, chunk_size, opt, PTS)
+    main(snps, model, sims, genotypes, chunk_size, opt, PTS, mask_type)
 
 
