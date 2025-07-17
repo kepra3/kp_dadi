@@ -29,3 +29,38 @@ Dadi location:
 Population pair is: group2-group4
 Optimised params are: 6.32731 14.44054 1.92073 28.22437 38.63484 6.20663 4.57565 0.01752 5.75246 9.48295 10 8.01703 0.6528 0.41495
 Running confidence intervals for 1het with epsilon 0.0001 for group2-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07947329956252058
+Maximum log composite likelihood: -1984.6032167507751
+Optimal value of theta: 5599.370541570355
+Loaded 100 bootstrap spectra from ../data/fs/projected_group2-group4/
+Estimated parameter standard deviations from GIM: [0.07256367 0.12536418 0.09817893 0.11502381 0.17530251 0.31253436
+ 0.29541795 0.53130082 0.67525393 0.93567973 0.75666743 0.71036434
+ 0.04579541 0.0386392  0.08061646]
+Optimised parameters: [6.32731, 14.44054, 1.92073, 28.22437, 38.63484, 6.20663, 4.57565, 0.01752, 5.75246, 9.48295, 10.0, 8.01703, 0.6528, 0.41495, 5599.370541570355]
+Estimated parameter lower from GIM: [ 6.25474633e+00  1.43151758e+01  1.82255107e+00  2.81093462e+01
+  3.84595375e+01  5.89409564e+00  4.28023205e+00 -5.13780825e-01
+  5.07720607e+00  8.54727027e+00  9.24333257e+00  7.30666566e+00
+  6.07004588e-01  3.76310799e-01  5.59928993e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [6.2547000e+00 1.4315200e+01 1.8226000e+00 2.8109300e+01 3.8459500e+01
+ 5.8941000e+00 4.2802000e+00 0.0000000e+00 5.0772000e+00 8.5473000e+00
+ 9.2433000e+00 7.3067000e+00 6.0700000e-01 3.7630000e-01 5.5992899e+03]
+Estimated parameter upper from GIM: [6.3999000e+00 1.4565900e+01 2.0189000e+00 2.8339400e+01 3.8810100e+01
+ 6.5192000e+00 4.8711000e+00 5.4880000e-01 6.4277000e+00 1.0418600e+01
+ 1.0756700e+01 8.7274000e+00 6.9860000e-01 4.5360000e-01 5.5994512e+03]
+Results written to ../results/group2-group4_projected0.8_1het_confidence_intervals.txt
