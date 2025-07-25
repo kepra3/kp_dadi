@@ -26,6 +26,6 @@ sed -e "s/--job-name=\"\"/--job-name=\"gadma_${PARAM_FILE}-${POP1}-${POP2}-p${PR
     -e "s/current_gadma-_%A_%a.o/${PARAM_FILE}_gadma-${POP1}-${POP2}_p${PROCESS_ID}_${DATE}_%A_%a.o/" \
     -e "s/current_gadma-_%A_%a.e/${PARAM_FILE}_gadma-${POP1}-${POP2}_p${PROCESS_ID}_${DATE}_%A_%a.e/" \
     -e "s/param_file/${PARAM_FILE}-${POP1}-${POP2}_process${PROCESS_ID}/" \
-    "$TEMPLATE_FILE" > "./hpc_files/${OUTPUT_FILE}"
+    "$TEMPLATE_FILE" > "../hpc_files/${OUTPUT_FILE}"
 
 echo "Customised SLURM script created: $OUTPUT_FILE"

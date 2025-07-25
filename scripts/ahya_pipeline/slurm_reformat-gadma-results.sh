@@ -28,6 +28,6 @@ python --version
 echo "Dadi location:"
 python -c "import dadi; print(dadi.__file__)"
 
-cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
+cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline
 
-python reformat-gadma-results_custom.py '../results/gadma/proj_2het' '../results/gadma_proj_2het_results_combined5.txt' 'custom_model_2p_2het.py' 0.8
+python reformat-gadma-results_custom.py '../../results/gadma/proj_2het' '../../results/gadma_proj_2het_results_combined5.txt' '../scripts/custom_model_2p_2het.py' 0.8
