@@ -137,6 +137,12 @@ dmypy.json
 # yml
 *.yml
 
+# R
+*.Rhistory
+
+# VS Code
+*.code-workspace
+
 # large vcf files
 ahya.group1.hwe.miss5.vcf
 ahya.group1.ld05.miss10.vcf

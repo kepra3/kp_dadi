@@ -126,14 +126,17 @@ calc_Tgen <- function(nref, t) {
 }
 calc_N <- function(nref, n) {
   N <- nref * n
+  return(N)
 }
 calc_rM <- function(nref, m) {
   rM <- ifelse(m == 0, 0,
          m/(2*nref))
+  return(rM)
 }
 calc_M <- function(N, rM) {
   M <- ifelse(rM == 0, 0,
                rM * N)
+  return(M)
 }
 convert_params <- function(gadma_results, model, proj, L.genom, mu) {
  
@@ -205,7 +208,7 @@ proj <- "proj"
 model <- "1het"
 optim <- paste(proj, model, sep = "_")
 
-# Load confidence interval files
+# Load confidence interval files ####
 conf_groups <- c(
   "group1-group2", "group1-group3", "group1-group4",
   "group2-group3", "group2-group4", "group3-group4",
@@ -214,15 +217,26 @@ conf_groups <- c(
 conf_files <- paste0("../results/", conf_groups, "_projected0.8_1het_confidence_intervals.txt")
 all_conf_list <- lapply(seq_along(conf_files), function(i) {
   df <- read.delim(conf_files[i])
-  df$group <- conf_groups[i]
+  df$Group <- conf_groups[i]
   df
 })
 all_conf <- do.call(rbind, all_conf_list)
 all_conf$Optimised_thres_max <- all_conf$Optimised/10000
 all_conf$Optimised_thres_min <- all_conf$Optimised/1000
-all_conf <- all_conf[all_conf$eps > all_conf$Optimised_thres_max & all_conf$eps < all_conf$Optimised_thres_min ,]
+all_conf$chosen_eps <- (all_conf$Optimised < 10 & all_conf$eps > all_conf$Optimised_thres_max & all_conf$eps < all_conf$Optimised_thres_min) |
+      (all_conf$Optimised >= 10 & all_conf$eps == 0.01)
+all_conf <- all_conf %>%
+  group_by(Group, Parameter) %>%
+  filter(if (any(chosen_eps)) chosen_eps else eps == max(eps)) %>%
+  ungroup()
+# Parameter order
+order_params <- c("nu_1", "nu_2", "t1", "nu11", "nu12", "me1_12", "me1_21", "t2", "nu21", "nu22", "me2_12", "me2_21", "P1", "P2", "theta")
 
-# Reformat so each parameter is a column
+all_conf$Parameter <- factor(all_conf$Parameter, levels = order_params, ordered = TRUE)
+all_conf <- all_conf[order(all_conf$Parameter), ]
+all_conf$Optimised[all_conf$Group == "group2-group3"]
+
+# Reformat gadma results so each parameter is a column ####
 param_names <- gadma_results$ModelParameters[1] |>
   str_remove_all("[()]") |>
   str_split(",\\s*") |>
@@ -322,6 +336,7 @@ gadma_results_pu <- convert_params(gadma_results,
                                    mu = mu)
 
 # Confidence intervals ####
+gadma_conf <- all_conf[,1:6]
 conf_long <- gadma_conf %>%
   pivot_longer(cols = c("Optimised", "Lower_CI", "Upper_CI", "eps"),
                names_to = "stat",
@@ -362,42 +377,64 @@ for (col in m_cols) {
   conf_wide[[col]] <- calc_rM(conf_wide$nref, conf_wide[[col]])
 }
 
+me1_12_cols <- c("me1_12_Optimised", "me1_12_Lower_CI","me1_12_Upper_CI")
+for (col in me1_12_cols) {
+  conf_wide[[col]] <- calc_M(conf_wide$nu11_Optimised, conf_wide[[col]])
+}
+me1_21_cols <- c("me1_21_Optimised", "me1_21_Lower_CI","me1_21_Upper_CI")
+for (col in me1_21_cols) {
+  conf_wide[[col]] <- calc_M(conf_wide$nu12_Optimised, conf_wide[[col]])
+}
+me2_12_cols <- c("me2_12_Optimised", "me2_12_Lower_CI","me2_12_Upper_CI")
+for (col in me2_12_cols) {
+  conf_wide[[col]] <- calc_M(conf_wide$nu21_Optimised, conf_wide[[col]])
+}
+me2_21_cols <- c("me2_21_Optimised", "me2_21_Lower_CI","me2_21_Upper_CI")
+for (col in me2_21_cols) {
+  conf_wide[[col]] <- calc_M(conf_wide$nu22_Optimised, conf_wide[[col]])
+}
+
 # Get unique parameter names by removing the suffixes
 param_names <- unique(str_replace(names(conf_wide), "_Optimised|_Lower_CI|_Upper_CI|_eps", ""))
 param_names <- param_names[param_names != "Group"] # Remove Group if present
 param_names <- param_names[param_names != ""]      # Remove any empty strings
+other_cols <- c("unfil.snps", "sfs.snps", "snps", "L.eff", "nref")
+param_names <- param_names[!param_names %in% other_cols]      # Remove any empty strings
+
+
+# High number parameters
+high_params <- c("nu_1", "nu_2", "t1", "t2", "nu11", "nu12", "nu21", "nu22")
+
+# Build the full column names to modify
+high_params_all <- unlist(lapply(high_params, function(p) {
+  c(paste0(p, "_Optimised"), paste0(p, "_Lower_CI"), paste0(p, "_Upper_CI"))
+}))
+
+# Divide each column by 1000
+conf_wide[high_params_all] <- lapply(conf_wide[high_params_all], function(x) x / 1000)
+
+# Start here for formatted confidence intervals ####
+combined_cols <- data.frame(Group = conf_wide$Group)
+
+format_sig <- function(x) {
+  ifelse(abs(x) < 1, signif(x, 2), signif(x, 4))
+}
+
 for (p in param_names) {
   opt_col <- paste0(p, "_Optimised")
   lower_col <- paste0(p, "_Lower_CI")
   upper_col <- paste0(p, "_Upper_CI")
+  combined_col <- paste0(p)
   
-  combined_col <- paste0(p, "_Combined")
-  
-  conf_wide[[combined_col]] <- paste0(signif(conf_wide[[opt_col]], 4),
-                                      " (", signif(conf_wide[[lower_col]], 4),
-                                      ", ", signif(conf_wide[[upper_col]], 4), ")")
-}
-str(conf_wide)
-combined_cols <- conf_wide[,c(1,67:length(conf_wide))]
-# M ####
-me1_12_cols <- c("me1_12_Optimised", "me1_12_Lower","me1_12_Upper")
-for (col in me1_12_cols) {
-  conf_wide[[col]] <- calc_M(conf_wide$)
-}
-me1_21_cols <- c("me1_21_Optimised", "me1_21_Lower","me1_21_Upper")
-for (col in me1_21_cols) {
-  conf_wide[[col]] <- calc_rM(conf_wide$nref, conf_wide[[col]])
-}
-me2_12_cols <- c("me2_12_Optimised", "me2_12_Lower","me2_12_Upper")
-for (col in me2_12_cols) {
-  conf_wide[[col]] <- calc_rM(conf_wide$nref, conf_wide[[col]])
-}
-me2_21_cols <- c("me2_21_Optimised", "me2_21_Lower","me2_21_Upper")
-for (col in me2_21_cols) {
-  conf_wide[[col]] <- calc_rM(conf_wide$nref, conf_wide[[col]])
+  combined_cols[[combined_col]] <- paste0(
+    format_sig(conf_wide[[opt_col]]),
+    " (", format_sig(conf_wide[[lower_col]]),
+    ", ", format_sig(conf_wide[[upper_col]]), ")"
+  )
 }
 
-# Change order here as well
+str(combined_cols)
+# Change order here as well ####
 if (model == "2het") {
   param_cols <- c(26,27,28,29,36:39,30,31,21,
                   40,47:50,41,42,22)

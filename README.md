@@ -60,7 +60,6 @@ Because inbreeding was used as a parameter in the models the subsample option wa
 
 -  Make sure the vcf file is named correctly (i.e., name of pop1 and pop2 separated by a hyphen) and is within 'data/vcf/' directory and the corresponding population file is within the 'data/popfile/' directory.
 
-E.g.,
 ```bash
 # Run script
 $ python make_fs.py AG1-AG2 folded low subsample 20 9
@@ -110,7 +109,6 @@ When creating a new model or wanting edit PTS or your upper and lower bounds edi
 
 Using the `optimise_manual.py` script:
 
-E.g.,
 ```bash
 # Run script
 $ python optimise_manual.py AG1-AG2 iso_inbred low subsample 3 50 '../results/test-' -p 1 1 1 1 1 
@@ -141,7 +139,6 @@ To qualitatively assess the model a simulated fs was created from the parameter 
 This is helpful because you can see which snp bins your model is doing badly at estimating. A bad fit is when there is 
 bias in certain snp bins - this tells you that another demographic model may be more appropriate.
 
-E.g.,
 ```bash
 # Run script
 $ python compare_model.py AG1-AG2 iso_inbred folded 0.05 -o 2.122 25.95 0.0012 0.0455 0.3989
@@ -164,7 +161,10 @@ Here, we use non-parametric bootstrapping. See manual and dadi-user group for mo
 change your chunk_size to a reasonable size according to the size of your genome.
 
 ```bash
+# Run script
 $ python nonparametric_bootstrap_subsample.py AG1-AG2 iso_inbred 100 100 -g 20 9 -o 2.122 25.95 0.0012 0.0455 0.3989 -m low
+# Find help
+$ python nonparametric_bootstrap_subsample.py -h
 ```
 Arguments: (1) fs, (2) model, (3) number of bootstraps, (4) chunk_size, (5) -g number of genotypes in each pop, (6) -o optimised parameters, (7) mask type (no, low or high).
 
@@ -177,7 +177,6 @@ Using the information gathered from the bootstrapping statistics, bootstrap like
 
 (this Rscript is currently only customised for Prata et al., 2022)
 
-E.g.,
 ```bash
 $ Rscript GOF_plots.R AG1-AG2 iso_inbred -551.02 1040.08
 ```

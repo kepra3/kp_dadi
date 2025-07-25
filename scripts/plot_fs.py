@@ -45,32 +45,36 @@ def write_statistics(stats_out_name, snps, fs, statistic_name, statistic_value):
         )
 
 
-def plot_spectrum(fs, snps, fold, method, mask, outpath):
-    """Plot the site frequency spectrum."""
-    extras = ""
 
-    # Folding
+def project_fs(fs, method):
+    """Project the frequency spectrum if requested."""
+    extras = ""
+    if method == "projection":
+        if len(fs.sample_sizes) == 1:
+            project_int = int(fs.sample_sizes[0] * 0.8)
+            fs = fs.project([project_int])
+        else:
+            project_int = [int(x * 0.8) for x in fs.sample_sizes]
+            fs = fs.project(project_int)
+        extras += "project"
+    return fs, extras
+
+
+def fold_fs(fs, fold):
+    """Fold the frequency spectrum if requested."""
+    extras = ""
     if fold == "folded":
         fs = fs.fold()
         extras += "fold"
+    return fs, extras
 
-    # Masking
-    if mask != "no":
-        extras += f"mask{mask}"
-
-    # Plotting and projecting
+def plot_spectrum(fs, snps, outpath, extras):
+    """Plot the site frequency spectrum."""
+    # Plotting
     fig = pylab.figure(figsize=(5, 5))
     if len(fs.sample_sizes) == 1:
-        if method == "projection":
-            project_int = int(fs.sample_sizes[0] * 0.8)
-            fs = fs.project([project_int])
-            extras += "project"
         dadi.Plotting.plot_1d_fs(fs)
     elif len(fs.sample_sizes) > 1:
-        if method == "projection":
-            project_int = [int(x * 0.8) for x in fs.sample_sizes]
-            fs = fs.project(project_int)
-            extras += "project"
         if len(fs.sample_sizes) == 2:
             colour_map = copy.copy(pylab.cm.get_cmap("hsv"))
             dadi.Plotting.plot_single_2d_sfs(fs, vmin=1, cmap=colour_map)
@@ -116,6 +120,8 @@ def plot_spectrum(fs, snps, fold, method, mask, outpath):
     pylab.close(fig)
 
 
+
+
 def main(filepath, fold, method, mask, outpath):
     """Main script functionality."""
     # Extract SNPs name from the file path
@@ -126,6 +132,17 @@ def main(filepath, fold, method, mask, outpath):
 
     # Apply masking
     apply_mask(fs, mask)
+    if mask != "no":
+        extras_mask = f"mask{mask}"
+
+    # Project spectrum if requested
+    fs, extras_proj = project_fs(fs, method)
+
+    # Fold spectrum if requested
+    fs, extras_fold = fold_fs(fs, fold)
+
+    # Combine extras for file naming
+    extras = extras_proj + extras_fold + extras_mask
 
     # Calculate statistics
     statistic_name, statistic = calculate_statistic(fs)
@@ -135,7 +152,7 @@ def main(filepath, fold, method, mask, outpath):
     write_statistics(stats_out_name, snps, fs, statistic_name, statistic)
 
     # Plot spectrum
-    plot_spectrum(fs, snps, fold, method, mask, outpath)
+    plot_spectrum(fs, snps, mask, outpath, extras)
 
 
 if __name__ == '__main__':

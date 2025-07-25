@@ -81,7 +81,7 @@ def plot_2d(fs, scaled_model, resid, fold, out_name, model, extras, resid_range)
     plot_and_save(fig, f"{out_name}_{model}_{extras}_all.pdf")
 
 
-def main(data, model, mask, fold, vmin, opt, PTS, resid_range):
+def main(data, model, mask, fold, opt, PTS, resid_range):
     """Main execution logic."""
     fs = Spectrum.from_file(f"../data/fs/{data}.fs")
     out_name = f"../plots/models/{data}"
@@ -119,11 +119,10 @@ if __name__ == "__main__":
     parser.add_argument("model", help="Optimized model name.")
     parser.add_argument("mask", help="Type of masking to apply ('low', 'mid', 'both', or 'none').")
     parser.add_argument("fold", choices=["folded", "unfolded"], help="Fold type.")
-    parser.add_argument("vmin", type=float, help="Scale bar for the SNPs.")
+    parser.add_argument("reside_range", type=float, help="Scale bar for the SNPs.")
     parser.add_argument("-o", "--opt", nargs='+', type=float, required=True, help="Optimized parameters.")
 
     args = parser.parse_args()
 
     PTS = SETTINGS.SET_PTS
-    resid_range = 3
-    main(args.data, args.model, args.mask, args.fold, args.vmin, args.opt, PTS, resid_range)
+    main(args.data, args.model, args.mask, args.fold, args.opt, PTS, args.resid_range)
