@@ -17,9 +17,9 @@ def model_func(params, ns, pts):
 
     # First time period
     phi1 = PhiManip.phi_1D(xx)
-    phi1 = PhiManip.phi_1D_to_2D(xx, phiI1)
-    phi1 = Integration.two_pops(phiI1, xx, T=t1, nu1=nu_1, nu2=nu_2, m12=0, m21=0)
-    phi1 = Integration.two_pops(phiI1, xx, T=t1, nu1=nu11, nu2=nu12, m12=0, m21=0)
+    phi1 = PhiManip.phi_1D_to_2D(xx, phi1)
+    phi1 = Integration.two_pops(phi1, xx, T=t1, nu1=nu_1, nu2=nu_2, m12=0, m21=0)
+    phi1 = Integration.two_pops(phi1, xx, T=t1, nu1=nu11, nu2=nu12, m12=0, m21=0)
 
 
     # Second time period: mix no migration at P2 with 1-P2 gene flow

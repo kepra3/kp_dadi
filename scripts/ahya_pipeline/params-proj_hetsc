@@ -128,8 +128,8 @@ Custom filename: /scratch/user/uqkprat2/analysis/kp_dadi/scripts/custom_model_he
 #	s: 0 - 1
 #	This bounds will be taken automatically if identifications are set.
 #	Default: None
-Lower bound: 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0, 0
-Upper bound: 300, 300, 15, 300, 300, 15, 300, 300, 15, 15, 1, 1
+Lower bound: 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0
+Upper bound: 300, 300, 15, 300, 300, 15, 300, 300, 15, 15, 1
 #	An identifier list:
 #	T - time
 #	N - size of population
@@ -137,7 +137,7 @@ Upper bound: 300, 300, 15, 300, 300, 15, 300, 300, 15, 15, 1, 1
 #	s - split event,  proportion in which population size
 #	is divided to form two new populations.
 #	Default: None
-Parameter identifiers: [nu_1, nu_2, t1, nu11, nu12, t2, nu21, nu22, me2_12, me2_21, P1, P2]
+Parameter identifiers: [nu_1, nu_2, t1, nu11, nu12, t2, nu21, nu22, me2_12, me2_21, P2]
 
 # 2. Structure is for not custom models!
 #	Structure of model for one population - number of time periods 

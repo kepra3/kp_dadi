@@ -129,7 +129,7 @@ Custom filename: /scratch/user/uqkprat2/analysis/kp_dadi/scripts/custom_model_2p
 #	This bounds will be taken automatically if identifications are set.
 #	Default: None
 Lower bound: 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0, 1e-2, 1e-2, 0, 0, 0, 0
-Upper bound: 300, 300, 15, 300, 300, 15, 15, 15, 300, 300, 15, 15, 1, 1
+Upper bound: 300, 300, 15, 300, 300, 30, 30, 15, 300, 300, 30, 30, 1, 1
 #	An identifier list:
 #	T - time
 #	N - size of population

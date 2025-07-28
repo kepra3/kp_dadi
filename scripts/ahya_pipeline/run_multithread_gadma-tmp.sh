@@ -4,7 +4,7 @@
 #SBATCH --ntasks-per-node=1     # use 1 for single and multi core jobs
 #SBATCH --cpus-per-task=8       # number of cores per job
 #SBATCH --mem=25G               # RAM per job given in megabytes (M), gigabytes (G), or terabytes (T)
-#SBATCH --time=100:00:00         # walltime
+#SBATCH --time=200:00:00         # walltime
 #SBATCH --account=a_riginos     # group account name
 #SBATCH --partition=general     # queue name
 #SBATCH -o current_gadma-_%A_%a.o # standard output
