@@ -68,3 +68,9 @@ Maximum log composite likelihood: -2831.6438069664755
 Optimal value of theta: 6440.3087442910755
 Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
 Running confidence intervals for 1het with epsilon 0.000001 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/

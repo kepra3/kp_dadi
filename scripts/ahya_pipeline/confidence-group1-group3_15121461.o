@@ -333,3 +333,38 @@ Estimated parameter upper from GIM: [1.2901000e+00 1.8666400e+01 2.2697000e+00 2
  1.5094600e+01 6.4982000e+00 2.8480000e-01 4.4370000e-01 5.1638404e+03]
 Results written to ../results/group1-group3_projected0.8_1het_confidence_intervals.txt
 Running confidence intervals for 1het with epsilon 0.000001 for group1-group3
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08037128605542515
+Maximum log composite likelihood: -2590.798378316089
+Optimal value of theta: 5163.812187183567
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group3/
+Estimated parameter standard deviations from GIM: [0.00233922 0.00724803 0.00263035 0.01195744 0.01052183 0.0062872
+ 0.00811795 0.00249114 0.02133758 0.00574494 0.0044193  0.00723156
+ 0.00284915 0.00195453 0.00217375]
+Optimised parameters: [1.27668, 18.40574, 2.22766, 25.03501, 26.65942, 0.00052, 0.53559, 0.01749, 44.58402, 19.70758, 15.0, 6.3867, 0.27127, 0.42545, 5163.812187183567]
+Estimated parameter lower from GIM: [ 1.27434078e+00  1.83984920e+01  2.22502965e+00  2.50230526e+01
+  2.66488982e+01 -5.76720263e-03  5.27472046e-01  1.49988612e-02
+  4.45626824e+01  1.97018351e+01  1.49955807e+01  6.37946844e+00
+  2.68420848e-01  4.23495472e-01  5.16381001e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [1.27430e+00 1.83985e+01 2.22500e+00 2.50231e+01 2.66489e+01 0.00000e+00
+ 5.27500e-01 1.50000e-02 4.45627e+01 1.97018e+01 1.49956e+01 6.37950e+00
+ 2.68400e-01 4.23500e-01 5.16381e+03]
+Estimated parameter upper from GIM: [1.2790000e+00 1.8413000e+01 2.2303000e+00 2.5047000e+01 2.6669900e+01
+ 6.8000000e-03 5.4370000e-01 2.0000000e-02 4.4605400e+01 1.9713300e+01
+ 1.5004400e+01 6.3939000e+00 2.7410000e-01 4.2740000e-01 5.1638144e+03]
+Results written to ../results/group1-group3_projected0.8_1het_confidence_intervals.txt

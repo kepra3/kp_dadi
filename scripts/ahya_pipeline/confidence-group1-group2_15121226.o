@@ -428,3 +428,37 @@ Estimated parameter upper from GIM: [1.9393000e+00 1.6148300e+01 2.8745000e+00 3
  1.6700800e+01 1.4329900e+01 4.6430000e-01 6.2510000e-01 3.9946699e+03]
 Results written to ../results/group1-group2_projected0.8_1het_confidence_intervals.txt
 Running confidence intervals for 1het with epsilon 0.000001 for group1-group2
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.08620121566333719
+Maximum log composite likelihood: -2753.649545528538
+Optimal value of theta: 3994.4350384947597
+Loaded 200 bootstrap spectra from ../data/fs/projected_group1-group2/
+Estimated parameter standard deviations from GIM: [0.07448156 0.03426618 0.01005751 0.03234572 0.03867804 0.01652542
+ 0.00977489 0.01532857 0.02226722 0.13817717 0.03172027 0.08293361
+ 0.00694499 0.04991284 0.12667662]
+Optimised parameters: [1.68837, 16.02573, 2.70899, 33.49254, 32.81391, 0.01289, 0.44575, 0.01283, 34.22929, 29.41194, 15.0, 14.21391, 0.35562, 0.43557, 3994.4350384947597]
+Estimated parameter lower from GIM: [ 1.61388844e+00  1.59914638e+01  2.69893249e+00  3.34601943e+01
+  3.27752320e+01 -3.63542031e-03  4.35975114e-01 -2.49856828e-03
+  3.42070228e+01  2.92737628e+01  1.49682797e+01  1.41309764e+01
+  3.48675008e-01  3.85657158e-01  3.99430836e+03]
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+not negative
+Adjusted estimated parameter lower from GIM: [1.6139000e+00 1.5991500e+01 2.6989000e+00 3.3460200e+01 3.2775200e+01
+ 0.0000000e+00 4.3600000e-01 0.0000000e+00 3.4207000e+01 2.9273800e+01
+ 1.4968300e+01 1.4131000e+01 3.4870000e-01 3.8570000e-01 3.9943084e+03]
+Estimated parameter upper from GIM: [1.7629000e+00 1.6060000e+01 2.7190000e+00 3.3524900e+01 3.2852600e+01
+ 2.9400000e-02 4.5550000e-01 2.8200000e-02 3.4251600e+01 2.9550100e+01
+ 1.5031700e+01 1.4296800e+01 3.6260000e-01 4.8550000e-01 3.9945617e+03]
+Results written to ../results/group1-group2_projected0.8_1het_confidence_intervals.txt
