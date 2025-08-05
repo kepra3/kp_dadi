@@ -11,7 +11,7 @@ find . -type f -name "GADMA.log" | while read -r FILE; do
     
     if [ -n "$LAST_LINE" ]; then
         echo "----- $FILE -----" >> "$OUTPUT_FILE"
-        awk -v start="$LAST_LINE" 'NR >= start && NR <= start + 6' "$FILE" >> "$OUTPUT_FILE"
+        awk -v start="$LAST_LINE" 'NR >= start && NR <= start + 9' "$FILE" >> "$OUTPUT_FILE"
         echo "" >> "$OUTPUT_FILE"
     fi
 done

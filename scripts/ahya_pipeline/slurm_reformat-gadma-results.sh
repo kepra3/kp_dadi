@@ -1,5 +1,5 @@
 #!/bin/bash --login
-#SBATCH --job-name="2het_reformat-results"
+#SBATCH --job-name="hetsc_reformat-results"
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
@@ -7,8 +7,8 @@
 #SBATCH --time=24:00:00
 #SBATCH --account=a_riginos
 #SBATCH --partition=general
-#SBATCH -o reformat_results-proj_2het_%A_%a.o
-#SBATCH -e reformat_results-proj_2het_%A_%a.e
+#SBATCH -o reformat_results-proj_hetsc_%A_%a.o
+#SBATCH -e reformat_results-proj_hetsc_%A_%a.e
 
 
 # module load python/3.9.5-gcccore-10.3.0
@@ -30,4 +30,4 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline
 
-python reformat-gadma-results_custom.py '../../results/gadma/proj_2het' '../../results/gadma_proj_2het_results_combined5.txt' '../scripts/custom_model_2p_2het.py' 0.8
+python reformat-gadma-results_custom.py '../../results/gadma/proj_hetsc' '../../results/gadma_proj_hetsc_results_combined.txt' '../custom_model_het_sc.py' 0.8
