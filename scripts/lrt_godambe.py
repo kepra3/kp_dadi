@@ -42,11 +42,11 @@ def main(data, full_model, nested_model, bootpath, mask, opt_full, opt_nested, n
     print(f"Loaded {len(all_boot)} bootstrap spectra from {bootpath}")
 
     # Calculate eps from the full model optimised parameters
-    eps_array = np.array([abs(p) / 1000 if p != 0 else 1e-6 for p in opt_full])
-    #eps = 0.001
+    #eps_array = np.array([abs(p) / 1000 if p != 0 else 1e-6 for p in opt_full])
+    eps = 0.001
 
     # Godambe adjustment
-    adj = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_full, fs, nested_indices, multinom=True, eps=eps_array)
+    adj = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_full, fs, nested_indices, multinom=True, eps=eps)
     print(f"Godambe adjustment: {adj}")
 
     # LRT statistic
@@ -72,8 +72,8 @@ if __name__ == "__main__":
     parser.add_argument("bootpath", help="Path to bootstrap spectra files.")
     parser.add_argument("mask", help="Mask type ('low', 'mid', 'both', or 'none').")
     #parser.add_argument("fold", choices=["folded", "unfolded"], help="Fold type.")
-    parser.add_argument("--opt_full", nargs='+', type=float, required=True, help="Optimized parameters for full model.")
-    parser.add_argument("--opt_nested", nargs='+', type=float, required=True, help="Optimized parameters for nested model.")
+    parser.add_argument("--opt_full", nargs='+', type=float, required=True, help="Optimised parameters for full model.")
+    parser.add_argument("--opt_nested", nargs='+', type=float, required=True, help="Optimised parameters for nested model.")
     parser.add_argument("--nested_indices", nargs='+', type=int, required=True, help="Indices of nested parameters in full model.")
     #parser.add_argument("--weights", nargs='+', type=float, required=True, help="Weights for chi-squared mixture (e.g., 0.5 0.5).")
     args = parser.parse_args()

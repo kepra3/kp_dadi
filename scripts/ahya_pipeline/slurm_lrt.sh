@@ -30,17 +30,17 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
 
-pop=$1
-opt=$2
-nested=$3
-indices=$4
+#pop=$1
+#opt=$2
+#nested=$3
+#indices=$4
 
-echo "Population pair is: $pop"
-echo "Optimised params are: $opt"
+#echo "Population pair is: $pop"
+#echo "Optimised params are: $opt"
 
 
- python lrt_godambe.py ../data/fs/group2-group4_0.8.fs 1het 1het_sym ../data/fs/projected_group2-group4 no \
-  --opt_full nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2 \
-  --opt_nested nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, P1 \
-  --nested_indices 7 8 9 10 11 13
+python lrt_godambe.py group2-group4_projected0.8 1het 1het_sym ../data/fs/projected_group2-group4 no \
+  --opt_full 6.95073 12.99178 2.3091 34.19443 53.42438 6.76192 4.87885 0.02486 5.54679 6.57953 8.11826 5.78261 0.65851 0.39829 \
+  --opt_nested 3.83473 25.59797 1.79703 23.64403 34.35781 0.57838 0.19872 0.2572 \
+  --nested_indices 8 9 10 11 12 13
 

@@ -1,5 +1,5 @@
 #!/bin/bash --login
-#SBATCH --job-name="confidence_g1-g2"
+#SBATCH --job-name="confidence_group4-Amil"
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
@@ -7,11 +7,9 @@
 #SBATCH --time=10:00:00
 #SBATCH --account=a_riginos
 #SBATCH --partition=general
-#SBATCH -o confidence-g1-g2_%A_%a.o
-#SBATCH -e confidence-g1-g2_%A_%a.e
+#SBATCH -o confidence-group4-Amil_%A.o
+#SBATCH -e confidence-group4-Amil_%A.e
 
-
-# module load python/3.9.5-gcccore-10.3.0 ##### SBATCH --qos=debug
 module load anaconda3/2023.09-0
 
 source $EBROOTANACONDA3/etc/profile.d/conda.sh
@@ -30,12 +28,11 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
 
-pop=$1
+pop="group4-Amil"
 
 echo "Population pair is: $pop"
 
 # Extract optimised parameters from the results file (starting from 5th column)
-# Find the row matching the population pair and extract parameters from column 5 onwards
 results_file="../results/proj_1het_best_models_dadi_params.csv"
 
 if [ ! -f "$results_file" ]; then
@@ -50,14 +47,20 @@ header=$(head -n 1 "$results_file")
 echo "Header: $header"
 
 # Extract parameters for the specified population pair
-# Use awk to find the row with matching Groups column and extract from 5th column onwards
+# Fixed to handle quoted CSV values
 opt=$(awk -F',' -v pop="$pop" '
     NR==1 {next}  # Skip header
+    {
+        # Remove quotes from first column for comparison
+        gsub(/"/, "", $1)
+    }
     $1 == pop {
         # Extract from 5th column onwards and join with spaces
         result = ""
         for(i=5; i<=NF; i++) {
             if(i > 5) result = result " "
+            # Remove quotes from parameter values
+            gsub(/"/, "", $i)
             result = result $i
         }
         print result
@@ -68,7 +71,7 @@ opt=$(awk -F',' -v pop="$pop" '
 if [ -z "$opt" ]; then
     echo "Error: No parameters found for population pair: $pop"
     echo "Available population pairs in file:"
-    awk -F',' 'NR>1 {print $1}' "$results_file" | sort | uniq
+    awk -F',' 'NR>1 {gsub(/"/, "", $1); print $1}' "$results_file" | sort | uniq
     exit 1
 fi
 
@@ -77,5 +80,5 @@ echo "Optimised params are: $opt"
 for i in 1 0.01 0.001 0.0001 0.00001 0.000001; do
     echo "Running confidence intervals for 1het with epsilon ${i} for ${pop}"
     python confidence_intervals.py "../data/fs/${pop}_projected0.8.fs" "../data/fs/projected_${pop}/" \
-        GIM  1het ${i} -o "${opt}"
+        GIM  1het ${i} -o ${opt}
 done
