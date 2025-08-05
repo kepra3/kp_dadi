@@ -1,1 +1,3 @@
 *.fs linguist-vendored
+scripts/ahya_pipeline/* linguist-vendored
+scripts/hpc_files/* linguist-vendored
