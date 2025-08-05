@@ -250,13 +250,19 @@ def get_settings(model, ALL=False):
         p_labels = "nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, t2, nu21, nu22, me2_12, me2_21, P1, P2"
         model_fun = demo_models_kp.custom_model_2p_m0
         lower = [1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0, 1e-2, 1e-2, 0, 0, 0, 0]
-        upper = [200, 200, 15, 200, 200, 10, 10, 15, 200, 200, 10, 10, 1, 1]
+        upper = [300, 300, 15, 300, 300, 15, 15, 15, 300, 300, 15, 15, 1, 1]
     elif model == "1het_sym":
         num = 8
         p_labels = "nu_1, nu_2, t1, nu11, nu12, me1_12, me1_21, P1"
         model_fun = demo_models_kp.one_het_sym
         lower = [1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0]
-        upper = [200, 200, 15, 200, 200, 10, 10, 1]
+        upper = [300, 300, 15, 300, 300, 15, 15, 1]
+    elif model == "hetsc":
+        num = 11
+        p_labels = "nu_1, nu_2, t1, nu11, nu12, t2, nu21, nu22, me2_12, me2_21, P2"
+        model_fun = demo_models_kp.het_sec_contact
+        lower = [1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 1e-2, 1e-2, 0, 0, 0]
+        upper = [300, 300, 15, 300, 300, 15, 300, 300, 15, 15 , 1]
     else:
         raise ValueError(
             'Model nickname undefined please check in SETTINGS.py you are using the correct model nickname!')
