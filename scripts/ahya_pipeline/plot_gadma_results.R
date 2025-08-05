@@ -434,6 +434,7 @@ for (p in param_names) {
 }
 
 str(combined_cols)
+
 # Change order here as well ####
 if (model == "2het") {
   param_cols <- c(26,27,28,29,36:39,30,31,21,
