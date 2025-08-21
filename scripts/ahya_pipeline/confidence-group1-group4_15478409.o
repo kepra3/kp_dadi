@@ -1,0 +1,76 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Population pair is: group1-group4
+Reading optimised parameters from: ../results/proj_1het_best_models_dadi_params.csv
+Header: "Groups","Run","LogLikelihood","theta","nu_1","nu_2","t1","nu11","nu12","me1_12","me1_21","t2","nu21","nu22","me2_12","me2_21","P1","P2"
+Optimised params are: 1.03823 34.30998 1.94183 19.01666 30.18014 0 0.63472 0.01701 14.77849 6.56549 15 3.47854 0.25364 0.3462
+Running confidence intervals for 1het with epsilon 1 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
+318486.29077307857 335338.4040024167
+151346.96456751102 335338.4040024167
+Running confidence intervals for 1het with epsilon 0.01 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
+Running confidence intervals for 1het with epsilon 0.001 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
+Running confidence intervals for 1het with epsilon 0.0001 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
+Running confidence intervals for 1het with epsilon 0.00001 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/
+Running confidence intervals for 1het with epsilon 0.000001 for group1-group4
+PTS is [100, 120, 130]
+Loaded spectrum with sample sizes: [32 32]
+FST 0.07697972520958449
+Maximum log composite likelihood: -2831.6438069664755
+Optimal value of theta: 6440.3087442910755
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4/

@@ -33,7 +33,7 @@ pop="group1-group2"
 echo "Population pair is: $pop"
 
 # Extract optimised parameters from the results file (starting from 5th column)
-results_file="../results/proj_hetc_models_dadi_params.csv"
+results_file="../results/proj_hetsc_best_models_dadi_params.csv"
 
 if [ ! -f "$results_file" ]; then
     echo "Error: Results file $results_file not found!"
