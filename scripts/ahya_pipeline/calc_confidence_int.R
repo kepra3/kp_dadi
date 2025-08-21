@@ -15,35 +15,29 @@ calc_L.eff <- function(L.genom, snps) {
   L.eff <- L.genom * snps
   return(L.eff)
 }
-
 calc_nref <- function(theta, mu, L.eff) {
   nref <- theta / (4*mu*L.eff)
   return(nref)
 }
-
 calc_Tgen <- function(nref, t) {
   Tgen <-   ifelse(t == 0, 0,
                    2 * nref * t)
   return(Tgen)
 }
-
 calc_N <- function(nref, n) {
   N <- nref * n
   return(N)
 }
-
 calc_rM <- function(nref, m) {
   rM <- ifelse(m == 0, 0,
          m/(2*nref))
   return(rM)
 }
-
 calc_M <- function(N, rM) {
   M <- ifelse(rM == 0, 0,
                rM * N)
   return(M)
 }
-
 calc_snps <- function(gadma_results, proj) {
   skip_groups = character(length = 0L)
   gadma_results$unfil.snps = NA
@@ -142,19 +136,19 @@ calc_snps <- function(gadma_results, proj) {
   return(gadma_results)
 }
 
-# CONSTANTS ####
-mu = 1.86*10^(-8)
-L.genom = 390206788
-
 # SETTINGS ####
 proj <- "proj"
 model <- "1het"
 
 # Load confidence interval files ####
+# group1-group2
+# group1-group3
+# Migration rates high
 conf_groups <- c(
-  "group1-group2", "group1-group3", "group1-group4",
-  "group2-group3", "group2-group4", "group3-group4",
-  "group1-Amil", "group2-Amil", "group3-Amil", "group4-Amil"
+  #"group1-group2", 
+  "gadma/group1-group3", "gadma/group1-group4",
+  "group2-group3",  "group2-group4", "group3-group4",
+  "gadma/group1-Amil", "gadma/group2-Amil", "gadma/group3-Amil", "gadma/group4-Amil"
 )
 conf_files <- paste0("../results/", conf_groups, "_projected0.8_1het_confidence_intervals.txt")
 all_conf_list <- lapply(seq_along(conf_files), function(i) {
@@ -165,15 +159,36 @@ all_conf_list <- lapply(seq_along(conf_files), function(i) {
 all_conf <- do.call(rbind, all_conf_list)
 all_conf$Optimised_thres_max <- all_conf$Optimised/10000
 all_conf$Optimised_thres_min <- all_conf$Optimised/1000
-all_conf$chosen_eps <- (all_conf$Optimised < 10 & all_conf$eps > all_conf$Optimised_thres_max & all_conf$eps < all_conf$Optimised_thres_min) |
-      (all_conf$Optimised >= 10 & all_conf$eps == 0.01)
+all_conf$chosen_eps <- (all_conf$Optimised < 100 & all_conf$eps > all_conf$Optimised_thres_max & all_conf$eps < all_conf$Optimised_thres_min) |
+      (all_conf$Optimised >= 100 & all_conf$eps == 1)
+# For these groups the low eps settings increase the upper confidence interval
+# This is probably because the lower bound is unable to be estimated
+# Choosing higher eps settings for this (which do not artifically decrease conf int)
+all_conf[all_conf$Group == "group2-group3" & all_conf$Parameter == "t2",]
+all_conf[all_conf$Group == "group2-group4" & all_conf$Parameter == "t2",]
+all_conf[all_conf$Group == "group3-group4" & all_conf$Parameter == "t2",]
+# Reset chosen_eps to FALSE for t2 parameter only, then set minimum to TRUE
+groups <-c("group2-group3", "group2-group4", "group3-group4")
+all_conf <- all_conf %>%
+  group_by(Group, Parameter) %>%
+  mutate(chosen_eps = ifelse(Parameter == "t2" & Group %in% groups, FALSE, chosen_eps),
+         chosen_eps = ifelse(Parameter == "t2" & Group %in% groups & Upper_CI == min(Upper_CI), TRUE, chosen_eps)) %>%
+  ungroup()
+all_conf[all_conf$Group == "group2-group3" & all_conf$Parameter == "t2",]
+all_conf[all_conf$Group == "group2-group4" & all_conf$Parameter == "t2",]
+all_conf[all_conf$Group == "group3-group4" & all_conf$Parameter == "t2",]
+
 all_conf <- all_conf %>%
   group_by(Group, Parameter) %>%
   filter(if (any(chosen_eps)) chosen_eps else eps == max(eps)) %>%
   ungroup()
 
+all_conf$Upper_CI[(all_conf$Parameter == "P1" | all_conf$Parameter == "P2") & all_conf$Upper_CI > 1] <- 1
+# Remove gadma prefix
+all_conf$Group <- gsub("^gadma/", "", all_conf$Group)
+
 # Parameter order
-order_params <- c("nu_1", "nu_2", "t1", "nu11", "nu12", "me1_12", "me1_21", "t2", "nu21", "nu22", "me2_12", "me2_21", "P1", "P2", "theta")
+order_params <- c("t1", "nu_1", "nu_2", "me1_12", "me1_21", "P1","nu11", "nu12", "t2", "me2_12", "me2_21", "P2",  "nu21", "nu22","theta")
 all_conf$Parameter <- factor(all_conf$Parameter, levels = order_params, ordered = TRUE)
 all_conf <- all_conf[order(all_conf$Parameter), ]
 
@@ -281,3 +296,4 @@ write.csv(combined_cols, "../results/confidence_intervals_formatted.csv", row.na
 cat("Confidence intervals processed and saved to:\n")
 cat("- ../results/confidence_intervals_physical_units.csv\n")
 cat("- ../results/confidence_intervals_formatted.csv\n")
+

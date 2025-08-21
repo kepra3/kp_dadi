@@ -280,13 +280,13 @@ setwd("~/git/kp_dadi/scripts/")
 # MAIN ANALYSIS ####
 # MODEL CONFIGURATION ####
 # Set model type: "1het", "2het", "hetsym", "hetsc", or ""
-model <- "hetsc"  # Change this to switch between models
+model <- "1het"  # Change this to switch between models
 proj <- "proj"
 optim <- paste(proj, model, sep = "_")
 
 # Load appropriate results file based on model
 if (model == "1het") {
-  results_file <- "../results/gadma_proj_1het_results_combined_noerror.txt"
+  results_file <- "../results/gadma_proj_1het_results_combined_noerror2.txt"
 } else if (model == "2het") {
   results_file <- "../results/gadma_proj_2het_results_combined_noerror.txt"
 } else if (model == "hetsym") {
@@ -536,18 +536,21 @@ for (group in unique(gadma_results$Groups)) {
 best_models_dadi$Groups <- factor(best_models_dadi$Groups, levels = custom_order)
 best_models_dadi <- best_models_dadi[order(best_models_dadi$Groups),]
 
+# Get current timestamp in YYYY-MM-DD_HH-MM-SS format
+timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
+
 # Write dadi parameters
-output_file_dadi <- paste0("../results/", optim, "_best_models_dadi_params.csv")
+output_file_dadi <- paste0("../results/", optim, "_best_models_dadi_params_", timestamp, ".csv")
 write.csv(best_models_dadi, output_file_dadi, row.names = FALSE)
 cat("Top models with dadi parameters saved to:", output_file_dadi, "\n")
 
 # 2. Export summary with physical parameters
-output_file_physical <- paste0("../results/", optim, "_summary_physical_params.csv")
+output_file_physical <- paste0("../results/", optim, "_summary_physical_params_", timestamp, ".csv")
 write.csv(gadma_top, output_file_physical, row.names = FALSE)
 cat("Summary with physical parameters saved to:", output_file_physical, "\n")
 
 # 3. Export summary statistics table
-output_file_summary <- paste0("../results/", optim, "_parameter_summary_table.csv")
+output_file_summary <- paste0("../results/", optim, "_parameter_summary_table_", timestamp, ".csv")
 write.csv(summary_table, output_file_summary, row.names = FALSE)
 cat("Parameter summary table saved to:", output_file_summary, "\n")
 
