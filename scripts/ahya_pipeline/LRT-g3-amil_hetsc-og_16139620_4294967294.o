@@ -1,0 +1,47 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+No masking applied
+Full model log-likelihood: -3797.238045416535
+Nested model log-likelihood: -4707.141568080275
+Loaded 100 bootstrap spectra from ../data/fs/projected_group3-Amil
+opt_full length: 14
+opt_nested length: 11
+nested_indices: [5, 6, 12]
+Expected nested length: 11
+opt_full: [1.0, 200.0, 1.50213, 14.8254, 5.98913, 0.02281, 0.06197, 0.09379, 17.48163, 12.3383, 1.59577, 10.0, 0.23576, 0.59581]
+opt_nested: [0.73348, 300.0, 1.03507, 11.7859, 4.73052, 0.31988, 13.18054, 6.96225, 0.41145, 2.50226, 0.45673]
+opt_nested_buffered: [0.73348, 300.0, 1.03507, 11.7859, 4.73052, 0, 0, 0.31988, 13.18054, 6.96225, 0.41145, 2.50226, 0, 0.45673]
+Godambe adjustment with full model: 0.038442946862074966
+Godambe adjustment with nested model: 1.1901215031355639
+Adjusted LRT statistic with full model: 69.95874554275395
+Adjusted LRT statistic with nested model: 2165.791496201829
+LRT p-value (chi^2, 1 df) with full model: 0.0
+LRT p-value (chi^2, 1 df) with nested model: 0.0
+Chosen model parameters for statistic: full
+Complex model is preferred.
