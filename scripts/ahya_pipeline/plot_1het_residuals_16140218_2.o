@@ -1,0 +1,47 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc3/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Array task ID: 2
+Population: group1-group3
+Parameter set: new
+CSV file: ../results/proj_1het_best_models_dadi_params_2025-08-20_11-02-17.csv
+Parameters: 1.27668 18.40574 2.22766 25.03501 26.65942 0.00052 0.53559 0.01749 44.58402 19.70758 15 6.3867 0.27127 0.42545
+Plotting residuals for group1-group3 with suffix new
+No masking applied.
+
+Spectrum Statistics:
+Sum of SFS: 300351.49
+FST: 0.08
+
+Saved plot to ../plots/models/group1-group3_projected0.8_data.pdf
+Saved plot to ../plots/models/group1-group3_projected0.8_1het_none_residual.pdf
+Saved plot to ../plots/models/group1-group3_projected0.8_1het_none_all.pdf
+Created: group1-group3_projected0.8_1het_new_residual.pdf
+Created: group1-group3_projected0.8_1het_new_all.pdf
+Created: group1-group3_projected0.8_data_new.pdf
+Completed plotting for group1-group3 with suffix new

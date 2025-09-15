@@ -1,0 +1,47 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Array task ID: 16
+Population: group3-group4
+Parameter set: og
+CSV file: ../results/proj_1het_best_models_dadi_params_2025-08-20_11-02-47.csv
+Parameters: 5.12561 23.28629 1.3831 17.96102 25.35598 10 6.34153 0.02641 5.30383 23.25009 10 3.55961 0.55819 0.17612
+Plotting residuals for group3-group4 with suffix og
+No masking applied.
+
+Spectrum Statistics:
+Sum of SFS: 374688.5
+FST: 0.06
+
+Saved plot to ../plots/models/group3-group4_projected0.8_data.pdf
+Saved plot to ../plots/models/group3-group4_projected0.8_1het_none_residual.pdf
+Saved plot to ../plots/models/group3-group4_projected0.8_1het_none_all.pdf
+Created: group3-group4_projected0.8_1het_og_residual.pdf
+Created: group3-group4_projected0.8_1het_og_all.pdf
+Created: group3-group4_projected0.8_data_og.pdf
+Completed plotting for group3-group4 with suffix og
