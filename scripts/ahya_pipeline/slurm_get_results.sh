@@ -1,17 +1,17 @@
 #!/bin/bash --login
-#SBATCH --job-name="hetsc_reformat-results"
+#SBATCH --job-name="get_results_g1-g4_hetsym"
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=2G
-#SBATCH --time=24:00:00
+#SBATCH --time=2:00:00
 #SBATCH --account=a_riginos
 #SBATCH --partition=general
-#SBATCH -o reformat_results-proj_hetsym_%A_%a.o
-#SBATCH -e reformat_results-proj_hetsym_%A_%a.e
+#SBATCH -o get_results-g1-g4-hetsym_%A_%a.o
+#SBATCH -e get_results-g1-g4-hetsym_%A_%a.e
 
 
-# module load python/3.9.5-gcccore-10.3.0
+# module load python/3.9.5-gcccore-10.3.0 ##### SBATCH --qos=debug
 module load anaconda3/2023.09-0
 
 source $EBROOTANACONDA3/etc/profile.d/conda.sh
@@ -30,4 +30,4 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline
 
-python reformat-gadma-results_custom.py '../../results/gadma/proj_hetsym_22-8-25' '../../results/gadma_proj_hetsym_results_combined_g1-g4.txt' '../custom_model_het_sym.py' 0.8
+./run_in_subdirs.sh '../../results/gadma/proj_hetsym_22-8-25' "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline/extract_best_gadma_results.sh"
