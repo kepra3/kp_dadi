@@ -53,7 +53,7 @@ if [ $SLURM_ARRAY_TASK_ID -le 7 ]; then
 else
     # Use hetsym parameters (tasks 8-13)
     csv_file="$csv_hetsym"
-    model_type="hetsym"
+    model_type="1het_sym"
     pop_index=$((SLURM_ARRAY_TASK_ID - 8))
     population=${hetsym_populations[$pop_index]}
 fi
