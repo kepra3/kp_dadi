@@ -45,21 +45,6 @@ def main(data, full_model, nested_model, bootpath, mask, opt_full, opt_nested, n
     #eps_array = np.array([abs(p) / 1000 if p != 0 else 1e-6 for p in opt_full])
     eps = 0.001
 
-    # Create opt_nested_buffered from opt_full structure
-    opt_nested_buffered = [1.0] * len(opt_full)  # Start with full model structure
-
-    # Set nested indices to 0 (these are the parameters being tested)
-    for idx in nested_indices:
-        opt_nested_buffered[idx] = 0
-
-    # Fill remaining positions with opt_nested values
-    nested_param_idx = 0
-    for i in range(len(opt_full)):
-        if i not in nested_indices:
-            if nested_param_idx < len(opt_nested):
-                opt_nested_buffered[i] = opt_nested[nested_param_idx]
-                nested_param_idx += 1
-
     # Verify all indices are covered
     print(f"opt_full length: {len(opt_full)}")
     print(f"opt_nested length: {len(opt_nested)}")
@@ -67,41 +52,69 @@ def main(data, full_model, nested_model, bootpath, mask, opt_full, opt_nested, n
     print(f"Expected nested length: {len(opt_full) - len(nested_indices)}")
     print(f"opt_full: {opt_full}")
     print(f"opt_nested: {opt_nested}")
-    print(f"opt_nested_buffered: {opt_nested_buffered}")
 
-    # Check that we used all nested parameters
-    if nested_param_idx != len(opt_nested):
-        raise ValueError(f"Mismatch: used {nested_param_idx} nested params, but got {len(opt_nested)}")
-
-    # Godambe adjustment
+    # Always calculate Godambe adjustment with full model
     adj_full = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_full, fs, nested_indices, multinom=True, eps=eps)
     print(f"Godambe adjustment with full model: {adj_full}")
-    adj_nested = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_nested_buffered, fs, nested_indices, multinom=True, eps=eps)
-    print(f"Godambe adjustment with nested model: {adj_nested}")
 
-
-    # LRT statistic
+    # Always calculate LRT statistic with full model
     D1 = adj_full * 2 * (ll_full - ll_nested)
     print(f"Adjusted LRT statistic with full model: {D1}")
-    D2 = adj_nested * 2 * (ll_full - ll_nested)
-    print(f"Adjusted LRT statistic with nested model: {D2}")
 
-    # Weighted chi-squared p-value
+    # Weighted chi-squared p-value with full model
     weights = (0.5, 0.5)
     p1 = Godambe.sum_chi2_ppf(D1, weights)
     print(f"LRT p-value (chi^2, 1 df) with full model: {round(p1, 5)}")
-    p2 = Godambe.sum_chi2_ppf(D2, weights)
-    print(f"LRT p-value (chi^2, 1 df) with nested model: {round(p2, 5)}")
 
-    # Choose most conservative method
-    if D1 < D2:
+    # Handle nested model calculations based on model type
+    if full_model == "1het_sym":
+        print("Skipping nested-based model calculations for 1het_sym model because pop sizes cannot be set to zero in Hessian calculations")
         D = D1
         p = p1
         model_choice = "full"
     else:
-        D = D2
-        p = p2
-        model_choice = "nested"
+        # Create opt_nested_buffered from opt_full structure for other models
+        opt_nested_buffered = [1.0] * len(opt_full)  # Start with full model structure
+
+        # Set nested indices to 0 (these are the parameters being tested)
+        for idx in nested_indices:
+            opt_nested_buffered[idx] = 0
+
+        # Fill remaining positions with opt_nested values
+        nested_param_idx = 0
+        for i in range(len(opt_full)):
+            if i not in nested_indices:
+                if nested_param_idx < len(opt_nested):
+                    opt_nested_buffered[i] = opt_nested[nested_param_idx]
+                    nested_param_idx += 1
+
+        # Check that we used all nested parameters
+        if nested_param_idx != len(opt_nested):
+            raise ValueError(f"Mismatch: used {nested_param_idx} nested params, but got {len(opt_nested)}")
+
+        print(f"opt_nested_buffered: {opt_nested_buffered}")
+
+        # Calculate nested model Godambe adjustment
+        adj_nested = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_nested_buffered, fs, nested_indices, multinom=True, eps=eps)
+        print(f"Godambe adjustment with nested model: {adj_nested}")
+
+        # Calculate LRT statistic with nested model
+        D2 = adj_nested * 2 * (ll_full - ll_nested)
+        print(f"Adjusted LRT statistic with nested model: {D2}")
+
+        # Weighted chi-squared p-value with nested model
+        p2 = Godambe.sum_chi2_ppf(D2, weights)
+        print(f"LRT p-value (chi^2, 1 df) with nested model: {round(p2, 5)}")
+
+        # Choose most conservative method
+        if D1 < D2:
+            D = D1
+            p = p1
+            model_choice = "full"
+        else:
+            D = D2
+            p = p2
+            model_choice = "nested"
 
     print(f"Chosen model parameters for statistic: {model_choice}")
     if p < 0.05:
