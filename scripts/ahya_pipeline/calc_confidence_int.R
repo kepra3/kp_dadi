@@ -1,6 +1,14 @@
 # Title: Calculate and format confidence intervals for GADMA results
 # Author: Katharine Prata
 # Description: Process confidence interval files and convert to physical units
+#
+# USAGE: 
+# Change the 'model' variable in the MODEL CONFIGURATION section below to:
+# - "1het" for 1 heterogeneous gene flow model
+# - "2het" for 2 heterogeneous gene flow model  
+# - "hetsym" for continuous heterogeneous gene flow model (single time period)
+# - "hetsc" for secondary contact model (two time periods, no T1 gene flow)
+# - "" for single migration rate model (two time periods)
 
 library(tidyverse)
 library(scales)
@@ -138,19 +146,33 @@ calc_snps <- function(gadma_results, proj) {
 
 # SETTINGS ####
 proj <- "proj"
-model <- "1het"
+# MODEL CONFIGURATION ####
+# Set model type: "1het", "2het", "hetsym", "hetsc", or ""
+model <- "hetsym"  # Change this to switch between models
 
 # Load confidence interval files ####
-# group1-group2
-# group1-group3
-# Migration rates high
 conf_groups <- c(
-  #"group1-group2", 
-  "gadma/group1-group3", "gadma/group1-group4",
-  "group2-group3",  "group2-group4", "group3-group4",
-  "gadma/group1-Amil", "gadma/group2-Amil", "gadma/group3-Amil", "gadma/group4-Amil"
+  "group1-group2"#, "gadma/group1-group3", "gadma/group1-group4",
+  #"group2-group3", "group2-group4", "group3-group4",
+  #"gadma/group1-Amil", "gadma/group2-Amil", "gadma/group3-Amil", "gadma/group4-Amil"
 )
-conf_files <- paste0("../results/", conf_groups, "_projected0.8_1het_confidence_intervals.txt")
+conf_files <- paste0("../results/", conf_groups, "_projected0.8_", model, "_confidence_intervals.txt")
+
+# Filter to only existing files
+existing_files <- file.exists(conf_files)
+conf_groups <- conf_groups[existing_files]
+conf_files <- conf_files[existing_files]
+
+if (length(conf_files) == 0) {
+  stop("No confidence interval files found for model: ", model)
+}
+
+cat("Loading confidence interval files for model:", model, "\n")
+cat("Files found:", length(conf_files), "\n")
+for (i in seq_along(conf_files)) {
+  cat("  -", conf_files[i], "\n")
+}
+
 all_conf_list <- lapply(seq_along(conf_files), function(i) {
   df <- read.delim(conf_files[i])
   df$Group <- conf_groups[i]
@@ -161,36 +183,99 @@ all_conf$Optimised_thres_max <- all_conf$Optimised/10000
 all_conf$Optimised_thres_min <- all_conf$Optimised/1000
 all_conf$chosen_eps <- (all_conf$Optimised < 100 & all_conf$eps > all_conf$Optimised_thres_max & all_conf$eps < all_conf$Optimised_thres_min) |
       (all_conf$Optimised >= 100 & all_conf$eps == 1)
-# For these groups the low eps settings increase the upper confidence interval
+
+# Remove gadma prefix
+all_conf$Group <- str_remove(all_conf$Group, "^gadma/")
+
+# MODEL-SPECIFIC EPSILON ADJUSTMENTS ####
+# For some groups/parameters, low eps settings increase the upper confidence interval
 # This is probably because the lower bound is unable to be estimated
-# Choosing higher eps settings for this (which do not artifically decrease conf int)
-all_conf[all_conf$Group == "group2-group3" & all_conf$Parameter == "t2",]
-all_conf[all_conf$Group == "group2-group4" & all_conf$Parameter == "t2",]
-all_conf[all_conf$Group == "group3-group4" & all_conf$Parameter == "t2",]
-# Reset chosen_eps to FALSE for t2 parameter only, then set minimum to TRUE
-groups <-c("group2-group3", "group2-group4", "group3-group4")
-all_conf <- all_conf %>%
-  group_by(Group, Parameter) %>%
-  mutate(chosen_eps = ifelse(Parameter == "t2" & Group %in% groups, FALSE, chosen_eps),
-         chosen_eps = ifelse(Parameter == "t2" & Group %in% groups & Upper_CI == min(Upper_CI), TRUE, chosen_eps)) %>%
-  ungroup()
-all_conf[all_conf$Group == "group2-group3" & all_conf$Parameter == "t2",]
-all_conf[all_conf$Group == "group2-group4" & all_conf$Parameter == "t2",]
-all_conf[all_conf$Group == "group3-group4" & all_conf$Parameter == "t2",]
+# Apply model-specific adjustments for problematic parameter/group combinations
+
+if (model == "1het") {
+  # For 1het model: adjust t2 parameter for specific groups
+  groups_t2_adjust <- c("group2-group3", "group2-group4", "group3-group4")
+  if (any(all_conf$Group %in% groups_t2_adjust & all_conf$Parameter == "t2")) {
+    cat("Applying t2 epsilon adjustments for 1het model\n")
+    all_conf <- all_conf %>%
+      group_by(Group, Parameter) %>%
+      mutate(chosen_eps = ifelse(Parameter == "t2" & Group %in% groups_t2_adjust, FALSE, chosen_eps),
+             chosen_eps = ifelse(Parameter == "t2" & Group %in% groups_t2_adjust & Upper_CI == min(Upper_CI), TRUE, chosen_eps)) %>%
+      ungroup()
+    groups_t2_adjust2 <- c("group3-Amil")
+    all_conf <- all_conf %>%
+      group_by(Group, Parameter) %>%
+      mutate(chosen_eps = ifelse(Parameter == "t2" & Group %in% groups_t2_adjust2, FALSE, chosen_eps),
+             chosen_eps = ifelse(Parameter == "t2" & Group %in% groups_t2_adjust2 & eps == 1e-04, TRUE, chosen_eps)) %>%
+      ungroup()
+  }
+  all_conf$Upper_CI[(all_conf$Parameter == "P1" | all_conf$Parameter == "P2") & all_conf$Upper_CI > 1] <- 1
+} else if (model == "hetsc") {
+  # For hetsc model: adjust specific parameters for group1-group2
+  if (any(all_conf$Group == "group1-group2")) {
+    cat("Applying parameter adjustments for hetsc model\n")
+    # Adjust t2 parameter
+    if (any(all_conf$Group == "group1-group2" & all_conf$Parameter == "t2")) {
+      all_conf <- all_conf %>%
+        group_by(Group, Parameter) %>%
+        mutate(chosen_eps = ifelse(Parameter == "t2" & Group == "group1-group2", FALSE, chosen_eps),
+               chosen_eps = ifelse(Parameter == "t2" & Group == "group1-group2" & eps == 1e-03, TRUE, chosen_eps)) %>%
+        ungroup()
+    }
+    # Adjust P2 parameter
+    if (any(all_conf$Group == "group1-group2" & all_conf$Parameter == "P2")) {
+      all_conf <- all_conf %>%
+        group_by(Group, Parameter) %>%
+        mutate(chosen_eps = ifelse(Parameter == "P2" & Group == "group1-group2", FALSE, chosen_eps),
+               chosen_eps = ifelse(Parameter == "P2" & Group == "group1-group2" & eps == 1, TRUE, chosen_eps)) %>%
+        ungroup()
+    }
+  }
+  
+} else if (model == "2het") {
+  # Add 2het-specific adjustments if needed
+  cat("No specific epsilon adjustments defined for 2het model\n")
+  
+} else if (model == "hetsym") {
+  # Add hetsym-specific adjustments if needed
+  cat("No specific epsilon adjustments defined for hetsym model\n")
+  
+} else if (model == "") {
+  # Add single migration rate model adjustments if needed
+  cat("No specific epsilon adjustments defined for single migration rate model\n")
+}
+
 
 all_conf <- all_conf %>%
   group_by(Group, Parameter) %>%
   filter(if (any(chosen_eps)) chosen_eps else eps == max(eps)) %>%
   ungroup()
 
-all_conf$Upper_CI[(all_conf$Parameter == "P1" | all_conf$Parameter == "P2") & all_conf$Upper_CI > 1] <- 1
-# Remove gadma prefix
-all_conf$Group <- gsub("^gadma/", "", all_conf$Group)
-
-# Parameter order
-order_params <- c("t1", "nu_1", "nu_2", "me1_12", "me1_21", "P1","nu11", "nu12", "t2", "me2_12", "me2_21", "P2",  "nu21", "nu22","theta")
-all_conf$Parameter <- factor(all_conf$Parameter, levels = order_params, ordered = TRUE)
+# MODEL-SPECIFIC PARAMETER ORDERING ####
+# Define parameter order based on model type
+if (model == "1het") {
+  order_params <- c("t1", "nu_1", "nu_2", "me1_12", "me1_21", "P1", "nu11", "nu12", "t2", "me2_12", "me2_21", "P2", "nu21", "nu22", "theta")
+} else if (model == "2het") {
+  order_params <- c("t1", "nu_1", "nu_2", "me1_12", "me1_21", "M1_12", "M1_21", "nu11", "nu12", "t2", "nu21", "nu22", "me2_12", "me2_21", "M2_12", "M2_21", "theta")
+} else if (model == "hetsym") {
+  # Single time period with symmetric heterogeneous gene flow
+  order_params <- c("t1", "nu_1", "nu_2", "me1_12", "me1_21", "P1", "nu11", "nu12", "theta")
+} else if (model == "hetsc") {
+  # Secondary contact: two time periods, no T1 gene flow, only T2 gene flow
+  order_params <- c("t1", "nu_1", "nu_2", "nu11", "nu12", "t2", "me2_12", "me2_21", "P2", "nu21", "nu22", "theta")
+} else if (model == "") {
+  # Single migration rate model (two time periods)
+  order_params <- c("t1", "nu_1", "nu_2", "m1_12", "m1_21", "nu11", "nu12", "t2", "m2_12", "m2_21", "nu21", "nu22", "theta")
+} else {
+  stop("Unknown model type: ", model, ". Please use: '1het', '2het', 'hetsym', 'hetsc', or ''")
+}
+# Apply parameter ordering (only for parameters that exist in the data)
+existing_params <- intersect(order_params, unique(all_conf$Parameter))
+all_conf$Parameter <- factor(all_conf$Parameter, levels = existing_params, ordered = TRUE)
 all_conf <- all_conf[order(all_conf$Parameter), ]
+
+cat("Parameters found for model", model, ":\n")
+cat(paste(existing_params, collapse = ", "), "\n\n")
 
 # CONFIDENCE INTERVALS PROCESSING ####
 gadma_conf <- all_conf[,1:6]
@@ -210,6 +295,9 @@ conf_wide$snps <- (conf_wide$sfs.snps/conf_wide$unfil.snps)
 conf_wide$L.eff <- calc_L.eff(L.genom, conf_wide$snps)
 conf_wide$nref <- calc_nref(conf_wide$theta_Optimised, mu, conf_wide$L.eff)
 
+cat("Columns available in conf_wide:\n")
+cat(paste(names(conf_wide), collapse = ", "), "\n\n")
+
 # Convert population sizes to physical units
 pop_cols <- c("nu_1_Optimised", "nu_1_Lower_CI", "nu_1_Upper_CI",
               "nu_2_Optimised", "nu_2_Lower_CI", "nu_2_Upper_CI",
@@ -217,42 +305,118 @@ pop_cols <- c("nu_1_Optimised", "nu_1_Lower_CI", "nu_1_Upper_CI",
               "nu12_Optimised", "nu12_Lower_CI", "nu12_Upper_CI",
               "nu21_Optimised", "nu21_Lower_CI", "nu21_Upper_CI",
               "nu22_Optimised", "nu22_Lower_CI", "nu22_Upper_CI")
-for (col in pop_cols) {
+
+# Only process existing columns
+existing_pop_cols <- pop_cols[pop_cols %in% names(conf_wide)]
+for (col in existing_pop_cols) {
   conf_wide[[col]] <- calc_N(conf_wide$nref, conf_wide[[col]])
 }
 
 # Convert time parameters to generations
 t_cols <- c("t1_Optimised", "t1_Lower_CI", "t1_Upper_CI",
             "t2_Optimised", "t2_Lower_CI", "t2_Upper_CI")
-for (col in t_cols) {
+
+# Only process existing columns
+existing_t_cols <- t_cols[t_cols %in% names(conf_wide)]
+for (col in existing_t_cols) {
   conf_wide[[col]] <- calc_Tgen(conf_wide$nref, conf_wide[[col]])
 }
 
-# Convert migration rates
-m_cols <- c("me1_12_Optimised", "me1_12_Lower_CI","me1_12_Upper_CI",
-            "me1_21_Optimised", "me1_21_Lower_CI","me1_21_Upper_CI",
-            "me2_12_Optimised", "me2_12_Lower_CI","me2_12_Upper_CI",
-            "me2_21_Optimised", "me2_21_Lower_CI","me2_21_Upper_CI")
-for (col in m_cols) {
+# Convert migration rates (model-specific)
+if (model %in% c("1het", "2het", "hetsym", "hetsc")) {
+  # Heterogeneous migration models use "me" parameters
+  m_cols <- c("me1_12_Optimised", "me1_12_Lower_CI", "me1_12_Upper_CI",
+              "me1_21_Optimised", "me1_21_Lower_CI", "me1_21_Upper_CI",
+              "me2_12_Optimised", "me2_12_Lower_CI", "me2_12_Upper_CI",
+              "me2_21_Optimised", "me2_21_Lower_CI", "me2_21_Upper_CI")
+} else if (model == "") {
+  # Single migration rate model uses "m" parameters
+  m_cols <- c("m1_12_Optimised", "m1_12_Lower_CI", "m1_12_Upper_CI",
+              "m1_21_Optimised", "m1_21_Lower_CI", "m1_21_Upper_CI",
+              "m2_12_Optimised", "m2_12_Lower_CI", "m2_12_Upper_CI",
+              "m2_21_Optimised", "m2_21_Lower_CI", "m2_21_Upper_CI")
+} else {
+  m_cols <- character(0)  # No migration columns
+}
+
+# Only process existing columns
+existing_m_cols <- m_cols[m_cols %in% names(conf_wide)]
+for (col in existing_m_cols) {
   conf_wide[[col]] <- calc_rM(conf_wide$nref, conf_wide[[col]])
 }
 
-# Convert to number of migrants
-me1_12_cols <- c("me1_12_Optimised", "me1_12_Lower_CI","me1_12_Upper_CI")
-for (col in me1_12_cols) {
-  conf_wide[[col]] <- calc_M(conf_wide$nu11_Optimised, conf_wide[[col]])
-}
-me1_21_cols <- c("me1_21_Optimised", "me1_21_Lower_CI","me1_21_Upper_CI")
-for (col in me1_21_cols) {
-  conf_wide[[col]] <- calc_M(conf_wide$nu12_Optimised, conf_wide[[col]])
-}
-me2_12_cols <- c("me2_12_Optimised", "me2_12_Lower_CI","me2_12_Upper_CI")
-for (col in me2_12_cols) {
-  conf_wide[[col]] <- calc_M(conf_wide$nu21_Optimised, conf_wide[[col]])
-}
-me2_21_cols <- c("me2_21_Optimised", "me2_21_Lower_CI","me2_21_Upper_CI")
-for (col in me2_21_cols) {
-  conf_wide[[col]] <- calc_M(conf_wide$nu22_Optimised, conf_wide[[col]])
+# Convert to number of migrants (model-specific)
+if (model %in% c("1het", "2het", "hetsym", "hetsc")) {
+  # Heterogeneous migration models
+  # Only process if the required columns exist
+  
+  # me1_12 migration (T1 period: pop1 -> pop2)
+  me1_12_cols <- c("me1_12_Optimised", "me1_12_Lower_CI", "me1_12_Upper_CI")
+  if (all(me1_12_cols %in% names(conf_wide)) && "nu11_Optimised" %in% names(conf_wide)) {
+    for (col in me1_12_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu11_Optimised, conf_wide[[col]])
+    }
+  }
+  
+  # me1_21 migration (T1 period: pop2 -> pop1)
+  me1_21_cols <- c("me1_21_Optimised", "me1_21_Lower_CI", "me1_21_Upper_CI")
+  if (all(me1_21_cols %in% names(conf_wide)) && "nu12_Optimised" %in% names(conf_wide)) {
+    for (col in me1_21_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu12_Optimised, conf_wide[[col]])
+    }
+  }
+  
+  # me2_12 migration (T2 period: pop1 -> pop2) - only for models with T2
+  if (model %in% c("1het", "2het", "hetsc")) {
+    me2_12_cols <- c("me2_12_Optimised", "me2_12_Lower_CI", "me2_12_Upper_CI")
+    if (all(me2_12_cols %in% names(conf_wide)) && "nu21_Optimised" %in% names(conf_wide)) {
+      for (col in me2_12_cols) {
+        conf_wide[[col]] <- calc_M(conf_wide$nu21_Optimised, conf_wide[[col]])
+      }
+    }
+    
+    # me2_21 migration (T2 period: pop2 -> pop1)
+    me2_21_cols <- c("me2_21_Optimised", "me2_21_Lower_CI", "me2_21_Upper_CI")
+    if (all(me2_21_cols %in% names(conf_wide)) && "nu22_Optimised" %in% names(conf_wide)) {
+      for (col in me2_21_cols) {
+        conf_wide[[col]] <- calc_M(conf_wide$nu22_Optimised, conf_wide[[col]])
+      }
+    }
+  }
+  
+} else if (model == "") {
+  # Single migration rate model - similar structure but with "m" instead of "me"
+  # m1_12 migration (T1 period)
+  m1_12_cols <- c("m1_12_Optimised", "m1_12_Lower_CI", "m1_12_Upper_CI")
+  if (all(m1_12_cols %in% names(conf_wide)) && "nu11_Optimised" %in% names(conf_wide)) {
+    for (col in m1_12_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu11_Optimised, conf_wide[[col]])
+    }
+  }
+  
+  # m1_21 migration (T1 period)
+  m1_21_cols <- c("m1_21_Optimised", "m1_21_Lower_CI", "m1_21_Upper_CI")
+  if (all(m1_21_cols %in% names(conf_wide)) && "nu12_Optimised" %in% names(conf_wide)) {
+    for (col in m1_21_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu12_Optimised, conf_wide[[col]])
+    }
+  }
+  
+  # m2_12 migration (T2 period)
+  m2_12_cols <- c("m2_12_Optimised", "m2_12_Lower_CI", "m2_12_Upper_CI")
+  if (all(m2_12_cols %in% names(conf_wide)) && "nu21_Optimised" %in% names(conf_wide)) {
+    for (col in m2_12_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu21_Optimised, conf_wide[[col]])
+    }
+  }
+  
+  # m2_21 migration (T2 period)
+  m2_21_cols <- c("m2_21_Optimised", "m2_21_Lower_CI", "m2_21_Upper_CI")
+  if (all(m2_21_cols %in% names(conf_wide)) && "nu22_Optimised" %in% names(conf_wide)) {
+    for (col in m2_21_cols) {
+      conf_wide[[col]] <- calc_M(conf_wide$nu22_Optimised, conf_wide[[col]])
+    }
+  }
 }
 
 # Get unique parameter names by removing the suffixes
@@ -267,7 +431,10 @@ high_params <- c("nu_1", "nu_2", "t1", "t2", "nu11", "nu12", "nu21", "nu22")
 high_params_all <- unlist(lapply(high_params, function(p) {
   c(paste0(p, "_Optimised"), paste0(p, "_Lower_CI"), paste0(p, "_Upper_CI"))
 }))
-conf_wide[high_params_all] <- lapply(conf_wide[high_params_all], function(x) x / 1000)
+
+# Only process existing columns
+existing_high_params <- high_params_all[high_params_all %in% names(conf_wide)]
+conf_wide[existing_high_params] <- lapply(conf_wide[existing_high_params], function(x) x / 1000)
 
 # FORMAT CONFIDENCE INTERVALS ####
 combined_cols <- data.frame(Group = conf_wide$Group)
@@ -289,11 +456,15 @@ for (p in param_names) {
   )
 }
 
-# Save results
-write.csv(conf_wide, "../results/confidence_intervals_physical_units.csv", row.names = FALSE)
-write.csv(combined_cols, "../results/confidence_intervals_formatted.csv", row.names = FALSE)
+# Save results with model-specific filenames
+output_suffix <- ifelse(model == "", "single_migration", model)
+physical_units_file <- paste0("../results/confidence_intervals_", output_suffix, "_physical_units.csv")
+formatted_file <- paste0("../results/confidence_intervals_", output_suffix, "_formatted.csv")
+
+write.csv(conf_wide, physical_units_file, row.names = FALSE)
+write.csv(combined_cols, formatted_file, row.names = FALSE)
 
 cat("Confidence intervals processed and saved to:\n")
-cat("- ../results/confidence_intervals_physical_units.csv\n")
-cat("- ../results/confidence_intervals_formatted.csv\n")
+cat("- ", physical_units_file, "\n")
+cat("- ", formatted_file, "\n")
 

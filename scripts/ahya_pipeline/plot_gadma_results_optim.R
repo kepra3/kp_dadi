@@ -280,7 +280,7 @@ setwd("~/git/kp_dadi/scripts/")
 # MAIN ANALYSIS ####
 # MODEL CONFIGURATION ####
 # Set model type: "1het", "2het", "hetsym", "hetsc", or ""
-model <- "1het"  # Change this to switch between models
+model <- "hetsym"  # Change this to switch between models
 proj <- "proj"
 optim <- paste(proj, model, sep = "_")
 
