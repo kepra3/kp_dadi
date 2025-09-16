@@ -1,0 +1,40 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+No masking applied
+Full model log-likelihood: -2864.3658557148383
+Nested model log-likelihood: -5486.957468062951
+Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4
+opt_full length: 14
+opt_nested length: 8
+nested_indices: [7, 8, 9, 10, 11, 13]
+Expected nested length: 8
+opt_full: [0.81175, 200.0, 1.44337, 14.47075, 20.00137, 0.02005, 0.84677, 0.02953, 24.92714, 34.33934, 10.0, 2.92701, 0.28567, 0.42008]
+opt_nested: [0.87889, 25.1084, 1.62333, 18.94526, 23.41913, 0.2072, 0.65265, 0.13563]
+opt_nested_buffered: [0.87889, 25.1084, 1.62333, 18.94526, 23.41913, 0.2072, 0.65265, 0, 0, 0, 0, 0, 0.13563, 0]
+Godambe adjustment with full model: 0.2608167906483426

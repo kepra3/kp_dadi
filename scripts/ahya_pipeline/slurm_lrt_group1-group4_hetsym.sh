@@ -39,8 +39,8 @@ cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
 #echo "Optimised params are: $opt"
 
 
-python lrt_godambe.py group1-group4_projected0.8 1het hetsc ../data/fs/projected_group1-group4 no \
-  --opt_full 0.81175,200,1.44337,14.47075,20.00137,0.02005,0.84677,0.02953,24.92714,34.33934,10,2.92701,0.28567,0.42008 \
-  --opt_nested
+python lrt_godambe.py group1-group4_projected0.8 1het 1het_sym ../data/fs/projected_group1-group4 no \
+  --opt_full 0.81175 200 1.44337 14.47075 20.00137 0.02005 0.84677 0.02953 24.92714 34.33934 10 2.92701 0.28567 0.42008 \
+  --opt_nested 0.87889 25.1084 1.62333 18.94526 23.41913 0.2072 0.65265 0.13563 \
   --nested_indices 7 8 9 10 11 13
 

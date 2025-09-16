@@ -1,0 +1,47 @@
+Conda envs:
+# conda environments:
+#
+angsd                    /home/uqkprat2/.conda/envs/angsd
+cmems                    /home/uqkprat2/.conda/envs/cmems
+copernicus               /home/uqkprat2/.conda/envs/copernicus
+dadi.233                 /home/uqkprat2/.conda/envs/dadi.233
+gadma_env             *  /home/uqkprat2/.conda/envs/gadma_env
+genom                    /home/uqkprat2/.conda/envs/genom
+ipyrad                   /home/uqkprat2/.conda/envs/ipyrad
+kat_dadi36               /home/uqkprat2/.conda/envs/kat_dadi36
+kopen3d                  /home/uqkprat2/.conda/envs/kopen3d
+kopen3d_py37             /home/uqkprat2/.conda/envs/kopen3d_py37
+kopen3d_py38             /home/uqkprat2/.conda/envs/kopen3d_py38
+kpyrad37                 /home/uqkprat2/.conda/envs/kpyrad37
+multiqc27                /home/uqkprat2/.conda/envs/multiqc27
+ncbi_datasets            /home/uqkprat2/.conda/envs/ncbi_datasets
+pcangsd                  /home/uqkprat2/.conda/envs/pcangsd
+picard                   /home/uqkprat2/.conda/envs/picard
+trimmomatic              /home/uqkprat2/.conda/envs/trimmomatic
+base                     /sw/auto/rocky8c/epyc4/software/Anaconda3/2023.09-0
+
+Python path:
+/home/uqkprat2/.conda/envs/gadma_env/bin/python
+Python version:
+Python 3.9.21
+Dadi location:
+/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
+Array task ID: 4
+Population: group1-Amil
+Model type: hetsc
+CSV file: ../results/proj_hetsc_best_models_dadi_params.csv
+Parameters: 0.39307 300 0.67909 7.38505 4.3923 0.05602 11.65843 3.60885 1.73737 14.99999 0.54413
+Plotting residuals for group1-Amil with model hetsc
+No masking applied.
+
+Spectrum Statistics:
+Sum of SFS: 393689.35
+FST: 0.24
+
+Saved plot to ../plots/models/group1-Amil_projected0.8_data.pdf
+Saved plot to ../plots/models/group1-Amil_projected0.8_hetsc_none_residual.pdf
+Saved plot to ../plots/models/group1-Amil_projected0.8_hetsc_none_all.pdf
+Created: group1-Amil_projected0.8_hetsc_residual.pdf
+Created: group1-Amil_projected0.8_hetsc_all.pdf
+Created: group1-Amil_projected0.8_data_hetsc.pdf
+Completed plotting for group1-Amil with model hetsc
