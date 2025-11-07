@@ -26,16 +26,22 @@ Python version:
 Python 3.9.21
 Dadi location:
 /home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
-Array task ID: 12
-Population: group3-group4
-Model type: hetsym
+Array task ID: 8
+Population: group1-group2
+Model type: 1het_sym
 CSV file: ../results/proj_hetsym_best_models_dadi_params_2025-09-16_10-17-14.csv
-Parameters: 5.42866 34.8866 1.37454 14.3881 24.86756 1.52713 0.50544 0.1912
-Plotting residuals for group3-group4 with model hetsym
+Parameters: 1.15237 15.13651 1.99671 26.1895 24.99174 0.13887 0.53388 0.15524
+Plotting residuals for group1-group2 with model 1het_sym
 No masking applied.
 
 Spectrum Statistics:
-Sum of SFS: 374688.5
-FST: 0.06
+Sum of SFS: 285376.87
+FST: 0.09
 
-Completed plotting for group3-group4 with model hetsym
+Saved plot to ../plots/models/group1-group2_projected0.8_data.pdf
+Saved plot to ../plots/models/group1-group2_projected0.8_1het_sym_none_residual.pdf
+Saved plot to ../plots/models/group1-group2_projected0.8_1het_sym_none_all.pdf
+Created: group1-group2_projected0.8_1het_sym_residual.pdf
+Created: group1-group2_projected0.8_1het_sym_all.pdf
+Created: group1-group2_projected0.8_data_1het_sym.pdf
+Completed plotting for group1-group2 with model 1het_sym

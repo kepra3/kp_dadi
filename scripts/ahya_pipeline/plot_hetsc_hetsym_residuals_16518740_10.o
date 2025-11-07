@@ -26,15 +26,22 @@ Python version:
 Python 3.9.21
 Dadi location:
 /home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/__init__.py
-No masking applied
-Full model log-likelihood: -2864.3658557148383
-Nested model log-likelihood: -5486.957468062951
-Loaded 100 bootstrap spectra from ../data/fs/projected_group1-group4
-opt_full length: 14
-opt_nested length: 8
-nested_indices: [7, 8, 9, 10, 11, 13]
-Expected nested length: 8
-opt_full: [0.81175, 200.0, 1.44337, 14.47075, 20.00137, 0.02005, 0.84677, 0.02953, 24.92714, 34.33934, 10.0, 2.92701, 0.28567, 0.42008]
-opt_nested: [0.87889, 25.1084, 1.62333, 18.94526, 23.41913, 0.2072, 0.65265, 0.13563]
-opt_nested_buffered: [0.87889, 25.1084, 1.62333, 18.94526, 23.41913, 0.2072, 0.65265, 0, 0, 0, 0, 0, 0.13563, 0]
-Godambe adjustment with full model: 0.2608167906483426
+Array task ID: 10
+Population: group2-group3
+Model type: 1het_sym
+CSV file: ../results/proj_hetsym_best_models_dadi_params_2025-09-16_10-17-14.csv
+Parameters: 9.5228 11.78008 1.69886 25.50125 25.83647 0.53095 0.53591 0.22488
+Plotting residuals for group2-group3 with model 1het_sym
+No masking applied.
+
+Spectrum Statistics:
+Sum of SFS: 329511.43
+FST: 0.07
+
+Saved plot to ../plots/models/group2-group3_projected0.8_data.pdf
+Saved plot to ../plots/models/group2-group3_projected0.8_1het_sym_none_residual.pdf
+Saved plot to ../plots/models/group2-group3_projected0.8_1het_sym_none_all.pdf
+Created: group2-group3_projected0.8_1het_sym_residual.pdf
+Created: group2-group3_projected0.8_1het_sym_all.pdf
+Created: group2-group3_projected0.8_data_1het_sym.pdf
+Completed plotting for group2-group3 with model 1het_sym

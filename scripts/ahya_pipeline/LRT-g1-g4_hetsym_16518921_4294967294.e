@@ -1,7 +1,7 @@
 Traceback (most recent call last):
-  File "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/lrt_godambe.py", line 130, in <module>
+  File "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/lrt_godambe.py", line 143, in <module>
     main(
-  File "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/lrt_godambe.py", line 79, in main
+  File "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/lrt_godambe.py", line 98, in main
     adj_nested = Godambe.LRT_adjust(func_ex_full, PTS, all_boot, opt_nested_buffered, fs, nested_indices, multinom=True, eps=eps)
   File "/home/uqkprat2/.conda/envs/gadma_env/lib/python3.9/site-packages/dadi/Godambe.py", line 381, in LRT_adjust
     GIM, H, J, cU = get_godambe(diff_func, grid_pts, all_boot, p_nested, data, 
