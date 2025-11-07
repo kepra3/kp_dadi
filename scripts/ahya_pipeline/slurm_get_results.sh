@@ -1,14 +1,14 @@
 #!/bin/bash --login
-#SBATCH --job-name="get_results_g1-g4_hetsym"
+#SBATCH --job-name="get_results_g2-Amil_hetsym"
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=2G
 #SBATCH --time=2:00:00
-#SBATCH --account=a_riginos
+#SBATCH --account=a_senv_mbos
 #SBATCH --partition=general
-#SBATCH -o get_results-g1-g4-hetsym_%A_%a.o
-#SBATCH -e get_results-g1-g4-hetsym_%A_%a.e
+#SBATCH -o get_results-g2-Amil-hetsym_%A_%a.o
+#SBATCH -e get_results-g2-Amil-hetsym_%A_%a.e
 
 
 # module load python/3.9.5-gcccore-10.3.0 ##### SBATCH --qos=debug
@@ -30,4 +30,4 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline
 
-./run_in_subdirs.sh '../../results/gadma/proj_hetsym_22-8-25' "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline/extract_best_gadma_results.sh"
+./run_in_subdirs.sh '../../results/gadma/proj_hetsym_16-9-25' "/scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline/extract_best_gadma_results.sh"
