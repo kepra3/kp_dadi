@@ -199,4 +199,118 @@ Arguments: (1) fs_filepath, (2) bootstraps_dirpath, (3) FIM or GIM, (4) model,
 
 Official analysis results can be found in `results/official_analaysis_results/confidence_intervals_official/`.
 
-## 5 - Using GADMA (coming soon!)
+## 5 - Using GADMA: the *Acropora hyacinthus* (ahya) example
+
+For the ahya dataset the demographic models were optimised with
+[GADMA](https://github.com/ctlab/GADMA) (a genetic-algorithm search over parameter space that then polishes
+candidates with a local optimiser), using dadi as the likelihood engine and our own custom models.
+Everything for this example is in `scripts/ahya_pipeline/` and was run on a Slurm HPC cluster.
+
+The analysis covers all 10 pairwise comparisons between the five groups, the four *A. hyacinthus* groups
+(`group1`–`group4`) and *Acropora millepora* (`Amil`):
+`group1-group2`, `group1-group3`, `group1-group4`, `group1-Amil`, `group2-group3`,
+`group2-group4`, `group2-Amil`, `group3-group4`, `group3-Amil` and `group4-Amil`.
+
+*Note: the scripts use absolute paths on our cluster (`/scratch/user/uqkprat2/analysis/kp_dadi`), our Slurm
+account and our conda environment. If you reuse them, change those values first.*
+
+### 5a - Environment
+
+```bash
+$ conda create -n gadma_env python=3.9 -y
+$ conda activate gadma_env
+$ pip install gadma==2.0.2 dadi==2.4.0 moments-popgen==1.3.0
+```
+
+(These are the versions in our `gadma_env`.)
+
+### 5b - Site frequency spectra and bootstraps
+
+The 2D SFS for each pair and its 100 bootstrap replicates were estimated in
+[ANGSD](https://www.popgen.dk/angsd/) from sites that passed quality and depth filters, with putative paralogs
+removed using [ngsParalog](https://github.com/tplinderoth/ngsParalog) (`*.fs` and `*.saf_boots/` in `data/fs/`). `make_ahya_sfs.sh` folds and projects each spectrum to 80% of the sample size with
+`plot_fs.py`, and renames it to `data/fs/<pop1>-<pop2>_projected0.8.fs`. It does the same for every
+bootstrap, writing them to `data/fs/projected_<pop1>-<pop2>/`.
+
+```bash
+$ cd scripts/ahya_pipeline
+# <pop1> <pop2> <projection|no> <GADMA params template> [-y to (re)make the spectra]
+$ ./make_ahya_sfs.sh group1 group2 projection params-proj_hetsym -y   # works from any directory
+```
+
+GADMA uses the bootstraps to calculate CLAIC (the SNPs are treated as linked). They are used again for the
+Godambe confidence intervals and the LRTs below.
+
+### 5c - Models
+
+The custom models (in `scripts/`) all describe a split between two populations with heterogeneous gene
+flow along the genome. A proportion `P` of the genome has no migration and `1 - P` migrates at rates
+`me_12`/`me_21`.
+
+| Name | File | Params | Description |
+|------|------|--------|-------------|
+| `1het` | `custom_model_2p_m0.py` | 14 | Two time periods (`t1`, `t2`), each with its own sizes, asymmetric migration and proportion without migration (`P1`, `P2`) |
+| `hetsc` | `custom_model_het_sc.py` | 11 | Secondary contact: no gene flow in `t1`, heterogeneous gene flow in `t2` (`P2`) |
+| `hetsym` | `custom_model_het_sym.py` | 8 | One period of continuous heterogeneous gene flow (`t1`, `P1`) |
+
+Each model has a GADMA parameter template (`params-proj_het` for 1het, `params-proj_hetsc` and `params-proj_hetsym`)
+that sets the input SFS, the bootstrap directory, the custom model file, the parameter bounds,
+`Pts: [60, 70, 100]` and `Local optimizer: optimize_log`. In the templates `pop1`, `pop2` and `processX` are
+placeholders that the helper scripts fill in.
+
+### 5d - Running GADMA
+
+Each pair is run as 8 independent GADMA processes, and each process runs 8 repeats on 4 cores.
+`make_ahya_sfs.sh` calls `customise_gadma_params.sh` and `customise_gadma_slurm.sh` to write one
+params file and one Slurm script per process (from `run_multithread_gadma-tmp.sh`) into `scripts/hpc_files/`,
+and these are then submitted:
+
+```bash
+$ cd scripts/hpc_files
+$ for f in submit_gadma_params-proj_hetsym-group1-group2_p*.sh; do sbatch $f; done
+```
+
+To repeat the optimisation with moments instead of dadi (`Engine: moments`, same bounds and settings),
+`slurm_gadma_moments_array.sh` submits all 10 pairs × 8 processes as a single 80-task array per model. It
+uses the moments versions of the models (`custom_model_*_moments.py`) and the templates
+`params-proj_*_moments`:
+
+```bash
+$ sbatch --job-name=gadma_moments_1het --export=ALL,MODEL=1het,RUNTAG=$(date +%d-%-m-%y) slurm_gadma_moments_array.sh
+```
+
+### 5e - Collecting the results
+
+```bash
+# 1. Pull the final "All best by log-likelihood models" block from each GADMA.log
+$ ./run_in_subdirs.sh ../../results/gadma/proj_hetsym_22-8-25 $PWD/extract_best_gadma_results.sh
+# 2. Combine all runs into one table, recomputing theta for each with dadi (see slurm_reformat-gadma-results.sh)
+$ python reformat-gadma-results_custom.py ../../results/gadma/proj_hetsym_22-8-25 \
+    ../../results/summaries/current/gadma_proj_hetsym_results_combined_g1-g4.txt ../custom_model_het_sym.py 0.8
+# 3. Drop runs whose model gave warnings while theta was being calculated
+$ python remove_runs_with_error.py <reformat .e log> <combined .txt> <combined_noerror .txt>
+```
+
+`plot_gadma_results.R` then plots parameter estimates and log-likelihoods across runs and chooses the best
+model per pair. The best parameters are written to `results/summaries/current/proj_<model>_best_models_dadi_params*.csv`.
+
+### 5f - Model fit, confidence intervals and model comparison
+
+- **Residuals:** `slurm_plot_hetsc_hetsym_residuals.sh` and `slurm_plot_1het_residuals.sh` run
+  `compare_model.py` (section 4a) on the best parameters for each pair, writing to `plots/models/`.
+- **Confidence intervals:** `slurm_confidence_<pair>.sh` (generated by `generate_confidence_slurm.sh`) runs
+  `confidence_intervals.py` with the GIM (section 4c) at eps = 1, 0.01, …, 1e-6. `calc_confidence_int.R`
+  chooses a stable eps for each parameter and converts the estimates to physical units
+  (μ = 1.86 × 10⁻⁸ per site per generation, L = 390,206,788 bp), writing to
+  `results/confidence_intervals_<model>_{physical_units,formatted}.csv`. The CI plots are in `plots/gadma_params/`.
+- **Nested model comparison:** `lrt_godambe.py` runs a Godambe-adjusted likelihood-ratio test
+  ([Coffman et al. 2016](https://doi.org/10.1093/molbev/msv255)) between a full model and a nested one. For example,
+  `hetsc` is nested in `1het` by fixing `me1_12`, `me1_21` and `P1` (indices 5, 6 and 12):
+
+```bash
+$ cd scripts
+$ python lrt_godambe.py group1-group2_projected0.8 1het hetsc ../data/fs/projected_group1-group2 no \
+    --opt_full <14 1het params> --opt_nested <11 hetsc params> --nested_indices 5 6 12
+```
+
+There is one `slurm_lrt_<pair>.sh` per pair containing the parameter values that were actually used.

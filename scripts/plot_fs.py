@@ -132,17 +132,17 @@ def main(filepath, fold, method, mask, outpath):
 
     # Apply masking
     apply_mask(fs, mask)
+    extras_mask = ""
     if mask != "no":
         extras_mask = f"mask{mask}"
 
-    # Project spectrum if requested
+    # Fold, then project (same order and file naming as the pre-July-2025 version,
+    # which produced the ahya spectra/bootstraps, e.g. *_foldproject.fs)
+    fs, extras_fold = fold_fs(fs, fold)
     fs, extras_proj = project_fs(fs, method)
 
-    # Fold spectrum if requested
-    fs, extras_fold = fold_fs(fs, fold)
-
     # Combine extras for file naming
-    extras = extras_proj + extras_fold + extras_mask
+    extras = extras_fold + extras_mask + extras_proj
 
     # Calculate statistics
     statistic_name, statistic = calculate_statistic(fs)
@@ -152,7 +152,7 @@ def main(filepath, fold, method, mask, outpath):
     write_statistics(stats_out_name, snps, fs, statistic_name, statistic)
 
     # Plot spectrum
-    plot_spectrum(fs, snps, mask, outpath, extras)
+    plot_spectrum(fs, snps, outpath, extras)
 
 
 if __name__ == '__main__':

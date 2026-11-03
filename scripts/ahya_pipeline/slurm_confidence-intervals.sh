@@ -36,7 +36,7 @@ echo "Population pair is: $pop"
 
 # Extract optimised parameters from the results file (starting from 5th column)
 # Find the row matching the population pair and extract parameters from column 5 onwards
-results_file="../results/proj_1het_best_models_dadi_params.csv"
+results_file="../results/summaries/archive/proj_1het_best_models_dadi_params.csv"
 
 if [ ! -f "$results_file" ]; then
     echo "Error: Results file $results_file not found!"

@@ -14,8 +14,8 @@ export PATH="/home/uqkprat2/.conda/envs/gadma_env/bin:$PATH"
 
 
 # Define file paths
-csv_new="../../results/proj_1het_best_models_dadi_params_2025-08-20_11-02-17.csv"
-csv_og="../../results/proj_1het_best_models_dadi_params_2025-08-20_11-02-47.csv"
+csv_new="../../results/summaries/archive/proj_1het_best_models_dadi_params_2025-08-20_11-02-17.csv"
+csv_og="../../results/summaries/current/proj_1het_best_models_dadi_params_2025-08-20_11-02-47.csv"
 plot_script="../compare_model.py"
 
 # Check if files exist

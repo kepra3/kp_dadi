@@ -288,13 +288,13 @@ optim <- paste(proj, model, sep = "_")
 if (model == "1het") {
   results_file <- "../results/gadma_proj_1het_results_combined_noerror2.txt"
 } else if (model == "2het") {
-  results_file <- "../results/gadma_proj_2het_results_combined_noerror.txt"
+  results_file <- "../results/summaries/current/gadma_proj_2het_results_combined_noerror.txt"
 } else if (model == "hetsym") {
-  results_file <- "../results/gadma_proj_hetsym_results_combined_noerror.txt"
+  results_file <- "../results/summaries/current/gadma_proj_hetsym_results_combined_noerror.txt"
 } else if (model == "hetsc") {
-  results_file <- "../results/gadma_proj_hetsc_results_combined_noerror.txt"
+  results_file <- "../results/summaries/current/gadma_proj_hetsc_results_combined_noerror.txt"
 } else if (model == "") {
-  results_file <- "../results/gadma_proj_results_combined.txt"
+  results_file <- "../results/summaries/current/gadma_proj_results_combined.txt"
 } else {
   stop("Unknown model type. Please use: '1het', '2het', 'hetsym', 'hetsc', or ''")
 }

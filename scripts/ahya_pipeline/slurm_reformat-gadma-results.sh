@@ -30,4 +30,4 @@ python -c "import dadi; print(dadi.__file__)"
 
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts/ahya_pipeline
 
-python reformat-gadma-results_custom.py '../../results/gadma/proj_hetsym_16-9-25' '../../results/gadma_proj_hetsym_results_combined_g2-Amil.txt' '../custom_model_het_sym.py' 0.8
+python reformat-gadma-results_custom.py '../../results/gadma/proj_hetsym_16-9-25' '../../results/summaries/current/gadma_proj_hetsym_results_combined_g2-Amil.txt' '../custom_model_het_sym.py' 0.8

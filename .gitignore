@@ -160,3 +160,7 @@ documents/
 results/archive/
 results/gadma_analysed/
 scripts/hpc_files/
+
+# archived slurm logs (tarballs)
+logs/
+plots/official_ms_plots_ahya/group1-2_comparisons.ai

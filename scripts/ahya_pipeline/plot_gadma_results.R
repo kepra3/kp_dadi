@@ -203,7 +203,7 @@ convert_params <- function(gadma_results, model, proj, L.genom, mu) {
 setwd("~/git/kp_dadi/scripts/")
 
 # Import results ####
-gadma_results <- read.delim("../results/gadma_proj_1het_results_combined_noerror.txt")
+gadma_results <- read.delim("../results/summaries/current/gadma_proj_1het_results_combined_noerror.txt")
 proj <- "proj"
 model <- "1het"
 optim <- paste(proj, model, sep = "_")

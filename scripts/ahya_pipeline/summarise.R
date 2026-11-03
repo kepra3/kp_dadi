@@ -41,7 +41,7 @@ setwd("~/git/kp_dadi/scripts/")
 # Args
 
 # Load data
-results <- read.table("../results/dadi_optimisation_combined.txt", sep = "\t",
+results <- read.table("../results/summaries/current/dadi_optimisation_combined.txt", sep = "\t",
                       header = TRUE)
 num_runs <- 1
 

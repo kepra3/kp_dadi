@@ -30,8 +30,8 @@ python -c "import dadi; print(dadi.__file__)"
 cd /scratch/user/uqkprat2/analysis/kp_dadi/scripts
 
 # Define file paths
-csv_hetsc="../results/proj_hetsc_best_models_dadi_params.csv"
-csv_hetsym="../results/proj_hetsym_best_models_dadi_params_2025-09-16_10-17-14.csv"
+csv_hetsc="../results/summaries/current/proj_hetsc_best_models_dadi_params.csv"
+csv_hetsym="../results/summaries/archive/proj_hetsym_best_models_dadi_params_2025-09-16_10-17-14.csv"
 
 # Create plots directory if it doesn't exist
 mkdir -p ../plots/models/
